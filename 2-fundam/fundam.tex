@@ -187,6 +187,9 @@ apenas por soluções contidas na primeira fronteira, e assim por diante. Para c
 de \textit{Crowding-Distance} as soluções com maiores valores irão ser adicionadas na população da próxima geração chamada $P_t$ onde $t$ é a
 avaliação corrente.
 
+Após criar e preencher $P_t$ com as soluções não dominadas de todas as fronteiras, a população $P_t$ é avaliada e então passa para um novo
+torneio binário e reprodução, dessa maneira, iniciando uma novo ciclo do algoritmo.
+
 \begin{algorithm}[htb!]
 	\begin{algorithmic}[1]
 		\State{$N \gets$ Population Size}
@@ -227,6 +230,29 @@ avaliação corrente.
 
 
 %=====================================================
+
+\subsection{IBEA (Indicator-Based Evolutionary Algorithm)}
+
+No contexto de otimização multiobjetiva, otimizar consiste em tentar encontrar a fronteira com uma boa aproximação da fronteira real de Pareto. 
+Entretanto, não existe uma definição geral para "uma boa aproximação". Consequentemente, indicadores de qualidade vem sendo utilizados
+para avaliar a qualidade da aproximação de fronteiras. O indicador \textit{hypervolume} é um exemplo de indicador utilizado para avaliação e comparação 
+das fronteiras.
+
+No algoritmo IBEA, indicadores de qualidade são	utilizados para avaliar o conjunto de soluções não dominadas \cite{figueiredo2013algoritmo}.
+Para utilizar o IBEA, é necessário definir qual indicador será utilizado para associar cada solução a um valor scalar. Um dos indicadores bastante utilizados
+em conjunto com IBEA é o \textit{hypervolume} por conta da sua capacidade de avaliar a convergência e a diversidade do espaço de busca ao mesmo \cite{ishibuchi2008evolutionary}.
+
+\begin{equation} \label{eq:ibea_fitness}
+F(x_i) = \sum_{x_j \in (P-x_i)} {-e^\frac{-I_{Hy}(x_j,x_i)}{k}}
+\end{equation}
+
+A equação de \textit{fitness} do IBEA é apresentada pela equação \ref{eq:ibea_fitness} e é utilizada para calcular a contribuição de uma dada solução
+para o valor do indicador referente a população, onde $k$ é um fator escalar dependente do $I_{Hy}$, o qual representa o indicador de qualidade sendo utilizado.
+O valor $F(x_i)$ corresponde à perda de qualidade da aproximação, da fronteira real de Pareto, se a solução $x_i$ for removida da população \cite{figueiredo2013algoritmo}.
+
+
+
+
 
 \section{Exemplo de figura}
 

@@ -11,12 +11,13 @@
 \contentsline {subsection}{\numberline {2.3.2}Considera\IeC {\c c}\IeC {\~o}es Finais}{9}{subsection.19}
 \contentsline {section}{\numberline {2.4}AEs - Algoritmos Evolucion\IeC {\'a}rios}{9}{section.20}
 \contentsline {subsection}{\numberline {2.4.1}NSGAII - Non-dominated sorting Genetic Algorithm II}{10}{subsection.21}
-\contentsline {section}{\numberline {2.5}Exemplo de figura}{10}{section.23}
-\contentsline {section}{\numberline {2.6}Exemplo de tabela}{11}{section.26}
-\contentsline {section}{\numberline {2.7}Exemplo de equa\IeC {\c c}\IeC {\~a}o}{11}{section.28}
-\contentsline {section}{\numberline {2.8}Exemplos de c\IeC {\'o}digo-fonte}{12}{section.30}
-\contentsline {section}{\numberline {2.9}Conclus\IeC {\~a}o}{13}{section.51}
-\contentsline {chapter}{Refer\^encias Bibliogr\'aficas}{14}{chapter*.52}
-\contentsline {chapter}{\numberline {A}Exemplo de anexo}{15}{appendix.53}
-\contentsline {section}{\numberline {A.1}Uma Se\IeC {\c c}\IeC {\~a}o}{15}{section.54}
-\contentsline {subsection}{\numberline {A.1.1}Uma sub-Se\IeC {\c c}\IeC {\~a}o}{16}{subsection.55}
+\contentsline {subsection}{\numberline {2.4.2}IBEA (Indicator-Based Evolutionary Algorithm)}{10}{subsection.23}
+\contentsline {section}{\numberline {2.5}Exemplo de figura}{12}{section.25}
+\contentsline {section}{\numberline {2.6}Exemplo de tabela}{12}{section.28}
+\contentsline {section}{\numberline {2.7}Exemplo de equa\IeC {\c c}\IeC {\~a}o}{13}{section.30}
+\contentsline {section}{\numberline {2.8}Exemplos de c\IeC {\'o}digo-fonte}{13}{section.32}
+\contentsline {section}{\numberline {2.9}Conclus\IeC {\~a}o}{14}{section.53}
+\contentsline {chapter}{Refer\^encias Bibliogr\'aficas}{15}{chapter*.54}
+\contentsline {chapter}{\numberline {A}Exemplo de anexo}{16}{appendix.55}
+\contentsline {section}{\numberline {A.1}Uma Se\IeC {\c c}\IeC {\~a}o}{16}{section.56}
+\contentsline {subsection}{\numberline {A.1.1}Uma sub-Se\IeC {\c c}\IeC {\~a}o}{17}{subsection.57}
