@@ -12,12 +12,16 @@
 \contentsline {section}{\numberline {2.4}AEs - Algoritmos Evolucion\IeC {\'a}rios}{9}{section.20}
 \contentsline {subsection}{\numberline {2.4.1}NSGAII - Non-dominated sorting Genetic Algorithm II}{10}{subsection.21}
 \contentsline {subsection}{\numberline {2.4.2}IBEA (Indicator-Based Evolutionary Algorithm)}{10}{subsection.23}
-\contentsline {section}{\numberline {2.5}Exemplo de figura}{12}{section.25}
-\contentsline {section}{\numberline {2.6}Exemplo de tabela}{12}{section.28}
-\contentsline {section}{\numberline {2.7}Exemplo de equa\IeC {\c c}\IeC {\~a}o}{13}{section.30}
-\contentsline {section}{\numberline {2.8}Exemplos de c\IeC {\'o}digo-fonte}{13}{section.32}
-\contentsline {section}{\numberline {2.9}Conclus\IeC {\~a}o}{14}{section.53}
-\contentsline {chapter}{Refer\^encias Bibliogr\'aficas}{15}{chapter*.54}
-\contentsline {chapter}{\numberline {A}Exemplo de anexo}{16}{appendix.55}
-\contentsline {section}{\numberline {A.1}Uma Se\IeC {\c c}\IeC {\~a}o}{16}{section.56}
-\contentsline {subsection}{\numberline {A.1.1}Uma sub-Se\IeC {\c c}\IeC {\~a}o}{17}{subsection.57}
+\contentsline {section}{\numberline {2.5}Hiper-Heur\IeC {\'\i }sticas }{12}{section.26}
+\contentsline {subsection}{\numberline {2.5.1}Hiper-heur\IeC {\'\i }sticas de Gera\IeC {\c c}\IeC {\~a}o}{15}{subsection.29}
+\contentsline {section}{\numberline {2.6}Programa\IeC {\c c}\IeC {\~a}o Gen\IeC {\'e}tica (PG)}{16}{section.30}
+\contentsline {section}{\numberline {2.7}Evolu\IeC {\c c}\IeC {\~a}o Gramatical (EG)}{16}{section.31}
+\contentsline {section}{\numberline {2.8}Exemplo de figura}{17}{section.32}
+\contentsline {section}{\numberline {2.9}Exemplo de tabela}{17}{section.35}
+\contentsline {section}{\numberline {2.10}Exemplo de equa\IeC {\c c}\IeC {\~a}o}{18}{section.37}
+\contentsline {section}{\numberline {2.11}Exemplos de c\IeC {\'o}digo-fonte}{18}{section.39}
+\contentsline {section}{\numberline {2.12}Conclus\IeC {\~a}o}{19}{section.60}
+\contentsline {chapter}{Refer\^encias Bibliogr\'aficas}{20}{chapter*.61}
+\contentsline {chapter}{\numberline {A}Exemplo de anexo}{21}{appendix.62}
+\contentsline {section}{\numberline {A.1}Uma Se\IeC {\c c}\IeC {\~a}o}{21}{section.63}
+\contentsline {subsection}{\numberline {A.1.1}Uma sub-Se\IeC {\c c}\IeC {\~a}o}{22}{subsection.64}

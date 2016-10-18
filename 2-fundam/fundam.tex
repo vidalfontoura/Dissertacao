@@ -251,6 +251,138 @@ para o valor do indicador referente a população, onde $k$ é um fator escalar 
 O valor $F(x_i)$ corresponde à perda de qualidade da aproximação, da fronteira real de Pareto, se a solução $x_i$ for removida da população \cite{figueiredo2013algoritmo}.
 
 
+O Algoritmo \ref{alg:ibea} recebe como parametro o tamanho da população $N$, o número máximo de avaliações $T$ e o fator escalar $k$. O processo se inicia
+criando uma população $P$ de tamanho $N$. Até que o critério de parada seja atingido os seguintes passos irão se repetir: um torneio binário 
+para selecionar indivíduos, reprodução (cruzamento e mutação) dos indivíduos selecionados para gerar descendentes, adicionar os descedentes na população
+auxiliar $\overline P$. Após a reprodução, a população $\overline P$ é unida com $P$. Enquanto o tamanho de $P$ exceder $N$, o pior indíviduo avaliado
+pela equação \ref{eq:ibea_fitness} é removido da população $P$ e os indíviduos restantes são re-avaliados. Quando o algoritmo terminar irá retornar o conjunto
+de soluções não dominadas é retornado.
+
+\begin{algorithm}[htb!]
+	\begin{algorithmic}[1]
+		\State{$N \gets$ Population Size}
+		\State{$\overline N \gets$ AuxiliaryPopulationSize}
+		\State{$T \gets$ Max Evaluations}
+		\State{$k \gets$ Scale factor of Fitness}
+		
+		\State{$P \gets$ CreatePopulation($N$);}
+		\State{$\overline P \gets$ CreateEmptyAuxiliaryPopulation($\overline N$);}
+		\State{$m \gets 0$}
+		\State{CalculateFitness($P$);}
+		
+		\While{$m \ge T$ or other stop criterion is not reached}
+		
+		\State{$\overline P \gets$ BinaryTournament($P$);}
+		\State{$\overline P \gets$ CrossoverMutation($\overline P$);}
+		\State{$P \gets P \cup \overline P$}
+		\State{$m \gets m+1$}
+		
+		\While{Size($P$) $> N$}
+		\State{$x^* \gets$ WorstIndividualByFitness();}
+		\State{RemoveFromPopulation($x^*$, $P$);}
+		\State{CalculateFitness($P$);}
+		\EndWhile
+		
+		\EndWhile
+		\State{\Return{$P \gets$ Set of non-dominated solutions}}
+		
+	\end{algorithmic}
+	\caption{IBEA}
+	\label{alg:ibea}
+\end{algorithm}
+
+%\footnotetext[1]{\textit{Hypervolume}: Indicador de qualidade utilizado neste estudo \cite{zitzler1998multiobjective}, 
+%	denotado como o "tamanho da área coberta do espaço de busca". Este indicador tem uma vantagen importante em relação aos outros \cite{zitzler2007hypervolume}:
+%	1 - Sensitivo a qualquer tipo de melhoria na aproximação em relação a outro conjunto. 
+
+\section{Hiper-Heurísticas }
+\label{Hiper-Heuristicas}
+
+Apesar do sucesso de métodos heurísticos e outros métodos de busca na tarefa de resolver problemas de busca computacional difíceis ainda existem dificuldades em generalizar estes métodos para diferentes problemas ou até mesmo para diferentes instâncias de um mesmo problema. Esta dificuldade provém principalmente da necessidade de selecionar os parâmetros e configurações mais adequados dos algoritmos para um problema ou para uma dada instância de um problema. Também vale mencionar a pouca orientação na tarefa de definir estes parâmetros.  É neste contexto que surge uma questão: é possível automatizar o projeto e parametrização de métodos heurísticos para resolver problemas de busca computacional difíceis? \cite{burke2013hyper}. A ideia principal é desenvolver algoritmos que sejam mais genéricos do que as implementações de metodologias atuais \cite{burke2013hyper}. As principais abordagens já propostas para este desafio podem ser classificadas em duas categorias: configuração estática (\textit{offline}) e controle dinâmico (\textit{online}). Abaixo são apresentadas algumas abordagens já propostas na literatura:
+
+\begin{itemize}
+	\item Configuração Estática (Offline):
+	\begin{itemize}
+		\item Seleção de algoritmos;
+		\item Portfólio de algoritmos;	
+		\item Configuração de algoritmos;
+		\item Ajuste de parâmetros;
+		\item Hiper-Heurísticas.
+	\end{itemize}
+	\item Controle Dinâmico (Online):
+	\begin{itemize}
+		\item Seleção adaptativa de operadores (AOS);
+		\item Controle de parâmetros;	
+		\item Algoritmos meméticos adaptativos;
+		\item Hiper-Heurísticas
+	\end{itemize}
+	
+\end{itemize}
+
+
+Esta seção tratará apenas de hiper-heurísticas e suas particularidades. Uma hiper-heurística pode ser vista como uma metodologia de alto nível, a qual seleciona ou cria heurísticas para resolver um dado problema ou instância de um problema. \cite{burke2013hyper}. O objetivo principal é tentar encontrar ou construir a heurística mais adequada para cada situação. As hiper-heurísticas diferem dos métodos padrão de busca pois operam sobre o espaço de busca de heurísticas que por sua vez operam sobre o espaço de busca de um problema. Além disso, hiper-heurísticas são independentes do problema. Tradicionalmente frameworks hiper-heurísticos possuem dois níveis: \cite{sabar2014automatic}
+
+\textbf{Heurísticas de baixo nível}:  Um conjunto de heurísticas de baixo nível específicas. Estas heurísticas costumam diferir entre domínios de problemas. São exemplos: operadores de cruzamento, mutação e buscas locais. Em alguns casos, meta-heurísticas também, dependendo da modelagem do \textit{framework} hiper-heurístico, podem assumir o papel de heurísticas de baixo nível. 
+
+\textbf{Heurísticas de alto nível}: Geralmente consistem em dois componentes: mecanismo de seleção, que gerencia quais heurísticas de baixo nível devem ser aplicadas durante a busca; um critério de aceitação, que tem a responsabilidade de decidir se irá aceitar ou não uma solução gerada, a partir da aplicação de uma heurística de baixo nível. A responsabilidade do mecanismo de seleção é selecionar, de um \textit{pool} de heurísticas de baixo nível, a heurística que for mais adequada naquele momento. Geralmente, a escolha da heurística de baixo nível é crucial para uma boa exploração do espaço de busca, evitando que a busca fique confinada em uma região específica \cite{sabar2015automatic}. O objetivo do critério de aceitação é auxiliar o processo de busca a evitar mínimos locais assim como explorar diferentes regiões através do aceite ou rejeição de soluções geradas \cite{chakhlevitch2008hyperheuristics}. Espera-se que um bom critério de aceitação deva atingir um bom equilíbrio entre aceitar soluções melhores assim como soluções diversificadas se a busca estiver presa em um mínimo local \cite{sabar2015automatic}. Ambos os componentes devem ser independentes de conhecimento sobre o problema.
+
+A imagem \ref{img:hiperheuristico} apresenta um diagrama exemplificando os níveis de um \textit{framework} hiper-heurístico e suas características. Note que entre os níveis (alto e baixo) existe uma barreira de domínio, ou seja, apenas as heurísticas de baixo nível são dependentes de conhecimento do problema ou instância e as heurísticas de alto nível não são dependentes do problema. 
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics{Imagens/HiperHeuristicas.png}
+	\caption{Framework Geral Hiper-Heurístico. Adaptado de \cite{sabar2015automatic}}
+	\label{img:hiperheuristico}
+\end{figure}
+
+
+Como cada instância ou problema possui um espaço de busca com diferentes características, os componentes da heurística de alto nível têm um grande impacto no desempenho de um \textit{framework} hiper-heurístico. Esta é uma das razões de existir um grande interesse de pesquisa em desenvolver  novos mecanismos de seleção, assim como diferentes critérios de aceitação \cite{burke2013hyper}. Um bom mecanismo de seleção deve selecionar a heurística mais adequada em um dado momento, para guiar a busca para regiões promissoras do espaço de busca. 
+Ao utilizar hiper-heurísticas, espera-se encontrar o método correto ou a sequência de heurísticas que mais se adequam a um problema ou instância ao invés de tentar resolver o problema diretamente. Entretanto, um importante objetivo é desenvolver métodos genéricos, que têm  potencial em produzir soluções com uma qualidade aceitável, utilizando um conjunto de heurísticas de baixo nível fácil de implementar. As hiper-heurísticas podem ser classificadas de diversas maneiras. A figura \ref{img:classificacaoHiperHeuristicas} apresenta as possíveis classificações descritas na literatura. 
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.8]{Imagens/ClassificacaoHiperHeuristica.png}
+	\caption{Classificação Hiper-heurísticas. Adaptado de \cite{sabar2015automatic}}
+	\label{img:classificacaoHiperHeuristicas}
+\end{figure}
+
+A primeira classificação de hiper-heurísticas é baseada na sua fonte de conhecimento durante a busca: \textit{Online} é quando a hiper-heurística toma decisões de maneira instantânea, baseando-se em métricas durante sua execução, não necessitando de treinamento prévio. \textit{Offline} necessita de treinamento prévio; estes \textit{frameworks}  tomam suas decisões baseados no que foi aprendido apenas durante o treinamento, sem atualização deste conhecimento. Os \textit{frameworks} classificados como \textit{No-Learning} não possuem nenhuma forma de aprendizagem. Outra classificação considera como as heurísticas de baixo nível operam sobre as soluções do problema. As heurísticas ditas perturbativas realizam pequenas perturbações nas soluções gerando novas soluções. Já heurísticas construtivas criam soluções do zero passo a passo e normalmente avaliam cada etapa da construção para obter \textit{feedback} sobre o seu desempenho. Uma última  classificação, mas não menos importante, divide as hiper-heurísticas de acordo com a  natureza do seu espaço de busca. As hiper-heurísticas de seleção selecionam sequências de heurísticas a serem aplicadas para resolver um dado problema ou instância. Já as hiper-heurísticas de geração operam gerando novas heurísticas com objetivo de resolver um problema ou instância.
+
+
+\subsection{Hiper-heurísticas de Geração}
+\label{Hiper-Heuristicas-Geraçao}
+
+Estas hiper-Heurísticas geram novas heurísticas combinando componentes de heurísticas existentes. Geralmente se utiliza programação genética (GP), ou alguma vertente de GP, como por exemplo evolução gramatical \cite{ryan1998grammatical} ou programação gênica \cite{ferreira2006gene}, como hiper-heurística para gerar heurísticas. A próxima sub-seção irá introduzir o conhecimento necessário para a compreensão da programação genética, assim como irá introduzir evolução gramatical, que se trata de um tipo de programação genética e que será utilizada nesta proposta.
+
+\section{Programação Genética (PG)}
+\label{subsection:PG}
+
+Programação Genética \cite{burke2009exploring} é um ramo da síntese de programas que utiliza ideias oriundas da teoria da evolução natural para produzir programas. Os principais componentes da computação evolucionária são herança (cruzamento/reprodução), seleção e variação (mutação). A herança significa que os descendentes  têm alguma semelhança com seus pais, pois quase todo material genético vem dos pais. A seleção trata de escolher quais pais irão se reproduzir para gerar novos descendentes; pais com maior aptidão tendem a ter maior probabilidade de serem selecionados. Esta pressão de seleção define quais indivíduos estão mais aptos que outros. Variação realiza pequenas alterações em um descendente a fim de criar novo material genético neste indivíduo e que não estava presente em nenhum dos indivíduos que o geraram. Computação evolutiva pode ser pensada como a interação destes três componentes. 
+Uma população aleatória de programas de computador é gerada, e os operadores geneticamente inspirados (cruzamento e mutação) são repetidamente aplicados com objetivo de produzir novos programas de computador. Estes programas são avaliados utilizando uma função de \textit{fitness} (normalmente dependente do desempenho obtido pela aplicação do programa em um problema), que determina quais destes programas são mais suscetíveis a sobreviver para gerações futuras. Os programas com maior aptidão tem mais chances de serem selecionados para o cruzamento e perpetuarem parte de seus códigos genéticos durante o processo evolutivo. 
+Programação genética é um método de geração de programas sintaticamente válidos e a função de \textit{fitness} é utilizada para decidir quais programas são mais adequados para o problema.
+Na programação genética, os programas que compõem a população são tradicionalmente representados utilizando estruturas de árvore. Existem outras estruturas que podem ser evoluídas, como por exemplo: sequências lineares de instruções ou gramáticas. Nesta proposta será utilizada uma representação gramatical linear que será explicada na seção \ref{subsubsection:EvolucaoGramatical}.
+
+\section{Evolução Gramatical (EG)}
+\label{subsubsection:EvolucaoGramatical}
+
+Evolução gramatical é uma técnica relativamente nova de computação evolutiva, proposta por Ryan et al. \cite{ryan1998grammatical}, trata-se de um tipo de programação genética. Assim como na programação genética, o principal objetivo é encontrar um programa executável ou trecho de um programa, que obtenha um bom valor de \textit{fitness} para o problema em questão. Na maioria dos trabalhos publicados de programação genética, expressões que representam estruturas de árvore são manipuladas, enquanto na evolução gramatical os operadores genéticos são aplicados em vetores de inteiros que posteriormente são mapeados para um programa (ou trecho de programa) através de uma gramática específica. Um dos benefícios de EG é que este mapeamento generaliza a aplicação para diferentes linguagens de programação.
+Ryan el al. \cite{ryan1998grammatical} propõem uma técnica para gerar programas ou fragmentos de programas para qualquer linguagem de programação utilizando definições BNF. A técnica pode ser utilizada para evoluir programas por um processo evolutivo. A evolução gramatical adota um mecanismo de mapeamento entre o genótipo (indivíduos codificados em um vetor de inteiros) e o fenótipo (programas gerados para resolver algum problema). 
+A notação \textit{Backus Naur Form} (BNF) é a notação utilizada para expressar a gramática de uma linguagem na forma de regras de produção. Uma gramática BNF consiste em um conjunto de terminais, os quais são itens que podem aparecer na linguagem, por exemplo: +, -, *, / etc e não terminais, que podem ser expandidos em um ou mais terminais e não terminais. Uma gramática pode ser expressada como uma tupla ${N,T,P,S}$, onde $N$ é o conjunto de não terminais, $T$ o conjunto de terminais, P um conjunto de regras de produção que mapeia os elementos $N$ para $T$; e, por último, $S$, um símbolo de início e que está contido em $N$.
+
+\begin{center}
+	
+	$ N = {\langle expr \rangle, \langle op \rangle, \langle pre-op \rangle}$
+	
+	$ T = {Sin,Cos,Tan,Log,+,-,/,*,X} $
+	
+	$ S = \langle expr \rangle $
+	
+\end{center}
+
+\noindent
+E $P$ pode ser representada como:
+
+
 
 
 
