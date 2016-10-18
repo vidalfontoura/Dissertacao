@@ -38,6 +38,8 @@
 
 % ------------------------------------------------------------------------------
 
+
+
 % inclusão/formatação de código-fonte (programas)
 \usepackage{listings}
 \lstset{language=c}
@@ -78,6 +80,25 @@
 %\newcommand{\symb}[2]{%
 %\refstepcounter{symb}
 %\addcontentsline{los}{symb}{\protect #1 :#2}\par}
+
+\usepackage{syntax}
+\grammarindent 80pt
+
+
+\usepackage{newfloat}
+% declare the floating environment {Grammar}
+% this will also define \listofGrammars:
+\DeclareFloatingEnvironment[
+% the file extension for the file used to create the list:
+fileext   = logr,% don't use log here!
+% the heading for the list:
+listname  = {List of Grammars},
+% the name used in captions:
+name      = Gramática,
+% the default floating parameters if the environment is used
+% without optional argument:
+placement = htp
+]{Grammar}
 
 
 

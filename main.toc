@@ -16,12 +16,15 @@
 \contentsline {subsection}{\numberline {2.5.1}Hiper-heur\IeC {\'\i }sticas de Gera\IeC {\c c}\IeC {\~a}o}{15}{subsection.29}
 \contentsline {section}{\numberline {2.6}Programa\IeC {\c c}\IeC {\~a}o Gen\IeC {\'e}tica (PG)}{16}{section.30}
 \contentsline {section}{\numberline {2.7}Evolu\IeC {\c c}\IeC {\~a}o Gramatical (EG)}{16}{section.31}
-\contentsline {section}{\numberline {2.8}Exemplo de figura}{17}{section.32}
-\contentsline {section}{\numberline {2.9}Exemplo de tabela}{17}{section.35}
-\contentsline {section}{\numberline {2.10}Exemplo de equa\IeC {\c c}\IeC {\~a}o}{18}{section.37}
-\contentsline {section}{\numberline {2.11}Exemplos de c\IeC {\'o}digo-fonte}{18}{section.39}
-\contentsline {section}{\numberline {2.12}Conclus\IeC {\~a}o}{19}{section.60}
-\contentsline {chapter}{Refer\^encias Bibliogr\'aficas}{20}{chapter*.61}
-\contentsline {chapter}{\numberline {A}Exemplo de anexo}{21}{appendix.62}
-\contentsline {section}{\numberline {A.1}Uma Se\IeC {\c c}\IeC {\~a}o}{21}{section.63}
-\contentsline {subsection}{\numberline {A.1.1}Uma sub-Se\IeC {\c c}\IeC {\~a}o}{22}{subsection.64}
+\contentsline {section}{\numberline {2.8}Programa\IeC {\c c}\IeC {\~a}o Gen\IeC {\'e}tica como Hiper-Heur\IeC {\'\i }stica de Gera\IeC {\c c}\IeC {\~a}o de Heur\IeC {\'\i }sticas}{20}{section.35}
+\contentsline {subsubsection}{Abordagem B\IeC {\'a}sica}{20}{section*.36}
+\contentsline {section}{\numberline {2.9}Considera\IeC {\c c}\IeC {\~o}es Finais}{21}{section.43}
+\contentsline {section}{\numberline {2.10}Exemplo de figura}{22}{section.44}
+\contentsline {section}{\numberline {2.11}Exemplo de tabela}{22}{section.47}
+\contentsline {section}{\numberline {2.12}Exemplo de equa\IeC {\c c}\IeC {\~a}o}{23}{section.49}
+\contentsline {section}{\numberline {2.13}Exemplos de c\IeC {\'o}digo-fonte}{23}{section.51}
+\contentsline {section}{\numberline {2.14}Conclus\IeC {\~a}o}{24}{section.72}
+\contentsline {chapter}{Refer\^encias Bibliogr\'aficas}{25}{chapter*.73}
+\contentsline {chapter}{\numberline {A}Exemplo de anexo}{26}{appendix.74}
+\contentsline {section}{\numberline {A.1}Uma Se\IeC {\c c}\IeC {\~a}o}{26}{section.75}
+\contentsline {subsection}{\numberline {A.1.1}Uma sub-Se\IeC {\c c}\IeC {\~a}o}{27}{subsection.76}
