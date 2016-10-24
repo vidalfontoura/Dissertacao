@@ -471,30 +471,36 @@ O Algoritmo \ref{alg:GE} apresenta o pseudocódigo da evolução gramatical (EG)
 
 %exceto pela aplicação dos operadores \textit{Duplicate} e \textit{Prune} (linhas 10 e 11 do Algoritmo  \ref{alg:GE}) e o processo de decodificação e execução dos programas descendentes (linhas 13 e 14 do Algoritmo \ref{alg:GE}).
 
-%\begin{algorithm}[htb]
-%	\fontsize{8pt}{10pt}\selectfont
-%	\caption{Pseudocódigo da evolução gramatical}
-%	\label{alg:GE}
-%	\KwIn{AG -- Arquivo da gramática}
-%	\Begin{
-%		$populacao \gets$ Inicialização a população\;
-%		$programas \gets$ Mapeia $populacao$ para programas utilizando $AG$\;
-%		Executa os $programas$\;
-%		Atribui valor de \textit{fitness} para as soluções  of $populacao$ de acordo com a saída obtida pelos respectivos programas decodificados\;
-%		\While{Condição de parada não atingida}{
-%			$pais \gets $ Seleção de indivíduos para cruzamento\;
-%			$descendentes \gets$ Cruzamento $pais$\;
-%			Aplica o operator \text{Prune} nas soluções $descendentes$\;
-%			Aplica o operador \textit{Duplicate} nas soluções $descendentes$\;
-%			Aplica o operador de mutação nas soluções $descendentes$\;
-%			$programas \gets$ Mapeia $descendentes$ para programas utilizando $AG$\;
-%			Executa $programas$\;
-%			Atribui valor \textit{fitness} para as soluções $descendentes$ de acordo com a saída obtida pelos respectivos programas decodificados\;
-%			$populacao \gets$ Realiza substituição\;
-%		}
-%		\Return{Melhor programa da $populacao$}\;
-%	}
-%\end{algorithm}
+\begin{algorithm}[htb!]
+	%\fontsize{8pt}{10pt}\selectfont
+	
+	
+	\begin{algorithmic}[1]
+		\State{$AG  \gets$ Arquivo da gramática;}
+		\State{$populacao \gets$ Inicialização a população;}
+		\State{$programas \gets$ Mapeia $populacao$ para programas utilizando $AG$;}
+		\State {Executa os $programas$;}
+		\State {Atribui valor de \textit{fitness} para as soluções  of $populacao$ de acordo com a saída obtida pelos respectivos programas decodificados;}
+%		\While{Condição de parada não atingida}
+		\While{Condição de parada não atingida}
+			\State {$pais \gets $ Seleção de indivíduos para cruzamento;}
+			\State {$descendentes \gets$ Cruzamento $pais$;}
+			\State {Aplica o operator \text{Prune} nas soluções $descendentes$;}
+			\State {Aplica o operador \textit{Duplicate} nas soluções $descendentes$;}
+			\State {Aplica o operador de mutação nas soluções $descendentes$;}
+			\State {$programas \gets$ Mapeia $descendentes$ para programas utilizando $AG$;}
+			\State {Executa $programas$;}
+			\State {Atribui valor \textit{fitness} para as soluções $descendentes$ de acordo com a saída obtida pelos respectivos programas decodificados;}
+			\State 	{$populacao \gets$ Realiza substituição;}
+		\EndWhile \\
+		\Return{Melhor programa da $populacao$;}
+			
+			
+		
+	\end{algorithmic}
+	\caption{Pseudocódigo da evolução gramatical}
+	\label{alg:GE}
+\end{algorithm}
 
 
 \section{Programação Genética como Hiper-Heurística de Geração de Heurísticas}

@@ -1,0 +1,21 @@
+\begin{thebibliography}{}
+
+\bibitem[Goossens et~al., 1993]{goossens93}
+Goossens, M., Mittelbach, F.  e Samarin, A. (1993).
+\newblock {\em The \LaTeX\ Companion}.
+\newblock Addison-Wesley.
+
+\bibitem[Maziero, 2015]{maziero15}
+Maziero, C. (2015).
+\newblock Modelo {PPGInf UFPR} para teses e dissertações.
+\newblock \url{http://www.inf.ufpr.br/maziero}.
+\newblock Acessado em 30/11/2015.
+
+\bibitem[UFPR, 2015]{bibufpr15}
+UFPR, B. (2015).
+\newblock Manual de normaliza\c{c}\~ao de documentos cient\'ificos de acordo
+  com as normas da {ABNT}.
+\newblock Relat\'orio T\'ecnico ISBN 9788584800025, Sistema de Bibliotecas --
+  Universidade Federal do Paran\'a, Curitiba PR.
+
+\end{thebibliography}
