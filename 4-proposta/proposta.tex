@@ -1,0 +1,13 @@
+\chapter{Metodologia}
+\label{cap:Metodologia}
+
+Neste capítulo serão apresentada duas estratégias propostas e desenvolvidas nesta dissertação para o problema de dobramento de proteínas. A primeira trata-se de uma abordagem multi-objetiva utilizando dois algoritmos evolucionários multi-objetivos (AEMOs) para o PDP. Já a segunda visa aplicação da evolução gramatical  para gerar heurísticas de alto nível para um \textit{framework} hiper-heurístico  para PDP intitulada EGHyPDP. Este capítulo está divido em duas seções respectivamente para cada uma das estratégias propostas.
+
+\section{AEMOs aplicados ao PDP}
+
+Esta abordagem utiliza uma modelagem multi-objetiva para PDP baseado no estudo desenvolvido por \cite{gabriel2012algoritmos}. Onde o primeiro objetivo trata de maximizar a quantidade de contatos topológicos das estruturas de proteínas e o segundo de minimizar a máxima distância euclidiana entre os aminoácidos. 
+
+
+
+\section{EGHyPDP}
+Esta proposta é baseada no trabalho desenvolvido por \cite{sabar2015automatic}, o qual  utilizou GEP (\textit{gene expression programming}) com objetivo de gerar os componentes de um \textit{framework} hiper-heurístico para diversos domínios de problemas. Os testes de generalidade realizados por Sabar, utilizando os 6 domínios providos pelo \textit{framework} hiper-heurístico HyFlex, apresentaram bons resultados em relação às outras estratégias hiper-heurísticas do estado da arte. Nesta proposta pretende-se utilizar EG ao invés de GEP e aplicar ao PDP utilizando o modelo HP-2D. A representação de coordenadas relativas, descrita na subseção \ref{subsubsection:modeloHP}, será utilizada pois segundo o estudo realizado por Krasnogor et al. \cite{krasnogor1999protein} apresentam um maior potencial em conduzir os algoritmos a resultados melhores. Para representar as soluções ao problema PDP utilizando coordenadas relativas um esquema de codificação precisa ser definido. Esta representação utiliza um conjunto de movimentos para cada aminoácido baseado no seu predecessor. Os movimentos permitidos para o modelo HP-2D são: frente (F), esquerda(E) e direita(D). Dessa maneira, foi definido o seguinte esquema de codificação utilizando valores inteiros F->0, E->1 e D->2. Portanto o alfabeto utilizado para representar as soluções é definido como $\{0,1,2\}$. Como mencionado anteriormente, um \textit{framework} hiper-heurístico possui dois níveis: alto (\textit{high-level heuristics}) e baixo (\textit{low-level heuristics}). Nesta proposta as heurísticas de alto nível são compostas por: um mecanismo de seleção e um critério de aceitação. Já as heurísticas de baixo nível consistem em um conjunto de heurísticas, selecionadas de estudos anteriores, um mecanismo de memória e uma função de \textit{fitness}. 

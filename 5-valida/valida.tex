@@ -1,0 +1,120 @@
+\chapter{Experimentos}
+
+Neste capítulo serão apresentados os experimentos para validar a duas estratégias apresentadas no Capítulo \ref{cap:Metodologia}. 
+
+
+Este capítulo esta divido em duas seções para melhor apresentar a duas estratégias propostas. A primeira seção descreverá os experimentos realizados para avaliar a aplicação de AEMOs para o PDP utilizando o modelo HP-2D. A segunda seção apresenta os experimentos realizados para avaliar a habilidade do EGHyPDP para gerar heurísticas de alto nível para um \textit{framework} hiper heurístico, utilizando evolução gramatical. 
+
+\section{Resultados dos AEMOs aplicados ao PDP}
+
+Nesta seção serão apresentados o cojunto de experimentos realizados utilizando a abordagem multi-objetiva com os algoritmos NSGAII e IBEA. Inicialmente, serão apresentadas as configurações utilizadas nos algoritmos. Em seguida, uma comparação entre os resultados de cada algoritmo é apresentada. Finalmente, uma comparação com os resultados dos trabalhos relacionados que tratam o problema de maneira mono-objetiva é apresentada.
+
+
+
+
+A configuração utilizada nos AEMOs foi definida baseada no tamanho das sequência. Para sequências menores o tamanho da população e a numero máximo de avaliações são menores. Já para as sequências maiores os valores utilizados são superiores. A Tabela \ref{tab:popConfiguration} apresenta para cada sequência: o tamanho da sequência, o tamanho da população e número máximo de avaliações.TODO: ver como colocar essa aprte, tem que explicar as abordagens na metodologia In the case of the first approach, the probability of crossover/mutation occurrence was fixed, for all sequences, to 0.9 and 0.01 respectively. The second approach does not use a probability since the operators are always applied to generate new individuals. 
+No caso do algoritmo IBEA a população auxiliar foi mantida em 200 para todas as sequências. Para cada sequência os algoritmos foram executados 30 vezes de maneira independente.
+
+
+\begin{table}[!htb]
+	\centering
+	\caption{Tamanho da população, número máximo de avaliações para cada sequência}
+	\label{tab:popConfiguration}
+	\begin{tabular}{ccccl}
+		\hline
+		Sequência & Tamanho & \begin{tabular}[c]{@{}c@{}}Tamanho  \\ 	População\end{tabular} & \begin{tabular}[c]{@{}c@{}}N Max Avaliações \\ \end{tabular} & \multicolumn{1}{c}{} \\ \hline
+		sq1      & 20   & 100                                                        & 25000                                                      &                      \\ \hline
+		sq2      & 24   & 100                                                        & 25000                                                      &                      \\ \hline
+		sq3      & 25   & 500                                                        & 250000                                                     &                      \\ \hline
+		sq4      & 36   & 500                                                        & 250000                                                     &                      \\ \hline
+		sq5      & 48   & 1000                                                       & 2500000                                                    &                      \\ \hline
+		sq6      & 50   & 1000                                                       & 2500000                                                    &                      \\ \hline
+		sq7      & 60   & 2500                                                       & 2500000                                                    &                      \\ \hline
+		sq8      & 64   & 2500                                                       & 2500000                                                    &                      \\ \hline
+	\end{tabular}
+\end{table}
+
+
+Conforme mencionado no capítulo \ref{cap:Metodologia} o indicador \textit{hypervolume} foi utilizado para comparar o desempenho dos AEMOs. Para cada algoritmo a média e o desvio padrão do \textit{hypervolume}  referente a 30 execuções é apresentada na Tabela \ref{tab:hypervolumeResults}. Os maiores valores estão em negrito e indicam uma maior aproximação da fronteira de Pareto TODO: rerencia pareto.
+
+Observando a Tabela \ref{tab:hypervolumeResults} é possível notar que, exceto para $sq1$, para todas outras sequências o algoritmo M\_IBEA (versão modificada \textit{backtrack} e um \textit{pool} de operadores) obteve a maior média de \textit{hypervolume}. No caso da $sq1$, o IBEA sem modificações obteve a média mais alta. Também vale mencionar, que quando comparando apenas o NSGAII e o M\_NSGAII, a versão modificada obteve as melhores médias. De maneira geral, os AEMOs com \textit{backtrack} e o \textit{pool} de operadores (M\_IBEA and M\_M_NSGAII) apresentaram melhoria considerável em relação aos AEMOs tradicionais. Na Tabela \ref{tab:hypervolumeResults}, as células do M\_IBEA que estão marcados de cinza apresentaram diferença estatística de acordo com o teste de  Kruskal-Wallis \cite{mckight2010kruskal} entre M\_IBEA e todos os outros algoritmos (NSGAII, M\_NSGAII e IBEA).
+
+
+\begin{table}[]
+	\centering
+	\caption{Resultado de média/desvio padrão dos AEMOs}
+	\label{tab:hypervolumeResults}
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{Sequência} & \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}\textit{Hypervolume} Média\\ (Desvio padrão)\end{tabular}} \\ \cline{2-5} 
+		& NSGAII            & M\_NSGAII         & IBEA                     & M\_IBEA                 \\ \hline
+		\multirow{2}{*}{sq1}      & 0.742827          & 0.720864          & \textbf{0.789712}        & 0.786571       \\
+		& (0.106315)        & (0.131351)        & (0.067660)               & (0.099424)              \\ \hline
+		\multirow{2}{*}{sq2}      & 0.680572          & 0.712275          & 0.719960                 & \textbf{0.737086}       \\
+		& (0.083445)        & (0.137226)        & (0.080727)               & (0.095299)              \\ \hline
+		\multirow{2}{*}{sq3}      & 0.671171          & 0.709898          & 0.716438                 & \textbf{0.738017}       \\
+		& (0.129417)        & (0.124201)        & (0.148112)               & (0.155638)              \\ \hline
+		\multirow{2}{*}{sq4}      & 0.702280          & 0.740153          & 0.751755                 & \textbf{0.785728}       \\
+		& (0689832)         & (0.075271)        & (0.092427)               & (0.055607)              \\ \hline
+		\multirow{2}{*}{sq5}      & 0.707654          & 0.758128          & 0.733464                 & \cellcolor[HTML]{C0C0C0}\textbf{0.807637}       \\
+		& (0.082611)        & (0.062315)        & (0.128757)               & \cellcolor[HTML]{C0C0C0}(0.039620)              \\ \hline
+		\multirow{2}{*}{sq6}      & 0.667771          & 0.774017          & 0.728699                 & \cellcolor[HTML]{C0C0C0}\textbf{0.821177}       \\
+		& (0.132218)        & (0.063231)        & (0.080679)               & \cellcolor[HTML]{C0C0C0}(0.048124)              \\ \hline
+		\multirow{2}{*}{sq7}      & 0.784483          & 0.792843          & 0.801778                 & \textbf{0.810351}       \\
+		& (0.063257)        & (0.033062)        & (0.067111)               & (0.054576)              \\ \hline
+		\multirow{2}{*}{sq8}      & 0.677464          & 0.705798          & 0.7450656                & \cellcolor[HTML]{C0C0C0}\textbf{0.811439}       \\
+		& (0.041287)        & (0.053048)        & (0.036454)               & \cellcolor[HTML]{C0C0C0}(0.050087)              \\ \hline
+	\end{tabular}
+\end{table}
+
+
+\subsection{Comparação com outras abordagens mono-objetivas}
+Esta subseção apresenta a comparação dos resultados obtidos pelas melhores variantes de cada AEMO com outras abordagens mono-objetivas propostas em trabalhos anteriores. Os trabalhos comparados são: GA \cite{unger1993genetic}, MMA \cite{krasnogor2002multimeme}, ACO \cite{shmygelska2002ant},  NewACO \cite{ shmygelska2003improved} e PERM \cite{hsu2003growth}. Todos os trabalhos mencionados tratam-se de abordagens mono-objetivas, considerando apenas o valor de energia referente as estruturas de proteínas. A Tabela \ref{tab:comparison} apresenta os melhores resultados, em termos da energia, pelas versões modificadas dos AEMOs, assim como os melhores resultados obtidos pelos estudos anteriores.
+
+
+
+
+\begin{table}[htb]
+	\centering
+	\caption{Comparação dos melhores AEMOs com o estudos anteriores do PDP}
+	\label{tab:comparison}
+	\begin{tabular}{ccccccccc}
+		\hline
+		inst                    & M\_IBEA      & M\_NSGAII    & \begin{tabular}[c]{@{}c@{}}EDA \\ 
+		
+		\end{tabular}           & 
+		
+		\begin{tabular}[c]{@{}c@{}}GA \\ 
+		
+		\end{tabular}   
+		
+		& 	\begin{tabular}[c]{@{}c@{}} MMA \\ 
+			  
+		\end{tabular}        
+		&
+		\begin{tabular}[c]{@{}c@{}}  ACO \\ 
+			
+		\end{tabular} 
+		& 
+		\begin{tabular}[c]{@{}c@{}}  NewACO\\ 
+			
+		\end{tabular}
+		& 
+		\begin{tabular}[c]{@{}c@{}}  PERM\\ 
+			 
+		\end{tabular}
+		\\ \hline
+		sq1                     & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  \\ \hline
+		sq2                     & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  \\ \hline
+		sq3                     & \textbf{-8}  & \textbf{-8}  & \textbf{-8}  & \textbf{-8}  & \textbf{-8}  & \textbf{-8}  & \textbf{-8}  & \textbf{-8}  \\ \hline
+		\multicolumn{1}{l}{sq4} & \textbf{-14}          & -13          & \textbf{-14} & \textbf{-14} & \textbf{-14} & \textbf{-14} & \textbf{-14} & \textbf{-14} \\ \hline
+		\multicolumn{1}{l}{sq5} & \textbf{-23} & -22          & \textbf{-23} & -22          & -22          & \textbf{-23} & \textbf{-23} & \textbf{-23} \\ \hline
+		\multicolumn{1}{l}{sq6} & \textbf{-21} & \textbf{-21} & \textbf{-21} & \textbf{-21} &              & \textbf{-21} & \textbf{-21} & \textbf{-21} \\ \hline
+		\multicolumn{1}{l}{sq7} & -35          & -34          & -35          & -34          &              & -34          & \textbf{-36} & \textbf{-36} \\ \hline
+		sq8                     & \textbf{-42} & -39          & \textbf{-42} & -37          &              & -32          & \textbf{-42} & -38          \\ \hline
+	\end{tabular}
+\end{table}
+
+No caso das 3 primeiras sequências $sq1$, $sq2$ e $sq3$ a versão modificada dos AEMOs (M\_NSGAII e M\_IBEA) obtiveram os mesmos valores mínimos de energia que os estudos  anteriores considerados nesta comparação. No caso da sequência $sq4$, exceto pelo algoritmo M\_NSGAII, todos os outros atingiram o valor de -14. Observando a sequência $sq5$ 4 algoritmos mono-objetivo e o algoritmo M\_IBEA obtiveram o valor ótimo de 23. Entretanto, M\_NSGAII e os outros algoritmos obtiveram um valor inferior de -22.    
+
+ In the case of sequence $sq6$ all algorithms obtained the optimum value of -21. For sequence $sq7$ the M\_IBEA obtained -35 as the EDA \cite{santana2008protein} did. However the best value found  for $sq7$, -36, were obtained by NewACO \cite{shmygelska2003improved} and PERM \cite{hsu2003growth}. For the last sequence $sq8$ the M\_IBEA obtained the optimum value of -42 which is the same obtained by EDA \cite{santana2008protein} and NewACO \cite{shmygelska2003improved}. All other approaches obtained lesser values for sequence $sq8$. In general the results obtained by the MOEAs were as good as the best found by other approaches for 6 of the 8 sequences considered.
