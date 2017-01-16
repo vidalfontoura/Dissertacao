@@ -1,9 +1,48 @@
 \chapter{Experimentos}
 
-Neste capítulo serão apresentados os experimentos para validar a duas estratégias apresentadas no Capítulo \ref{cap:Metodologia}. 
+Neste capítulo serão apresentadas as instâncias do PSP com o modelo HP-2D e os experimentos para avaliar e validar a duas estratégias apresentadas na Seção \ref{seç:Metodologia}.
+
+Um  total de 11 instâncias foram selecionadas  dos trabalhos relacionados para compor um conjunto de \textit{benchmark} para avaliar as estratégias propostas por esta dissertação. A Tabela \ref{tab:instancias} apresenta o tamanho, o melhor valor de energia conhecido e a fórmula da sequência de aminoácidos referente ao modelo HP. Tanto os AEMOs e o EGHyPDP foram submetidos a esse conjunto de instâncias o qual possui diferentes níveis de complexidade.  
 
 
-Este capítulo esta divido em duas seções para melhor apresentar a duas estratégias propostas. A primeira seção descreverá os experimentos realizados para avaliar a aplicação de AEMOs para o PDP utilizando o modelo HP-2D. A segunda seção apresenta os experimentos realizados para avaliar a habilidade do EGHyPDP para gerar heurísticas de alto nível para um \textit{framework} hiper heurístico, utilizando evolução gramatical. 
+Este capítulo esta divido em duas seções para melhor apresentar os resultados obtidos por cada uma das estratégias propostas. A primeira seção descreve os experimentos realizados para avaliar a aplicação de AEMOs para o PDP utilizando o modelo HP-2D. A segunda seção apresenta os experimentos realizados para avaliar a habilidade do EGHyPDP para gerar heurísticas de alto nível para um \textit{framework} hiper heurístico, utilizando um procedimento com evolução gramatical.
+
+
+ 
+\begin{table}[]
+	\centering
+	\caption{Instâncias de \textit{benchmark} utilizadas nos experimentos}
+	\label{tab:instancias}
+	
+	\resizebox{\columnwidth}{!}{%
+	\begin{tabular}{cccc}
+		Instância & Tamanho & \multicolumn{1}{l}{Melhor valor de Energia} & Fórmula HP                                                                                                                                                                          \\ \hline
+		sq1       & 20      & -9                          & $HPHPPHHPHHPHPHHPPHPH$                                                                                                                                                               \\ \hline
+		sq2       & 24      & -9                          & $HHPPHPPHPPHPPHPPHPPHPPHH $                                                                                                                                                           \\ \hline
+		sq3       & 25      & -8                          & $PPHPPHHP^4HHP^4HHP^4HH$                                                                                                              \\ \hline
+		sq4       & 36      & -14                         & $P^3HHPPHHP^5H^7PPHHP^4HHPPHPP$                                                                                       \\ \hline
+		sq5       & 48      & -23                         & $PPHPPHHPPHHP^5H^{10}P^6HHPPHHPPHPPH^5$                                                                             \\ \hline
+		sq6       & 50      & -21                         & $HHPHPHPHPH^4PHP^3HP^3HP^4HP^3HP^3HPH^4{{PH}}^4H$ \\ \hline
+		sq7       & 60      & -36                         & $PPH^3PH^8P^3H^{10}PHP^3H^{12}P^4H^6PHHPHP$      \\ \hline
+		sq8       & 64      & -42                         & $H^{12}PHPH{{PPHH}}^2PPH{{PPHH}}^2PPH{{PPHH}}^2PPHPHPH^{12}$                          \\ \hline
+		sq9       & 85      & -53                         & $H^4P^4H^{12}P^6H^{12}P^3H^12P^3H^12P^3HP^2H^2P^2H^2P^2HPH$      \\ \hline
+		sq10      & 100     & -48                         & $P^6HPH^2P^5H^3PH^5PH^2P^4H^2P^2H^2PH^5PH^10PH^2PH^7P^11H^7P^2HP^3P^6HPH$         \\ \hline
+		sq11      & 100     & -50                         & $P^3H^2P^2H^4P^2H^3PH^2PH^2PH^4P^8H^6P^2H^6P^9HPH^2PH^11P^2H^3PH^2PHP^2HPH^3P^6H^3$ \\ \hline
+	
+	\end{tabular}
+	}	
+\end{table}
+
+
+
+
+
+
+
+
+
+
+
 
 \section{Resultados dos AEMOs aplicados ao PDP}
 
@@ -12,7 +51,7 @@ Nesta seção serão apresentados o cojunto de experimentos realizados utilizand
 
 
 
-A configuração utilizada nos AEMOs foi definida baseada no tamanho das sequência. Para sequências menores o tamanho da população e a numero máximo de avaliações são menores. Já para as sequências maiores os valores utilizados são superiores. A Tabela \ref{tab:popConfiguration} apresenta para cada sequência: o tamanho da sequência, o tamanho da população e número máximo de avaliações.TODO: ver como colocar essa aprte, tem que explicar as abordagens na metodologia In the case of the first approach, the probability of crossover/mutation occurrence was fixed, for all sequences, to 0.9 and 0.01 respectively. The second approach does not use a probability since the operators are always applied to generate new individuals. 
+As configurações utilizadas nos AEMOs foi definida baseada no tamanho das sequência. Para sequências menores o tamanho da população e a numero máximo de avaliações são menores. Já para as sequências maiores os valores utilizados são superiores. A Tabela \ref{tab:popConfiguration} apresenta para cada sequência: o tamanho da sequência, o tamanho da população e número máximo de avaliações.TODO: ver como colocar essa aprte, tem que explicar as abordagens na metodologia In the case of the first approach, the probability of crossover/mutation occurrence was fixed, for all sequences, to 0.9 and 0.01 respectively. The second approach does not use a probability since the operators are always applied to generate new individuals. 
 No caso do algoritmo IBEA a população auxiliar foi mantida em 200 para todas as sequências. Para cada sequência os algoritmos foram executados 30 vezes de maneira independente.
 
 
@@ -31,11 +70,14 @@ No caso do algoritmo IBEA a população auxiliar foi mantida em 200 para todas a
 		sq6      & 50   & 1000                                                       & 2500000                                                    &                      \\ \hline
 		sq7      & 60   & 2500                                                       & 2500000                                                    &                      \\ \hline
 		sq8      & 64   & 2500                                                       & 2500000                                                    &                      \\ \hline
+		sq9     &  85   & 2500                                                       & 2500000                                                    &                      \\ \hline
+		sq10     &  100   & 3500                                                       & 3500000                                                    &                      \\ \hline
+		sq11     &  100   & 3500                                                       & 3500000                                                    &                      \\ \hline
 	\end{tabular}
 \end{table}
 
 
-Conforme mencionado no capítulo \ref{cap:Metodologia} o indicador \textit{hypervolume} foi utilizado para comparar o desempenho dos AEMOs. Para cada algoritmo a média e o desvio padrão do \textit{hypervolume}  referente a 30 execuções é apresentada na Tabela \ref{tab:hypervolumeResults}. Os maiores valores estão em negrito e indicam uma maior aproximação da fronteira de Pareto TODO: rerencia pareto.
+Conforme mencionado na capítulo \ref{cap:Metodologia} o indicador \textit{hypervolume} foi utilizado para comparar o desempenho dos AEMOs. Para cada algoritmo a média e o desvio padrão do \textit{hypervolume}  referente a 30 execuções é apresentada na Tabela \ref{tab:hypervolumeResults}. Os maiores valores estão em negrito e indicam uma maior aproximação da fronteira de Pareto \cite{barr1998economics}.
 
 Observando a Tabela \ref{tab:hypervolumeResults} é possível notar que, exceto para $sq1$, para todas outras sequências o algoritmo M\_IBEA (versão modificada \textit{backtrack} e um \textit{pool} de operadores) obteve a maior média de \textit{hypervolume}. No caso da $sq1$, o IBEA sem modificações obteve a média mais alta. Também vale mencionar, que quando comparando apenas o NSGAII e o M\_NSGAII, a versão modificada obteve as melhores médias. De maneira geral, os AEMOs com \textit{backtrack} e o \textit{pool} de operadores (M\_IBEA and M\_M_NSGAII) apresentaram melhoria considerável em relação aos AEMOs tradicionais. Na Tabela \ref{tab:hypervolumeResults}, as células do M\_IBEA que estão marcados de cinza apresentaram diferença estatística de acordo com o teste de  Kruskal-Wallis \cite{mckight2010kruskal} entre M\_IBEA e todos os outros algoritmos (NSGAII, M\_NSGAII e IBEA).
 
@@ -64,6 +106,20 @@ Observando a Tabela \ref{tab:hypervolumeResults} é possível notar que, exceto 
 		& (0.063257)        & (0.033062)        & (0.067111)               & (0.054576)              \\ \hline
 		\multirow{2}{*}{sq8}      & 0.677464          & 0.705798          & 0.7450656                & \cellcolor[HTML]{C0C0C0}\textbf{0.811439}       \\
 		& (0.041287)        & (0.053048)        & (0.036454)               & \cellcolor[HTML]{C0C0C0}(0.050087)              \\ \hline
+		
+		
+			\multirow{2}{*}{sq9}      & 0.687454          & 0.710798          & 0.7150656                & \cellcolor[HTML]{C0C0C0}\textbf{0.771439}       \\
+			& (0.041287)        & (0.043546)        & (0.026561)               & \cellcolor[HTML]{C0C0C0}(0.044087)              \\ \hline
+			  
+		  
+		  \multirow{2}{*}{sq10}      & 0.650798          & 0.690891         & 0.7250126                & \cellcolor[HTML]{C0C0C0}\textbf{0.761439}       \\
+		  & (0.062157)        & (0.033661)        & (0.031211)               & \cellcolor[HTML]{C0C0C0}(0.013186)              \\ \hline
+		  
+		  
+		  
+		   
+		   \multirow{2}{*}{sq11}      & 0.630496          & 0.670812         & 0.713126                & \cellcolor[HTML]{C0C0C0}\textbf{0.752445}       \\
+		   & (0.052751)        & (0.031235)        & (0.053422)               & \cellcolor[HTML]{C0C0C0}(0.042326)              \\ \hline
 	\end{tabular}
 \end{table}
 
@@ -129,4 +185,16 @@ Também foi possível verificar que a abordagem multi-objetiva utilizando o NSGA
 Dado os resultados é indiscutível que o algoritmo M\_IBEA foi capaz de escapar dos mínimos locais em quase todos os casos, exceto para $sq7$, por conta da capacidade, da modelagem multi-objetiva combinada com o \textit{pool} de operadores, em gerar diversidade entre a população. Também vale mencionar que os parâmetros para os algoritmos não foram \textit{tunados} e que existe uma chance de obterem melhores resultados caso um procedimento de \textit{tunning} seja feito.
 
 Os resultados obtidos pelo M\_IBEA abrem um amplo campo de possibilidades para aprofundar formulações multi-objetivas para o problema PDP com o modelo HP-2D ou até mesmo o HP-3D. As descobertas desta dissertação motivam pesquisas adicionais utilizando abordagens multi-objetivas e adição de um \textit{pool} de operadores com objetivo de aprimorar a habilidade de escapar de mínimos locais. No caso de formulações multi-objetiva é possível mencionar que o \textit{design} de abordagens inovadoras como o uso de métricas para avaliar o grau de compactação das conformações de proteínas ou outros métodos que considerem diferentes fatores, podem aprimorar os AEMOs e possibilitar que melhores resultados sejam obtidos.
+
+
+
+\section{Resultados obtidos com EGHyPDP}
+
+Nesta seção, serão discutidos  os experimentos conduzidos com objetivo de avaliar se o \textit{design} automático de heurísticas de alto nível para um \textit{framework} hiper-heurístico para o PDP.
+
+
+In this section, we will discuss the conducted experiments in order to evaluate the methodology proposed by this paper. Three GE were executed and will be described next. All experiments were executed 30 times because of the stochastic behavior of the GE. 
+
+The first  experiment (GExp-1) that was executed consisted on executing the GE only generating selection mechanisms. Just one piece of the high level heuristic from the hyper-heuristic frameworks was evolved, the acceptance criterion was fixed, within the hyper-heuristic framework HyPDP,  in order to evaluate the ability of generating selection mechanisms isolated from acceptance criteria. An adaptation of the Improvement Only (OM) \cite{burke2013hyper}, which also accepts generated solutions with the same fitness value, was used as the acceptance criterion. The second GE experiment (GExp-2) consisted on generating only acceptance criteria. Fixing the selection mechanism, within the hyper-heuristic framework, with the better (the one with higher fitness from the 30 executions) selection mechanism generated by the GExp-1. Finally, the third GE experiment (GExp-3) was executed generating both selection mechanisms and acceptance criteria. Table \ref{tab:geExps} summarizes the average, standard deviations, max and min fitness values from 30 executions from the tree experiments.
+
 
