@@ -1,11 +1,14 @@
 \chapter{Experimentos}
 
-Neste capítulo serão apresentadas as instâncias do PSP com o modelo HP-2D e os experimentos para avaliar e validar a duas estratégias apresentadas na Seção \ref{seç:Metodologia}.
+Neste capítulo serão apresentadas as instâncias do PSP com o modelo HP-2D e os experimentos para avaliar e validar a duas estratégias apresentadas no Capítulo \ref{cap:Metodologia}.
 
-Um  total de 11 instâncias foram selecionadas  dos trabalhos relacionados para compor um conjunto de \textit{benchmark} para avaliar as estratégias propostas por esta dissertação. A Tabela \ref{tab:instancias} apresenta o tamanho, o melhor valor de energia conhecido e a fórmula da sequência de aminoácidos referente ao modelo HP. Tanto os AEMOs e o EGHyPDP foram submetidos a esse conjunto de instâncias o qual possui diferentes níveis de complexidade.  
+Um  total de 11 instâncias foram selecionadas  dos trabalhos relacionados para compor um conjunto de \textit{benchmark} para avaliar as estratégias propostas por esta dissertação. A Tabela \ref{tab:instancias} apresenta o tamanho, o melhor valor de energia conhecido e a fórmula da sequência de aminoácidos referente ao modelo HP. Tanto os AEMOs e o EGHyPDP foram submetidos a esse conjunto de instâncias o qual possui diferentes níveis de complexidade. Todos os experimentos realizados nesta dissertação foram executados 30 vezes por conta do comportamento estocástico inerente às heurísticas utilizadas tanto nos experimentos com os AEMOs e com o EGHyPDP. Por conta das múltiplas execuções em casos que forem necessários serão apresentados os valores de média, desvio padrão, minimo e máximo referente as execuções.
+
+TODO: COLOCAR O HARDWARE EM QUE FOI EXECUTADO OS EXPERIMENTOS
 
 
 Este capítulo esta divido em duas seções para melhor apresentar os resultados obtidos por cada uma das estratégias propostas. A primeira seção descreve os experimentos realizados para avaliar a aplicação de AEMOs para o PDP utilizando o modelo HP-2D. A segunda seção apresenta os experimentos realizados para avaliar a habilidade do EGHyPDP para gerar heurísticas de alto nível para um \textit{framework} hiper heurístico, utilizando um procedimento com evolução gramatical.
+
 
 
  
@@ -168,6 +171,12 @@ Esta subseção apresenta a comparação dos resultados obtidos pelas melhores v
 		\multicolumn{1}{l}{sq6} & \textbf{-21} & \textbf{-21} & \textbf{-21} & \textbf{-21} &              & \textbf{-21} & \textbf{-21} & \textbf{-21} \\ \hline
 		\multicolumn{1}{l}{sq7} & -35          & -34          & -35          & -34          &              & -34          & \textbf{-36} & \textbf{-36} \\ \hline
 		sq8                     & \textbf{-42} & -39          & \textbf{-42} & -37          &              & -32          & \textbf{-42} & -38          \\ \hline
+		
+		sq9                    & -49 & -44          & -52 & -37          &              & -32          & -52 & \textit{-53}          \\ \hline
+		
+		sq10                    & -43 & -39          & -47 &          &              &           & -47 & \textbf{-48}          \\ \hline
+		
+		sq11                    & -41 & -37          & -48  &          &              &           & -47 & \textbf{-50}          \\ \hline
 	\end{tabular}
 \end{table}
 
@@ -175,6 +184,7 @@ No caso das 3 primeiras sequências $sq1$, $sq2$ e $sq3$ a versão modificada do
 
 Já no caso da sequência $sq6$ todos os algoritmos obtiveram um valor ótimo de -21. Para a sequência $sq7$ o algoritmo M\_IBEA obteve -35 da mesma maneira que o EDA \cite{santana2008protein}. Entretanto o valor ótimo para sequência $sq7$ é -36 e foi obtido pelo NewACO \cite{shmygelska2003improved} e PERM \cite{hsu2003growth}. Para a última sequência $sq8$ o algoritmo M\_IBEA obteve o valor ótimo -42 mesmo valor que o EDA \cite{EDA} e NewACO \cite{shmygelska2003improved}. Todos as outras abordagens obtiveram valores inferiores para $sq8$. De maneira geral os resultados obtidos pelos AEMOs estão bem próximos dos resultados encontrados por outras abordagens em 6 de 8 sequências consideradas.
 
+TODO: COMENTAR SOBRE AS SEQUENCIAS QUE FORAM ADICIONASDAS 
 
 \subsection{Conclusão dos experimentos utilizando os AEMOs}
 
@@ -190,11 +200,116 @@ Os resultados obtidos pelo M\_IBEA abrem um amplo campo de possibilidades para a
 
 \section{Resultados obtidos com EGHyPDP}
 
-Nesta seção, serão discutidos  os experimentos conduzidos com objetivo de avaliar se o \textit{design} automático de heurísticas de alto nível para um \textit{framework} hiper-heurístico para o PDP.
+Nesta seção, serão discutidos  os experimentos conduzidos com objetivo de avaliar se o \textit{design} automático de heurísticas de alto nível para um \textit{framework} hiper-heurístico para o PDP utilizando a implementação EGHyPDP desenvolvida durante o período de desenvolvimento desta dissertação.
 
+Três grupos de experimentos foram desenvolvidos e executados. O primeiro grupo de experimentos tratou apenas de gerar mecanismos de seleção. O segundo grupo foi desenvolvido com objetivo de gerar apenas critérios de aceitação. E por último o terceiro grupo foi desenvolvido com intuito de gerar em paralelo tanto mecanismos de seleção como critérios de aceitação. Todos os experimentos
 
-In this section, we will discuss the conducted experiments in order to evaluate the methodology proposed by this paper. Three GE were executed and will be described next. All experiments were executed 30 times because of the stochastic behavior of the GE. 
+O tempo de execução total destes 3 grupos de experimentos foi de 28 dias. Após a execução dos experimentos os resultados obtidos por cada grupo foram comparados entre si. Porém esta comparação não foi suficiente para avaliar a capacidade das heurísticas de alto nível. \cite{misir2012intelligent} nos forneceu o código fonte utilizado em seu estudo e isto possibilitou a execução do GIHH (Generic Intelligent Hyper-heuristic) no contexto do PDP com o modelo HP-2D. O GIHH obteve resultados impressionantes em outros problemas de \textit{benchmark}. Portanto, a comparação dos resultados em relação aos obtidos por uma hiper heurística, do estado arte, desenvolvida por um pesquisador foi realizada.   	. 
 
-The first  experiment (GExp-1) that was executed consisted on executing the GE only generating selection mechanisms. Just one piece of the high level heuristic from the hyper-heuristic frameworks was evolved, the acceptance criterion was fixed, within the hyper-heuristic framework HyPDP,  in order to evaluate the ability of generating selection mechanisms isolated from acceptance criteria. An adaptation of the Improvement Only (OM) \cite{burke2013hyper}, which also accepts generated solutions with the same fitness value, was used as the acceptance criterion. The second GE experiment (GExp-2) consisted on generating only acceptance criteria. Fixing the selection mechanism, within the hyper-heuristic framework, with the better (the one with higher fitness from the 30 executions) selection mechanism generated by the GExp-1. Finally, the third GE experiment (GExp-3) was executed generating both selection mechanisms and acceptance criteria. Table \ref{tab:geExps} summarizes the average, standard deviations, max and min fitness values from 30 executions from the tree experiments.
+O primeiro grupo de experimentos denominado (GEHyPDP-1) apenas gerou mecanismos de seleção. O critério de aceitação foi configurado e mantido fixo com uma estratégia que aceita apenas soluções melhores ou iguais \cite{burke2013hyper}. O objetivo deste grupo é avaliar a habilidade da abordagem proposta em gerar mecanismos de seleção utilizando um critério de aceitação fixo.
 
+	O segundo grupo de experimentos, GEHyPDP-2, consistiu em gerar apenas critérios de aceitação. O mecanismo de seleção foi configurado e mantido fixo utilizando o melhor mecanismos de seleção gerado pelo primeiro grupo de experimentos. Consequentemente, este experimento dependeu da saída do primeiro grupo. O objetivo deste experimento é avaliar a qualidade dos critérios de aceitação gerados, separadamente do mecanismo de seleção o qual foi mantido fixo.
+	
+	O terceiro grupo de experimentos,  GEHyPDP-3, foi desenvolvido para gerar tanto os mecanismos de seleção e critérios de aceitação ao mesmo tempo. Este grupo avalia a habilidade em gerar mecanismos de seleção em conjunto com critérios de aceitação. Diferentemente do grupo GEHyPDP-2  , este grupo não depende de nenhuma saída dos experimentos anteriores.
 
+% since it
+%generates both mechanisms without fixing any component.
+	Para cada grupo de experimentos a fase de treino consistiu em executar o processo da evolução gramatical com 3 instâncias de \textit{benchmark} selecionadas aleatoriamente. Na fase de validação o melhor mecanismo de seleção e o melhor critério de aceitação foram combinados e executados com todas as 11 instâncias descritas no início deste Capítulo. 
+	
+
+	
+	
+	\subsection{Results from GEHyPSP-1}
+	
+	The best individual found in the GEHyPSP-1 was the following selection mechanism:  $RC * Ccurrent * Cava - Cr$ and it was executed 30 times with a time limit of 10 minutes against the eleven instances. Table \ref{tab:gexp1best}  presents the average, standard deviation, minimum and maximum of 30 executions of the best individual found in the GEHyPSP-1 experiment. The last row denoted with O(x*) is the best known value for each sequence. It is possible to note analyzing the last two rows that only for the smaller instances the generated selection mechanism achieved good results. For the sequences 8, 9, 10 and 11 the results obtained are very far from the best known results.
+	
+	
+	\begin{table}[]
+		\centering
+		\caption{Results from the best individual found in GEHyPSP-1}
+		\label{tab:gexp1best}
+		\resizebox{\columnwidth}{!}{%
+			\begin{tabular}{cccccccccccc}
+				Inst  & 1   & 2    & 3   & 4    & 5    & 6   & 7   & 8    & 9    & 10   & 11   \\ \hline
+				Avg   & 8.1 & 7.6 & 6.7 & 11.9 & 17.4 & 16  & 30  & 28.3 & 40.1 & 35.6 & 35.9 \\ \hline
+				St Dv & 0.3 & 0.5  & 0.5 & 0.7  & 1    & 1.4 & 1.7 & 2    & 2.7  & 2.1  & 2.9  \\ \hline
+				Min   & 8   & 7    & 5   & 11   & 15   & 13  & 25  & 23   & 34   & 32   & 27   \\ \hline
+				Max   & 9   & 9    & 7   & 13   & 19   & 20  & 33  & 32   & 46   & 40   & 41   \\ \hline
+				O(x*) & 9   & 9    & 8   & 14   & 23   & 21  & 36  & 42   & 53   & 48   & 50  
+			\end{tabular}
+		}
+	\end{table}
+	
+	\subsection{Results from GEHyPSP-2}
+	
+	The best individual found in the GEHyPSP-2 was the following acceptance criterion:  $( ( TI / Delta ) / ( ( Delta * ( ( TI / Delta ) / CI ) * Delta / Delta * TI ) - CI ) )$ and combined with the best individual from the GEHyPSP-1 the hyper-heuristic framework was executed 30 times for each one of the eleven instances with a time limit of 10 minutes. Table \ref{tab:gexp2best} presents the results for the best generated acceptance criterion in GEHyPSP-2 and also using the best selection mechanism generated in GEHyPSP-1. Again, looking to the two last rows it is possible to notice that the hyper-heuristic framework, using the best generated selection mechanisms and acceptance criterion, was not able to reach the best known results for the larger sequences. And comparing Tables \ref{tab:gexp1best} and \ref{tab:gexp2best} it is possible to visualize that there is a slight difference between the results, favoring the generated selection mechanism using the "better or equal" acceptance criterion.
+	
+	\begin{table}[]
+		\centering
+		\caption{Results from the best individual found in GEHyPSP-2
+		}
+		\label{tab:gexp2best}
+		\resizebox{\columnwidth}{!}{%
+			\begin{tabular}{cccccccccccc}
+				Inst  & 1   & 2   & 3   & 4    & 5    & 6    & 7   & 8    & 9    & 10   & 11  \\ \hline
+				Avg   & 8   & 7.6 & 6.7 & 10.1 & 14.8 & 14.7 & 27  & 25.7 & 38.3 & 32.8 & 30. \\ \hline
+				St Dv & 0.6 & 0.4 & 0.6 & 0.7  & 1.5  & 1.4  & 2.0 & 2.5  & 3.3  & 3.7  & 3.4 \\ \hline
+				Min   & 7   & 7   & 5   & 8    & 12   & 12   & 23  & 22   & 31   & 26   & 24  \\ \hline
+				Max   & 9   & 8   & 8   & 11   & 17   & 18   & 31  & 31   & 44   & 40   & 37  \\ \hline
+				O(x*) & 9   & 9   & 8   & 14   & 23   & 21   & 36  & 42   & 53   & 48   & 50 
+			\end{tabular}
+		}
+	\end{table}
+	
+	\subsection{Results from GEHyPSP-3}
+	
+	The best individual generated by the experiment GEHyPSP-3 was both a selection mechanism and an acceptance criterion. And they are presented below: \\ 
+	Selection Mechanism: $( ( ( ( ( Caccept / RC ) * Cr / Caccept ) / RC * Cr ) / Caccept / RC ) * Cr ) / Caccept$ \\
+	Acceptance Criterion: $( ( ( ( ( CI / PF ) * Delta / CI ) / PF * Delta ) / CI / PF ) * Delta ) / CI$
+	
+	Table \ref{bestGExp3} presents the results, of the best individual generated by the experiment GEHyPSP-3, of 30 executions with a time limit of 10 minutes. Once again the values presented did not achieve good results when analyzing the most difficult instances. Furthermore, when comparing Table \ref{bestGExp3} with Tables \ref{tab:gexp1best} and \ref{tab:gexp2best} it is possible to see that generating both selection mechanisms and acceptance criteria produces worse results than generating them separately.
+	
+	\begin{table}[]
+		\centering
+		\caption{Results from the best individual found in GEHyPSP-3}
+		\label{bestGExp3}
+		\resizebox{\columnwidth}{!}{%
+			\begin{tabular}{cccccccccccc}
+				Inst  & 1   & 2   & 3   & 4   & 5    & 6    & 7   & 8    & 9    & 10  & 11   \\ \hline
+				Avg   & 7.6 & 7.0 & 5.7 & 9.7 & 13.8 & 12.7 & 24  & 24.2 & 31.6 & 27  & 26.4 \\ \hline
+				St Dv & 0.6 & 0.7 & 0.8 & 0.9 & 1.3  & 0.9  & 1.1 & 1.6  & 1.7  & 1.7 & 2    \\ \hline
+				Min   & 7   & 6   & 4   & 7   & 12   & 11   & 21  & 21   & 29   & 24  & 24   \\ \hline
+				Max   & 9   & 8   & 8   & 11  & 18   & 15   & 26  & 28   & 37   & 31  & 31   \\ \hline
+				O(x*) & 9   & 9   & 8   & 14  & 23   & 21   & 36  & 42   & 53   & 48  & 50  
+			\end{tabular}
+		}
+	\end{table}
+	
+	
+	%TODO: falar da tabela 2 aquela com o resultado da GE
+	
+	
+	\subsection{Comparison with a state-of-art hyper-heuristic}
+	In order to compare the generated high level heuristics with an already proposed hyper-heuristic strategy a state-of-art human-designed hyper-heuristic framework \cite{misir2012intelligent} was selected. This framework produced the best results applied to the 6 domain problems from HyFlex framework \cite{ochoa2012hyflex}. Misir et al. \cite{misir2012intelligent} provided us the source code from the GIHH and then it was executed against the PSP problem. 
+	
+	Table \ref{tab:gihhandbhlh} presents the best results, for each instance, found by the best generated high level heuristic with GEHyPSP, the best results found by the GIHH \cite{misir2012intelligent} and finally the best know results (O_x(*)). The GEHyPSP and the GIHH were executed 10 minutes. It is possible to note that the GEHyPSP found worse results than the GIHH as the sequences length increase. However, the GIHH is a human-designed hyper-heuristic which demanded several years of research in order to be completed and achieved good results in the six domains problems provided by HyFlex. Despite the good performance obtained by the GIHH in the domains from HyFlex, it is possible to notice that the GIHH was also unable to achieve the best known results in many instances.
+	
+	\begin{table}[]
+		\centering
+		\caption{Best results found by GEHyPSP, best results found by GIHH and the best know results O(x*)}
+		\label{tab:gihhandbhlh}
+		\begin{tabular}{cccccccccccc}
+			Inst         & 1 & 2 & 3 & 4  & 5  & 6  & 7  & 8  & 9  & 10 & 11 \\ \hline
+			GEHyPSP  & 9 & 9 & 7 & 13 & 19 & 20 & 33 & 32 & 46 & 40 & 41 \\ \hline
+			GIHH (max)   & 9 & 9 & 8 & 13 & 22 & 21 & 35 & 37 & 49 & 43 & 45 \\ \hline
+			O(x*)        & 9 & 9 & 8 & 14 & 23 & 21 & 36 & 42 & 53 & 48 & 50
+		\end{tabular}
+	\end{table}
+	
+	
+	\subsection{Discussion}
+	
+	In order to better investigate the relationship between the generated selection mechanisms and acceptance criteria another experiment was designed. From the 30 executions of the GEHyPSP-2 ten random individuals were selected to be further analyzed. These individuals were re-executed in debugging mode in order to check its behavior. Note that only the acceptance criterion was different between them because the selection mechanism was fixed, using the best generated in the previous experiment GEHyPSP-1. From 10 individuals 7, were accepting only better or equal solutions just like the fixed acceptance criterion that was used in the GEHyPSP-1. The difference between the individuals and a fixed acceptance criterion was that individuals were slower than the fixed, because it is required to execute arithmetical functions and in the other hand only a simple $if$ was evaluated. But with respect to their behavior they were exactly the same. It was also noticed that 2 individuals, the worst of the group, were always accepting worst solutions just like the "all moves" described by Burke et al. \cite{burke2013hyper}. Finally, one individual was never accepting any solution. 
+	
+	These experiments showed that the GE managed, several times, to find different acceptance criteria with the same behavior of human-designed strategies. 
+	
