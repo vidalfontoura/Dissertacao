@@ -1,36 +1,38 @@
 \chapter{Experimentos}
 
-Neste capítulo serão apresentadas as instâncias do PSP com o modelo HP-2D e os experimentos para avaliar e validar a duas estratégias apresentadas no Capítulo \ref{cap:Metodologia}.
+Neste capítulo serão apresentados  os experimentos para avaliar e validar as duas estratégias apresentadas no Capítulo \ref{cap:Metodologia}. Também são apresentadas as instâncias de \textit{benchmark} para o problema PDP com o modelo HP-2D que foram utilizadas nos experimentos.
 
-Um  total de 11 instâncias foram selecionadas  dos trabalhos relacionados para compor um conjunto de \textit{benchmark} para avaliar as estratégias propostas por esta dissertação. A Tabela \ref{tab:instancias} apresenta o tamanho, o melhor valor de energia conhecido e a fórmula da sequência de aminoácidos referente ao modelo HP. Tanto os AEMOs e o EGHyPDP foram submetidos a esse conjunto de instâncias o qual possui diferentes níveis de complexidade. Todos os experimentos realizados nesta dissertação foram executados 30 vezes por conta do comportamento estocástico inerente às heurísticas utilizadas tanto nos experimentos com os AEMOs e com o EGHyPDP. Por conta das múltiplas execuções em casos que forem necessários serão apresentados os valores de média, desvio padrão, minimo e máximo referente as execuções.
+
+
+Um  total de 11 instâncias foram selecionadas  dos trabalhos relacionados \cite{unger1993genetic,krasnogor2002multimeme,shmygelska2002ant,shmygelska2003improved,hsu2003growth} para compor um conjunto de \textit{benchmark}. Este conjunto foi utilizado para avaliar as estratégias propostas. A Tabela \ref{tab:instancias} apresenta o tamanho, o melhor valor de energia conhecido e a fórmula da sequência de aminoácidos do modelo HP. Tanto os AEMOs e o EGHyPDP foram submetidos a esse conjunto de instâncias o qual possui diferentes níveis de complexidade. Todos os experimentos realizados nesta dissertação foram executados 30 vezes por conta do comportamento estocástico inerente às heurísticas utilizadas. Por conta das múltiplas execuções em casos que forem necessários serão apresentados os valores de média, desvio padrão, minimo e máximo referente as execuções.
 
 %TODO: COLOCAR O HARDWARE EM QUE FOI EXECUTADO OS EXPERIMENTOS
 
 
-Este capítulo esta divido em duas seções para melhor apresentar os resultados obtidos por cada uma das estratégias propostas. A primeira seção descreve os experimentos realizados para avaliar a aplicação de AEMOs para o PDP utilizando o modelo HP-2D. A segunda seção apresenta os experimentos realizados para avaliar a habilidade do EGHyPDP para gerar heurísticas de alto nível para um \textit{framework} hiper heurístico, utilizando um procedimento com evolução gramatical.
+Este capítulo esta divido em duas seções para melhor apresentar os resultados obtidos por cada uma das estratégias propostas. A primeira seção descreve os experimentos realizados para avaliar a aplicação de AEMOs para o PDP utilizando o modelo HP-2D. A segunda seção apresenta os experimentos realizados para avaliar a habilidade do EGHyPDP para gerar heurísticas de alto nível para um \textit{framework} hiper heurístico, utilizando um procedimento de evolução gramatical.
 
 
 
  
 \begin{table}[]
 	\centering
-	\caption{Instâncias de \textit{benchmark} utilizadas nos experimentos}
+	\caption{Instâncias de \textit{benchmark} utilizadas nos experimentos.}
 	\label{tab:instancias}
 	
 	\resizebox{\columnwidth}{!}{%
 	\begin{tabular}{cccc}
-		Instância & Tamanho & \multicolumn{1}{l}{Melhor valor de Energia} & Fórmula HP                                                                                                                                                                          \\ \hline
-		sq1       & 20      & -9                          & $HPHPPHHPHHPHPHHPPHPH$                                                                                                                                                               \\ \hline
-		sq2       & 24      & -9                          & $HHPPHPPHPPHPPHPPHPPHPPHH $                                                                                                                                                           \\ \hline
-		sq3       & 25      & -8                          & $PPHPPHHP^4HHP^4HHP^4HH$                                                                                                              \\ \hline
-		sq4       & 36      & -14                         & $P^3HHPPHHP^5H^7PPHHP^4HHPPHPP$                                                                                       \\ \hline
-		sq5       & 48      & -23                         & $PPHPPHHPPHHP^5H^{10}P^6HHPPHHPPHPPH^5$                                                                             \\ \hline
-		sq6       & 50      & -21                         & $HHPHPHPHPH^4PHP^3HP^3HP^4HP^3HP^3HPH^4{{PH}}^4H$ \\ \hline
-		sq7       & 60      & -36                         & $PPH^3PH^8P^3H^{10}PHP^3H^{12}P^4H^6PHHPHP$      \\ \hline
-		sq8       & 64      & -42                         & $H^{12}PHPH{{PPHH}}^2PPH{{PPHH}}^2PPH{{PPHH}}^2PPHPHPH^{12}$                          \\ \hline
-		sq9       & 85      & -53                         & $H^4P^4H^{12}P^6H^{12}P^3H^12P^3H^12P^3HP^2H^2P^2H^2P^2HPH$      \\ \hline
-		sq10      & 100     & -48                         & $P^6HPH^2P^5H^3PH^5PH^2P^4H^2P^2H^2PH^5PH^10PH^2PH^7P^11H^7P^2HP^3P^6HPH$         \\ \hline
-		sq11      & 100     & -50                         & $P^3H^2P^2H^4P^2H^3PH^2PH^2PH^4P^8H^6P^2H^6P^9HPH^2PH^11P^2H^3PH^2PHP^2HPH^3P^6H^3$ \\ \hline
+		Instância & Tamanho & \multicolumn{1}{l}{Melhor Valor de Energia} & Fórmula HP                                                                                                                                                                          \\ \hline
+	1       & 20      & -9                          & $HPHPPHHPHHPHPHHPPHPH$                                                                                                                                                               \\ \hline
+	2       & 24      & -9                          & $HHPPHPPHPPHPPHPPHPPHPPHH $                                                                                                                                                           \\ \hline
+		3       & 25      & -8                          & $PPHPPHHP^4HHP^4HHP^4HH$                                                                                                              \\ \hline
+		4       & 36      & -14                         & $P^3HHPPHHP^5H^7PPHHP^4HHPPHPP$                                                                                       \\ \hline
+		s5       & 48      & -23                         & $PPHPPHHPPHHP^5H^{10}P^6HHPPHHPPHPPH^5$                                                                             \\ \hline
+		6       & 50      & -21                         & $HHPHPHPHPH^4PHP^3HP^3HP^4HP^3HP^3HPH^4{{PH}}^4H$ \\ \hline
+		7       & 60      & -36                         & $PPH^3PH^8P^3H^{10}PHP^3H^{12}P^4H^6PHHPHP$      \\ \hline
+		8       & 64      & -42                         & $H^{12}PHPH{{PPHH}}^2PPH{{PPHH}}^2PPH{{PPHH}}^2PPHPHPH^{12}$                          \\ \hline
+		9       & 85      & -53                         & $H^4P^4H^{12}P^6H^{12}P^3H^12P^3H^12P^3HP^2H^2P^2H^2P^2HPH$      \\ \hline
+		10      & 100     & -48                         & $P^6HPH^2P^5H^3PH^5PH^2P^4H^2P^2H^2PH^5PH^10PH^2PH^7P^11H^7P^2HP^3P^6HPH$         \\ \hline
+		11      & 100     & -50                         & $P^3H^2P^2H^4P^2H^3PH^2PH^2PH^4P^8H^6P^2H^6P^9HPH^2PH^11P^2H^3PH^2PHP^2HPH^3P^6H^3$ \\ \hline
 	
 	\end{tabular}
 	}	
@@ -54,35 +56,35 @@ Nesta seção serão apresentados o cojunto de experimentos realizados utilizand
 
 
 
-As configurações utilizadas nos AEMOs foi definida baseada no tamanho das sequência. Para sequências menores o tamanho da população e a numero máximo de avaliações são menores. Já para as sequências maiores os valores utilizados são superiores. A Tabela \ref{tab:popConfiguration} apresenta para cada sequência: o tamanho da sequência, o tamanho da população e número máximo de avaliações.TODO: ver como colocar essa aprte, tem que explicar as abordagens na metodologia In the case of the first approach, the probability of crossover/mutation occurrence was fixed, for all sequences, to 0.9 and 0.01 respectively. The second approach does not use a probability since the operators are always applied to generate new individuals. 
-No caso do algoritmo IBEA a população auxiliar foi mantida em 200 para todas as sequências. Para cada sequência os algoritmos foram executados 30 vezes de maneira independente.
+As configurações utilizadas nos AEMOs foi definida baseada no tamanho das instâncias. Para instâncias menores o tamanho da população e a numero máximo de avaliações são menores. Já para as sequências maiores os valores utilizados são superiores. A Tabela \ref{tab:popConfiguration} apresenta para cada instância: o tamanho da instância, o tamanho da população e número máximo de avaliações.TODO: ver como colocar essa aprte, tem que explicar as abordagens na metodologia In the case of the first approach, the probability of crossover/mutation occurrence was fixed, for all sequences, to 0.9 and 0.01 respectively. The second approach does not use a probability since the operators are always applied to generate new individuals. 
+No caso do algoritmo IBEA a população auxiliar foi mantida em 200 para todas as instâncias.
 
 
 \begin{table}[!htb]
 	\centering
-	\caption{Tamanho da população, número máximo de avaliações para cada sequência}
+	\caption{Tamanho da população, número máximo de avaliações para cada instância}
 	\label{tab:popConfiguration}
 	\begin{tabular}{ccccl}
 		\hline
-		Sequência & Tamanho & \begin{tabular}[c]{@{}c@{}}Tamanho  \\ 	População\end{tabular} & \begin{tabular}[c]{@{}c@{}}N Max Avaliações \\ \end{tabular} & \multicolumn{1}{c}{} \\ \hline
-		sq1      & 20   & 100                                                        & 25000                                                      &                      \\ \hline
-		sq2      & 24   & 100                                                        & 25000                                                      &                      \\ \hline
-		sq3      & 25   & 500                                                        & 250000                                                     &                      \\ \hline
-		sq4      & 36   & 500                                                        & 250000                                                     &                      \\ \hline
-		sq5      & 48   & 1000                                                       & 2500000                                                    &                      \\ \hline
-		sq6      & 50   & 1000                                                       & 2500000                                                    &                      \\ \hline
-		sq7      & 60   & 2500                                                       & 2500000                                                    &                      \\ \hline
-		sq8      & 64   & 2500                                                       & 2500000                                                    &                      \\ \hline
-		sq9     &  85   & 2500                                                       & 2500000                                                    &                      \\ \hline
-		sq10     &  100   & 3500                                                       & 3500000                                                    &                      \\ \hline
-		sq11     &  100   & 3500                                                       & 3500000                                                    &                      \\ \hline
+		Instância & Tamanho & \begin{tabular}[c]{@{}c@{}}Tamanho  \\ 	População\end{tabular} & \begin{tabular}[c]{@{}c@{}}N Max Avaliações \\ \end{tabular} & \multicolumn{1}{c}{} \\ \hline
+		1      & 20   & 100                                                        & 25000                                                      &                      \\ \hline
+		2      & 24   & 100                                                        & 25000                                                      &                      \\ \hline
+		3      & 25   & 500                                                        & 250000                                                     &                      \\ \hline
+		4      & 36   & 500                                                        & 250000                                                     &                      \\ \hline
+		5      & 48   & 1000                                                       & 2500000                                                    &                      \\ \hline
+		6      & 50   & 1000                                                       & 2500000                                                    &                      \\ \hline
+		7      & 60   & 2500                                                       & 2500000                                                    &                      \\ \hline
+		8      & 64   & 2500                                                       & 2500000                                                    &                      \\ \hline
+		9     &  85   & 2500                                                       & 2500000                                                    &                      \\ \hline
+		10     &  100   & 3500                                                       & 3500000                                                    &                      \\ \hline
+		11     &  100   & 3500                                                       & 3500000                                                    &                      \\ \hline
 	\end{tabular}
 \end{table}
 
 
-Conforme mencionado na capítulo \ref{cap:Metodologia} o indicador \textit{hypervolume} foi utilizado para comparar o desempenho dos AEMOs. Para cada algoritmo a média e o desvio padrão do \textit{hypervolume}  referente a 30 execuções é apresentada na Tabela \ref{tab:hypervolumeResults}. Os maiores valores estão em negrito e indicam uma maior aproximação da fronteira de Pareto \cite{barr1998economics}.
+Conforme mencionado no Capítulo \ref{cap:Metodologia} o indicador \textit{hypervolume} foi utilizado para comparar o desempenho dos AEMOs. Para cada algoritmo a média e o desvio padrão do \textit{hypervolume}  referente a 30 execuções é apresentada na Tabela \ref{tab:hypervolumeResults}. Os maiores valores estão em negrito e indicam uma maior aproximação da fronteira de Pareto \cite{barr1998economics}.
 
-Observando a Tabela \ref{tab:hypervolumeResults} é possível notar que, exceto para $sq1$, para todas outras sequências o algoritmo M\_IBEA (versão modificada \textit{backtrack} e um \textit{pool} de operadores) obteve a maior média de \textit{hypervolume}. No caso da $sq1$, o IBEA sem modificações obteve a média mais alta. Também vale mencionar, que quando comparando apenas o NSGAII e o M\_NSGAII, a versão modificada obteve as melhores médias. De maneira geral, os AEMOs com \textit{backtrack} e o \textit{pool} de operadores (M\_IBEA and M\_M_NSGAII) apresentaram melhoria considerável em relação aos AEMOs tradicionais. Na Tabela \ref{tab:hypervolumeResults}, as células do M\_IBEA que estão marcados de cinza apresentaram diferença estatística de acordo com o teste de  Kruskal-Wallis \cite{mckight2010kruskal} entre M\_IBEA e todos os outros algoritmos (NSGAII, M\_NSGAII e IBEA).
+Observando a Tabela \ref{tab:hypervolumeResults} é possível notar que, exceto para a instância $1$, para todas outras instâncias o algoritmo M\_IBEA (versão modificada \textit{backtrack} e um \textit{pool} de operadores) obteve a maior média de \textit{hypervolume}. No caso da instância $1$, o IBEA sem modificações obteve a média mais alta. Também vale mencionar, que quando comparando apenas o NSGAII e o M\_NSGAII, a versão modificada obteve as melhores médias. De maneira geral, os AEMOs com \textit{backtrack} e o \textit{pool} de operadores (M\_IBEA and M\_M_NSGAII) apresentaram uma melhoria considerável em relação aos AEMOs tradicionais. Na Tabela \ref{tab:hypervolumeResults}, as células do M\_IBEA que estão marcados de cinza apresentaram diferença estatística de acordo com o teste de  Kruskal-Wallis \cite{mckight2010kruskal} entre M\_IBEA e todos os outros algoritmos (NSGAII, M\_NSGAII e IBEA).
 
 
 \begin{table}[]
@@ -91,37 +93,37 @@ Observando a Tabela \ref{tab:hypervolumeResults} é possível notar que, exceto 
 	\label{tab:hypervolumeResults}
 	\begin{tabular}{|c|c|c|c|c|}
 		\hline
-		\multirow{2}{*}{Sequência} & \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}\textit{Hypervolume} Média\\ (Desvio padrão)\end{tabular}} \\ \cline{2-5} 
+		\multirow{2}{*}{Instância} & \multicolumn{4}{c|}{\begin{tabular}[c]{@{}c@{}}\textit{Hypervolume} Média\\ (Desvio padrão)\end{tabular}} \\ \cline{2-5} 
 		& NSGAII            & M\_NSGAII         & IBEA                     & M\_IBEA                 \\ \hline
-		\multirow{2}{*}{sq1}      & 0.742827          & 0.720864          & \textbf{0.789712}        & 0.786571       \\
+		\multirow{2}{*}{1}      & 0.742827          & 0.720864          & \textbf{0.789712}        & 0.786571       \\
 		& (0.106315)        & (0.131351)        & (0.067660)               & (0.099424)              \\ \hline
-		\multirow{2}{*}{sq2}      & 0.680572          & 0.712275          & 0.719960                 & \textbf{0.737086}       \\
+		\multirow{2}{*}{2}      & 0.680572          & 0.712275          & 0.719960                 & \textbf{0.737086}       \\
 		& (0.083445)        & (0.137226)        & (0.080727)               & (0.095299)              \\ \hline
-		\multirow{2}{*}{sq3}      & 0.671171          & 0.709898          & 0.716438                 & \textbf{0.738017}       \\
+		\multirow{2}{*}{3}      & 0.671171          & 0.709898          & 0.716438                 & \textbf{0.738017}       \\
 		& (0.129417)        & (0.124201)        & (0.148112)               & (0.155638)              \\ \hline
-		\multirow{2}{*}{sq4}      & 0.702280          & 0.740153          & 0.751755                 & \textbf{0.785728}       \\
+		\multirow{2}{*}{4}      & 0.702280          & 0.740153          & 0.751755                 & \textbf{0.785728}       \\
 		& (0689832)         & (0.075271)        & (0.092427)               & (0.055607)              \\ \hline
-		\multirow{2}{*}{sq5}      & 0.707654          & 0.758128          & 0.733464                 & \cellcolor[HTML]{C0C0C0}\textbf{0.807637}       \\
+		\multirow{2}{*}{5}      & 0.707654          & 0.758128          & 0.733464                 & \cellcolor[HTML]{C0C0C0}\textbf{0.807637}       \\
 		& (0.082611)        & (0.062315)        & (0.128757)               & \cellcolor[HTML]{C0C0C0}(0.039620)              \\ \hline
-		\multirow{2}{*}{sq6}      & 0.667771          & 0.774017          & 0.728699                 & \cellcolor[HTML]{C0C0C0}\textbf{0.821177}       \\
+		\multirow{2}{*}{6}      & 0.667771          & 0.774017          & 0.728699                 & \cellcolor[HTML]{C0C0C0}\textbf{0.821177}       \\
 		& (0.132218)        & (0.063231)        & (0.080679)               & \cellcolor[HTML]{C0C0C0}(0.048124)              \\ \hline
-		\multirow{2}{*}{sq7}      & 0.784483          & 0.792843          & 0.801778                 & \textbf{0.810351}       \\
+		\multirow{2}{*}{7}      & 0.784483          & 0.792843          & 0.801778                 & \textbf{0.810351}       \\
 		& (0.063257)        & (0.033062)        & (0.067111)               & (0.054576)              \\ \hline
-		\multirow{2}{*}{sq8}      & 0.677464          & 0.705798          & 0.7450656                & \cellcolor[HTML]{C0C0C0}\textbf{0.811439}       \\
+		\multirow{2}{*}{8}      & 0.677464          & 0.705798          & 0.7450656                & \cellcolor[HTML]{C0C0C0}\textbf{0.811439}       \\
 		& (0.041287)        & (0.053048)        & (0.036454)               & \cellcolor[HTML]{C0C0C0}(0.050087)              \\ \hline
 		
 		
-			\multirow{2}{*}{sq9}      & 0.687454          & 0.710798          & 0.7150656                & \cellcolor[HTML]{C0C0C0}\textbf{0.771439}       \\
+			\multirow{2}{*}{9}      & 0.687454          & 0.710798          & 0.7150656                & \cellcolor[HTML]{C0C0C0}\textbf{0.771439}       \\
 			& (0.041287)        & (0.043546)        & (0.026561)               & \cellcolor[HTML]{C0C0C0}(0.044087)              \\ \hline
 			  
 		  
-		  \multirow{2}{*}{sq10}      & 0.650798          & 0.690891         & 0.7250126                & \cellcolor[HTML]{C0C0C0}\textbf{0.761439}       \\
+		  \multirow{2}{*}{10}      & 0.650798          & 0.690891         & 0.7250126                & \cellcolor[HTML]{C0C0C0}\textbf{0.761439}       \\
 		  & (0.062157)        & (0.033661)        & (0.031211)               & \cellcolor[HTML]{C0C0C0}(0.013186)              \\ \hline
 		  
 		  
 		  
 		   
-		   \multirow{2}{*}{sq11}      & 0.630496          & 0.670812         & 0.713126                & \cellcolor[HTML]{C0C0C0}\textbf{0.752445}       \\
+		   \multirow{2}{*}{11}      & 0.630496          & 0.670812         & 0.713126                & \cellcolor[HTML]{C0C0C0}\textbf{0.752445}       \\
 		   & (0.052751)        & (0.031235)        & (0.053422)               & \cellcolor[HTML]{C0C0C0}(0.042326)              \\ \hline
 	\end{tabular}
 \end{table}
@@ -139,7 +141,7 @@ Esta subseção apresenta a comparação dos resultados obtidos pelas melhores v
 	\label{tab:comparison}
 	\begin{tabular}{ccccccccc}
 		\hline
-		inst                    & M\_IBEA      & M\_NSGAII    & \begin{tabular}[c]{@{}c@{}}EDA \\ 
+		Instância                   & M\_IBEA      & M\_NSGAII    & \begin{tabular}[c]{@{}c@{}}EDA \\ 
 		
 		\end{tabular}           & 
 		
@@ -163,36 +165,40 @@ Esta subseção apresenta a comparação dos resultados obtidos pelas melhores v
 			 
 		\end{tabular}
 		\\ \hline
-		sq1                     & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  \\ \hline
-		sq2                     & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  \\ \hline
-		sq3                     & \textbf{-8}  & \textbf{-8}  & \textbf{-8}  & \textbf{-8}  & \textbf{-8}  & \textbf{-8}  & \textbf{-8}  & \textbf{-8}  \\ \hline
-		\multicolumn{1}{l}{sq4} & \textbf{-14}          & -13          & \textbf{-14} & \textbf{-14} & \textbf{-14} & \textbf{-14} & \textbf{-14} & \textbf{-14} \\ \hline
-		\multicolumn{1}{l}{sq5} & \textbf{-23} & -22          & \textbf{-23} & -22          & -22          & \textbf{-23} & \textbf{-23} & \textbf{-23} \\ \hline
-		\multicolumn{1}{l}{sq6} & \textbf{-21} & \textbf{-21} & \textbf{-21} & \textbf{-21} &              & \textbf{-21} & \textbf{-21} & \textbf{-21} \\ \hline
-		\multicolumn{1}{l}{sq7} & -35          & -34          & -35          & -34          &              & -34          & \textbf{-36} & \textbf{-36} \\ \hline
-		sq8                     & \textbf{-42} & -39          & \textbf{-42} & -37          &              & -32          & \textbf{-42} & -38          \\ \hline
+		1                     & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  \\ \hline
+		2                     & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  & \textbf{-9}  \\ \hline
+		3                     & \textbf{-8}  & \textbf{-8}  & \textbf{-8}  & \textbf{-8}  & \textbf{-8}  & \textbf{-8}  & \textbf{-8}  & \textbf{-8}  \\ \hline
+		\multicolumn{1}{c}{4} & \textbf{-14}          & -13          & \textbf{-14} & \textbf{-14} & \textbf{-14} & \textbf{-14} & \textbf{-14} & \textbf{-14} \\ \hline
+		\multicolumn{1}{c}{5} & \textbf{-23} & -22          & \textbf{-23} & -22          & -22          & \textbf{-23} & \textbf{-23} & \textbf{-23} \\ \hline
+		\multicolumn{1}{c}{6} & \textbf{-21} & \textbf{-21} & \textbf{-21} & \textbf{-21} &              & \textbf{-21} & \textbf{-21} & \textbf{-21} \\ \hline
+	
+		\multicolumn{1}{c}{7} & -35          & -34          & -35          & -34          &              & -34          & \textbf{-36} & \textbf{-36} \\ \hline
+	
+	\multicolumn{1}{c}{8}                     & \textbf{-42} & -39          & \textbf{-42} & -37          &              & -32          & \textbf{-42} & -38          \\ \hline
 		
-		sq9                    & -49 & -44          & -52 & -37          &              & -32          & -52 & \textbf{-53}          \\ \hline
+		9                    & -49 & -44          & -52 & -37          &              & -32          & -52 & \textbf{-53}          \\ \hline
 		
-		sq10                    & -43 & -39          & -47 &          &              &           & -47 & \textbf{-48}          \\ \hline
+		10                    & -43 & -39          & -47 &          &              &           & -47 & \textbf{-48}          \\ \hline
 		
-		sq11                    & -41 & -37          & -48  &          &              &           & -47 & \textbf{-50}          \\ \hline
+		11                    & -41 & -37          & -48  &          &              &           & -47 & \textbf{-50}          \\ \hline
 	\end{tabular}
 \end{table}
 
-No caso das 3 primeiras sequências $sq1$, $sq2$ e $sq3$ a versão modificada dos AEMOs (M\_NSGAII e M\_IBEA) obtiveram os mesmos valores mínimos de energia que os estudos  anteriores considerados nesta comparação. No caso da sequência $sq4$, exceto pelo algoritmo M\_NSGAII, todos os outros atingiram o valor de -14. Observando a sequência $sq5$ 4 algoritmos mono-objetivo e o algoritmo M\_IBEA obtiveram o valor ótimo de 23. Entretanto, M\_NSGAII e os outros algoritmos obtiveram um valor inferior de -22.    
+No caso das 3 primeiras instâncias $1$, $2$ e $3$ a versões modificadas dos AEMOs (M\_NSGAII e M\_IBEA) obtiveram os mesmos valores mínimos de energia que os estudos  anteriores considerados nesta comparação. No caso da instância $4$, exceto pelo algoritmo M\_NSGAII, todos os outros atingiram o valor de -14. Já no caso da instância $5$ o algoritmo M\_IBEA e 4 algoritmos mono-objetivo obtiveram o valor ótimo de 23. Entretanto, M\_NSGAII e os demais algoritmos obtiveram um valor inferior de -22.    
 
-Já no caso da sequência $sq6$ todos os algoritmos obtiveram um valor ótimo de -21. Para a sequência $sq7$ o algoritmo M\_IBEA obteve -35 da mesma maneira que o EDA \cite{santana2008protein}. Entretanto o valor ótimo para sequência $sq7$ é -36 e foi obtido pelo NewACO \cite{shmygelska2003improved} e PERM \cite{hsu2003growth}. Para a última sequência $sq8$ o algoritmo M\_IBEA obteve o valor ótimo -42 mesmo valor que o EDA \cite{EDA} e NewACO \cite{shmygelska2003improved}. Todos as outras abordagens obtiveram valores inferiores para $sq8$. De maneira geral os resultados obtidos pelos AEMOs estão bem próximos dos resultados encontrados por outras abordagens em 6 de 8 sequências consideradas.
+Já no caso da instância $6$ todos os algoritmos obtiveram o valor ótimo de -21. Para a instância $7$ o algoritmo M\_IBEA obteve -35 da mesma maneira que o EDA. Entretanto o valor ótimo para sequência $7$ é -36 e foi obtido pelo NewACO e PERM. Para a instância $8$ o algoritmo M\_IBEA obteve o valor ótimo -42 mesmo valor que o EDA  e NewACO. Todos as outras abordagens obtiveram valores inferiores. No caso das instâncias 9,10 e 11, as maiores, apenas o algoritmo PERM conseguiu obter os melhores resultados. Estas instâncias são as mais complexas devido ao seu tamanho. Dessa maneira, os algoritmos tendem a ficar presos em mínimos locais. Consequentemente, nestes casos os algoritmos necessitam de mecanismos inteligentes para escapar de mínimos locais e guiar a busca para regiões promissoras.
 
-TODO: COMENTAR SOBRE AS SEQUENCIAS QUE FORAM ADICIONASDAS 
+Após analisar os resultados foi possível constatar que apenas um AEMO, o M\_IBEA conseguiu encontrar os melhores resultados para 7 instâncias de 11. Entretanto, nas instâncias mais complexas seu desempenho é degradado. Já os outros AEMOs propostos não tiveram resultados expressivos.
 
 \subsection{Conclusão dos experimentos utilizando os AEMOs}
 
-AEMOs são algoritmos evolucionários que visam a otimização de múltiplos objetivos ao mesmo tempo. Estes apresentam bons resultados quando aplicados a muitos problemas de várias áreas da ciência.  Neste experimentos dois AEMO foram aplicados ao problema PDP utilizando o modelo HP-2D. Duas abordagens multi-objetivas foram apresentadas: a primeira utiliza as versões padrão dos algoritmos IBEA e NSGAII; a segunda abordagem consistiu em modificar o IBEA e NSGAII adicionando a inicialização com \textit{backtrack} e o \textit{pool} de operadores, com objetivo de melhorar os resultados. Dado os resultados se tornou claro que as versões modificadas dos algoritmos tem uma maior habilidade em explorar o espaço de busca quando comparados com as versões padrão.  
+AEMOs são algoritmos evolucionários que visam a otimização de múltiplos objetivos ao mesmo tempo. Estes apresentam bons resultados quando aplicados a problemas de várias áreas da ciência.  Nestes experimentos dois AEMOs foram aplicados ao problema PDP utilizando o modelo HP-2D. Duas abordagens multi-objetivas foram apresentadas: a primeira utiliza as versões padrão dos algoritmos IBEA e NSGAII; a segunda abordagem consistiu em modificar o IBEA e NSGAII adicionando a inicialização com \textit{backtrack} e o \textit{pool} de operadores, com objetivo de melhorar os resultados. Dado os resultados se tornou claro que as versões modificadas dos algoritmos tem uma maior habilidade em explorar o espaço de busca quando comparados com as versões padrão.  
 
-Também foi possível verificar que a abordagem multi-objetiva utilizando o NSGAII e o M\_NSGAII também não apresentou resultados, tanto em termos de hypervolume como valores de energia, satisfatórios quando comparado com o IBEA e a versão modificada. Mesmo a versão padrão de IBEA obteve melhores resultados do que ambas as versões do NSGAII. Porém a versão modificada M\_IBEA apresentou os melhores resultados dentre os outros propostos nesta dissertação. Isto sugere que apenas uma formulação multi-objetiva não é suficiente para atingir bons resultados em termos de energia das estruturas. Com a inicialização via \textit{backtrack}, \textit{pool} de operadores e a maneira sofisticada de explorar o espaço de busca multi-objetivo do IBEA poderão possibilitar resultados promissores.
+Também foi possível verificar que a abordagem multi-objetiva utilizando o NSGAII e o M\_NSGAII também não apresentou resultados, tanto em termos de hypervolume como valores de energia, satisfatórios quando comparado com o IBEA e a versão modificada. Mesmo a versão padrão de IBEA obteve melhores resultados do que ambas as versões do NSGAII. Porém, a versão modificada M\_IBEA apresentou os melhores resultados dentre os outros AEMOs propostos. Isto sugere que apenas uma formulação multi-objetiva não é suficiente para atingir bons resultados em termos de energia das estruturas. Com a inicialização via \textit{backtrack}, \textit{pool} de operadores e a maneira sofisticada de explorar o espaço de busca multi-objetivo do IBEA poderão possibilitar resultados promissores.
 
-Dado os resultados é indiscutível que o algoritmo M\_IBEA foi capaz de escapar dos mínimos locais em quase todos os casos, exceto para $sq7$, por conta da capacidade, da modelagem multi-objetiva combinada com o \textit{pool} de operadores, em gerar diversidade entre a população. Também vale mencionar que os parâmetros para os algoritmos não foram \textit{tunados} e que existe uma chance de obterem melhores resultados caso um procedimento de \textit{tunning} seja feito.
+Dado os resultados é indiscutível que o algoritmo M\_IBEA foi capaz de escapar dos mínimos locais em vários os casos, exceto para as instâncias 7,9,10 e 11. Estas instâncias são as mais complexas e muitas propostas não conseguem obter os melhores resultados. Dentre  os trabalhos relacionados apenas o PERM consegue  explorar o espaço de busca o suficiente para encontrar os melhores resultados.
+
+Também vale mencionar que os parâmetros para os algoritmos não foram \textit{tunados} e que existe uma chance de obterem melhores resultados caso um procedimento de \textit{tunning} seja feito.
 
 Os resultados obtidos pelo M\_IBEA abrem um amplo campo de possibilidades para aprofundar formulações multi-objetivas para o problema PDP com o modelo HP-2D ou até mesmo o HP-3D. As descobertas desta dissertação motivam pesquisas adicionais utilizando abordagens multi-objetivas e adição de um \textit{pool} de operadores com objetivo de aprimorar a habilidade de escapar de mínimos locais. No caso de formulações multi-objetiva é possível mencionar que o \textit{design} de abordagens inovadoras como o uso de métricas para avaliar o grau de compactação das conformações de proteínas ou outros métodos que considerem diferentes fatores, podem aprimorar os AEMOs e possibilitar que melhores resultados sejam obtidos.
 
@@ -345,7 +351,8 @@ O primeiro grupo de experimentos denominado, EGHyPDP-1, apenas gerou mecanismos 
 	
 	\subsection{Conclusão dos experimentos utilizando o EGHyPDP}
 	
-	Nesta seção os experimentos realizados com EGHyPDP, uma ferramenta automática para gerar heurísticas de alto nível para um \textit{framework} hiper heurístico para o problema PDP com o modelo HP-2D
+	Nesta seção os experimentos realizados com EGHyPDP, uma ferramenta automática para gerar heurísticas de alto nível para um \textit{framework} hiper heurístico para o problema PDP com o modelo HP-2D.
+	
 	In this work  GEHyPSP, an automatic way of generating high level heuristics to a hyper-heuristic framework for the PSP problem, was presented and evaluated. The PSP is a very challenging problem  with a high number of local optima and a very complex landscape. Many authors explored the PSP problem with heuristic methods. 
 	However, very often the proposed heuristic approaches are unable to find the best known results when executing against longer sequences. Usually, the hyper-heuristic framework fits well in this kind of complex scenario. Hence, the goal of this paper was to generate, using a grammatical evolution strategy, selection mechanisms and acceptance criteria to a hyper-heuristic framework and evaluate its performance and behavior with a set of eleven HP instances. Three groups of experiments were executed, using three randomly selected HP instances, in order to generate the high level heuristics and later the best individuals found in the experiments were executed using all the eleven HP instances. 
 	
