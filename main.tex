@@ -16,11 +16,13 @@
 % - ... (demais opções aceitas pela classe "book")
 
 % Opções default: defesa, oneside
+\PassOptionsToPackage{table,xcdraw}{xcolor}
 \documentclass[defesa,oneside]{ppginf}
 %\documentclass[final,twoside]{ppginf}
 
 % configurações de diversos pacotes, inclusive o fonte principal do texto
 \include{packages}
+
 
 %=====================================================
 
@@ -29,7 +31,7 @@
 % Principais dados, usados para gerar as páginas iniciais.
 % Campos não utilizados podem ser removidos ou comentados.
 
-\title{Um modelo para dissertações e teses \\ (escrevi um título mais longo para ver como se comporta a quebra de linhas e o espaçamento entre elas)}
+\title{Meta-Heurísticas e Hiper-Heurísticas  aplicadas ao problema de dobramento de proteínas}
 
 % Estas devem ser definidas aqui para poder incorporar nos metadados do PDF
 \pchave{palavra-chave 1, palavra-chave 2, palavra-chave 3}
@@ -93,7 +95,8 @@
 
 % inclusao de cada capítulo, alterar a gosto (do professor de Metodologia...)
 \include{1-intro/intro}			% introdução
-\include{2-fundam/fundam}		% fundamentação teórica
+\include{2-pdp/pdp}
+\include{3-fundam/fundam}		% fundamentação teórica
 \include{3-revbib/revbib}		% revisão bibliográfica (estado da arte)
 \include{4-proposta/proposta}		% proposta
 \include{5-valida/valida}		% experimentação e validação
