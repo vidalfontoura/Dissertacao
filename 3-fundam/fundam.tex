@@ -7,6 +7,7 @@
 
 \section{AEs - Algoritmos Evolucionários}
 
+
 Um algoritmo evolucionário (AE) é uma técnica de busca, altamente paralela, inspirada na teoria da seleção natural e reprodução genética de Charles Darwin. De acordo com a teoria de Darwin, a seleção natural irá favorecer os indíviduos que forem mais aptos, dessa maneira, estes indíviduos tem uma maior probabilidade
 de reprodução. Indivíduos com mais descendentes tem uma chance maior de perpetuarem seus códigos genéticos nas gerações futuras. O código genético é a identidade de cada indivíduo e é representado por cromossomos. Estes princípios são utilizados na implementação de algoritmos computacionais, que procuram por soluções melhores para um dado problema, evoluindo uma população 
 de soluções codificadas em cromossomos artificais -- estruturas de dados utilizadas para representar soluções factíveis para um dado problema \cite{pacheco1999algoritmos}.
@@ -24,6 +25,7 @@ Nesta dissertação foram explorados dois AEMOs: NSGAII \cite{deb2002fast} and I
 %=====================================================
 
 \subsection{NSGAII - Non-dominated sorting Genetic Algorithm II}
+\label{subsection:nsgaii}
 
 O algoritmo \ref{alg:nsgaII} apresenta o pseudo código do NSGAII. O algoritmo recebe como parâmetro $N$ o tamanho da população e $T$ o número máximo 
 de avaliações. O algoritmo inicia criando uma população com tamanho $N$ chamada $P_0$. A população $P_0$ é classificada de acordo com aptidão 
