@@ -140,4 +140,166 @@ Os 4 algoritmos foram implementados utilizando a arquitetura \textit{open source
 \section{EGHyPDP}
 \label{sec:eghypdp}
 
-Esta proposta é baseada no trabalho desenvolvido por \cite{sabar2015automatic}, o qual  utilizou GEP (\textit{gene expression programming}) com objetivo de gerar, de maneira online, os componentes de um \textit{framework} hiper-heurístico para diversos domínios de problemas. Os testes de generalidade realizados por Sabar, utilizando os 6 domínios providos pelo \textit{framework} hiper-heurístico HyFlex, apresentaram bons resultados em relação às outras estratégias hiper-heurísticas do estado da arte. Nesta proposta pretende-se utilizar EG ao invés de GEP e aplicar ao PDP utilizando o modelo HP-2D. Da mesma maneira que a primeira abordagem com os AEMOs a representação de coordenadas relativas descrita na subseção \ref{subsubsection:modeloHP}, será utilizada. Como mencionado anteriormente, um \textit{framework} hiper-heurístico possui dois níveis: alto (\textit{high-level heuristics}) e baixo (\textit{low-level heuristics}). Nesta proposta as heurísticas de alto nível são compostas por: um mecanismo de seleção e um critério de aceitação. Já as heurísticas de baixo nível consistem em um conjunto de heurísticas, selecionadas de estudos anteriores, um mecanismo de memória e uma função de \textit{fitness}. 
+Esta proposta é baseada no trabalho desenvolvido por \cite{sabar2015automatic}, o qual  utilizou GEP (\textit{gene expression programming}) com objetivo de gerar, de maneira online, os componentes de um \textit{framework} hiper-heurístico para diversos domínios de problemas. Os testes de generalidade realizados por Sabar, utilizando os 6 domínios providos pelo \textit{framework} hiper-heurístico HyFlex, apresentaram bons resultados em relação às outras estratégias hiper-heurísticas do estado da arte. Nesta proposta pretende-se utilizar EG ao invés de GEP e aplicar ao PDP utilizando o modelo HP-2D. Da mesma maneira que a abordagem que utilizou  AEMOs a representação de coordenadas relativas descrita na subseção \ref{subsubsection:modeloHP}, será utilizada. Como mencionado anteriormente, um \textit{framework} hiper-heurístico possui dois níveis: alto (\textit{high-level heuristics}) e baixo (\textit{low-level heuristics}). Nesta proposta as heurísticas de alto nível são compostas por: um mecanismo de seleção e um critério de aceitação. Já as heurísticas de baixo nível consistem em um conjunto de heurísticas, selecionadas de estudos anteriores, um mecanismo de memória e uma função de \textit{fitness}. 
+
+\section{Heurísticas de alto nível}
+\label{sec:highlevelheuristics}
+Esta abordagem  foi desenvolvida para gera de maneria \textit{online} os componentes de uma heurística de alto nível (mecanismo de seleção e critério de aceitação) para um \textit{framework} hiper-heurístico. A figura \ref{fig:proposedFramework} apresenta a estrutura geral do EGHyPDP. 
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=.98]{Imagens/proposedFramework.png}
+	\caption{ \textit{Estrutura geral do EGHyPDP.} \\ Fonte: Adaptado de \cite{sabar2015automatic}}
+	\label{fig:proposedFramework}
+\end{figure}
+
+
+Heurísticas de alto nível geralmente levam em consideração uma ou mais informações referentes ao histórico das aplicações das heurísticas de baixo nível para tomar suas decisões. Tradicionalmente, informações tais como desempenho (capacidade de melhorar soluções), tempo (desde a última aplicação de uma dada heurística) e intervalo de confiança (no caso de estratégias que utilizam MAB) são utilizadas como base de conhecimento. \cite{sabar2015automatic} propõem a utilização de vários critérios para avaliar as heurísticas de baixo nível. A razão disto se dá pelo fato de que cada critério irá favorecer a seleção de uma heurística de baixo nível a partir de uma perspectiva diferente. Por exemplo, algumas heurísticas de baixo nível podem ter bom desempenho apenas no início da busca, enquanto outras podem obter melhores resultados apenas ao final. Estes critérios propostos por Sabar et al. \cite{sabar2015automatic} contém estatísticas referente à aplicações das heurísticas de baixo nível e são genéricos o suficiente para serem aplicados ao PDP. Os critérios propostos por Sabar et al. \cite{sabar2015automatic} são detalhados em seguida:
+
+
+\begin{itemize}
+	\item RC (\textit{Reward Credit}): Representa a recompensa que uma determinada heurística de baixo nível deve receber baseado no seu desempenho durante o processo de busca. Quando a i-ésima heurística é aplicada, a melhoria para a solução é computada. O cálculo da melhoria é dado por: $M(i) = (|f1 -f2|/f1) *100$ se $f2$< $f1$, onde $f1$ é a qualidade da solução corrente e $f2$ é a qualidade da solução resultante após a aplicação da i-ésima heurística. 
+	A melhoria obtida é salva em uma janela deslizante (FIFO) de tamanho W. O crédito de qualquer heurística de baixo nível é então atribuído como o máximo valor na janela deslizante correspondente. A ideia por trás deste critério é: heurísticas de baixo nível que não são usadas com frequência mas que alteram a solução com grandes melhorias tendem a ter mais preferência do que aquelas que geram pequenas melhorias. Portanto as heurísticas que trazem frequentes, mas pequenas melhorias irão ter menos probabilidade de serem selecionadas.
+	\item $C_{best}$: Número de vezes que a i-ésima heurística de baixo nível atualizou a melhor solução conhecida. Este critério favorece as heurísticas de baixo nível que obtiveram êxito em melhorar a melhor solução conhecida até o momento. Este critério é útil para sistematicamente melhorar o atual mínimo local.
+	\item $C_{current}$: Número de vezes que a i-ésima heurística de baixo nível atualizou a solução atual. Este critério favorece as heurísticas de baixo nível que obtém êxito em atualizar a solução corrente. Este critério serve para deixar a busca concentrada próxima à solução corrente.
+	\item $C_{accept}$: Número de vezes que a solução gerada pela i-ésima heurística de baixo nível foi aceita pelo critério de aceitação. Irá favorecer heurísticas de baixo nível que podem ajudar a escapar de um mínimo local.
+	\item $C_{ava}$: A média de melhorias anteriores da i-ésima heurística de baixo nível durante o progresso da busca. Este critério favorece heurísticas de baixo nível que realizaram grandes melhorias em média.
+	\item $C_r$: O número de vezes que a i-ésima heurística de baixo nível foi classificada como primeira.  
+\end{itemize} 
+
+Da mesma maneira Sabar et al. \cite{sabar2015automatic} propõem o uso de dados referentes ao histórico de aplicações das heurísticas de baixo nível para compor critérios de aceitação que irão definir limites para aceitar soluções com qualidade inferior. Dessa forma, um conjunto de fatores também foi proposto e será detalhado em seguida:
+
+
+\begin{itemize}
+	\item Delta: A diferença da qualidade entre a solução corrente e a solução descendente.
+	\item PF: A qualidade da solução anterior.
+	\item CF: A qualidade da solução atual.
+	\item CI: Iteração corrente.
+	\item TI: Número de iterações.
+\end{itemize}
+
+
+Utilizando estes dados estatísticos e um conjunto de funções matemáticas simples, tais como soma, subtração, multiplicação e divisão, uma gramática foi desenvolvida para suportar a geração das heurísticas de alto nível. A gramática desenvolvida para gerar mecanismos de seleção e critérios de aceitação é apresentada na Gramática \ref{grammar:proposedGrammar}. 
+
+Para inicializar os dados dos terminais: todas as heurísicas foram executadas uma vez e os dados para cada terminal foi calculado. Toda iteração seguinte irá atualizar os dados dos terminais e essas informações são utilizadas durante a busca.
+
+ \begin{Grammar}
+ 	\begin{grammar}
+ 		<hh-selection> ::= <selection-mechanism> <acceptance-criterion> 
+ 		
+ 		<selection-mechanism> :==  <selection-terminal>   
+ 		\alt <selection-mechanism> <math-function> <selection-mechanism> 
+ 		\alt (<selection-mechanism> <math-function> <selection-mechanism>) 
+ 		
+ 		<selection-terminal> :== 
+ 		RC 
+ 		| Cbest 
+ 		| Ccurrent 
+ 		| Caccept 
+ 		| Cava 
+ 		| Cr
+ 		
+ 		<math-function> :== + 
+ 		| - 
+ 		| * 
+ 		| \%
+ 		
+ 		<acceptance-criterion> ::== <acceptance-terminal> 
+ 		\alt <acceptance-criterion> <math-function>
+ 		<acceptance-criterion>
+ 		\alt (<acceptance-criterion>  <math-function> <acceptance-criterion>) 
+ 		
+ 		<acceptance-terminal> :== PF | CF | CI | TI
+ 		
+ 		%	<acceptance-function> :== + | - | * | \% | $e^x$
+ 		
+ 		
+ 	\end{grammar}
+ 	\caption{Gramática definida para gerar  heurísticas de alto nível}
+ 	\label{grammar:proposedGrammar}
+ \end{Grammar}
+ 
+ 
+  
+  O conjunto de funções matemáticas para combinar de diferentes maneiras os dados históricos das aplicações das heurísticas de baixo nível é apresentado abaixo:
+  
+  \begin{itemize}
+  	\item +: Adiciona as duas entradas.
+  	\item -: Subtrai a segunda entrada da primeira.
+  	\item *: Multiplica as duas entradas.
+  	\item \%: Divisão protegida, isto é, se o denominador for 0, o altera para 0,001.
+  \end{itemize}
+  
+  
+  Utilizando a \ref{grammar:proposedGrammar} e vetores de inteiros é possível gerar heurísticas de alto nível. Os conjuntos terminais da gramática apresentam estatísticas sobre as heurísticas de baixo nível e estas são a matéria-prima para a construção dos componentes das heurísticas de alto nível de um \textit{framework} hiper-heurístico. 
+  
+  
+
+  
+  O próximo passo consiste em evoluir uma população de vetores de inteiro, gerados de maneira aleatória, utilizando o processo evolutivo descrito na subseção 
+  \ref{subsubsection:EvolucaoGramatical}. %A figura BLAH apresenta o processo geral da evolução gramatical proposta.
+  
+  
+  \subsection{Função de \textit{Fitness}}
+  
+ Com objetivo de avaliar os indivíduos gerados durante a busca, uma função de \textit{fitness} foi desenvolvida. A função de consistiu em executar a heurística de alto nível, representada por um dado indivíduo, em 3 instâncias aleatórias de um total de 11 selecionadas dos estudos anteriores. Para cada instância a heuristíca de alto nível foi executada com um tempo máximo de 30 minutos e o retorno é a melhor solução para o PDP simplificado com o modelo HP-2D. O valor de \textit{fitness} associado com a solução retornada é então normalizado entre 0 e 1. O \textit{fitness} de um indivíduo, da EG, consiste na soma das saídas das execuções com cada uma das 3 instâncias. Dessa maneira, o melhor valor possível é 3 e o pior é 0. A razão de executar a heurística de alto nível (indivíduo) com 3 instâncias é que treinar a EG com apenas uma não seria suficiente para obter bons resultados em várias instâncias na fase de validação. 
+ 
+   
+
+
+  
+  \subsection{Critério de Parada}
+  \label{sub:criterioParada}
+  
+  Para terminar o processo da EG um número máximo de iterações que não obtêm melhora será utilizado como condição de parada. Note que este critério de parada é referente à parada do processo da EG e não das execuções dos indivíduos dentro do \textit{framework} hiper-heurístico, que ocorrem durante o progresso da EG. 
+  
+  
+  \section{Heurísticas de baixo nível}
+  
+  Nas heurísticas de baixo nível o EGHyPDP possui 2 componentes principais: um conjunto de heurísticas de baixo nível e um mecanismo de memória.
+  
+  \subsection{Conjunto de heurísticas de baixo nível}
+  Um conjunto de heurísticas de baixo nível utilizado foi selecionado de estudos anteriores e foi apresentados no início deste capítulo.
+  
+
+
+
+\section{Processo geral do EGHyPDP} 
+
+As principais etapas da EGHyPDP proposta serão apresentadas nesta seção.
+Inicialmente uma população de indivíduos (heurísticas de alto nível: mecanismos de seleção e critérios de aceitação) é gerada de maneira aleatória. O \textit{fitness} da população é calculado inserindo os indivíduos em um \textit{framework} hiper-heurístico e o executando com 3 instâncias por 30 minutos. E de maneira iterativa selecionar indivíduos pais e aplicar os operadores de cruzamento, \textit{prune}, mutação, e \textit{duplicate} para gerar descendentes. Para avaliar os descendentes, os seguintes passos são executados:
+
+
+O processo da EGHyPDP irá parar apenas quando o critério de parada discutido na subseção \ref{sub:criterioParada} for atingido e será retornado o indivíduo (heurística de alto nível) que possuir o maior valor de \textit{fitness}. Também será retornada a solução ao PDP que tiver maior qualidade no mecanismo de memória.
+
+
+
+\subsection{Mecanismo de Memória}
+\label{sub:MecanismoDeMemoria}
+
+A maioria dos \textit{frameworks} hiper-heurísticos propostos na literatura operam sobre uma única solução \cite{chakhlevitch2008hyperheuristics, burke2013hyper}. Blum et al. \cite{blum2011hybrid} menciona que utilizar uma única solução pode restringir a capacidade de explorar um espaço de busca grande e restrito. Dessa maneira, Sabar et al. \cite{sabar2014automatic} propôs uma abordagem que utiliza um mecanismo de memória, assim como Talbi el al. \cite{talbi2006cosearch}, o qual contém um conjunto de soluções com alta qualidade e diversificadas, atualizado conforme o progresso da busca. Nesta proposta o mecanismo de memória tem a responsabilidade de armazenar soluções para o problema PDP utilizando a representação de coordenadas relativas para o modelo HP-2D. 
+
+\subsubsection{Inicialização do Mecanismo de Memória}
+
+Tradicionalmente algoritmos evolutivos inicializam suas populações iniciais de maneira aleatória, por conta disto  muitas soluções inválidas ao problema PDP, podem ser geradas na inicialização. Isto geralmente  ocasiona perda de tempo de processamento, por conta da grande quantidade de conformações inválidas antes que bons resultados sejam obtidos. Diante disto, \cite{benitez2015algoritmo} propôs uma estratégia especializada de inicialização. A população de seu algoritmo genético, dividido-a em duas partes. Uma gerada aleatoriamente, com indivíduos que potencialmente possuem colisões. E uma segunda parte onde todos os indivíduos são livres de colisões. Uma configuração é utilizada para definir a proporção entre as duas partes da população inicial. Para garantir que os indivíduos não possuam colisões, uma estratégia de \textit{backtracking} deve ser utilizada. Nesta proposta, pretende-se utilizar uma estratégia similar, adaptada ao modelo HP-2D.  A estratégia de inicialização com \textit{backtracking} irá começar posicionando o primeiro aminoácido na posição 0,0. Para posicionar o próximo aminoácido, um movimento é selecionado de maneira aleatória. Caso o movimento cause uma colisão, este movimento será marcado como uma má escolha e um novo movimento é selecionado aleatoriamente (do conjunto que restou sem os movimentos marcados como más escolhas). Caso todos os movimentos estejam marcados como má escolha, a estratégia de \textit{backtracking} irá retornar de maneira recursiva para o aminoácido anterior e marcar a escolha em questão como uma má escolha. A estratégia de \textit{backtracking} termina quando gerar uma conformação que não possua colisões.
+
+%As possíveis conformações podem ser representadas por um caminho em um grafo orientado estruturado como uma árvore. Consequentemente, cada nó da árvore representa uma solução candidata parcial $c$, desde o primeiro aminoácido até o último sendo considerado. Portanto, um caminho até um nó folha representa uma conformação completa. As arestas do grafo representam o movimento de cada aminoácido relativo a seu predecessor.
+
+
+
+\subsubsection{Atualização do Mecanismo de Memória}
+Para cada indivíduo (heurística de alto nível) será selecionada de maneira aleatória uma solução do mecanismo de memória e a busca irá iniciar em torno desta solução, quando o \text{framework} hiper-heurístico atingir o seu número máximo de iterações a solução final tem que ser avaliada para verificar sua qualidade e diversidade. A qualidade de uma solução para o PDP utilizando o modelo HP é inversamente proporcional à quantidade de interações entre aminoácidos hidrofóbicos. Portanto a qualidade de uma solução é dada pela quantidade de iterações H-H multiplicada por -1, conforme descrito na subseção \ref{subsubsection:modeloHP}.  As soluções geradas que tiverem a qualidade maior que todas as soluções contidas no mecanismo de memória substituirão a solução que tiver menor similaridade segundo a distância de \textit{Hamming} \cite{hamming1950error}. Se a qualidade de uma solução gerada não for maior que todas as soluções, mas melhor em relação a um sub-conjunto do mecanismo de memória, esta substituirá a solução que tiver menor qualidade e menor similaridade do sub-conjunto. E por fim se a qualidade da solução gerada for pior que todas contidas no mecanismo de memória, esta é descartada. A similaridade é considerada a fim de manter a diversidade entre as soluções.  
+
+
+
+\section{Considerações Finais}
+\label{Metodologia:ConsideracoesFinais}
+
+Neste capítulo foram discutidos os principais aspectos relativos à duas estratégias propostas nesta dissertação. Inicialmente,= foi discutido sobre a aplicação de AEMOs e o EGHyPDP ao PDP simplificado com modelo HP-2D. A representação relativa foi utilizada para codificar as soluções para ambas as estratégias. O conjunto de heurísticas de baixo nível também foi apresentado. No caso dos AEMOs duas versões de cada algoritmo foram apresentadas. As funções objetivas também foram discutidas. Duas adaptacões foram propostas que consistiram em adicionar um \textit{pool} de operadores e a inicialização via \textit{backtracking}.
+
+
+
+ para aplicar a evolução gramatical com objetivo de gerar heurísticas de alto nível de um \text{framework} hiper-heurístico para o PDP. Inicialmente foi discutido por que o esquema de codificação utilizado para representar as soluções ao PDP serão coordenadas relativas. Em seguida, foi apresentada a gramática desenvolvida para gerar as heurísticas de alto nível. Os componentes terminais da gramática representam diferentes aspectos estatísticos referente ao histórico das aplicações das heurísticas de baixo nível. Funções matemáticas simples também compõem a gramática e combinadas com os dados estatísticos gerarão diferentes heurísticas de alto nível. Posteriormente, a função de \textit{fitness} para avaliar as heurísticas de alto nível e o critério de parada foram da EG foram introduzidos. As heurísticas de baixo nível também foram apresentadas. E finalmente o processo geral desta proposta foi apresentado, incluindo os aspectos referentes ao mecanismo de memória. No caso do EGHyPDP foi apresentado o processo para gerar as heurísticas de alto nível através da evolução da gramatical. Os terminais desenvolvidos para gerar os mecanismos de seleção e os critérios de aceitação foram apresentados, assim como a gramática proposta. A função de \textit{fitness} e o critério de parada para a evolução gramatical também foram apresentados. O processo geral da EGHyPDP e o mecanismo de memória também foram discutidos neste capítulo. O próximo capítulo apresenta os experimentos realizados afim de avaliar o desempenho da duas abordagens propostas nesta dissertação.
+
+
+
