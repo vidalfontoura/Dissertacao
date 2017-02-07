@@ -4,9 +4,22 @@ As proteínas são responsáveis por muitas funções importantes das células v
 
 Determinar a estrutura nativa de proteínas uma tarefa desafiadora até mesmo para modernos super computadores. Isto ocorre por conta do imenso espaço de busca para testar todas as possíveis configurações que uma dada proteína pode adotar. Diferentes formas de representar as estruturas/conformações de proteínas existem e podem ser utilizadas para simular o processo de dobramento. Embora existam modelos extremamente detalhados, estas representações são computacionalmente muito custosas. Consequentemente, muitos autores \cite{custodio2004investigation,hsu2003growth,lin2011protein,unger1993genetic,santanna2008,custodio2014multiple, garza2012locality} utilizam modelos simplificados para representar as estruturas de proteínas. Um modelo bastante conhecido para este propósito, criado por Lau and Dill \cite{lau1989lattice}, é o modelo Hidrofóbico-Polar (HP). Este modelo simplifica os amino ácidos em apenas dois tipos: hidrofóbico (H) e polar (P). 
 
+Para avaliar as estruturas representadas pelo modelo HP é preciso computar o valor de energia associado a uma dada conformação \cite{unger1993genetic}. Para isto, é necessário considerar as interações entre os aminoácidos. Uma interação ocorre quando o par de aminoácidos é adjacente no \textit{grid}/cubo e não é adjacente na sequência. No modelo HP existem apenas três: (HP, HH e PP), mas somente interações hidrofóbicas (HH) influenciam no valor de energia referente a uma conformação \cite{unger1993genetic}. A questão que surge é como buscar, dentre as possíveis conformações, aquela cuja a energia seja mínima. Embora, o modelo HP seja um modelo simplificado este se apresenta como um problema NP-Completo e as instâncias apresentam uma grande variabilidade entre si. Dessa maneira, tornando muito difícil para os algoritmos manter bons resultados em várias instâncias do modelo HP. Outra dificuldade encontrada por pesquisadores é a configuração os parâmetros para os algoritmos
+
+É nesse contexto que as hiper-heurísticas e estratégias adaptativas, tais como utilizar operadores genéticos de maneira dinâmica, geralmente são aplicadas e vem apresentando bons resultados \cite{burke2013hyper}. Entretanto, não existem muitas abordagens que visam o projeto automático de novas heurísticas ou automatização da seleção de heurísticas existentes para o PDP. Assim como a maioria dos trabalhos tratam o PDP de maneira mono objetiva. Consequentemente, existem poucos trabalhos que propõem estratégias multi objetivas.
+
+Esta dissertação apresenta duas abordagens para o PDP. A primeira trata-se de uma estratégia multi objetiva para o PDP utilizando algoritmos evolucionários multi objetivos (AEMOs) do estado da arte. Duas adaptações foram propostas para os AEMOs com objetivo de melhorar os resultados obtidos. A segunda abordagem consistiu em uma estratégia de design automático de heurísticas de alto nível para um \textit{framework} hiper heurístico.
 
 
-Também existe uma grande variação das características do espaço de busca entre diferentes instâncias do modelo HP. \textit{Grids} bidimensionais (2D) e tridimensionais (3D) pode ser utilizados para representar as conformações que uma proteína pode adotar. Cada conformação no \textit{grid} tem um valor de energia associado.
+\section{Organização do Texto}
+\label{Introducao:Organizacao do Texto}
 
-Muitos estudos  \cite{custodio2004investigation,hsu2003growth,lin2011protein,unger1993genetic,santana2008component,custodio2014multiple, garza2012locality} have used the Hydrophobic-Polar (HP) \cite{lau1989lattice}
- partir do processo de dobramento. Para avaliar as estruturas representadas pelo modelo HP é preciso computar o valor de energia associado a uma dada conformação \cite{unger1993genetic}. Para isto, é necessário considerar as interações entre os aminoácidos. Uma interação ocorre quando o par de aminoácidos é adjacente no \textit{grid}/cubo e não é adjacente na sequência. No modelo HP existem apenas três: (HP, HH e PP), mas somente interações hidrofóbicas (HH) influenciam no valor de energia referente a uma conformação \cite{unger1993genetic}. A questão que surge é como buscar, dentre as possíveis conformações, aquela cuja a energia seja mínima.
+O restante desta dissertação está organizado da seguinte maneira: no capítulo \ref{cap:pdp} é introduzido o referencial teórico necessário para uma boa compreensão sobre o PDP. Já no capítulo \ref{cap:Referencial Teórico} são apresentados conceitos relacionados com os AEMOs, assim como os algoritmos que foram utilizados nesta dissertação. Ainda são discutidos os aspectos referentes as hiper-heurísticas, sua classificação e também conceitos de programação genética (PG) e evolução gramatical (EG). Em seguida, o capítulo \ref{cap:Trabalhos Relacionados} apresenta estudos relacionados com esta dissertação. A duas abordagens propostas são apresentadas no capítulo \ref{cap:Metodologia}. Os experimentos realizados com as duas abordagens são apresentados no capítulo \ref{cap:experimentos}. Finalmente, o capítulo \ref{cap:conclusao} apresenta a conclusão desta dissertação.
+
+
+
+
+
+
+
+ 
