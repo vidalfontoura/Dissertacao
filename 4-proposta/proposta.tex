@@ -102,7 +102,7 @@ Para ambas as abordagens o mesmo conjunto de heurísticas de baixo nível (opera
 
 
 
- Este capítulo está divido em duas seções respectivamente para cada melhor apresentar as estratégias propostas nesta dissertação (AEMOs e o EGHyPDP). A seção \ref{sec:aemos} apresenta a estratégia multi objetiva onde foi utilizada dois algoritmos evolucionários, do estado da arte de otimização multi objetiva. Já a seção  \ref{sec:eghypdp} irá apresentar \ref{sec:eghypdp} o design automático de heurísticas de alto nível para um \textit{framework} hiper heurístico para resolver o PDP.
+ Este capítulo está divido em duas seções para melhor apresentar ambas as estratégias propostas nesta dissertação . A seção \ref{sec:aemos} apresenta a estratégia multi objetiva onde foi utilizada dois algoritmos evolucionários, do estado da arte de otimização multi objetiva. Já a seção  \ref{sec:eghypdp} irá apresentar o design automático de heurísticas de alto nível para um \textit{framework} hiper heurístico para resolver o PDP.
  
 
 
@@ -111,9 +111,7 @@ Para ambas as abordagens o mesmo conjunto de heurísticas de baixo nível (opera
 
 Esta abordagem utiliza uma modelagem multi-objetiva para PDP baseado no estudo desenvolvido por \cite{gabriel2012algoritmos}. Onde o primeiro objetivo trata de maximizar a quantidade de contatos topológicos das estruturas de proteínas e o segundo de minimizar a máxima distância euclidiana entre os aminoácidos. 
 
-Duas abordagens multi-objetivas foram desenvolvidas neste capítulo, utilizando os AEMOs (NSGAII e IBEA) descritos no capítulo \ref{cap:Referencial Teórico}.
-
-A primeira abordagem consistiu em aplicar dois AEMOs do estado da arte de otimização multi objetiva (IBEA and NSGAII). Utilizando as versões padrão dos algoritmos estes from aplicados ao PDP utilizando o modelo HP-2D. Nesta abordagem os operadores genéticos (cruzamento e mutação) são fixos com: \textit{Single Point Crossover (1x)} and \textit{Bit Flip Mutation (BM)}. Esta foi a combinação que obteve os melhores resultados em experimentos preliminares. No caso da segunda abordagem, o IBEA e NSGAII foram modificados com objetivo de aprimorar os resultados em relação às versões padrões. Duas modificações foram propostas e serão descritas abaixo:
+Duas abordagens multi-objetivas foram desenvolvidas neste capítulo, utilizando os AEMOs (NSGAII e IBEA) descritos no capítulo \ref{cap:Referencial Teórico}. A primeira abordagem consistiu em aplicar os algoritmo IBEA and NSGAII utilizando suas versões padrão. Nesta abordagem os operadores genéticos (cruzamento e mutação) são fixos com: \textit{Single Point Crossover (1x)} and \textit{Bit Flip Mutation (BM)}. Esta foi a combinação que obteve os melhores resultados em experimentos preliminares. No caso da segunda abordagem, o IBEA e NSGAII foram modificados com objetivo de aprimorar os resultados em relação às versões padrões. Duas modificações foram propostas e serão descritas abaixo:
 
  
  \begin{itemize}
@@ -121,24 +119,24 @@ A primeira abordagem consistiu em aplicar dois AEMOs do estado da arte de otimiz
 		\item \textit{Pool} de operadores: O uso de operadores fixos geralmente não conseguem guiar a busca para regiões promissoras. Com objetivo de aprimorar os AEMOs, um \textit{pool} de operadores foi desenvolvido. Os operadores que compõem \textit{pool} foram selecionados de estudos anteriores e foram apresentados no início deste capítulo. A cada operação de cruzamento e mutação os operadores são selecionados de maneira aleatória a partir do \textit{pool}. Os operadores são sempre executados independente de probabilidades conforme a versão padrão dos algoritmos. 
 	
 		
-		\item Inicialização via \textit{backtracking}: Tradicionalmente, a população inicial é gerada de maneira aleatória no caso dos algoritmos NSGAII e IBEA. Este tipo de inicialização tem grande potencial de gerar muitas soluções inválidas ao PDP com o modelo HP-2D. Soluções que não sejam \textit{self-avoiding walk} (SAW) contém colisões. Se a população for integralmente gerada de maneira aleatória os algoritmos de otimização perdem um tempo considerável avaliando soluções inválidas. Para evitar este problema uma estratégia de \textit{backtracking} pode ser utilizada, para evitar que soluções inválidas sejam geradas. Entretanto, a inicialização via \textit{backtracking} é computacionalmente custosa. Dessa maneira, apenas 20\% da população inicial foi inicializada utilizando esta estratégia.
+		\item Inicialização via \textit{backtracking}: Tradicionalmente, a população inicial é gerada de maneira aleatória no caso dos algoritmos NSGAII e IBEA. Este tipo de inicialização tem grande potencial de gerar muitas soluções inválidas ao  modelo HP-2D. Soluções que não sejam \textit{self-avoiding walk} (SAW) são consideradas inválidas pois dois ou mais aminoácidos estariam ocupando a mesma posição no espaço. Se a população for integralmente gerada de maneira aleatória os algoritmos de otimização perdem um tempo considerável avaliando soluções inválidas. Para evitar este problema uma estratégia de \textit{backtracking} pode ser utilizada Entretanto, a inicialização via \textit{backtracking} é computacionalmente custosa. Dessa maneira, apenas 20\% da população inicial foi inicializada utilizando esta estratégia.
 
 \end{itemize}
 
-Portanto 4 algoritmos foram implementados (IBEA, NSGAII, M\_IBEA and M\_NSGAII) foram propostos para avaliar a abordagem multi objetiva para o PDP simplificado.
+Portanto 4 algoritmos foram implementados (IBEA, NSGAII, M\_IBEA e M\_NSGAII) foram propostos para avaliar a abordagem multi objetiva para o PDP simplificado.
 
 
 \subsection{Funções Objetivo}
 
 
 \begin{itemize}
-	\item \textbf{Valor de Energia}: Este é o objetivo principal e avaliar o valor de energia associado com as possíveis conformações codificadas pelos cromossomos. O objetivo é minimizar o valor de energia, o qual, é calculado conforme descrito no capítulo \ref{cap:pdp}. Este objetivo guia a busca na direção onde os valores energia associados com as conformações de proteínas sejam mínimos. Dessa maneira, obtendo conformações mais próximas ao estado nativo das estruturas de proteínas.
+	\item \textbf{Valor de Energia}: Este é o objetivo principal e sua responsabilidade é avaliar o valor de energia associado com as possíveis conformações codificadas pelos cromossomos. O objetivo é minimizar o valor de energia, o qual, é calculado conforme descrito no capítulo \ref{cap:pdp}. Este objetivo guia a busca na direção onde os valores energia associados com as estruturas de proteínas sejam mínimos. Dessa maneira, obtendo conformações mais próximas ao estado nativo das estruturas de proteínas.
 
     \item \textbf{Distância euclideana entre os resíduos mais distantes}: Este é um objetivo secundário inspirado pelo estudo desenvolvido por \cite{gabriel2012algoritmos}. A motivação por de trás deste objetivo é que estruturas mais compactas tendem a possuir mais contatos hidrofóbicos, oque resultaria em um valor menor de energia. A distância entre os resíduos é calculada utilizando a distância euclidiana.
    
 \end{itemize}
 
-Geralmente para avaliar e comparar a performance dos AEMOs, indicadores de qualidade são comumente utilizados. Neste estudo o indicador \textit{hypervolume} foi utilizado. Este indicador considera o volume do espaço de busca dominado pela fronteira conhecida de Pareto \cite{zitzler2003performance} por um algoritmo. Um maior valor de \textit{hypervolume} significa maior qualidade na cobertura que um algoritmo com valor menor de \textit{hypervolume}.
+Geralmente para avaliar e comparar a performance dos AEMOs, indicadores de qualidade são utilizados. Neste estudo o indicador \textit{hypervolume} foi utilizado. Este indicador considera o volume do espaço de busca dominado pela fronteira conhecida de Pareto obtida por um algoritmo \cite{zitzler2003performance}. Um maior valor de \textit{hypervolume} significa maior qualidade na cobertura que um algoritmo com valor menor de \textit{hypervolume}.
 
 Os 4 algoritmos foram implementados utilizando a arquitetura \textit{open source} disponível no \textit{framework} jMetal. A arquitetura do jMetal é de fácil extensão e possui uma ativa comunidade.
 
@@ -146,7 +144,7 @@ Os 4 algoritmos foram implementados utilizando a arquitetura \textit{open source
 \section{EGHyPDP}
 \label{sec:eghypdp}
 
-Esta proposta é baseada no trabalho desenvolvido por \cite{sabar2015automatic}, o qual  utilizou GEP (\textit{gene expression programming}) com objetivo de gerar, de maneira online, os componentes de um \textit{framework} hiper-heurístico para diversos domínios de problemas. Os testes de generalidade realizados por Sabar, utilizando os 6 domínios providos pelo \textit{framework} hiper-heurístico HyFlex, apresentaram bons resultados em relação às outras estratégias hiper-heurísticas do estado da arte. Nesta proposta pretende-se utilizar EG ao invés de GEP e aplicar ao PDP utilizando o modelo HP-2D. Da mesma maneira que a abordagem que utilizou  AEMOs a representação de coordenadas relativas descrita na subseção \ref{subsubsection:modeloHP}, será utilizada. Como mencionado anteriormente, um \textit{framework} hiper-heurístico possui dois níveis: alto (\textit{high-level heuristics}) e baixo (\textit{low-level heuristics}). Nesta proposta as heurísticas de alto nível são compostas por: um mecanismo de seleção e um critério de aceitação. Já as heurísticas de baixo nível consistem em um conjunto de heurísticas, selecionadas de estudos anteriores, um mecanismo de memória e uma função de \textit{fitness}. 
+Esta proposta é baseada no trabalho desenvolvido por \cite{sabar2015automatic}, o qual  utilizou GEP (\textit{gene expression programming}) com objetivo de gerar, de maneira online, os componentes de um \textit{framework} hiper-heurístico para diversos domínios de problemas. Os testes de generalidade realizados, utilizando os 6 domínios providos pelo \textit{framework} hiper-heurístico HyFlex, apresentaram bons resultados em relação às outras estratégias hiper-heurísticas do estado da arte. Nesta proposta pretende-se utilizar EG ao invés de GEP e aplicar ao PDP utilizando o modelo HP-2D. Da mesma maneira que a abordagem que utilizou  AEMOs a representação de coordenadas relativas descrita na subseção \ref{subsubsection:modeloHP}, será utilizada. Como mencionado anteriormente, um \textit{framework} hiper-heurístico possui dois níveis: alto (\textit{high-level heuristics}) e baixo (\textit{low-level heuristics}). Nesta proposta as heurísticas de alto nível são compostas por: um mecanismo de seleção e um critério de aceitação. Já as heurísticas de baixo nível consistem em um conjunto de heurísticas, selecionadas de estudos anteriores, um mecanismo de memória e uma função de \textit{fitness}. 
 
 \section{Heurísticas de alto nível}
 \label{sec:highlevelheuristics}
