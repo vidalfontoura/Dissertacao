@@ -13,13 +13,13 @@ de reprodução. Indivíduos com mais descendentes tem uma chance maior de perpe
 de soluções codificadas em cromossomos artificais -- estruturas de dados utilizadas para representar soluções factíveis para um dado problema \cite{pacheco1999algoritmos}.
 
 De maneira geral, problemas reais de otimização possuem múltiplos objetivos a serem minimizados/maximizados e estão presentes em muitas áreas do conhecimento.
-Para otimizar problemas multiobjetivos, dois ou mais objetivos são considerados os quais geralmenta são conflitantes. Para estes problemas é impossível encontrar uma
+Para otimizar problemas multiobjetivos dois ou mais objetivos são considerados, os quais geralmente são conflitantes. Para estes problemas é impossível encontrar uma
 única solução ótima. Um conjunto de soluções é encontrado avaliando a dominância de Pareto \cite{pareto} entre as soluções. O objetivo principal é encontrar o conjunto  
 de soluções que sejam não dominadas entre si. Uma solução domina outra, se e somente se, for melhor em pelos um dos objetivos, sem ser pior em qualquer outro.
 Este conjunto de soluções constitui a fronteira de Pareto. Encontrar a fronteira real de Pareto é um problema NP-Completo \cite{fonseca2005tutorial}, dessa maneira,
 o objetivo é encontrar uma boa aproximação da fronteira real.
 
-Algoritmos Evolucionários Multi-Objetivos (AEMOs) são extensões de AEs para problemas multi-objetivos os quais aplicam
+Algoritmos Evolucionários Multi-Objetivos (AEMOs) são extensões de AEs para problemas multi-objetivos, os quais aplicam
 conceitos da dominância de Pareto para criar diferentes estratégias para evoluir e manter a diversidade das soluções.
 Nesta dissertação foram explorados dois AEMOs: NSGAII \cite{deb2002fast} and IBEA \cite{zitzler2004indicator}.
 %=====================================================
@@ -31,12 +31,12 @@ O algoritmo \ref{alg:nsgaII} apresenta o pseudo código do NSGAII. O algoritmo r
 de avaliações. O algoritmo inicia criando uma população com tamanho $N$ chamada $P_0$. A população $P_0$ é classificada de acordo com aptidão 
 e a relação de não dominância. A população $P_0$ é submitida ao operador de seleção: torneio binário para selecionar duas soluções que serão utilizadas
 para gerar descendentes. Operadores de cruzamento e mutação são aplicados na soluções selecionadas gerando duas soluções distintas descendentes. 
-Ao fim do processo de reprodução as soluções descendentes são avaliadas e adicionadas a população chamada $Q_0$.
+Ao fim do processo de reprodução, as soluções descendentes são avaliadas e adicionadas a população chamada $Q_0$.
 
 Após esta estapa, $P_0$ e $Q_0$ são adicionadas em uma população auxiliar chamada $R$. Utilizando o conceito de não dominância, $R$ é ordenada 
 criando fronteiras, onde cada solução da primeira fronteira não é dominada por nenhuma outra solução, já soluções da segunda fronteira são dominadas
 apenas por soluções contidas na primeira fronteira, e assim por diante. Para cada fronteira, as soluções são avaliadas utilizando um mecanismo
-de \textit{Crowding-Distance} as soluções com maiores valores irão ser adicionadas na população da próxima geração chamada $P_t$ onde $t$ é a
+de \textit{Crowding-Distance (CD)}. Soluções com maiores valores de CD irão ser adicionadas na população da próxima geração chamada $P_t$ onde $t$ é a
 avaliação corrente.
 
 Após criar e preencher $P_t$ com as soluções não dominadas de todas as fronteiras, a população $P_t$ é avaliada e então passa para um novo
