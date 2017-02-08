@@ -1,4 +1,5 @@
 \chapter{Experimentos}
+\label{cap:experimentos}
 
 Neste capítulo serão apresentados  os experimentos para avaliar e validar as duas estratégias apresentadas no Capítulo \ref{cap:Metodologia}. Também são apresentadas as instâncias de \textit{benchmark} para o problema PDP com o modelo HP-2D que foram utilizadas nos experimentos.
 
@@ -53,12 +54,9 @@ Este capítulo esta divido em duas seções para melhor apresentar os resultados
 
 Nesta seção serão apresentados o cojunto de experimentos realizados utilizando a abordagem multi-objetiva com os algoritmos NSGAII e IBEA. Inicialmente, serão apresentadas as configurações utilizadas nos algoritmos. Em seguida, uma comparação entre os resultados de cada algoritmo é apresentada. Finalmente, uma comparação com os resultados dos trabalhos relacionados que tratam o problema de maneira mono-objetiva é apresentada.
 
+As configurações utilizadas nos AEMOs foi definida baseada no tamanho das instâncias. Para instâncias menores o tamanho da população e o número máximo de avaliações são menores. Já para as sequências maiores os valores utilizados são superiores. A Tabela \ref{tab:popConfiguration} apresenta para cada instância: o tamanho da instância, o tamanho da população e número máximo de avaliações.
 
-
-
-As configurações utilizadas nos AEMOs foi definida baseada no tamanho das instâncias. Para instâncias menores o tamanho da população e a numero máximo de avaliações são menores. Já para as sequências maiores os valores utilizados são superiores. A Tabela \ref{tab:popConfiguration} apresenta para cada instância: o tamanho da instância, o tamanho da população e número máximo de avaliações.TODO: ver como colocar essa aprte, tem que explicar as abordagens na metodologia In the case of the first approach, the probability of crossover/mutation occurrence was fixed, for all sequences, to 0.9 and 0.01 respectively. The second approach does not use a probability since the operators are always applied to generate new individuals. 
-No caso do algoritmo IBEA a população auxiliar foi mantida em 200 para todas as instâncias.
-
+No caso das versões padrão dos algoritmos IBEA e NSGAII as probabilidades de cruzamento e mutação foram configuradas com 0.9 e 0.01 respectivamente. A segunda abordagem não necessita de probabilidades pois os operadores sempre serão aplicados para gerar novos indivíduos. No caso dos algoritmos IBEA e M\_IBEA a população auxiliar foi mantida em 200 para todas as instâncias.
 
 \begin{table}[!htb]
 	\centering
