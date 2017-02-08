@@ -1,10 +1,16 @@
 \chapter{Metodologia}
 \label{cap:Metodologia}
 
-Neste capítulo serão apresentadas as duas estratégias propostas e desenvolvidas nesta dissertação para o problema de dobramento de proteínas. A primeira trata de uma abordagem multi-objetiva utilizando dois algoritmos evolucionários multi-objetivos (AEMOs) para o PDP. Já a segunda visa aplicação da evolução gramatical  para gerar heurísticas de alto nível para um \textit{framework} hiper-heurístico  para PDP intitulada EGHyPDP.
+Neste capítulo serão apresentadas as duas estratégias propostas e desenvolvidas nesta dissertação para o PDP simplificado. A primeira trata de uma abordagem multi-objetiva utilizando dois AEMOs. Já a segunda visa aplicação da evolução gramatical  para gerar heurísticas de alto nível para um \textit{framework} hiper-heurístico intitulada EGHyPDP.
 
 
-O problema PDP simplificado foi modelado utilizando a representação relativa, descrita na subseção \ref{subsubsection:modeloHP}, afim de codificar as possíveis conformações de proteínas em vetores de inteiros. Segundo o estudo realizado por Krasnogor et al. \cite{krasnogor1999protein} esta representação possui um maior potencial em conduzir os algoritmos a resultados melhores. Cada gene do cromossomo especifica a direção que o amino ácido atual deve ser posicionado. Cada amino ácido é posicionado na direção especificada pelo respectivo gene em relação ao amino ácido anterior. O genes podem assumir apenas 3 valores (0,1 e 2): 0 indica que o próximo amino ácido deve ser posicionado à direita do amino ácido anterior, 1 indica que o próximo amino ácido deve ser posicionado à frente do amino ácido anterior e 2 indica que o próximo aminoácido deve ser posicionado à esquerda. 
+O problema PDP simplificado foi modelado utilizando a representação relativa, descrita na subseção \ref{subsubsection:modeloHP}, afim de codificar as possíveis estruturas de proteínas em vetores de inteiros. Segundo o estudo realizado por  \cite{krasnogor1999protein} esta representação possui um maior potencial em conduzir os algoritmos a resultados melhores. Cada gene do cromossomo especifica a direção que o amino ácido atual deve ser posicionado. Cada amino ácido é posicionado na direção codificada pelo respectivo gene em relação ao amino ácido anterior. O genes podem assumir apenas 3 valores:
+
+\begin{itemize}
+	\item 0 indica que o próximo amino ácido deve ser posicionado à direita do amino ácido anterior
+	\item 1 indica que o próximo amino ácido deve ser posicionado à frente do amino ácido anterior
+	\item 2 indica que o próximo aminoácido deve ser posicionado à esquerda do amino ácido anterior.
+\end{itemize}
 
 A Figura \ref{img:cromossomo} apresenta um exemplo de um cromossomo hipotético e a conformação gerada no \textit{grid} para o modelo HP-2D.
 
@@ -18,7 +24,7 @@ A Figura \ref{img:cromossomo} apresenta um exemplo de um cromossomo hipotético 
 
 
 
-Para ambas as abordagens o mesmo conjunto de heurísticas de baixo nível (operadores de cruzamento/mutaçào e busca locais) foi selecionado a partir dos estudos anteriores. O conjunto de heurísticas de baixo nível será descrito abaixo:
+Para ambas as abordagens o mesmo conjunto de heurísticas de baixo nível (operadores de cruzamento/mutação e busca locais) foi selecionado a partir dos estudos anteriores. O conjunto de heurísticas de baixo nível será descrito abaixo:
 
  \begin{itemize}
  	
@@ -37,7 +43,7 @@ Para ambas as abordagens o mesmo conjunto de heurísticas de baixo nível (opera
  	
  	
  	
- 	\item \textit{Multi Points Crossover} (MPX): Semelhante ao 2X porém com c pontos, baseado na função $c = int(n * 0.1)$, $n$ é o tamanho da sequência. O operador MPX é utilizado para promover diversidade estrutural realizando uma mescla randômica entre os pais, embora não tão radical quanto o \textit{Uniform  Crossover} \cite{sabar2014automatic}. Um exemplo de aplicação do operador MPX é apresentado na imagem \ref{fig:multipointscrossover}
+ 	\item \textit{Multi Points Crossover} (MPX): Semelhante ao 2X porém com c pontos, baseado na função $c = int(n * 0.1)$, onde $n$ é o tamanho da sequência. O operador MPX é utilizado para promover diversidade estrutural realizando uma mescla randômica entre os pais. Embora, não tão radical quanto o \textit{Uniform  Crossover} \cite{sabar2015automatic}. Um exemplo de aplicação do operador MPX é apresentado na imagem \ref{fig:multipointscrossover}
  	
  	
  	\begin{figure}[!htb]
@@ -56,10 +62,10 @@ Para ambas as abordagens o mesmo conjunto de heurísticas de baixo nível (opera
  	\end{figure}
  	
  	
- 	\item \textit {Exhaustive Search Mutation} (EMUT): Esta heurística seleciona um gene aleatório e testa todas as outras direções possíveis e irá manter a alteração que conseguir aumentar a qualidade da conformação. O \textit{tradeoff} deste operador é demandar 4 avaliações de \textit{fitness}, as quais devem ser levadas em consideração. Esta heurística tem grande potencial de melhorar o \textit{fitness} de uma conformação. 
+ 	\item \textit {Exhaustive Search Mutation} (EMUT): Esta heurística seleciona um gene aleatório e testa todas as outras direções possíveis. Manterá a alteração que conseguir aumentar a qualidade da estrutura. O \textit{tradeoff} deste operador é demandar 4 avaliações de \textit{fitness}, há mais que as demais. Esta heurística tem grande potencial de melhorar o \textit{fitness} de uma estrutura. 
  	
  	
- 	\item \textit{Local Move Operator} (LM): Esta heurística troca direções entre dois genes aleatórios consecutivos. Existem algumas condições para que esta heurística possa ser executada, por exemplo, as novas direções não podem criar movimentos redundantes. Este operador introduz um "movimento de esquina". A figura \ref{fig:localMoveOperator} apresenta um exemplo da aplicação do operador LM. 
+ 	\item \textit{Local Move Operator} (LM): Esta heurística troca direções entre dois genes aleatórios consecutivos. Existem algumas condições para que esta heurística possa ser executada, por exemplo, as novas direções não podem criar movimentos redundantes. A figura \ref{fig:localMoveOperator} apresenta um exemplo da aplicação do operador LM. 
  	
  	
  	\begin{figure}[!htb]
@@ -70,7 +76,7 @@ Para ambas as abordagens o mesmo conjunto de heurísticas de baixo nível (opera
  	\end{figure}
  	
  	
- 	\item \textit{Loop Move Operator} (LPM): Da mesma maneira que a heurística LM, esta heurística troca direções entre dois genes que estão a 5 genes de distância na sequência, criando um movimento de \textit{loop}. A figura  \ref{fig:loopMoveOperator} apresenta um exemplo da aplicação do operador LPM.
+ 	\item \textit{Loop Move Operator} (LPM): Da mesma maneira que a heurística LM, esta heurística troca direções entre dois genes que estão a 5 genes de distância na sequência. A figura  \ref{fig:loopMoveOperator} apresenta um exemplo da aplicação do operador LPM.
  	
  	
  	\begin{figure}[!htb]
