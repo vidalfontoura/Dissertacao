@@ -252,6 +252,15 @@ Para inicializar os dados dos terminais: todas as heurísicas foram executadas u
   	
  Com objetivo de avaliar os indivíduos gerados durante a busca, uma função de \textit{fitness} foi desenvolvida. A função executa a heurística de alto nível, representada por um dado indivíduo, em 3 instâncias aleatórias de um total de 11 selecionadas dos estudos anteriores. Para cada instância a heuristíca de alto nível foi executada com um tempo máximo de 30 minutos e o retorno é a melhor solução para o PDP simplificado com o modelo HP-2D. O valor de \textit{fitness} associado com a solução retornada é então normalizado entre 0 e 1. O \textit{fitness} de um indivíduo, da EG, consiste na soma das saídas das execuções com cada uma das 3 instâncias. Dessa maneira, o melhor valor possível é 3 e o pior é 0. A razão de executar a heurística de alto nível (indivíduo) com 3 instâncias é que treinar a EG com menos instâncias não seria suficiente para obter bons resultados em várias instâncias na fase de validação. 
  
+% 
+%\begin{equation}
+% 	\sum_{i = 0}^{n}E(c_i)
+% \end{equation}
+%
+%\noindent onde $ c $ é o conjunto de instâncias selecionadas de maneira aleatória no inicio do processo da EGHyPDP, sendo que o tamanho máximo, $ n $ foi definido como três.
+ 
+ 
+ 
    
 
 

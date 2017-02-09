@@ -216,7 +216,7 @@ O primeiro grupo de experimentos denominado, EGHyPDP-1, apenas gerou mecanismos 
 	O terceiro grupo de experimentos,  EGHyPDP-3, foi desenvolvido para gerar tanto mecanismos de seleção e critérios de aceitação ao mesmo tempo. Este grupo avalia a habilidade em gerar mecanismos de seleção em conjunto com critérios de aceitação. Diferentemente do grupo EGHyPDP-2  , este grupo não depende de nenhuma saída dos experimentos anteriores.
 
 
-	Para cada grupo de experimentos a fase de treino consistiu em executar o processo da EG utilizando a função de \textit{fitness} descrita no \ref{cap:Metodologia}. Na fase de validação o melhor mecanismo de seleção e o melhor critério de aceitação obtidos foram  executados com todas as 11 instâncias descritas na Tabela \ref{tab:instancias}. 
+	Para cada grupo de experimentos a fase de treino consistiu em executar o processo da EG utilizando a função de \textit{fitness} descrita no Capítulo \ref{cap:Metodologia}. Na fase de validação o melhor mecanismo de seleção e o melhor critério de aceitação obtidos foram  executados utilizando todas as 11 instâncias descritas na Tabela \ref{tab:instancias}. 
 	
 
 	
@@ -232,7 +232,7 @@ O primeiro grupo de experimentos denominado, EGHyPDP-1, apenas gerou mecanismos 
 	
 
 	
-	Este mecanismo de seleção, juntamente com o critério de aceitação (melhor ou igual) foi executado novamente por 30 vezes com um tempo máximo de 30 minutos, porém utilizando todas as 11 instâncias disponíveis. A Tabela  \ref{tab:gexp1best} apresenta os resultados de média, desvio padrão, mínimo e máximo das execuções do melhor indivíduo apresentado na Equação \ref{eq:bestSelectionMechanism}. A última linha denota o melhor valor de energia conhecido para cada instância. Os valores destacados com negrito representam o indivíduo que obteve o melhor valor conhecido para determinada instância. É possível notar analisando as duas últimas linhas, que exceto para as instâncias 7,9,10 e 11, todas as outras instâncias, o indivíduo gerado conseguiu obter os melhores valores conhecidos. Dessa maneira, é possível observar que quando o tamanho das instâncias aumentam a qualidade dos resultados obtidos degrada.
+	Este mecanismo de seleção, juntamente com o critério de aceitação (melhor ou igual) foi executado novamente por 30 vezes com um tempo limite de 30 minutos em cada execução, porém utilizando todas as 11 instâncias disponíveis. A Tabela  \ref{tab:gexp1best} apresenta os resultados de média, desvio padrão, mínimo e máximo das execuções do melhor indivíduo apresentado na Equação \ref{eq:bestSelectionMechanism}. A última linha denota o melhor valor de energia conhecido para cada instância. Os valores destacados com negrito representam os melhores valor conhecido para determinada instância. É possível notar analisando as duas últimas linhas, que exceto para as instâncias 7,9,10 e 11, todas as outras instâncias, o indivíduo gerado conseguiu obter os melhores valores conhecidos. Dessa maneira, é possível observar que quando o tamanho das instâncias aumentam a qualidade dos resultados obtidos degrada.
 	
 
 	\begin{table}[]
@@ -252,14 +252,14 @@ O primeiro grupo de experimentos denominado, EGHyPDP-1, apenas gerou mecanismos 
 	\end{table}
 	
 	\subsection{Resultados obtidos com EGHyPDP-2}
-	O melhor indivíduo (mecanismo de seleção fixo e critério de aceitação gerado) encontrado no grupo de experimento EGHyPDP-2 é apresentado na Equação \ref{eq:bestAcceptanceCriteria}. O mecanismo de seleção utilizado foi o mesmo apresentado na Equação \ref{eq:bestSelectionMechanism}. A razão por usar este mecanismo de seleção foi: os resultados obtidos pelo melhor indivíduo da execução do EGHyPDP-1 se apresentaram promissores e o objetivo era gerar um um bom critério de aceitação que combinado com um mecanismo de seleção que funcione relativamente bem.
+	O melhor indivíduo (mecanismo de seleção fixo e critério de aceitação gerado) encontrado no grupo de experimento EGHyPDP-2 é apresentado na Equação \ref{eq:bestAcceptanceCriteria}. O mecanismo de seleção utilizado foi o mesmo apresentado na Equação \ref{eq:bestSelectionMechanism}. A razão por usar este mecanismo de seleção foi: os resultados obtidos pelo melhor indivíduo da execução do EGHyPDP-1 se apresentaram promissores e o objetivo era gerar um um bom critério de aceitação combinado com um mecanismo de seleção que funcione bem.
 	 
 	 \begin{equation}
 	 \label{eq:bestAcceptanceCriteria}
 	( ( TI / Delta ) / ( ( Delta * ( ( TI / Delta ) / CI ) * Delta / Delta * TI ) - CI ) )
 	 \end{equation}
 		 
-	Este critério de aceitação, juntamente com o melhor mecanismo de seleção gerado pelo EGHyPDP-1, foram executados 30 vezes com um tempo máximo de 30 minutos utilizando as 11 instâncias disponíveis. A Tabela \ref{tab:gexp2best}  apresenta os resultados obtidos. Novamente, observando as duas ultimas linhas é possível verificar que em apenas em duas instâncias os melhores valores foram encontrados. Dessa maneira, é fácil notar que os resultados apresentados na Subseção \ref{subsection:gehypdp1results} obtiveram éxito em encontrar, para mais instâncias,  os melhores valores conhecidos. Vale mencionar, que o melhor mecanismo de seleção encontrado combinado com um critério de aceitação $"$melhor ou igual$"$  apresentou melhores resultados do que quando combinado com o melhor critério de aceitação gerado. 
+	Este critério de aceitação, juntamente com o melhor mecanismo de seleção gerado pelo EGHyPDP-1, foram executados 30 vezes com um tempo máximo de 30 minutos utilizando as 11 instâncias disponíveis. A Tabela \ref{tab:gexp2best}  apresenta os resultados obtidos. Novamente, observando as duas ultimas linhas é possível verificar que em apenas em duas instâncias os melhores valores foram encontrados. Dessa maneira, é fácil notar que os resultados apresentados na Subseção \ref{subsection:gehypdp1results} obtiveram éxito em encontrar, para mais instâncias,  os melhores valores conhecidos. Vale mencionar, que o melhor mecanismo de seleção encontrado combinado com um critério de aceitação melhor ou igual apresentou melhores resultados do que quando combinado com o melhor critério de aceitação gerado. 
 
 
 	
@@ -279,7 +279,7 @@ O primeiro grupo de experimentos denominado, EGHyPDP-1, apenas gerou mecanismos 
 		}
 	\end{table}
 	
-	\subsection{Results from EGHyPDP-3}
+	\subsection{Resultados obtidos com EGHyPDP-3}
 	
 	O melhor indivíduo gerado pelo grupo de experimento EGHyPDP-3 é composto por um mecanismo de seleção e um critério de aceitação. As Equações \ref{eq:bestSelectionMechanismWithAccept} e \ref{eq:bestSelectionMechanismWithAccept2} apresentam respectivamente o mecanismo de seleção e o critério de aceitação gerados.
 	
@@ -296,7 +296,7 @@ O primeiro grupo de experimentos denominado, EGHyPDP-1, apenas gerou mecanismos 
 	\end{equation}
 	
 	
-	A Tabela \ref{bestGExp3} apresenta os resultados da execução do mecanismo de seleção e do critério de aceitação gerados pelo grupo de experimentos EGHyPDP-3. Da mesma maneira, consistiram em 30 execuções com tempo máximo de 30 minutos. O valores destacados com negrito são os casos que o indivíduo alcançou os melhores valores conhecidos. É possível observar que apenas em dois casos isto ocorreu nas menores instâncias, entre 20 a 25 aminoácidos. Estas sequências são extremamente triviais levando apenas minutos para um  algoritmo genético encontrar as melhores soluções conhecidas. Dessa forma, é possível concluir que a geração de ambos as estratégias (seleção e aceitação), neste contexto, não apresentou bons resultados. 
+	A Tabela \ref{bestGExp3} apresenta os resultados da execução do mecanismo de seleção e do critério de aceitação gerados pelo grupo de experimentos EGHyPDP-3. Da mesma maneira, consistiram em 30 execuções com tempo máximo de 30 minutos. O valores destacados com negrito são os casos que o indivíduo alcançou os melhores valores conhecidos. É possível observar que apenas em dois casos isto ocorreu nas menores instâncias, entre 20 a 25 aminoácidos. Estas sequências são extremamente triviais levando apenas minutos para um  algoritmo genético encontrar as melhores soluções conhecidas. Dessa forma, é possível concluir que a geração de ambas as estratégias neste contexto não apresentou bons resultados. 
 	
 	\begin{table}[]
 		\centering
@@ -314,7 +314,7 @@ O primeiro grupo de experimentos denominado, EGHyPDP-1, apenas gerou mecanismos 
 		}
 	\end{table}
 	
-	Após estes experimentos foi concluído que apenas a geração de mecanismos de seleção apresentou algum potencial. Os melhores resultados conhecidos foram obtidos em 7 instâncias de um total de 11, utilizando o melhor mecanismo de seleção encontrado. No caso dos critérios de aceitação os resultados não foram como esperados. A hipótese inicial era que combinadas as estratégias de seleção e aceitação esta se complementariam. Dessa maneira, possibilitando que o \textit{framework} hiper heurístico pudesse explorar de maneira adequada o espaço de busca. Apesar do resultado promissor obtido, gerando apenas mecanismos de seleção, é possível notar a perca de desempenho em instâncias maiores (64 a 100 aminoácidos). \cite{santana2008protein} menciona a grande quantidade de mínimos locais presentes no espaço de busca da instância 7. É questionável: se a falta de um critério de aceitação, melhor do que aceitar apenas soluções melhores ou iguais, pudesse guiar a busca afim de escapar dos mínimos locais. 
+	Após estes experimentos foi concluído que apenas a geração de mecanismos de seleção apresentou algum potencial. Os melhores resultados conhecidos foram obtidos em 7 instâncias de um total de 11, utilizando o melhor mecanismo de seleção encontrado. No caso dos critérios de aceitação os resultados não foram como esperados. A hipótese inicial era que combinadas as estratégias de seleção e aceitação esta se complementariam. Dessa maneira, possibilitando que o \textit{framework} hiper heurístico pudesse explorar de maneira adequada o espaço de busca. Apesar do resultado promissor obtido, gerando apenas mecanismos de seleção, é possível notar a perca de desempenho em instâncias maiores (64 a 100 aminoácidos). É questionável: se a falta de um critério de aceitação, melhor do que aceitar apenas soluções melhores ou iguais, pudesse guiar a busca afim de escapar dos mínimos locais. 
 
 	
 	
@@ -338,7 +338,7 @@ O primeiro grupo de experimentos denominado, EGHyPDP-1, apenas gerou mecanismos 
 	
 	
 	\subsection{Discussão}
-	O EGHyPDP obteve êxito em gerar um mecanismo de seleção, que combinado com um critério de aceitação (melhor ou igual), obteve os melhores resultados em 7 instâncias. Entretanto, nas instâncias mais complexas os resultados obtidos são bem inferiores em relação aos melhores valores conhecidos. Também foi constatado que o EGHyPDP conseguiu gerar pelo menos um bom mecanismo de seleção, já no caso dos critérios de aceitação gerados nenhum apresentou bons resultados. Um novo experimento foi realizado para avaliar o comportamento dos critérios de aceitação. Este experimento consistiu em selecionar de maneira aleatória 10 indivíduos gerados pelo experimento EGHyPDP-2 e executá-los novamente para analisar o comportamento de cada um dos 10 critérios de aceitação.
+	O EGHyPDP obteve êxito em gerar um mecanismo de seleção, que combinado com um critério de aceitação que aceita soluções melhores ou iguais, obteve os melhores resultados em 7 instâncias. Entretanto, nas instâncias mais complexas os resultados obtidos são bem inferiores em relação aos melhores valores conhecidos. Também foi constatado que o EGHyPDP conseguiu gerar pelo menos um bom mecanismo de seleção, já no caso dos critérios de aceitação gerados nenhum apresentou bons resultados. Um novo experimento foi realizado para avaliar o comportamento dos critérios de aceitação. Este experimento consistiu em selecionar de maneira aleatória 10 indivíduos gerados pelo experimento EGHyPDP-2 e executá-los novamente para analisar o comportamento de cada um dos 10 critérios de aceitação.
 	De 10 indivíduos 7, estavam  aceitando apenas soluções melhores ou iguais, da mesma maneira que o critério fixo que foi utilizado no primeiro experimento EGHyPDP-1. A única diferença entre os indivíduos gerados e o critério fixo: é que os indivíduos são mais lentos que o fixo pois é necessário executar uma expressão aritmética enquanto com o critério fixo, um simples $if$ é avaliado. Mas com respeito ao comportamento os critérios de aceitação são iguais. Outros 2 indivíduos dos 10 selecionados estavam aceitando qualquer solução pior do que a solução corrente da mesma maneira que o critério "todos movimentos" descrito por \cite{burke2013hyper}. Finalmente, um indivíduo não estava aceitando nunca soluções piores da mesma maneira que o critério "apenas melhorias"        
 	 \cite{burke2013hyper}.
 	
