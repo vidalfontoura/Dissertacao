@@ -1,16 +1,14 @@
 \chapter{Experimentos}
 \label{cap:experimentos}
 
-Neste capítulo serão apresentados  os experimentos para avaliar e validar as duas estratégias apresentadas no Capítulo \ref{cap:Metodologia}. Também são apresentadas as instâncias de \textit{benchmark} para o problema PDP com o modelo HP-2D que foram utilizadas nos experimentos.
+Neste Capítulo serão apresentados  os experimentos para  validar as duas estratégias apresentadas no Capítulo \ref{cap:Metodologia}. 
+O conjunto de \textit{benchmark} para avaliar o desempenho dos das abordagens ao PDP simplificado com modelo HP-2D
 
 
-
-Um  total de 11 instâncias foram selecionadas  dos trabalhos relacionados \cite{unger1993genetic,krasnogor2002multimeme,shmygelska2002ant,shmygelska2003improved,hsu2003growth} para compor um conjunto de \textit{benchmark}. Este conjunto foi utilizado para avaliar as estratégias propostas. A Tabela \ref{tab:instancias} apresenta o tamanho, o melhor valor de energia conhecido e a fórmula da sequência de aminoácidos do modelo HP. Tanto os AEMOs e o EGHyPDP foram submetidos a esse conjunto de instâncias o qual possui diferentes níveis de complexidade. Todos os experimentos realizados nesta dissertação foram executados 30 vezes por conta do comportamento estocástico inerente às heurísticas utilizadas. Por conta das múltiplas execuções em casos que forem necessários serão apresentados os valores de média, desvio padrão, minimo e máximo referente as execuções.
-
-%TODO: COLOCAR O HARDWARE EM QUE FOI EXECUTADO OS EXPERIMENTOS
+A partir da revisão bibliográfica foi possível selecionar 11 instâncias dos trabalhos relacionados \cite{unger1993genetic,krasnogor2002multimeme,shmygelska2002ant,shmygelska2003improved,hsu2003growth} para compor um conjunto de \textit{benchmark}. Este conjunto foi utilizado para avaliar ambas estratégias propostas, a Tabela \ref{tab:instancias} apresenta o tamanho, o melhor valor de energia conhecido e a fórmula da sequência de aminoácidos para o modelo HP. Tanto os AEMOs e o EGHyPDP foram submetidos a esse conjunto de instâncias o qual possui diferentes níveis de complexidade e características. Todos os experimentos realizados nesta dissertação foram executados 30 vezes por conta do comportamento estocástico inerente às heurísticas utilizadas. Por conta das múltiplas execuções em casos que forem necessários serão apresentados os valores de média, desvio padrão, minimo e máximo referente as execuções.
 
 
-Este capítulo esta divido em duas seções para melhor apresentar os resultados obtidos por cada uma das estratégias propostas. A primeira seção descreve os experimentos realizados para avaliar a aplicação de AEMOs para o PDP utilizando o modelo HP-2D. A segunda seção apresenta os experimentos realizados para avaliar a habilidade do EGHyPDP para gerar heurísticas de alto nível para um \textit{framework} hiper heurístico, utilizando um procedimento de evolução gramatical.
+Este capítulo esta divido em duas seções para melhor apresentar os resultados obtidos por cada uma das estratégias propostas. A primeira seção descreve os experimentos realizados para avaliar a aplicação de AEMOs para o PDP utilizando o modelo HP-2D. A segunda seção apresenta os experimentos realizados para avaliar a habilidade do EGHyPDP em gerar heurísticas de alto nível para um \textit{framework} hiper heurístico, utilizando um procedimento de EG.
 
 
 
@@ -27,7 +25,7 @@ Este capítulo esta divido em duas seções para melhor apresentar os resultados
 	2       & 24      & -9                          & $HHPPHPPHPPHPPHPPHPPHPPHH $                                                                                                                                                           \\ \hline
 		3       & 25      & -8                          & $PPHPPHHP^4HHP^4HHP^4HH$                                                                                                              \\ \hline
 		4       & 36      & -14                         & $P^3HHPPHHP^5H^7PPHHP^4HHPPHPP$                                                                                       \\ \hline
-		s5       & 48      & -23                         & $PPHPPHHPPHHP^5H^{10}P^6HHPPHHPPHPPH^5$                                                                             \\ \hline
+		5       & 48      & -23                         & $PPHPPHHPPHHP^5H^{10}P^6HHPPHHPPHPPH^5$                                                                             \\ \hline
 		6       & 50      & -21                         & $HHPHPHPHPH^4PHP^3HP^3HP^4HP^3HP^3HPH^4{{PH}}^4H$ \\ \hline
 		7       & 60      & -36                         & $PPH^3PH^8P^3H^{10}PHP^3H^{12}P^4H^6PHHPHP$      \\ \hline
 		8       & 64      & -42                         & $H^{12}PHPH{{PPHH}}^2PPH{{PPHH}}^2PPH{{PPHH}}^2PPHPHPH^{12}$                          \\ \hline
@@ -52,11 +50,11 @@ Este capítulo esta divido em duas seções para melhor apresentar os resultados
 
 \section{Resultados dos AEMOs aplicados ao PDP}
 
-Nesta seção serão apresentados o cojunto de experimentos realizados utilizando a abordagem multi-objetiva com os algoritmos NSGAII e IBEA. Inicialmente, serão apresentadas as configurações utilizadas nos algoritmos. Em seguida, uma comparação entre os resultados de cada algoritmo é apresentada. Finalmente, uma comparação com os resultados dos trabalhos relacionados que tratam o problema de maneira mono-objetiva é apresentada.
+Nesta seção serão apresentados o cojunto de experimentos realizados utilizando a abordagem multi-objetiva com os algoritmos NSGAII e IBEA. Inicialmente, serão apresentadas as configurações utilizadas para os algoritmos. Em seguida, uma comparação entre os resultados de cada algoritmo é apresentada. Por fim, uma comparação com os resultados dos trabalhos relacionados, que tratam o PDP de maneira mono-objetiva, é apresentada.
 
 As configurações utilizadas nos AEMOs foi definida baseada no tamanho das instâncias. Para instâncias menores o tamanho da população e o número máximo de avaliações são menores. Já para as sequências maiores os valores utilizados são superiores. A Tabela \ref{tab:popConfiguration} apresenta para cada instância: o tamanho da instância, o tamanho da população e número máximo de avaliações.
 
-No caso das versões padrão dos algoritmos IBEA e NSGAII as probabilidades de cruzamento e mutação foram configuradas com 0.9 e 0.01 respectivamente. A segunda abordagem não necessita de probabilidades pois os operadores sempre serão aplicados para gerar novos indivíduos. No caso dos algoritmos IBEA e M\_IBEA a população auxiliar foi mantida em 200 para todas as instâncias.
+No caso das versões padrão dos algoritmos IBEA e NSGAII as probabilidades de cruzamento e mutação foram configuradas com 0.9 e 0.01 respectivamente. A segunda abordagem não necessita de probabilidades, pois os operadores sempre serão aplicados para gerar novos indivíduos. No caso dos algoritmos IBEA e M\_IBEA a população auxiliar foi mantida em 200 para todas as instâncias.
 
 \begin{table}[!htb]
 	\centering
@@ -82,7 +80,7 @@ No caso das versões padrão dos algoritmos IBEA e NSGAII as probabilidades de c
 
 Conforme mencionado no Capítulo \ref{cap:Metodologia} o indicador \textit{hypervolume} foi utilizado para comparar o desempenho dos AEMOs. Para cada algoritmo a média e o desvio padrão do \textit{hypervolume}  referente a 30 execuções é apresentada na Tabela \ref{tab:hypervolumeResults}. Os maiores valores estão em negrito e indicam uma maior aproximação da fronteira de Pareto \cite{barr1998economics}.
 
-Observando a Tabela \ref{tab:hypervolumeResults} é possível notar que, exceto para a instância $1$, para todas outras instâncias o algoritmo M\_IBEA (versão modificada \textit{backtrack} e um \textit{pool} de operadores) obteve a maior média de \textit{hypervolume}. No caso da instância $1$, o IBEA sem modificações obteve a média mais alta. Também vale mencionar, que quando comparando apenas o NSGAII e o M\_NSGAII, a versão modificada obteve as melhores médias. De maneira geral, os AEMOs com \textit{backtrack} e o \textit{pool} de operadores (M\_IBEA and M\_M_NSGAII) apresentaram uma melhoria considerável em relação aos AEMOs tradicionais. Na Tabela \ref{tab:hypervolumeResults}, as células do M\_IBEA que estão marcados de cinza apresentaram diferença estatística de acordo com o teste de  Kruskal-Wallis \cite{mckight2010kruskal} entre M\_IBEA e todos os outros algoritmos (NSGAII, M\_NSGAII e IBEA).
+Observando a Tabela \ref{tab:hypervolumeResults} é possível notar que, exceto para a instância $1$, em todas instâncias o algoritmo M\_IBEA (versão modificado com \textit{backtracking} e o \textit{pool} de operadores) obteve a maior média de \textit{hypervolume}. No caso da instância $1$, o IBEA sem modificações obteve a média mais alta. Também vale mencionar, que quando comparando apenas o NSGAII e o M\_NSGAII, a versão modificada obteve as melhores médias. De maneira geral, os AEMOs com \textit{backtracking} e o \textit{pool} de operadores (M\_IBEA and M\_M_NSGAII) apresentaram uma melhoria considerável em relação aos AEMOs tradicionais. Na Tabela \ref{tab:hypervolumeResults}, as células do M\_IBEA que estão marcados com cinza apresentaram diferença estatística de acordo com o teste de  Kruskal-Wallis \cite{mckight2010kruskal} entre os outros algoritmos (NSGAII, M\_NSGAII e IBEA).
 
 
 \begin{table}[]
@@ -128,7 +126,7 @@ Observando a Tabela \ref{tab:hypervolumeResults} é possível notar que, exceto 
 
 
 \subsection{Comparação com outras abordagens mono-objetivas}
-Esta subseção apresenta a comparação dos resultados obtidos pelas melhores variantes de cada AEMO com outras abordagens mono-objetivas propostas em trabalhos anteriores. Os trabalhos comparados são: GA \cite{unger1993genetic}, MMA \cite{krasnogor2002multimeme}, ACO \cite{shmygelska2002ant},  NewACO \cite{ shmygelska2003improved} e PERM \cite{hsu2003growth}. Todos os trabalhos mencionados tratam-se de abordagens mono-objetivas, considerando apenas o valor de energia referente as estruturas de proteínas. A Tabela \ref{tab:comparison} apresenta os melhores resultados, em termos da energia, pelas versões modificadas dos AEMOs, assim como os melhores resultados obtidos pelos estudos anteriores.
+Esta subseção apresenta a comparação dos resultados obtidos pelas melhores variantes de cada AEMO com outras abordagens mono-objetivas propostas em trabalhos anteriores. Os trabalhos comparados são: EDA \cite{santana2008protein}, GA \cite{unger1993genetic}, MMA \cite{krasnogor2002multimeme}, ACO \cite{shmygelska2002ant},  NewACO \cite{ shmygelska2003improved} e PERM \cite{hsu2003growth}. Todos os trabalhos mencionados tratam-se de abordagens mono-objetivas, considerando apenas o valor de energia referente as estruturas de proteínas. A Tabela \ref{tab:comparison} apresenta os melhores resultados, em termos da energia, pelas versões modificadas dos AEMOs, assim como os melhores resultados obtidos pelos estudos anteriores.
 
 
 
@@ -182,7 +180,7 @@ Esta subseção apresenta a comparação dos resultados obtidos pelas melhores v
 	\end{tabular}
 \end{table}
 
-No caso das 3 primeiras instâncias $1$, $2$ e $3$ a versões modificadas dos AEMOs (M\_NSGAII e M\_IBEA) obtiveram os mesmos valores mínimos de energia que os estudos  anteriores considerados nesta comparação. No caso da instância $4$, exceto pelo algoritmo M\_NSGAII, todos os outros atingiram o valor de -14. Já no caso da instância $5$ o algoritmo M\_IBEA e 4 algoritmos mono-objetivo obtiveram o valor ótimo de 23. Entretanto, M\_NSGAII e os demais algoritmos obtiveram um valor inferior de -22.    
+No caso das instâncias $1$, $2$ e $3$ a versões modificadas dos AEMOs (M\_NSGAII e M\_IBEA) obtiveram os mesmos valores mínimos de energia que os estudos  anteriores considerados nesta comparação. No caso da instância $4$, exceto pelo algoritmo M\_NSGAII, todos os outros atingiram o valor de -14. Já no caso da instância $5$ o algoritmo M\_IBEA e 4 algoritmos mono-objetivo obtiveram o valor ótimo de 23. Entretanto, M\_NSGAII e os demais algoritmos obtiveram um valor inferior de -22.    
 
 Já no caso da instância $6$ todos os algoritmos obtiveram o valor ótimo de -21. Para a instância $7$ o algoritmo M\_IBEA obteve -35 da mesma maneira que o EDA. Entretanto o valor ótimo para sequência $7$ é -36 e foi obtido pelo NewACO e PERM. Para a instância $8$ o algoritmo M\_IBEA obteve o valor ótimo -42 mesmo valor que o EDA  e NewACO. Todos as outras abordagens obtiveram valores inferiores. No caso das instâncias 9,10 e 11, as maiores, apenas o algoritmo PERM conseguiu obter os melhores resultados. Estas instâncias são as mais complexas devido ao seu tamanho. Dessa maneira, os algoritmos tendem a ficar presos em mínimos locais. Consequentemente, nestes casos os algoritmos necessitam de mecanismos inteligentes para escapar de mínimos locais e guiar a busca para regiões promissoras.
 
