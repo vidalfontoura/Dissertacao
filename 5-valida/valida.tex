@@ -182,15 +182,15 @@ Esta subseção apresenta a comparação dos resultados obtidos pelas melhores v
 
 No caso das instâncias $1$, $2$ e $3$ a versões modificadas dos AEMOs (M\_NSGAII e M\_IBEA) obtiveram os mesmos valores mínimos de energia que os estudos  anteriores considerados nesta comparação. No caso da instância $4$, exceto pelo algoritmo M\_NSGAII, todos os outros atingiram o valor de -14. Já no caso da instância $5$ o algoritmo M\_IBEA e 4 algoritmos mono-objetivo obtiveram o valor ótimo de 23. Entretanto, M\_NSGAII e os demais algoritmos obtiveram um valor inferior de -22.    
 
-Já no caso da instância $6$ todos os algoritmos obtiveram o valor ótimo de -21. Para a instância $7$ o algoritmo M\_IBEA obteve -35 da mesma maneira que o EDA. Entretanto o valor ótimo para sequência $7$ é -36 e foi obtido pelo NewACO e PERM. Para a instância $8$ o algoritmo M\_IBEA obteve o valor ótimo -42 mesmo valor que o EDA  e NewACO. Todos as outras abordagens obtiveram valores inferiores. No caso das instâncias 9,10 e 11, as maiores, apenas o algoritmo PERM conseguiu obter os melhores resultados. Estas instâncias são as mais complexas devido ao seu tamanho. Dessa maneira, os algoritmos tendem a ficar presos em mínimos locais. Consequentemente, nestes casos os algoritmos necessitam de mecanismos inteligentes para escapar de mínimos locais e guiar a busca para regiões promissoras.
+Já no caso da instância $6$ todos os algoritmos obtiveram o valor ótimo de -21. Para a instância $7$ o algoritmo M\_IBEA obteve -35 da mesma maneira que o EDA. Entretanto o valor ótimo para sequência $7$ é -36 e foi obtido pelo NewACO e PERM. Para a instância $8$ o algoritmo M\_IBEA obteve o valor ótimo -42 mesmo valor que o EDA  e NewACO. Os demais algoritmos obtiveram valores inferiores. No caso das instâncias 9,10 e 11, as maiores, apenas o algoritmo PERM conseguiu obter os melhores resultados. Estas instâncias são as mais complexas devido ao seu tamanho. Dessa maneira, os algoritmos tendem a ficar presos em mínimos locais. Consequentemente, nestes casos os algoritmos necessitam de mecanismos inteligentes para escapar de mínimos locais e guiar a busca para regiões promissoras.
 
-Após analisar os resultados foi possível constatar que apenas um AEMO, o M\_IBEA conseguiu encontrar os melhores resultados para 7 instâncias de 11. Entretanto, nas instâncias mais complexas seu desempenho é degradado. Já os outros AEMOs propostos não tiveram resultados expressivos.
+Após analisar os resultados foi possível constatar que apenas um AEMO, o M\_IBEA conseguiu encontrar os melhores resultados para 7 instâncias de 11. Entretanto, nas instâncias mais complexas seu desempenho é degradado. Já os outros AEMOs propostos não obtiveram resultados expressivos.
 
 \subsection{Conclusão dos experimentos utilizando os AEMOs}
 
-AEMOs são algoritmos evolucionários que visam a otimização de múltiplos objetivos ao mesmo tempo. Estes apresentam bons resultados quando aplicados a problemas de várias áreas da ciência.  Nestes experimentos dois AEMOs foram aplicados ao problema PDP utilizando o modelo HP-2D. Duas abordagens multi-objetivas foram apresentadas: a primeira utiliza as versões padrão dos algoritmos IBEA e NSGAII; a segunda abordagem consistiu em modificar o IBEA e NSGAII adicionando a inicialização com \textit{backtrack} e o \textit{pool} de operadores, com objetivo de melhorar os resultados. Dado os resultados se tornou claro que as versões modificadas dos algoritmos tem uma maior habilidade em explorar o espaço de busca quando comparados com as versões padrão.  
+AEMOs são algoritmos evolucionários que visam a otimização de múltiplos objetivos em paralelo. Estes apresentam bons resultados quando aplicados a problemas de várias áreas da ciência.  Nestes experimentos dois AEMOs foram aplicados ao problema PDP utilizando o modelo HP-2D. Duas abordagens multi-objetivas foram apresentadas: a primeira utiliza as versões padrão dos algoritmos IBEA e NSGAII; a segunda abordagem consistiu em modificar o IBEA e NSGAII adicionando a inicialização com \textit{backtrack} e o \textit{pool} de operadores, com objetivo de melhorar os resultados. Dado os resultados se tornou claro que as versões modificadas dos algoritmos tem uma maior habilidade em explorar o espaço de busca quando comparados com as versões padrão.  
 
-Também foi possível verificar que a abordagem multi-objetiva utilizando o NSGAII e o M\_NSGAII também não apresentou resultados satisfatórios, tanto em termos de \textit{hypervolume} como valores de energia,  quando comparado com o IBEA e a versão modificada. Mesmo a versão padrão de IBEA obteve melhores resultados do que ambas as versões do NSGAII. Porém, a versão modificada M\_IBEA apresentou os melhores resultados dentre os outros AEMOs propostos. Isto sugere que apenas uma formulação multi-objetiva não é suficiente para atingir bons resultados em termos de energia das estruturas. Com a inicialização via \textit{backtrack}, \textit{pool} de operadores e a maneira sofisticada de explorar o espaço de busca multi-objetivo do IBEA poderão possibilitar resultados promissores.
+Também foi possível verificar que a abordagem multi-objetiva utilizando o NSGAII e o M\_NSGAII também não apresentou resultados satisfatórios, tanto em termos de \textit{hypervolume} como valores de energia,  quando comparado com o IBEA e a versão modificada. Mesmo a versão padrão de IBEA obteve melhores resultados do que ambas as versões do NSGAII. Porém, a versão modificada M\_IBEA apresentou os melhores resultados dentre todos AEMOs propostos. Isto sugere que apenas uma formulação multi-objetiva não é suficiente para atingir bons resultados em termos de energia das estruturas. Com a inicialização via \textit{backtracking}, \textit{pool} de operadores e a maneira sofisticada de explorar o espaço de busca multi-objetivo do IBEA  possibilitaram resultados promissores.
 
 Dado os resultados é indiscutível que o algoritmo M\_IBEA foi capaz de escapar dos mínimos locais em vários os casos, exceto para as instâncias 7,9,10 e 11. Estas instâncias são as mais complexas e muitas propostas não conseguem obter os melhores resultados. Dentre  os trabalhos relacionados apenas o PERM consegue  explorar o espaço de busca o suficiente para encontrar os melhores resultados.
 
@@ -202,7 +202,7 @@ Os resultados obtidos pelo M\_IBEA abrem um amplo campo de possibilidades para a
 
 \section{Resultados obtidos com EGHyPDP}
 
-Nesta seção, serão discutidos  os experimentos conduzidos com objetivo de avaliar se o \textit{design} automático de heurísticas de alto nível para um \textit{framework} hiper-heurístico. Este \textit{framework} foi aplicado ao PDP para avaliar seu desempenho. A implementação do EGHyPDP ocorreu durante o período de desenvolvimento desta dissertação. 
+Nesta seção, serão discutidos  os experimentos conduzidos com objetivo de avaliar o \textit{design} automático de heurísticas de alto nível para um \textit{framework} hiper-heurístico. Este \textit{framework} foi aplicado ao PDP para avaliar seu desempenho. A implementação do EGHyPDP ocorreu durante o período de desenvolvimento desta dissertação. 
 
 
 Três grupos de experimentos foram desenvolvidos e executados. O primeiro grupo de experimentos tratou apenas de gerar mecanismos de seleção. O segundo grupo foi desenvolvido com objetivo de gerar apenas critérios de aceitação. E por último o terceiro grupo foi desenvolvido com intuito de gerar em paralelo tanto mecanismos de seleção como critérios de aceitação.
@@ -215,15 +215,10 @@ O primeiro grupo de experimentos denominado, EGHyPDP-1, apenas gerou mecanismos 
 	
 	O terceiro grupo de experimentos,  EGHyPDP-3, foi desenvolvido para gerar tanto mecanismos de seleção e critérios de aceitação ao mesmo tempo. Este grupo avalia a habilidade em gerar mecanismos de seleção em conjunto com critérios de aceitação. Diferentemente do grupo EGHyPDP-2  , este grupo não depende de nenhuma saída dos experimentos anteriores.
 
-% since it
-%generates both mechanisms without fixing any component.
-	Para cada grupo de experimentos a fase de treino consistiu em executar o processo da evolução gramatical. Foram utilizadas 3  instâncias (2,5 e 10 da Tabela \ref{tab:instancias}), com diferentes complexidades, na função de \textit{fitness} da EG. Na fase de validação o melhor mecanismo de seleção e o melhor critério de aceitação foram combinados e executados com todas as 11 instâncias descritas na Tabela \ref{tab:instancias}. 
-	
-	%TODO: escrever na metodologia sobre a funao de fitness escrever uma funcao bunitinha 
 
+	Para cada grupo de experimentos a fase de treino consistiu em executar o processo da EG utilizando a função de \textit{fitness} descrita no \ref{cap:Metodologia}. Na fase de validação o melhor mecanismo de seleção e o melhor critério de aceitação obtidos foram  executados com todas as 11 instâncias descritas na Tabela \ref{tab:instancias}. 
 	
 
-	
 	
 	\subsection{Resultados obtidos com EGHyPDP-1}
 	\label{subsection:gehypdp1results}
