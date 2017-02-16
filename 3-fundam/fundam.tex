@@ -6,6 +6,7 @@
 
 
 \section{AEs - Algoritmos Evolucionários}
+\label{sec:aemos}
 
 
 Um algoritmo evolucionário (AE) é uma técnica de busca, altamente paralela, inspirada na teoria da seleção natural e reprodução genética de Charles Darwin. De acordo com a teoria de Darwin, a seleção natural irá favorecer os indíviduos que forem mais aptos, dessa maneira, estes indíviduos tem uma maior probabilidade
@@ -13,13 +14,13 @@ de reprodução. Indivíduos com mais descendentes tem uma chance maior de perpe
 de soluções codificadas em cromossomos artificais -- estruturas de dados utilizadas para representar soluções factíveis para um dado problema \cite{pacheco1999algoritmos}.
 
 De maneira geral, problemas reais de otimização possuem múltiplos objetivos a serem minimizados/maximizados e estão presentes em muitas áreas do conhecimento.
-Para otimizar problemas multiobjetivos, dois ou mais objetivos são considerados os quais geralmenta são conflitantes. Para estes problemas é impossível encontrar uma
+Para otimizar problemas multiobjetivos dois ou mais objetivos são considerados, os quais geralmente são conflitantes. Para estes problemas é impossível encontrar uma
 única solução ótima. Um conjunto de soluções é encontrado avaliando a dominância de Pareto \cite{pareto} entre as soluções. O objetivo principal é encontrar o conjunto  
 de soluções que sejam não dominadas entre si. Uma solução domina outra, se e somente se, for melhor em pelos um dos objetivos, sem ser pior em qualquer outro.
 Este conjunto de soluções constitui a fronteira de Pareto. Encontrar a fronteira real de Pareto é um problema NP-Completo \cite{fonseca2005tutorial}, dessa maneira,
 o objetivo é encontrar uma boa aproximação da fronteira real.
 
-Algoritmos Evolucionários Multi-Objetivos (AEMOs) são extensões de AEs para problemas multi-objetivos os quais aplicam
+Algoritmos Evolucionários Multi-Objetivos (AEMOs) são extensões de AEs para problemas multi-objetivos, os quais aplicam
 conceitos da dominância de Pareto para criar diferentes estratégias para evoluir e manter a diversidade das soluções.
 Nesta dissertação foram explorados dois AEMOs: NSGAII \cite{deb2002fast} and IBEA \cite{zitzler2004indicator}.
 %=====================================================
@@ -31,12 +32,12 @@ O algoritmo \ref{alg:nsgaII} apresenta o pseudo código do NSGAII. O algoritmo r
 de avaliações. O algoritmo inicia criando uma população com tamanho $N$ chamada $P_0$. A população $P_0$ é classificada de acordo com aptidão 
 e a relação de não dominância. A população $P_0$ é submitida ao operador de seleção: torneio binário para selecionar duas soluções que serão utilizadas
 para gerar descendentes. Operadores de cruzamento e mutação são aplicados na soluções selecionadas gerando duas soluções distintas descendentes. 
-Ao fim do processo de reprodução as soluções descendentes são avaliadas e adicionadas a população chamada $Q_0$.
+Ao fim do processo de reprodução, as soluções descendentes são avaliadas e adicionadas a população chamada $Q_0$.
 
 Após esta estapa, $P_0$ e $Q_0$ são adicionadas em uma população auxiliar chamada $R$. Utilizando o conceito de não dominância, $R$ é ordenada 
 criando fronteiras, onde cada solução da primeira fronteira não é dominada por nenhuma outra solução, já soluções da segunda fronteira são dominadas
 apenas por soluções contidas na primeira fronteira, e assim por diante. Para cada fronteira, as soluções são avaliadas utilizando um mecanismo
-de \textit{Crowding-Distance} as soluções com maiores valores irão ser adicionadas na população da próxima geração chamada $P_t$ onde $t$ é a
+de \textit{Crowding-Distance (CD)}. Soluções com maiores valores de CD irão ser adicionadas na população da próxima geração chamada $P_t$, no qual $t$ é a
 avaliação corrente.
 
 Após criar e preencher $P_t$ com as soluções não dominadas de todas as fronteiras, a população $P_t$ é avaliada e então passa para um novo
@@ -91,20 +92,18 @@ para avaliar a qualidade da aproximação de fronteiras. O indicador \textit{hyp
 das fronteiras.
 
 No algoritmo IBEA, indicadores de qualidade são	utilizados para avaliar o conjunto de soluções não dominadas \cite{figueiredo2013algoritmo}.
-Para utilizar o IBEA, é necessário definir qual indicador será utilizado para associar cada solução a um valor scalar. Um dos indicadores bastante utilizados
-em conjunto com IBEA é o \textit{hypervolume} por conta da sua capacidade de avaliar a convergência e a diversidade do espaço de busca ao mesmo \cite{ishibuchi2008evolutionary}.
+Para utilizar o IBEA, é necessário definir qual indicador será utilizado para associar cada solução a um valor scalar. Um dos indicadores bastante utilizados é o \textit{hypervolume} por conta da sua capacidade de avaliar a convergência e a diversidade do espaço de busca ao mesmo \cite{ishibuchi2008evolutionary}.
 
 \begin{equation} \label{eq:ibeaFitness}
 F(x_i) = \sum_{x_j \in (P-x_i)} {-e^\frac{-I_{Hy}(x_j,x_i)}{k}}
 \end{equation}
 
 A equação de \textit{fitness} do IBEA é apresentada pela equação \ref{eq:ibeaFitness} e é utilizada para calcular a contribuição de uma dada solução
-para o valor do indicador referente a população, onde $k$ é um fator escalar dependente do $I_{Hy}$, o qual representa o indicador de qualidade sendo utilizado.
-O valor $F(x_i)$ corresponde à perda de qualidade da aproximação, da fronteira real de Pareto, se a solução $x_i$ for removida da população \cite{figueiredo2013algoritmo}.
+para o valor do indicador referente a população, onde $k$ é um fator escalar dependente do $I_{Hy}$, o qual representa o indicador de qualidade sendo utilizado. O valor $F(x_i)$ corresponde à perda de qualidade da aproximação, da fronteira real de Pareto, se a solução $x_i$ for removida da população \cite{figueiredo2013algoritmo}.
 
 
 O Algoritmo \ref{alg:ibea} recebe como parametro o tamanho da população $N$, o número máximo de avaliações $T$ e o fator escalar $k$. O processo se inicia
-criando uma população $P$ de tamanho $N$. Até que o critério de parada seja atingido os seguintes passos irão se repetir: um torneio binário 
+criando uma população $P$ de tamanho $N$. Os seguintes passos irão se repetir até que o critério de parada seja atingido: um torneio binário 
 para selecionar indivíduos, reprodução (cruzamento e mutação) dos indivíduos selecionados para gerar descendentes, adicionar os descedentes na população
 auxiliar $\overline P$. Após a reprodução, a população $\overline P$ é unida com $P$. Enquanto o tamanho de $P$ exceder $N$, o pior indíviduo avaliado
 pela equação \ref{eq:ibeaFitness} é removido da população $P$ e os indíviduos restantes são re-avaliados. Quando o algoritmo terminar irá retornar o conjunto
@@ -150,7 +149,7 @@ de soluções não dominadas é retornado.
 \section{Hiper-Heurísticas }
 \label{Hiper-Heuristicas}
 
-Apesar do sucesso de métodos heurísticos e outros métodos de busca na tarefa de resolver problemas de busca computacional difíceis ainda existem dificuldades em generalizar estes métodos para diferentes problemas ou até mesmo para diferentes instâncias de um mesmo problema. Esta dificuldade provém principalmente da necessidade de selecionar os parâmetros e configurações mais adequados dos algoritmos para um problema ou para uma dada instância de um problema. Também vale mencionar a pouca orientação na tarefa de definir estes parâmetros.  É neste contexto que surge uma questão: é possível automatizar o projeto e parametrização de métodos heurísticos para resolver problemas de busca computacional difíceis? \cite{burke2013hyper}. A ideia principal é desenvolver algoritmos que sejam mais genéricos do que as implementações de metodologias atuais \cite{burke2013hyper}. As principais abordagens já propostas para este desafio podem ser classificadas em duas categorias: configuração estática (\textit{offline}) e controle dinâmico (\textit{online}). Abaixo são apresentadas algumas abordagens já propostas na literatura:
+Apesar do sucesso de métodos heurísticos e outros métodos de busca na tarefa de resolver problemas de busca computacional difíceis, ainda existem dificuldades em generalizar estes métodos para diferentes problemas ou até mesmo para diferentes instâncias de um mesmo problema. Esta dificuldade provém principalmente da necessidade de selecionar os parâmetros e configurações mais adequados dos algoritmos para um problema ou para uma dada instância de um problema. Também vale mencionar a pouca orientação na tarefa de definir estes parâmetros.  É neste contexto que surge uma questão: é possível automatizar o projeto e parametrização de métodos heurísticos para resolver problemas de busca computacional difíceis? \cite{burke2013hyper}. A ideia principal é desenvolver algoritmos que sejam mais genéricos do que as implementações de metodologias atuais \cite{burke2013hyper}. As principais abordagens já propostas para este desafio podem ser classificadas em duas categorias: configuração estática (\textit{offline}) e controle dinâmico (\textit{online}). Abaixo são apresentadas algumas abordagens já propostas na literatura:
 
 \begin{itemize}
 	\item Configuração Estática (Offline):
@@ -172,13 +171,13 @@ Apesar do sucesso de métodos heurísticos e outros métodos de busca na tarefa 
 \end{itemize}
 
 
-Esta seção tratará apenas de hiper-heurísticas e suas particularidades. Uma hiper-heurística pode ser vista como uma metodologia de alto nível, a qual seleciona ou cria heurísticas para resolver um dado problema ou instância de um problema. \cite{burke2013hyper}. O objetivo principal é tentar encontrar ou construir a heurística mais adequada para cada situação. As hiper-heurísticas diferem dos métodos padrão de busca pois operam sobre o espaço de busca de heurísticas que por sua vez operam sobre o espaço de busca de um problema. Além disso, hiper-heurísticas são independentes do problema. Tradicionalmente frameworks hiper-heurísticos possuem dois níveis: \cite{sabar2015automatic}
+Esta seção tratará apenas de hiper-heurísticas e suas particularidades. Uma hiper-heurística pode ser vista como uma metodologia de alto nível, a qual seleciona ou cria heurísticas para resolver um dado problema ou instância de um problema. \cite{burke2013hyper}. O objetivo principal é tentar encontrar ou construir a heurística mais adequada para cada situação. As hiper-heurísticas diferem dos métodos padrão de busca, pois operam sobre o espaço de busca de heurísticas que por sua vez operam sobre o espaço de busca de um problema. Além disso, hiper-heurísticas são independentes do problema. Tradicionalmente frameworks hiper-heurísticos possuem dois níveis \cite{sabar2015automatic}: 
 
-\textbf{Heurísticas de baixo nível}:  Um conjunto de heurísticas de baixo nível específicas. Estas heurísticas costumam diferir entre domínios de problemas. São exemplos: operadores de cruzamento, mutação e buscas locais. Em alguns casos, meta-heurísticas também, dependendo da modelagem do \textit{framework} hiper-heurístico, podem assumir o papel de heurísticas de baixo nível. 
+\textbf{Heurísticas de baixo nível}:  Um conjunto de heurísticas de baixo nível específicas. Estas heurísticas costumam diferir entre domínios de problemas. São exemplos: operadores de cruzamento, mutação e buscas locais. Em alguns casos, meta-heurísticas, dependendo da modelagem do \textit{framework} hiper-heurístico, também podem assumir o papel de heurísticas de baixo nível. 
 
-\textbf{Heurísticas de alto nível}: Geralmente consistem em dois componentes: mecanismo de seleção, que gerencia quais heurísticas de baixo nível devem ser aplicadas durante a busca; um critério de aceitação, que tem a responsabilidade de decidir se irá aceitar ou não uma solução gerada, a partir da aplicação de uma heurística de baixo nível. A responsabilidade do mecanismo de seleção é selecionar, de um \textit{pool} de heurísticas de baixo nível, a heurística que for mais adequada naquele momento. Geralmente, a escolha da heurística de baixo nível é crucial para uma boa exploração do espaço de busca, evitando que a busca fique confinada em uma região específica \cite{sabar2015automatic}. O objetivo do critério de aceitação é auxiliar o processo de busca a evitar mínimos locais assim como explorar diferentes regiões através do aceite ou rejeição de soluções geradas \cite{chakhlevitch2008hyperheuristics}. Espera-se que um bom critério de aceitação deva atingir um bom equilíbrio entre aceitar soluções melhores assim como soluções diversificadas se a busca estiver presa em um mínimo local \cite{sabar2015automatic}. Ambos os componentes devem ser independentes de conhecimento sobre o problema.
+\textbf{Heurísticas de alto nível}: Geralmente consistem em dois componentes: mecanismo de seleção, que gerencia quais heurísticas de baixo nível devem ser aplicadas durante a busca; um critério de aceitação, que tem a responsabilidade de decidir se irá aceitar ou não uma solução gerada, a partir da aplicação de uma heurística de baixo nível. A responsabilidade do mecanismo de seleção é selecionar, de um \textit{pool} de heurísticas de baixo nível, a heurística que for mais adequada naquele momento. Geralmente, a escolha da heurística de baixo nível é crucial para uma boa exploração do espaço de busca, evitando que a busca fique confinada em uma região específica \cite{sabar2015automatic}. O objetivo do critério de aceitação é auxiliar o processo de busca a evitar mínimos locais assim como explorar diferentes regiões através do aceite ou rejeição de soluções geradas \cite{chakhlevitch2008hyperheuristics}. Espera-se que um bom critério de aceitação deva atingir um bom equilíbrio entre aceitar soluções melhores assim, como soluções diversificadas caso a busca esteja presa em um mínimo local \cite{sabar2015automatic}. Ambos os componentes devem ser independentes de conhecimento sobre o problema.
 
-A imagem \ref{img:hiperheuristico} apresenta um diagrama exemplificando os níveis de um \textit{framework} hiper-heurístico e suas características. Note que entre os níveis (alto e baixo) existe uma barreira de domínio, ou seja, apenas as heurísticas de baixo nível são dependentes de conhecimento do problema ou instância e as heurísticas de alto nível não são dependentes do problema. 
+A Imagem \ref{img:hiperheuristico} apresenta um diagrama exemplificando os níveis de um \textit{framework} hiper-heurístico e suas características. Note que entre os níveis (alto e baixo) existe uma barreira de domínio, ou seja, apenas as heurísticas de baixo nível são dependentes de conhecimento do problema ou instância enquanto as heurísticas de alto nível não são dependentes do problema. 
 
 \begin{figure}[!htb]
 	\centering
@@ -189,7 +188,7 @@ A imagem \ref{img:hiperheuristico} apresenta um diagrama exemplificando os níve
 
 
 Como cada instância ou problema possui um espaço de busca com diferentes características, os componentes da heurística de alto nível têm um grande impacto no desempenho de um \textit{framework} hiper-heurístico. Esta é uma das razões de existir um grande interesse de pesquisa em desenvolver  novos mecanismos de seleção, assim como diferentes critérios de aceitação \cite{burke2013hyper}. Um bom mecanismo de seleção deve selecionar a heurística mais adequada em um dado momento, para guiar a busca para regiões promissoras do espaço de busca. 
-Ao utilizar hiper-heurísticas, espera-se encontrar o método correto ou a sequência de heurísticas que mais se adequam a um problema ou instância ao invés de tentar resolver o problema diretamente. Entretanto, um importante objetivo é desenvolver métodos genéricos, que têm  potencial em produzir soluções com uma qualidade aceitável, utilizando um conjunto de heurísticas de baixo nível fácil de implementar. As hiper-heurísticas podem ser classificadas de diversas maneiras. A figura \ref{img:classificacaoHiperHeuristicas} apresenta as possíveis classificações descritas na literatura. 
+Ao utilizar hiper-heurísticas, espera-se encontrar o método correto ou a sequência de heurísticas que mais se adequam a um problema ou instância em vez de tentar resolver o problema diretamente. Entretanto, um importante objetivo é desenvolver métodos genéricos, que têm  potencial em produzir soluções com uma qualidade aceitável, utilizando um conjunto de heurísticas de baixo nível com fácil implementação. As hiper-heurísticas podem ser classificadas de diversas maneiras. A Figura \ref{img:classificacaoHiperHeuristicas} apresenta as possíveis classificações descritas na literatura. 
 
 \begin{figure}[!htb]
 	\centering
@@ -198,13 +197,13 @@ Ao utilizar hiper-heurísticas, espera-se encontrar o método correto ou a sequ�
 	\label{img:classificacaoHiperHeuristicas}
 \end{figure}
 
-A primeira classificação de hiper-heurísticas é baseada na sua fonte de conhecimento durante a busca: \textit{Online} é quando a hiper-heurística toma decisões de maneira instantânea, baseando-se em métricas durante sua execução, não necessitando de treinamento prévio. \textit{Offline} necessita de treinamento prévio; estes \textit{frameworks}  tomam suas decisões baseados no que foi aprendido apenas durante o treinamento, sem atualização deste conhecimento. Os \textit{frameworks} classificados como \textit{No-Learning} não possuem nenhuma forma de aprendizagem. Outra classificação considera como as heurísticas de baixo nível operam sobre as soluções do problema. As heurísticas ditas perturbativas realizam pequenas perturbações nas soluções gerando novas soluções. Já heurísticas construtivas criam soluções do zero passo a passo e normalmente avaliam cada etapa da construção para obter \textit{feedback} sobre o seu desempenho. Uma última  classificação, mas não menos importante, divide as hiper-heurísticas de acordo com a  natureza do seu espaço de busca. As hiper-heurísticas de seleção selecionam sequências de heurísticas a serem aplicadas para resolver um dado problema ou instância. Já as hiper-heurísticas de geração operam gerando novas heurísticas com objetivo de resolver um problema ou instância.
+A primeira classificação de hiper-heurísticas é baseada na sua fonte de conhecimento durante a busca: \textit{Online} é quando a hiper-heurística toma decisões de maneira instantânea, baseando-se em métricas durante sua execução, não necessitando de treinamento prévio. \textit{Offline} necessita de treinamento prévio; estes \textit{frameworks}  tomam suas decisões baseados no que foi aprendido apenas durante o treinamento, sem atualização deste conhecimento. Os \textit{frameworks} classificados como \textit{No-Learning} não possuem nenhuma forma de aprendizagem. Outra classificação considera a forma como as heurísticas de baixo nível operam sobre as soluções do problema. As heurísticas ditas perturbativas realizam pequenas perturbações nas soluções gerando novas soluções. Já heurísticas construtivas criam soluções do zero passo a passo e normalmente avaliam cada etapa da construção para obter \textit{feedback} sobre o seu desempenho. Uma última  classificação, mas não menos importante, divide as hiper-heurísticas de acordo com a  natureza do seu espaço de busca. As hiper-heurísticas de seleção selecionam sequências de heurísticas a serem aplicadas para resolver um dado problema ou instância. Já as hiper-heurísticas de geração operam gerando novas heurísticas com objetivo de resolver um problema ou instância.
 
 
 \subsection{Hiper-heurísticas de Geração}
 \label{Hiper-Heuristicas-Geraçao}
 
-Estas hiper-Heurísticas geram novas heurísticas combinando componentes de heurísticas existentes. Geralmente se utiliza programação genética (GP), ou alguma vertente de GP, como por exemplo evolução gramatical \cite{ryan1998grammatical} ou programação gênica \cite{ferreira2006gene}, como hiper-heurística para gerar heurísticas. A próxima sub-seção irá introduzir o conhecimento necessário para a compreensão da programação genética, assim como irá introduzir evolução gramatical, que se trata de um tipo de programação genética e que será utilizada nesta proposta.
+Estas hiper-Heurísticas geram novas heurísticas combinando componentes de heurísticas existentes. Geralmente se utiliza programação genética (GP), ou alguma vertente de GP, como evolução gramatical \cite{ryan1998grammatical} ou programação gênica \cite{ferreira2006gene}, como hiper-heurística para gerar heurísticas. A próxima sub-seção irá introduzir o conhecimento necessário para a compreensão da programação genética, assim como irá introduzir evolução gramatical, que se trata de um tipo de programação genética e que será utilizada nesta proposta.
 
 \section{Programação Genética (PG)}
 \label{subsection:PG}
@@ -212,13 +211,12 @@ Estas hiper-Heurísticas geram novas heurísticas combinando componentes de heur
 Programação Genética \cite{burke2009exploring} é um ramo da síntese de programas que utiliza ideias oriundas da teoria da evolução natural para produzir programas. Os principais componentes da computação evolucionária são herança (cruzamento/reprodução), seleção e variação (mutação). A herança significa que os descendentes  têm alguma semelhança com seus pais, pois quase todo material genético vem dos pais. A seleção trata de escolher quais pais irão se reproduzir para gerar novos descendentes; pais com maior aptidão tendem a ter maior probabilidade de serem selecionados. Esta pressão de seleção define quais indivíduos estão mais aptos que outros. Variação realiza pequenas alterações em um descendente a fim de criar novo material genético neste indivíduo e que não estava presente em nenhum dos indivíduos que o geraram. Computação evolutiva pode ser pensada como a interação destes três componentes. 
 Uma população aleatória de programas de computador é gerada, e os operadores geneticamente inspirados (cruzamento e mutação) são repetidamente aplicados com objetivo de produzir novos programas de computador. Estes programas são avaliados utilizando uma função de \textit{fitness} (normalmente dependente do desempenho obtido pela aplicação do programa em um problema), que determina quais destes programas são mais suscetíveis a sobreviver para gerações futuras. Os programas com maior aptidão tem mais chances de serem selecionados para o cruzamento e perpetuarem parte de seus códigos genéticos durante o processo evolutivo. 
 Programação genética é um método de geração de programas sintaticamente válidos e a função de \textit{fitness} é utilizada para decidir quais programas são mais adequados para o problema.
-Na programação genética, os programas que compõem a população são tradicionalmente representados utilizando estruturas de árvore. Existem outras estruturas que podem ser evoluídas, como por exemplo: sequências lineares de instruções ou gramáticas. Nesta proposta será utilizada uma representação gramatical linear que será explicada na seção \ref{subsubsection:EvolucaoGramatical}.
+Na programação genética, os programas que compõem a população são tradicionalmente representados utilizando estruturas de árvore. Existem outras estruturas que podem ser evoluídas, por exemplo: sequências lineares de instruções ou gramáticas. Nesta proposta será utilizada uma representação gramatical linear que será explicada na Seção \ref{subsubsection:EvolucaoGramatical}.
 
 \section{Evolução Gramatical (EG)}
 \label{subsubsection:EvolucaoGramatical}
 
-Evolução gramatical é uma técnica relativamente nova de computação evolutiva, proposta por Ryan et al. \cite{ryan1998grammatical}, trata-se de um tipo de programação genética. Assim como na programação genética, o principal objetivo é encontrar um programa executável ou trecho de um programa, que obtenha um bom valor de \textit{fitness} para o problema em questão. Na maioria dos trabalhos publicados de programação genética, expressões que representam estruturas de árvore são manipuladas, enquanto na evolução gramatical os operadores genéticos são aplicados em vetores de inteiros que posteriormente são mapeados para um programa (ou trecho de programa) através de uma gramática específica. Um dos benefícios de EG é que este mapeamento generaliza a aplicação para diferentes linguagens de programação.
-Ryan el al. \cite{ryan1998grammatical} propõem uma técnica para gerar programas ou fragmentos de programas para qualquer linguagem de programação utilizando definições BNF. A técnica pode ser utilizada para evoluir programas por um processo evolutivo. A evolução gramatical adota um mecanismo de mapeamento entre o genótipo (indivíduos codificados em um vetor de inteiros) e o fenótipo (programas gerados para resolver algum problema). 
+Evolução gramatical é uma técnica relativamente nova de computação evolutiva, proposta por Ryan et al. \cite{ryan1998grammatical}. Trata-se de um tipo de programação genética. Assim como na programação genética, o principal objetivo é encontrar um programa executável ou trecho de um programa, que obtenha um bom valor de \textit{fitness} para o problema em questão. Na maioria dos trabalhos publicados de programação genética, expressões que representam estruturas de árvore são manipuladas, enquanto na evolução gramatical os operadores genéticos são aplicados em vetores de inteiros que posteriormente são mapeados para um programa (ou trecho de programa) através de uma gramática específica. Um dos benefícios de EG é que este mapeamento generaliza a aplicação para diferentes linguagens de programação. \cite{ryan1998grammatical} propõem uma técnica para gerar programas ou fragmentos de programas para qualquer linguagem de programação utilizando definições BNF. A técnica pode ser utilizada para evoluir programas por um processo evolutivo. A evolução gramatical adota um mecanismo de mapeamento entre o genótipo (indivíduos codificados em um vetor de inteiros) e o fenótipo (programas gerados para resolver algum problema). 
 A notação \textit{Backus Naur Form} (BNF) é a notação utilizada para expressar a gramática de uma linguagem na forma de regras de produção. Uma gramática BNF consiste em um conjunto de terminais, os quais são itens que podem aparecer na linguagem, por exemplo: +, -, *, / etc e não terminais, que podem ser expandidos em um ou mais terminais e não terminais. Uma gramática pode ser expressada como uma tupla ${N,T,P,S}$, onde $N$ é o conjunto de não terminais, $T$ o conjunto de terminais, P um conjunto de regras de produção que mapeia os elementos $N$ para $T$; e, por último, $S$, um símbolo de início e que está contido em $N$.
 
 \begin{center}
@@ -293,7 +291,7 @@ Suponha o seguinte vetor de inteiros:
 
 Este vetor será utilizado para mapear o cromossomo (genótipo) em um trecho de programa (fenótipo) utilizando a gramática BNF. 
 %A expressão não terminal $ \langle expr \rangle$ no algoritmo \ref{alg:pseudocodigogrammar} será preenchida por um trecho de código que será mapeado a partir do cromossomo apresentado. Os passos do mapeamento serão descritos a seguir.%
-A tabela \autoref{tab:productionRules} resume o número de escolhas associada à cada regra de produção da \autoref{gram:gramatica}. Existem 4 opções de regras de produção que podem ser selecionadas para a expressão $ \langle expr \rangle$. Para decidir qual será selecionada, o primeiro valor no cromossomo deve ser utilizado. O valor é 220. Devemos realizar o módulo deste valor pelo número de escolhas, neste caso 4. Portanto, 220 MOD 4 = 0, o que significa selecionar a primeira opção: $\langle expr \rangle \langle op \rangle \langle expr \rangle$.
+A tabela \autoref{tab:productionRules} resume o número de escolhas associada à cada regra de produção da \autoref{gram:gramatica}. Existem 4 opções de regras de produção que podem ser selecionadas para a expressão $ \langle expr \rangle$. Para decidir qual será selecionada, o primeiro valor no cromossomo deve ser utilizado. Sendo que o valor é 220. Devemos realizar o módulo deste valor pelo número de escolhas, neste caso 4. Portanto, 220 MOD 4 = 0, o que significa selecionar a primeira opção: $\langle expr \rangle \langle op \rangle \langle expr \rangle$.
 
 Note que a primeira expressão é novamente $ \langle expr \rangle$ e da mesma maneira devemos obter o próximo valor de inteiro e realizar o módulo. O próximo valor inteiro é 203; realizando o modulo de 4, resulta em 3, que portanto seleciona a quarta opção: $ \langle var \rangle$. Substituindo na expressão anterior, obtemos: $ \langle var \rangle \langle op \rangle \langle expr \rangle$
 
@@ -329,10 +327,10 @@ O Algoritmo \ref{alg:GE} apresenta o pseudocódigo da evolução gramatical (EG)
 	
 	\begin{algorithmic}[1]
 		\State{$AG  \gets$ Arquivo da gramática;}
-		\State{$populacao \gets$ Inicialização a população;}
-		\State{$programas \gets$ Mapeia $populacao$ para programas utilizando $AG$;}
+		\State{$população \gets$ Inicialização a população;}
+		\State{$programas \gets$ Mapeia $população$ para programas utilizando $AG$;}
 		\State {Executa os $programas$;}
-		\State {Atribui valor de \textit{fitness} para as soluções  of $populacao$ de acordo com a saída obtida pelos respectivos programas decodificados;}
+		\State {Atribui valor de \textit{fitness} para as soluções  of $população$ de acordo com a saída obtida pelos respectivos programas decodificados;}
 %		\While{Condição de parada não atingida}
 		\While{Condição de parada não atingida}
 			\State {$pais \gets $ Seleção de indivíduos para cruzamento;}
@@ -343,9 +341,9 @@ O Algoritmo \ref{alg:GE} apresenta o pseudocódigo da evolução gramatical (EG)
 			\State {$programas \gets$ Mapeia $descendentes$ para programas utilizando $AG$;}
 			\State {Executa $programas$;}
 			\State {Atribui valor \textit{fitness} para as soluções $descendentes$ de acordo com a saída obtida pelos respectivos programas decodificados;}
-			\State 	{$populacao \gets$ Realiza substituição;}
+			\State 	{$população \gets$ Realiza substituição;}
 		\EndWhile \\
-		\Return{Melhor programa da $populacao$;}
+		\Return{Melhor programa da $população$;}
 			
 			
 		
@@ -358,7 +356,7 @@ O Algoritmo \ref{alg:GE} apresenta o pseudocódigo da evolução gramatical (EG)
 \section{Programação Genética como Hiper-Heurística de Geração de Heurísticas}
 \label{subsubsection:PGasHH}
 
-Nesta seção serão apresentadas questões relativas ao uso de EG como mecanismo de geração de heurísticas.  \cite{burke2009exploring} descrevem que muitos autores mencionam a melhor adequação de programação genética, em relação a outras técnicas de aprendizagem de máquina, para gerar heurísticas de maneira automática. Burke et al \cite{burke2009exploring} também apontam algumas vantagens desta técnica:
+Nesta seção serão apresentadas questões relativas ao uso de EG como mecanismo de geração de heurísticas  \cite{burke2009exploring} descrevem que muitos autores mencionam a melhor adequação de programação genética, em relação a outras técnicas de aprendizagem de máquina, para gerar heurísticas de maneira automática. \cite{burke2009exploring} também apontam algumas vantagens desta técnica:
 
 \begin{itemize}
 	\item PG utiliza cromossomos de tamanho variável. Geralmente, não se sabe um tamanho ótimo para representar heurísticas de um dado domínio de problema.
@@ -367,32 +365,31 @@ Nesta seção serão apresentadas questões relativas ao uso de EG como mecanism
 	\item Heurísticas desenvolvidas por humanos podem facilmente ser expressadas na mesma linguagem utilizada para criar o espaço de busca da PG. O conjunto de funções, relevante para o problema pode ser determinado facilmente. E adicionalmente PG pode ser suplementada com uma gramática específica.
 \end{itemize}
 
-Todas estas vantagens descritas por Burke et al. \cite{burke2009exploring} também são consideradas ao utilizar EG, visto que se trata de uma extensão de programação genética e possui as mesmas características (cromossomo de tamanho variável, produz estruturas executáveis, etc).
-Burke et al. \cite{burke2009exploring} também mencionam desvantagens, por exemplo: a cada execução da programação genética é encontrada uma melhor heurística que, por se tratar de uma técnica estocástica, os resultados podem ser distintos em diferentes execuções. Portanto se fazem necessárias múltiplas execuções, a fim de se obter um melhor conhecimento da qualidade das heurísticas que podem ser produzidas. Outra desvantagem é referente à configuração de parâmetros, que normalmente é encontrada via tentativa e erro.
+Todas estas vantagens descritas por \cite{burke2009exploring} também são consideradas ao utilizar EG, visto que se trata de uma extensão de programação genética e possui as mesmas características (cromossomo de tamanho variável, produz estruturas executáveis, etc). \cite{burke2009exploring} também mencionam desvantagens, por exemplo: a cada execução da programação genética é encontrada uma melhor heurística que, por se tratar de uma técnica estocástica, os resultados podem ser distintos em diferentes execuções. Portanto, se fazem necessárias múltiplas execuções a fim de se obter um melhor conhecimento da qualidade das heurísticas que podem ser produzidas. Outra desvantagem é referente à configuração de parâmetros, que normalmente é encontrada via tentativa e erro.
 
 \subsubsection{Abordagem Básica}
 
-Burke et al. \cite{burke2009exploring} descrevem uma abordagem básica para aplicar programação genética para gerar heurísticas:
+\cite{burke2009exploring} descrevem uma abordagem básica para aplicar programação genética para gerar heurísticas:
 
 \begin{enumerate}
-	\item Examinar as heurísticas existentes: Avaliar se as heurísticas já propostas para um dado problema podem ser descritas em um \textit{framework} comum. Estas heurísticas podem ter sido criadas por humanos ou até mesmo concebidas via outras técnicas de aprendizagem. Este passo não é trivial, pois envolve o entendimento de um número diverso de heurísticas existentes, que podem operar de diferentes maneiras. Geralmente heurísticas desenvolvidas por humanos são produtos de anos de pesquisa, portanto uma boa compreensão das heurísticas existentes pode ser um trabalho difícil. 
+	\item Examinar as heurísticas existentes: Avaliar se as heurísticas já propostas para um dado problema podem ser descritas em um \textit{framework} comum. Estas heurísticas podem ter sido criadas por humanos ou até mesmo concebidas via outras técnicas de aprendizagem. Este passo não é trivial, pois envolve o entendimento de um número diverso de heurísticas existentes, que podem operar de diferentes maneiras. Geralmente heurísticas desenvolvidas por humanos são produtos de anos de pesquisa, e portanto, uma boa compreensão das heurísticas existentes pode ser um trabalho difícil. 
 	\item Um framework que utilizará as heurísticas: neste momento a preocupação é em como as heurísticas serão aplicadas para um dado problema. Em geral, os frameworks tendem a ser bem diferentes dependendo do domínio do problema. 
 	\item Definição do conjunto terminal: neste passo a preocupação refere-se a variáveis que expressem o estado do problema. Estas variáveis irão compor os terminais da programação genética/evolução gramatical. Outros terminais também podem ser utilizados. Particularmente, constantes aleatórias podem ser úteis.
 	\item Definição do conjunto de funções: é necessário definir como as variáveis estarão relacionadas ou combinadas entre si. Estes relacionamentos irão compor o conjunto de funções da programação genética/evolução gramatical. 
 	\item Identificar uma função de \textit{fitness}: uma função de \textit{fitness} precisa ser identificada para o problema. Geralmente, uma função simples de aptidão não irá avaliar bem os cromossomos. Introduzir alguns parâmetros pode ajudar a encontrar uma mais adequada.
-	\item Executar o framework: geralmente ao executar pela primeira vez um framework hiper-heurístico com programação genética, não serão produzidos bons resultados, devido à escolha dos parâmetros. Isto é observado especialmente em casos que o pesquisador é iniciante. Portanto é essencial que as definições de parâmetros sejam cuidadosamente investigadas.
+	\item Executar o framework: geralmente ao executar pela primeira vez um framework hiper-heurístico com programação genética, não serão produzidos bons resultados, devido à escolha dos parâmetros. Isto é observado especialmente em casos que o pesquisador é iniciante. Portanto, é essencial que as definições de parâmetros sejam cuidadosamente investigadas.
 \end{enumerate}
 
 
 
 
-\section{Conclusão}
+\section{Considerações Finais}
 \label{ReferencialTeorico:Conclusão}
 
-%TODO: mencionar os AEMOs aqui
-Neste capítulo foram apresentados os conceitos que permeiam a área de estudo sobre hiper-heurísticas, tendo sido discutidos os seus níveis (alto e baixo) e as classificações encontradas na literatura.  Foram discutidas algumas estratégias para hiper-heurísticas de seleção e geração. As hiper-heurísticas de geração foram mais detalhadas, pois esta proposta visa o projeto  automático de heurísticas de alto nível. Foram apresentados os conceitos de PG e sua extensão EG, por se tratarem de estratégias comumente utilizadas para o projeto de hiper-heurísticas de geração de heurísticas. Também foram discutidas algumas vantagens e desvantagens referentes ao uso de PG para geração de heurísticas, além de demonstrar que a EG possui as mesmas características da PG, pois se trata de uma extensão que utiliza uma gramática para gerar os programas. O funcionamento geral da EG foi demonstrado utilizando uma gramática exemplo e um vetor de inteiros e, por fim, o pseudocódigo da evolução gramatical foi apresentado. A Capítulo \ref{sec:ProblemaDobramentoProteínas} apresenta o Problema de Dobramento de Proteínas e o Capítulo \ref{cap:Metodologia} apresentará a proposta da aplicação de EG a este problema.
 
+Neste capítulo foram apresentados alguns conceitos que permeiam a área de estudo otimização multi objetiva e sobre hiper-heurísticas. Inicialmente, uma contextualização sobre AEs foi fornecida em seguida os AEMOs foram introduzidos. Nesta dissertação foram utilizados os algoritmos NSGAII e IBEA os quais também foram apresentados. Também foi discutido sobre \textit{frameworks} hiper-heurísticos,  os seus níveis (alto e baixo) e as classificações encontradas na literatura.  Foram discutidas algumas estratégias para hiper-heurísticas de seleção e geração. As hiper-heurísticas de geração foram mais detalhadas, pois esta proposta visa o projeto  automático de heurísticas de alto nível. Foram apresentados os conceitos de PG e sua extensão EG, por se tratarem de estratégias comumente utilizadas para o projeto de hiper-heurísticas de geração de heurísticas. Também foram discutidas algumas vantagens e desvantagens referentes ao uso de PG para geração de heurísticas, além de demonstrar que a EG possui as mesmas características da PG, pois se trata de uma extensão que utiliza uma gramática para gerar os programas. O funcionamento geral da EG foi demonstrado utilizando uma gramática exemplo e um vetor de inteiros e, por fim, o pseudocódigo da evolução gramatical foi apresentado. 
 
-TODO: arrumar acima
+O Capítulo \ref{cap:Trabalhos Relacionados} apresenta os trabalhos relacionados e o Capítulo \ref{cap:Metodologia} apresentará as abordagens propostas nesta dissertação. Já o Capítulo \ref{cap:experimentos} apresentá os experimentos realizados para cada abordagem e uma discussão sobre os resultados é realizada. E por fim o Capítulo \ref{cap:conclusao} apresentá a conclusão final desta dissertação.
+
 
 

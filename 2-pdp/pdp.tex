@@ -41,34 +41,45 @@ As proteínas são polímeros compostos por sequências de aminoácidos (também
 Experimentos conduzidos por Anfinsen et al. \cite{sela1957reductive, anfinsen1972studies, anfinsen1961kinetics}, mostraram que as proteínas possuem apenas uma conformação nativa e que as informações essenciais que codificam a estrutura estão contidas na sequência de aminoácidos. A conformação tridimensional nativa é dada pela estrutura primária (sequência de aminoácidos) de uma proteína.
 
 Muitas proteínas podem desnaturar por modificações no ambiente em que estão inseridas, conforme demonstrado por \cite{sela1957reductive, anfinsen1972studies, anfinsen1961kinetics}. Durante o processo de desnaturação as proteínas perdem sua forma nativa (desdobram) e, consequentemente, perdem sua função. O exemplo mais conhecido de desnaturação proteica é o da clara do ovo. A clara do ovo é composta por água e albumina. A albumina é uma proteína polar, portanto solúvel em 
-água. Ao fritar ou cozinhar o ovo, eleva-se a temperatura, levando à desnaturação da albumina que, mesmo ao retornar à temperatura original, não consegue voltar à sua conformação nativa. Além de se desdobrarem é possível que ocorram erros de dobramento na formação das proteínas causando com que a proteína não exerça sua função biológica corretamente. Estudos tentam identificar causas para os erros de dobramento das proteínas pois muitas enfermidades são causadas pelo mal dobramento de proteínas como, por exemplo, mal de Alzheimer \cite{hutton2001analysis, selkoe2001clearing}, alguns tipos de câncer \cite{bell2002p53, dawson2003n, ishimaru2003fibrillar}, fibrose cística \cite{thomas1992altered}, arteriosclerose
+água. Ao fritar ou cozinhar o ovo, eleva-se a temperatura, levando à desnaturação da albumina que, mesmo ao retornar à temperatura original, não consegue voltar à sua conformação nativa. Além de se desdobrarem é possível que ocorram erros de dobramento na formação das proteínas causando com que a proteína não exerça sua função biológica corretamente. Estudos tentam identificar causas para os erros de dobramento das proteínas pois, muitas enfermidades são causadas por conta disto, por exemplo, mal de Alzheimer \cite{hutton2001analysis, selkoe2001clearing}, alguns tipos de câncer \cite{bell2002p53, dawson2003n, ishimaru2003fibrillar}, fibrose cística \cite{thomas1992altered}, arteriosclerose
 \cite{ursini2002atherosclerosis}, mal de Parkinson \cite{mcnaught2001failure}, entre outras. 
-Portanto, entender como o processo de dobramento de proteínas ocorre é de fundamental importância. Um dos objetivos comuns das ciências biológicas é caracterizar funcionalmente sequências de proteínas através da resolução de suas conformações nativas \cite{eswar2003tools}. Varias áreas da ciência, tais como Biologia, Medicina, Química Orgânica, realizam diferentes estudos das proteínas. Muitos destes estudos são voltados para o processo de dobramento das proteínas que pode sofrer alterações: tanto em como a conformação estará disposta no espaço, como ela estará agrupada e sobre sua má formação. Isto é muito relevante para estudos que visam à produção de medicamentos, suplementos alimentares, técnicas que manipulam o DNA, ou para formação de novos compostos proteicos sintéticos em laboratório \cite{devlin1998manual}. É importante mencionar que apesar do avanço na grande quantidade de proteínas que se tem conhecimento por conta de projetos de sequenciamento genômico, apenas uma pequena fração de estruturas tridimensionais é conhecida.
+Portanto, entender como o processo de dobramento de proteínas ocorre é de fundamental importância. 
+
+Um dos objetivos comuns das ciências biológicas é caracterizar funcionalmente sequências de proteínas através da resolução de suas conformações nativas \cite{eswar2003tools}. Varias áreas da ciência, tais como Biologia, Medicina, Química Orgânica, realizam diferentes estudos das proteínas. Muitos destes estudos são voltados para o processo de dobramento das proteínas que pode sofrer alterações: tanto em como a conformação estará disposta no espaço, como ela estará agrupada e sobre sua má formação. Isto é muito relevante para estudos que visam à produção de medicamentos, suplementos alimentares, técnicas que manipulam o DNA, ou para formação de novos compostos proteicos sintéticos em laboratório \cite{devlin1998manual}. É importante mencionar que apesar do avanço na grande quantidade de proteínas que se tem conhecimento por conta de projetos de sequenciamento genômico, apenas uma pequena fração de estruturas tridimensionais é conhecida.
 
 A cristalografia de raios-X e espectroscopia de RNM são os métodos experimentais mais poderosos para o estudo da estruturas de proteínas \cite{ilari2008protein} \cite{gobl2012application}. Entretanto estes métodos são altamente custosos tanto em esforços computacionais, de tempo e financeiros, e estão disponíveis apenas para algumas instituições.
 
 
 Embora o conceito de dobramento de proteínas tenha surgido da área de biologia molecular, este problema é um problema interdisciplinar, o qual requer apoio de muitas áreas do conhecimento, e é considerado como um dos desafios atuais mais importantes da biologia e bioinformática \cite{nicosia2008generalized}. 
 
-Na biologia computacional existem dois problemas que tratam sobre o dobramento de proteínas. São eles: problema de predição estrutura de proteínas (ou PSP - \textit{Protein Structure Prediction}), que trata de predizer a estrutura tridimensional (conformação) a partir de sua sequência (estrutura primária); e o problema de dobramento de proteínas (PDP ou PFP - \textit{Protein Folding Problem}), o qual trata da determinação dos passos/eventos que conduzem o dobramento a partir da estrutura primária até a conformação nativa \cite{lopes2008evolutionary}. Porém, na literatura, é encontrado ambos os termos sendo utilizados sem nenhuma distinção, normalmente se referindo apenas ao primeiro problema \cite{lopes2008evolutionary}.  
+Na biologia computacional existem dois problemas que tratam sobre o dobramento de proteínas. São eles: problema de predição estrutura de proteínas (ou PSP - \textit{Protein Structure Prediction}), que trata de predizer a estrutura tridimensional (conformação) a partir de sua sequência (estrutura primária); e o problema de dobramento de proteínas (PDP ou PFP - \textit{Protein Folding Problem}), o qual trata da determinação dos passos/eventos que conduzem o dobramento a partir da estrutura primária até a conformação nativa \cite{lopes2008evolutionary}. Porém, na literatura, são encontrado ambos os termos sendo utilizados sem nenhuma distinção, normalmente se referindo apenas ao primeiro problema \cite{lopes2008evolutionary}.  
 
-A ciência da computação desempenha um papel importante nisto, propondo e desenvolvendo modelos e soluções computacionais para o estudo de ambos os problemas PSP e PDP \cite{lopes2008evolutionary}. Muitas estratégias computacionais descrevem modelos de predição de estruturas de proteínas com diferentes níveis de detalhamento e complexidade mas que permitem uma representação fidedigna da estrutura tridimensional, sem perda de viabilidade computacional \cite{benitez2015algoritmo}. Dessa maneira  evita-se a obrigatoriedade do uso de métodos caros, aumentando a competitividade e auxiliando na consolidação de centros de pesquisa que desenvolvem estudos nesta área \cite{dill2000polymer}.
+A ciência da computação desempenha um papel importante nisto, propondo e desenvolvendo modelos e soluções computacionais para o estudo de ambos os problemas PSP e PDP \cite{lopes2008evolutionary}. Muitas estratégias computacionais descrevem modelos de predição para estruturas proteicas com diferentes níveis de detalhamento e complexidade. Embora, existão modelos com um elevado grau de detalhamento. Simular a predição de estruturas das proteínas é computacionalmente muito custosa. É nesta lacuna que se abre espaço para estratégias que proponham modelos simplificados para representar estruturas de proteínas sem perda de viabilidade computacional \cite{benitez2015algoritmo}. Consequentemente, é possível evitar a obrigatoriedade de métodos caros e assim aumentar a capacidade de centros de pesquisa, com recursos escassos, desenvolverem abordagens com modelos simplificados para representar as estruturas. Apesar de complexidade reduzida estes modelos apresentam uma maneira fidedigna de representar as estruturas de proteínas. 
 
-Acredita-se que a conformação nativa de uma proteína é a sua estrutura mais estável, adquirindo um estado de energia livre mínima, o que gerou a chamada hipótese da termodinâmica \cite{pedersen2000algorithms}. Os modelos de predição de estruturas normalmente são baseados nas leis da termodinâmica onde o problema é modelado como um problema de minimização da energia livre a respeito das possíveis conformações que uma proteína pode assumir \cite{benitez2015algoritmo}. A minimização da energia livre é assumida como o principal fator para a formação da estrutura da proteína. Portanto, a conformação nativa de uma proteína é dada por aquela que possuir o menor valor de energia livre.
 
-Segundo \cite{pedersen2000algorithms}, um modelo computacional deve possuir algumas características:
+Segundo a lei da termodinâmica \cite{anfinsen1972studies}, a estrutura de uma proteína se torna estável quando adquire o seu estado nativo, em qual a sua energia livre é mínima. Os modelos de predição de estruturas normalmente são baseados nesta lei. Dessa maneira, o problema é modelado com objetivo de minimizar energia livre das possíveis conformações que uma proteína pode assumir \cite{benitez2015algoritmo}. Estes modelos assumem que o principal fator para formação das estruturas de proteínas segue a lei da termodinâmica. Portanto, a conformação nativa de uma proteína é dada por aquela que possuir o menor valor de energia livre.
+
+\cite{pedersen2000algorithms} sugere que um modelo computacional deve possuir algumas características:
 
 \begin{itemize}
 	\item Um conjunto de entidades que representam os átomos e as ligações entre eles. 
 	\item Regras que definem as possíveis conformações.
-	\item Uma função que seja computacionalmente factível, para calcular a energia livre das possíveis conformações.
+	\item Uma função que seja computacionalmente factível para calcular a energia livre das possíveis conformações.
 \end{itemize}
 
-A próxima subseção irá discorrer sobre alguns modelos de representação de estruturas de proteínas.
+A próxima subseção irá discorrer sobre alguns modelos para representar as estruturas de proteínas.
 
 \section{Modelos de Representação de Proteínas}
 
-Em suma existem duas classes de modelos de representação de estruturas de proteínas: analítico (também conhecido como \textit{all atom}) e discreto (chamado também de \textit{coarse-grained}). Os modelos analíticos possuem uma descrição detalhada da estrutura tridimensional incluindo informações de todos os átomos que constituem uma proteína. Já os modelos discretos descrevem as proteínas com um nível bastante reduzido de detalhes. Os modelos discretos recentemente ganharam maior interesse, por conta de dois fatores: a simulação de modelos analíticos nem sempre é computacionalmente possível e modelos discretos possibilitam simulações biologicamente relevantes com melhor aproveitamento  computacional \cite{benitez2015algoritmo}. Embora simulações utilizando modelos discretos ainda não possam ser consideradas tão preditivas quanto simulações analíticas, avanços notáveis têm: sido alcançados, referente ao uso de metodologias mais rigorosas e criação de algoritmos para melhor explorar o espaço de busca \cite{tozzini2005coarse}. Esta proposta irá descrever apenas os modelos discretos pois visa a utilização do modelo hidrofóbico polar (HP) 2D.
+Em suma, existem duas classes de modelos de representação de estruturas de proteínas: analítico (também conhecido como \textit{all atom}) e discreto (chamado também de \textit{coarse-grained}). Os modelos analíticos possuem uma descrição detalhada da estrutura tridimensional incluindo informações de todos os átomos que constituem uma proteína. Já os modelos discretos descrevem as proteínas com um nível bastante reduzido de detalhes. Recentemente, os modelos discretos ganharam maior interesse, por conta de dois fatores \cite{benitez2015algoritmo}:
+
+\begin{itemize}
+	\item A simulação de modelos analíticos nem sempre é computacionalmente possível por conta do alto custo envolvido.
+	\item Modelos discretos possibilitam simulações biologicamente relevantes com melhor aproveitamento  computacional . 
+	
+\end{itemize}
+
+ Esta proposta irá descrever apenas os modelos discretos pois visa a utilização do modelo hidrofóbico polar (HP) 2D.
 
 \subsection{Modelos Discretos}
 
@@ -97,15 +108,15 @@ Embora simples, a estratégia computacional de buscar uma solução para o PDP u
 	\item Muitas regiões com conformações inválidas.
 \end{itemize}
 
-A figura \ref{fig:exemploModeloHP} apresenta um exemplo para os modelos HP (2D e 3D). Os pontos pretos são aminoácidos do tipo H e os brancos são aminoácidos do tipo P. As linhas pontilhadas representam as interações hidrofóbicas.
+A Figura \ref{fig:exemploModeloHP} apresenta um exemplo para os modelos HP (2D e 3D). Os pontos pretos são aminoácidos do tipo H e os brancos são aminoácidos do tipo P. As linhas pontilhadas representam as interações hidrofóbicas.
 
-%TODO: adpatar imagens
-%\begin{figure}[!htb]
-%	\centering
-%	\includegraphics[scale=.9]{modeloHP/modeloHPExemplo.png}
-%	\caption{Exemplos de representação de proteínas utilizando os modelos HP 2D-HP (a) e 3D-HP (b). \\ Fonte: Adaptado de \cite{benitez2015algoritmo}}
-%	\label{fig:exemploModeloHP}
-%\end{figure}
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=.9]{Imagens/modeloHPExemplo.png}
+	\caption{Exemplos de representação de proteínas utilizando os modelos HP 2D-HP (a) e 3D-HP (b). \\ Fonte: Adaptado de \cite{benitez2015algoritmo}}
+	\label{fig:exemploModeloHP}
+\end{figure}
 
 
 Diversos trabalhos aplicam algoritmos evolucionários e bio-inspirados ao problema de dobramento de proteínas utilizando o modelo HP. Uma decisão comum a todos trabalhos que utilizam o modelo HP é a de como representar as variáveis de entrada. Na literatura é possível encontrar basicamente três representações \cite{krasnogor1999protein, lopes2008evolutionary}: 
@@ -152,4 +163,4 @@ Além do modelo HP, outros modelos simples em grade são utilizados para represe
 \subsection{Conclusão}
 \label{Problema de Dobramento de Proteínas:Conclusao}
 
-Neste seção o problema de dobramento de proteínas foi apresentado e sua importância para biológica computacional, química orgânica e medicina. Também foi mencionado que existem diversos modelos para representar estruturas de proteínas. Cada modelo tem suas peculiaridades e considera interações diferentes. Não existe um modelo que represente de maneira real o dobramento de proteínas, pois se trata de um processo ainda não completamente compreendido pelos cientistas e pesquisadores. Os modelos propostos tem diferentes níveis de detalhe e complexidade. O modelo mais simples é o HP mas apesar da sua simplicidade se apresenta como um problema $NP$-completo. O modelo HP será utilizado nesta proposta por conta de sua simplicidade de implementação, assim como o baixo custo computacional para realizar simulações do cálculo de energia. Utilizando o modelo HP diferentes maneiras de representar as variáveis existem. Nesta dissertação será utilizada a representação relativa pois é mencionado na literatura que esta tem uma maior capacidade de guiar algoritmos de busca a melhores resultados  \cite{krasnogor1999protein}.
+Nesta capítulo foi apresentado o problema de dobramento de proteinas, bem como sua importância para biológica computacional, química orgânica e medicina. Também foi mencionado que existem diversos modelos para representar estruturas de proteínas. Cada modelo tem suas peculiaridades e considera interações diferentes. Não existe um modelo que represente de maneira real o dobramento de proteínas, pois se trata de um processo ainda não completamente compreendido pelos cientistas e pesquisadores. Os modelos propostos tem diferentes níveis de detalhe e complexidade. O modelo mais simples é o HP mas apesar da sua simplicidade se apresenta como um problema $NP$-completo. O modelo HP será utilizado nesta proposta por conta de sua simplicidade de implementação, assim como o baixo custo computacional para realizar simulações do cálculo de energia. Utilizando o modelo HP diferentes maneiras de representar as variáveis existem. Nesta dissertação será utilizada a representação relativa pois, é mencionado na literatura que esta tem uma maior capacidade de guiar algoritmos de busca a melhores resultados  \cite{krasnogor1999protein}.
