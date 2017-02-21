@@ -126,6 +126,13 @@ Devlin, T.~M. e Toma, L. (1998).
 \newblock {\em Manual de bioqu{\'\i}mica: com correla{\c{c}}{\~o}es
   cl{\'\i}nicas}.
 
+\bibitem[Drake et~al., 2012]{drake2012improved}
+Drake, J.~H., {\"O}zcan, E.  e Burke, E.~K. (2012).
+\newblock An improved choice function heuristic selection for cross domain
+  heuristic search.
+\newblock Em {\em International Conference on Parallel Problem Solving from
+  Nature}, p\'aginas 307--316. Springer.
+
 \bibitem[Eswar et~al., 2003]{eswar2003tools}
 Eswar, N., John, B., Mirkovic, N., Fiser, A., Ilyin, V.~A., Pieper, U., Stuart,
   A.~C., Marti-Renom, M.~A., Madhusudhan, M.~S., Yerkovich, B.  et~al. (2003).

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.20)  21 FEB 2017 09:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.20)  21 FEB 2017 11:08
 entering extended mode
 **./main.tex
 (main.tex
@@ -1276,11 +1276,7 @@ Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
 (0-preambulo/agradece.aux) (0-preambulo/resumo.aux) (0-preambulo/abstract.aux)
 (0-preambulo/acronimos.aux) (0-preambulo/simbolos.aux) (1-intro/intro.aux)
 (2-pdp/pdp.aux) (3-fundam/fundam.aux) (3-revbib/revbib.aux)
-(4-proposta/proposta.aux) (5-valida/valida.aux
-
-LaTeX Warning: Label `eq:bestAcceptanceCriteria' multiply defined.
-
-) (6-conclusao/conclusao.aux))
+(4-proposta/proposta.aux) (5-valida/valida.aux) (6-conclusao/conclusao.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 29.
@@ -1813,7 +1809,7 @@ Cap\'{\i }tulo 4.
 
  (4-proposta/proposta.tex
 Cap\'{\i }tulo 5.
-<Imagens/DecodedCromossome.png, id=558, 642.4pt x 481.8pt>
+<Imagens/DecodedCromossome.png, id=566, 642.4pt x 481.8pt>
 File: Imagens/DecodedCromossome.png Graphic file (type png)
 
 <use Imagens/DecodedCromossome.png>
@@ -1824,14 +1820,14 @@ Package pdftex.def Info: Imagens/DecodedCromossome.png used on input line 20.
 
 
 ]
-<Imagens/TwoPointsCrossover.png, id=570, 264.38776pt x 69.861pt>
+<Imagens/TwoPointsCrossover.png, id=578, 264.38776pt x 69.861pt>
 File: Imagens/TwoPointsCrossover.png Graphic file (type png)
 
 <use Imagens/TwoPointsCrossover.png>
 Package pdftex.def Info: Imagens/TwoPointsCrossover.png used on input line 38.
 (pdftex.def)             Requested size: 264.3871pt x 69.86081pt.
 
-<Imagens/MultiPointsCrossover.png, id=573, 263.7855pt x 68.6565pt>
+<Imagens/MultiPointsCrossover.png, id=581, 263.7855pt x 68.6565pt>
 File: Imagens/MultiPointsCrossover.png Graphic file (type png)
 
 <use Imagens/MultiPointsCrossover.png>
@@ -1839,7 +1835,7 @@ Package pdftex.def Info: Imagens/MultiPointsCrossover.png used on input line 51
 .
 (pdftex.def)             Requested size: 263.78485pt x 68.65631pt.
 
-<Imagens/segmentMutation.png, id=575, 263.7855pt x 42.75975pt>
+<Imagens/segmentMutation.png, id=583, 263.7855pt x 42.75975pt>
 File: Imagens/segmentMutation.png Graphic file (type png)
 
 <use Imagens/segmentMutation.png>
@@ -1847,21 +1843,21 @@ Package pdftex.def Info: Imagens/segmentMutation.png used on input line 59.
 (pdftex.def)             Requested size: 263.78485pt x 42.75963pt.
  [29 <./Imagens/DecodedCromossome.png> <./Imagens/TwoPointsCrossover.png> <./Im
 agens/MultiPointsCrossover.png>]
-<Imagens/LocalMoveOperator.png, id=584, 263.18324pt x 41.55525pt>
+<Imagens/LocalMoveOperator.png, id=592, 263.18324pt x 41.55525pt>
 File: Imagens/LocalMoveOperator.png Graphic file (type png)
 
 <use Imagens/LocalMoveOperator.png>
 Package pdftex.def Info: Imagens/LocalMoveOperator.png used on input line 73.
 (pdftex.def)             Requested size: 263.1826pt x 41.55513pt.
 
-<Imagens/LoopMoveOperator.png, id=586, 263.7855pt x 42.75975pt>
+<Imagens/LoopMoveOperator.png, id=594, 263.7855pt x 42.75975pt>
 File: Imagens/LoopMoveOperator.png Graphic file (type png)
 
 <use Imagens/LoopMoveOperator.png>
 Package pdftex.def Info: Imagens/LoopMoveOperator.png used on input line 84.
 (pdftex.def)             Requested size: 263.78485pt x 42.75963pt.
 
-<Imagens/OppositeMutation.png, id=588, 263.7855pt x 42.75975pt>
+<Imagens/OppositeMutation.png, id=596, 263.7855pt x 42.75975pt>
 File: Imagens/OppositeMutation.png Graphic file (type png)
 
 <use Imagens/OppositeMutation.png>
@@ -1869,7 +1865,7 @@ Package pdftex.def Info: Imagens/OppositeMutation.png used on input line 94.
 (pdftex.def)             Requested size: 263.78485pt x 42.75963pt.
  [30 <./Imagens/segmentMutation.png> <./Imagens/LocalMoveOperator.png> <./Image
 ns/LoopMoveOperator.png>] [31 <./Imagens/OppositeMutation.png>] [32]
-<Imagens/proposedFramework.png, id=613, 360.74776pt x 216.81pt>
+<Imagens/proposedFramework.png, id=621, 360.74776pt x 216.81pt>
 File: Imagens/proposedFramework.png Graphic file (type png)
 
 <use Imagens/proposedFramework.png>
@@ -1944,17 +1940,13 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 121.
 (4-proposta/proposta.aux) (5-valida/valida.aux) (6-conclusao/conclusao.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 121.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 121.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 121.
  ) 
 Here is how much of TeX's memory you used:
- 17740 strings out of 493333
- 262294 string characters out of 3139197
- 522894 words of memory out of 3000000
- 20363 multiletter control sequences out of 15000+200000
+ 17742 strings out of 493333
+ 262335 string characters out of 3139197
+ 522910 words of memory out of 3000000
+ 20364 multiletter control sequences out of 15000+200000
  77007 words of font info for 179 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  67i,16n,81p,1996b,501s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1973,9 +1965,9 @@ s/MiKTeX 2.9/fonts/type1/public/txfonts/rtxr.pfb><C:/Program Files/MiKTeX 2.9/f
 onts/type1/public/newtx/txexs.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
 ic/newtx/txsys.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.p
 fb>
-Output written on main.pdf (67 pages, 621006 bytes).
+Output written on main.pdf (67 pages, 624465 bytes).
 PDF statistics:
- 1045 PDF objects out of 1200 (max. 8388607)
- 240 named destinations out of 1000 (max. 500000)
+ 1053 PDF objects out of 1200 (max. 8388607)
+ 241 named destinations out of 1000 (max. 500000)
  18344 words of extra memory for PDF output out of 20736 (max. 10000000)
 
