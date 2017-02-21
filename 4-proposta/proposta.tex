@@ -103,13 +103,15 @@ Para ambas as abordagens o mesmo conjunto de heurísticas de baixo nível (opera
 
 
  Este capítulo está divido em duas seções para melhor apresentar ambas as estratégias propostas nesta dissertação . A seção \ref{sec:aemos} apresenta a estratégia multi objetiva onde foi utilizada dois algoritmos evolucionários, do estado da arte de otimização multi objetiva. Já a seção  \ref{sec:eghypdp} irá apresentar o design automático de heurísticas de alto nível para um \textit{framework} hiper heurístico para resolver o PDP.
- 
+
+	
+
 
 
 \section{AEMOs aplicados ao PDP}
 \label{sec:aeoms}
 
-Esta abordagem utiliza uma modelagem multi-objetiva para PDP baseado no estudo desenvolvido por \cite{gabriel2012algoritmos}. Onde o primeiro objetivo trata de maximizar a quantidade de contatos topológicos das estruturas de proteínas e o segundo de minimizar a máxima distância euclidiana entre os aminoácidos. 
+Esta abordagem utiliza uma modelagem multi-objetiva para PDP baseado no estudo desenvolvido por \cite{gabriel2012algoritmos}. O primeiro objetivo consiste em maximizar a quantidade de contatos topológicos das estruturas de proteínas. Já o segundo  trata de minimizar a máxima distância euclidiana entre os aminoácidos. 
 
 Duas abordagens multi-objetivas foram desenvolvidas neste capítulo, utilizando os AEMOs (NSGAII e IBEA) descritos no capítulo \ref{cap:Referencial Teórico}. A primeira abordagem consistiu em aplicar os algoritmo IBEA and NSGAII utilizando suas versões padrão. Nesta abordagem os operadores genéticos (cruzamento e mutação) são fixos com: \textit{Single Point Crossover (1x)} and \textit{Bit Flip Mutation (BM)}. Esta foi a combinação que obteve os melhores resultados em experimentos preliminares. No caso da segunda abordagem, o IBEA e NSGAII foram modificados com objetivo de aprimorar os resultados em relação às versões padrões. Duas modificações foram propostas e serão descritas abaixo:
 
@@ -148,7 +150,7 @@ Esta abordagem é baseada no trabalho desenvolvido por \cite{sabar2015automatic}
 
 \section{Heurísticas de alto nível}
 \label{sec:highlevelheuristics}
-Esta abordagem  foi desenvolvida para gera de maneria \textit{offline} os componentes de uma heurística de alto nível (mecanismo de seleção e critério de aceitação) para um \textit{framework} hiper-heurístico. A figura \ref{fig:proposedFramework} apresenta a estrutura geral do EGHyPDP. 
+Esta abordagem  foi desenvolvida para construir de maneria \textit{offline} os componentes de uma heurística de alto nível (mecanismo de seleção e critério de aceitação) para compor um \textit{framework} hiper-heurístico. A figura \ref{fig:proposedFramework} apresenta a estrutura geral do EGHyPDP. 
 
 \begin{figure}[!htb]
 	\centering
@@ -158,7 +160,7 @@ Esta abordagem  foi desenvolvida para gera de maneria \textit{offline} os compon
 \end{figure}
 
 
-Heurísticas de alto nível geralmente levam em consideração uma ou mais informações referentes ao histórico das aplicações das heurísticas de baixo nível para tomar suas decisões. Tradicionalmente, informações tais como desempenho (capacidade de melhorar soluções), tempo (desde a última aplicação de uma dada heurística) e intervalo de confiança (no caso de estratégias que utilizam MAB) são utilizadas como base de conhecimento. \cite{sabar2015automatic} propõem a utilização de vários critérios para avaliar as heurísticas de baixo nível. A razão disto se dá pelo fato de que cada critério irá favorecer a seleção de uma heurística de baixo nível a partir de um aspecto diferente. Por exemplo, algumas heurísticas de baixo nível podem ter bom desempenho apenas no início da busca, enquanto outras podem obter melhores resultados apenas ao final. Estes critérios propostos por \cite{sabar2015automatic} contém estatísticas referente à aplicações das heurísticas de baixo nível e são genéricos o suficiente para serem aplicados ao PDP. Os critérios propostos por Sabar et al. \cite{sabar2015automatic} são detalhados em seguida:
+Heurísticas de alto nível geralmente levam em consideração uma ou mais informações referentes ao histórico das aplicações das heurísticas de baixo nível para tomar suas decisões. Tradicionalmente, informações tais como desempenho (capacidade de melhorar soluções), tempo (desde a última aplicação de uma dada heurística) e intervalo de confiança (no caso de estratégias que utilizam MAB) são utilizadas como base de conhecimento. \cite{sabar2015automatic} propõem a utilização de vários critérios para avaliar as heurísticas de baixo nível. Cada critério irá favorecer a seleção de uma heurística de baixo nível a partir de um aspecto diferente. Por exemplo, algumas heurísticas de baixo nível podem ter bom desempenho apenas no início da busca, enquanto outras podem obter melhores resultados apenas ao final. Estes critérios propostos por \cite{sabar2015automatic} contém estatísticas referente à aplicações das heurísticas de baixo nível e são genéricos o suficiente para serem aplicados ao PDP. Os critérios propostos por Sabar et al. \cite{sabar2015automatic} são detalhados em seguida:
 
 
 \begin{itemize}
@@ -250,7 +252,7 @@ Para inicializar os dados dos terminais: todas as heurísicas foram executadas u
   
   	%TODO: escrever na metodologia sobre a funao de fitness escrever uma funcao bunitinha 
   	
- Com objetivo de avaliar os indivíduos gerados durante a busca, uma função de \textit{fitness} foi desenvolvida. A função executa a heurística de alto nível, representada por um dado indivíduo, em 3 instâncias aleatórias de um total de 11 selecionadas dos estudos anteriores. Para cada instância a heuristíca de alto nível foi executada com um tempo máximo de 30 minutos e o retorno é a melhor solução para o PDP simplificado com o modelo HP-2D. O valor de \textit{fitness} associado com a solução retornada é então normalizado entre 0 e 1. O \textit{fitness} de um indivíduo, da EG, consiste na soma das saídas das execuções com cada uma das 3 instâncias. Dessa maneira, o melhor valor possível é 3 e o pior é 0. A razão de executar a heurística de alto nível (indivíduo) com 3 instâncias é que treinar a EG com menos instâncias não seria suficiente para obter bons resultados em várias instâncias na fase de validação. 
+ Com objetivo de avaliar os indivíduos gerados durante a busca, uma função de \textit{fitness} foi desenvolvida. A função executa a heurística de alto nível, representada por um dado indivíduo, em 3 instâncias aleatórias de um total de 11 selecionadas dos estudos anteriores. Para cada instância a heuristíca de alto nível foi executada com um tempo máximo de 30 minutos e o retorno é a melhor solução para o PDP simplificado com o modelo HP-2D. O valor de \textit{fitness} associado com a solução retornada é então normalizado entre 0 e 1. O \textit{fitness} de um indivíduo, da EG, consiste na soma das saídas das execuções com cada uma das 3 instâncias. Dessa maneira, o melhor valor possível é 3 e o pior é 0. A razão de executar a heurística de alto nível (indivíduo) com 3 instâncias é que treinar a EG com apenas uma poderia torna as heurísticas geradas muito especializadas na instância utilizada. Portanto 1/4 do número total de instâncias foi utilizado para tentar tonar as heurísticas menos especialistas e mais genéricas. 
  
 % 
 %\begin{equation}

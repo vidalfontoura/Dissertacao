@@ -5,7 +5,8 @@ Neste Capítulo serão apresentados  os experimentos para  validar as duas estra
 O conjunto de \textit{benchmark} para avaliar o desempenho dos das abordagens ao PDP simplificado com modelo HP-2D
 
 
-A partir da revisão bibliográfica foi possível selecionar 11 instâncias dos trabalhos relacionados \cite{unger1993genetic,krasnogor2002multimeme,shmygelska2002ant,shmygelska2003improved,hsu2003growth} para compor um conjunto de \textit{benchmark}. Este conjunto foi utilizado para avaliar ambas estratégias propostas, a Tabela \ref{tab:instancias} apresenta o tamanho, o melhor valor de energia conhecido e a fórmula da sequência de aminoácidos para o modelo HP. Tanto os AEMOs e o EGHyPDP foram submetidos a esse conjunto de instâncias o qual possui diferentes níveis de complexidade e características. Todos os experimentos realizados nesta dissertação foram executados 30 vezes por conta do comportamento estocástico inerente às heurísticas utilizadas. Por conta das múltiplas execuções em casos que forem necessários serão apresentados os valores de média, desvio padrão, minimo e máximo referente as execuções.
+A partir da revisão bibliográfica foi possível selecionar 11 instâncias dos trabalhos relacionados \cite{unger1993genetic,krasnogor2002multimeme,shmygelska2002ant,shmygelska2003improved,hsu2003growth} para compor um conjunto de \textit{benchmark}. Este conjunto foi utilizado para avaliar ambas estratégias propostas, a Tabela \ref{tab:instancias} apresenta o tamanho, o melhor valor de energia conhecido e a fórmula da sequência de aminoácidos para o modelo HP. Tanto os AEMOs e o EGHyPDP foram submetidos a esse conjunto de instâncias o qual possui diferentes níveis de complexidade e características. Todos os experimentos realizados nesta dissertação foram executados 30 vezes por conta do comportamento estocástico inerente às heurísticas utilizadas. Por conta das múltiplas execuções em casos que forem necessários serão apresentados os valores de média, desvio padrão, minimo e máximo referente as execuções. Para avaliar a diferença entre os conjuntos de resultados é necessário usar algum teste estatístico. Nesta dissertação foi utilizado o teste não paramétrico de  Kruskal-Wallis \cite{mckight2010kruskal}.
+
 
 
 Este capítulo esta divido em duas seções para melhor apresentar os resultados obtidos por cada uma das estratégias propostas. A primeira seção descreve os experimentos realizados para avaliar a aplicação de AEMOs para o PDP utilizando o modelo HP-2D. A segunda seção apresenta os experimentos realizados para avaliar a habilidade do EGHyPDP em gerar heurísticas de alto nível para um \textit{framework} hiper heurístico, utilizando um procedimento de EG.
@@ -41,14 +42,14 @@ Este capítulo esta divido em duas seções para melhor apresentar os resultados
 
 
 
+\section{AEMOs aplicados ao PDP}
+
+AEMOs são algoritmos evolucionários que visam a otimização de múltiplos objetivos em paralelo. Estes apresentam bons resultados quando aplicados a problemas de várias áreas da ciência.  Nestes experimentos dois AEMOs foram aplicados ao problema PDP utilizando o modelo HP-2D. Duas abordagens multi-objetivas foram apresentadas: a primeira utiliza as versões padrão dos algoritmos IBEA e NSGAII; a segunda abordagem consistiu em modificar o IBEA e NSGAII adicionando a inicialização com \textit{backtrack} e o \textit{pool} de operadores, com objetivo de melhorar os resultados. Os algoritmos tradicionais serão denominados IBEA e NSGAII e os modificados M\_IBEA e M\_NSGAII.
 
 
 
 
-
-
-
-\section{Resultados dos AEMOs aplicados ao PDP}
+\subsection{Resultados dos AEMOs aplicados ao PDP}
 
 Nesta seção serão apresentados o cojunto de experimentos realizados utilizando a abordagem multi-objetiva com os algoritmos NSGAII e IBEA. Inicialmente, serão apresentadas as configurações utilizadas para os algoritmos. Em seguida, uma comparação entre os resultados de cada algoritmo é apresentada. Por fim, uma comparação com os resultados dos trabalhos relacionados, que tratam o PDP de maneira mono-objetiva, é apresentada.
 
@@ -80,7 +81,10 @@ No caso das versões padrão dos algoritmos IBEA e NSGAII as probabilidades de c
 
 Conforme mencionado no Capítulo \ref{cap:Metodologia} o indicador \textit{hypervolume} foi utilizado para comparar o desempenho dos AEMOs. Para cada algoritmo a média e o desvio padrão do \textit{hypervolume}  referente a 30 execuções é apresentada na Tabela \ref{tab:hypervolumeResults}. Os maiores valores estão em negrito e indicam uma maior aproximação da fronteira de Pareto \cite{barr1998economics}.
 
-Observando a Tabela \ref{tab:hypervolumeResults} é possível notar que, exceto para a instância $1$, em todas instâncias o algoritmo M\_IBEA (versão modificado com \textit{backtracking} e o \textit{pool} de operadores) obteve a maior média de \textit{hypervolume}. No caso da instância $1$, o IBEA sem modificações obteve a média mais alta. Também vale mencionar, que quando comparando apenas o NSGAII e o M\_NSGAII, a versão modificada obteve as melhores médias. De maneira geral, os AEMOs com \textit{backtracking} e o \textit{pool} de operadores (M\_IBEA and M\_M_NSGAII) apresentaram uma melhoria considerável em relação aos AEMOs tradicionais. Na Tabela \ref{tab:hypervolumeResults}, as células do M\_IBEA que estão marcados com cinza apresentaram diferença estatística de acordo com o teste de  Kruskal-Wallis \cite{mckight2010kruskal} entre os outros algoritmos (NSGAII, M\_NSGAII e IBEA).
+Observando a Tabela \ref{tab:hypervolumeResults} é possível notar que, exceto para a instância $1$, em todas instâncias o algoritmo M\_IBEA  obteve a maior média de \textit{hypervolume}. No caso da instância $1$, o IBEA sem modificações obteve a média mais alta. Também vale mencionar, que quando comparando apenas o NSGAII e o M\_NSGAII, a versão modificada obteve as melhores médias. De maneira geral, os AEMOs com \textit{backtracking} e o \textit{pool} de operadores (M\_IBEA and M\_M_NSGAII) apresentaram uma melhoria considerável em relação aos AEMOs tradicionais. Na Tabela \ref{tab:hypervolumeResults}, as células do M\_IBEA que estão marcados com cinza apresentaram diferença estatística de acordo com o teste estatístico \cite{mckight2010kruskal} entre os outros algoritmos (NSGAII, M\_NSGAII e IBEA).
+
+
+
 
 
 \begin{table}[]
@@ -186,13 +190,13 @@ Já no caso da instância $6$ todos os algoritmos obtiveram o valor ótimo de -2
 
 Após analisar os resultados foi possível constatar que apenas um AEMO, o M\_IBEA conseguiu encontrar os melhores resultados para 7 instâncias de 11. Entretanto, nas instâncias mais complexas seu desempenho é degradado. Já os outros AEMOs propostos não obtiveram resultados expressivos.
 
-\subsection{Conclusão dos experimentos utilizando os AEMOs}
+\subsection{Discussão sobre os experimentos utilizando os AEMOs}
 
-AEMOs são algoritmos evolucionários que visam a otimização de múltiplos objetivos em paralelo. Estes apresentam bons resultados quando aplicados a problemas de várias áreas da ciência.  Nestes experimentos dois AEMOs foram aplicados ao problema PDP utilizando o modelo HP-2D. Duas abordagens multi-objetivas foram apresentadas: a primeira utiliza as versões padrão dos algoritmos IBEA e NSGAII; a segunda abordagem consistiu em modificar o IBEA e NSGAII adicionando a inicialização com \textit{backtrack} e o \textit{pool} de operadores, com objetivo de melhorar os resultados. Dado os resultados se tornou claro que as versões modificadas dos algoritmos tem uma maior habilidade em explorar o espaço de busca quando comparados com as versões padrão.  
+Dado os resultados se tornou claro que as versões modificadas dos algoritmos tem uma maior habilidade em explorar o espaço de busca quando comparados com as versões padrão.  
 
 Também foi possível verificar que a abordagem multi-objetiva utilizando o NSGAII e o M\_NSGAII também não apresentou resultados satisfatórios, tanto em termos de \textit{hypervolume} como valores de energia,  quando comparado com o IBEA e a versão modificada. Mesmo a versão padrão de IBEA obteve melhores resultados do que ambas as versões do NSGAII. Porém, a versão modificada M\_IBEA apresentou os melhores resultados dentre todos AEMOs propostos. Isto sugere que apenas uma formulação multi-objetiva não é suficiente para atingir bons resultados em termos de energia das estruturas. Com a inicialização via \textit{backtracking}, \textit{pool} de operadores e a maneira sofisticada de explorar o espaço de busca multi-objetivo do IBEA  possibilitaram resultados promissores.
 
-Dado os resultados é indiscutível que o algoritmo M\_IBEA foi capaz de escapar dos mínimos locais em vários os casos, exceto para as instâncias 7,9,10 e 11. Estas instâncias são as mais complexas e muitas propostas não conseguem obter os melhores resultados. Dentre  os trabalhos relacionados apenas o PERM consegue  explorar o espaço de busca o suficiente para encontrar os melhores resultados.
+Dado os resultados é indiscutível que o algoritmo M\_IBEA foi capaz de escapar dos mínimos locais em vários casos, exceto para as instâncias 7,9,10 e 11. Estas instâncias são as mais complexas e muitas propostas não conseguem obter os melhores resultados. Dentre  os trabalhos relacionados apenas o PERM consegue  explorar o espaço de busca o suficiente para encontrar os melhores resultados.
 
 Também vale mencionar que os parâmetros para os algoritmos não foram \textit{tunados} e que existe uma chance de obterem melhores resultados caso um procedimento de \textit{tunning} seja feito.
 
@@ -200,14 +204,12 @@ Os resultados obtidos pelo M\_IBEA abrem um amplo campo de possibilidades para a
 
 
 
-\section{Resultados obtidos com EGHyPDP}
+\section{EGHyPDP}
 
 Nesta seção, serão discutidos  os experimentos conduzidos com objetivo de avaliar o \textit{design} automático de heurísticas de alto nível para um \textit{framework} hiper-heurístico. Este \textit{framework} foi aplicado ao PDP para avaliar seu desempenho. A implementação do EGHyPDP ocorreu durante o período de desenvolvimento desta dissertação. 
 
 
-Três grupos de experimentos foram desenvolvidos e executados. O primeiro grupo de experimentos tratou apenas de gerar mecanismos de seleção. O segundo grupo foi desenvolvido com objetivo de gerar apenas critérios de aceitação. E por último o terceiro grupo foi desenvolvido com intuito de gerar em paralelo tanto mecanismos de seleção como critérios de aceitação.
-
-O tempo de execução total destes 3 grupos de experimentos foi de 28 dias. Após a execução dos experimentos os resultados obtidos por cada grupo foram comparados entre si. Porém esta comparação não foi suficiente para avaliar a capacidade das heurísticas de alto nível. \cite{misir2012intelligent} nos forneceu o código fonte utilizado em seu estudo e isto possibilitou a execução do GIHH (Generic Intelligent Hyper-heuristic) no contexto do PDP com o modelo HP-2D. O GIHH obteve resultados impressionantes em outros problemas de \textit{benchmark}. Portanto, a comparação dos resultados em relação aos obtidos por uma estratégia hiper heurística (do estado da arte) desenvolvida por um pesquisador foi realizada.   	. 
+Três grupos de experimentos foram desenvolvidos e executados. O tempo de execução total destes 3 grupos de experimentos foi de 28 dias. Após a execução dos experimentos os resultados obtidos por cada grupo foram comparados entre si. Porém esta comparação não foi suficiente para avaliar a capacidade das heurísticas de alto nível. Misir el al. forneceram o código fonte utilizado em seu estudo e isto possibilitou a execução do GIHH (Generic Intelligent Hyper-heuristic) \cite{misir2012intelligent}b no contexto do PDP com o modelo HP-2D. O GIHH obteve resultados impressionantes em outros problemas de \textit{benchmark}. Portanto, a comparação dos resultados em relação aos obtidos por uma estratégia hiper heurística (do estado da arte) desenvolvida por um pesquisador foi realizada. 
 
 O primeiro grupo de experimentos denominado, EGHyPDP-1, apenas gerou mecanismos de seleção. O critério de aceitação foi configurado e mantido fixo com uma estratégia que aceita apenas soluções melhores ou iguais \cite{burke2013hyper}. O objetivo deste grupo é avaliar a habilidade da abordagem proposta em gerar mecanismos de seleção utilizando um critério de aceitação fixo.
 
@@ -232,12 +234,14 @@ O primeiro grupo de experimentos denominado, EGHyPDP-1, apenas gerou mecanismos 
 	
 
 	
-	Este mecanismo de seleção, juntamente com o critério de aceitação (melhor ou igual) foi executado novamente por 30 vezes com um tempo limite de 30 minutos em cada execução, porém utilizando todas as 11 instâncias disponíveis. A Tabela  \ref{tab:gexp1best} apresenta os resultados de média, desvio padrão, mínimo e máximo das execuções do melhor indivíduo apresentado na Equação \ref{eq:bestSelectionMechanism}. A última linha denota o melhor valor de energia conhecido para cada instância. Os valores destacados com negrito representam os melhores valor conhecido para determinada instância. É possível notar analisando as duas últimas linhas, que exceto para as instâncias 7,9,10 e 11, todas as outras instâncias, o indivíduo gerado conseguiu obter os melhores valores conhecidos. Dessa maneira, é possível observar que quando o tamanho das instâncias aumentam a qualidade dos resultados obtidos degrada.
+	Este mecanismo de seleção, juntamente com o critério de aceitação (melhor ou igual) foi executado novamente por 30 vezes com um tempo limite de 30 minutos em cada execução, porém utilizando todas as 11 instâncias disponíveis. A Tabela  \ref{tab:gexp1best} apresenta os resultados de média, desvio padrão, mínimo e máximo das execuções do melhor indivíduo apresentado na Equação \ref{eq:bestSelectionMechanism}. A última linha denota o melhor valor de energia conhecido para cada instância. Os valores destacados com negrito representam os melhores valor conhecido para determinada instância. É possível notar analisando as duas últimas linhas, que exceto para as instâncias 7,9,10 e 11, todas as outras instâncias, o indivíduo gerado conseguiu obter os melhores valores conhecidos. Dessa maneira, é possível observar que quando o tamanho das instâncias aumentam a qualidade dos resultados obtidos degrada. Os terminais que compõem o melhor indivíduo foram: $RC$ o qual avalia as melhorias que um indivíduo obteve, esse terminal é o principal agente de intensificação da busca; $Ccurrent$ é um terminal que avalia a capacidade de melhorar o mínimo local; $Cava$ considera a melhoria obtida em média oque resulta em uma exploração mais ampla do espaço de busca. Todos esses terminais são multiplicados entre si e subtrai-se pelo terminal $Cr$ o qual considera o número de vezes que uma heurística foi classificada como primeiro. Dessa maneira, a heurística alto nível gerada consegue um bom balanço para selecionar as heurísticas de baixo nível a serem aplicadas. Heurísticas de baixo nível que conseguem obter bons resultados (no geral e em média) tendem a ser priorizadas. Porém, se uma heurística de baixo nível estiver sempre sendo classificada como primeira isso irá impactar de maneira negativa na heurística de alto nível gerada.
+	
+
 	
 
 	\begin{table}[]
 		\centering
-		\caption{Resultados da execução do melhor indivíduo encontrado pelo grupo de experimento EGHyPDP-1}
+		\caption{Resultados de 30 execuções do melhor indivíduo encontrado pelo grupo de experimento EGHyPDP-1}
 		\label{tab:gexp1best}
 		\resizebox{\columnwidth}{!}{%
 			\begin{tabular}{cccccccccccc}
@@ -259,13 +263,13 @@ O primeiro grupo de experimentos denominado, EGHyPDP-1, apenas gerou mecanismos 
 	( ( TI / Delta ) / ( ( Delta * ( ( TI / Delta ) / CI ) * Delta / Delta * TI ) - CI ) )
 	 \end{equation}
 		 
-	Este critério de aceitação, juntamente com o melhor mecanismo de seleção gerado pelo EGHyPDP-1, foram executados 30 vezes com um tempo máximo de 30 minutos utilizando as 11 instâncias disponíveis. A Tabela \ref{tab:gexp2best}  apresenta os resultados obtidos. Novamente, observando as duas ultimas linhas é possível verificar que em apenas em duas instâncias os melhores valores foram encontrados. Dessa maneira, é fácil notar que os resultados apresentados na Subseção \ref{subsection:gehypdp1results} obtiveram éxito em encontrar, para mais instâncias,  os melhores valores conhecidos. Vale mencionar, que o melhor mecanismo de seleção encontrado combinado com um critério de aceitação melhor ou igual apresentou melhores resultados do que quando combinado com o melhor critério de aceitação gerado. 
+	Este critério de aceitação, juntamente com o melhor mecanismo de seleção gerado pelo EGHyPDP-1, foram executados 30 vezes com um tempo máximo de 30 minutos utilizando as 11 instâncias disponíveis. A Tabela \ref{tab:gexp2best}  apresenta os resultados obtidos. Novamente, observando as duas ultimas linhas é possível verificar que em apenas em duas instâncias os melhores valores foram encontrados. Dessa maneira, é fácil notar que os resultados apresentados na Subseção \ref{subsection:gehypdp1results} obtiveram éxito em encontrar, para mais instâncias,  os melhores valores conhecidos. Vale mencionar, que o melhor mecanismo de seleção encontrado combinado com um critério de aceitação melhor ou igual apresentou melhores resultados do que quando combinado com o melhor critério de aceitação gerado. A heurística de alto nível gerada considera as seguintes métricas: Delta a principal métrica que avalia a diferença entre a solução gerada e a atual; TI considera o número total de interações esta métrica de certa maneira considera o tempo total de execução; CI é o número iteração atual. Estes terminais combinados não Equação \ref{eq:bestAcceptanceCriteria} não obtiveram bons resultados.
 
 
 	
 	\begin{table}[]
 		\centering
-		\caption{Resultados da execução do melhor indivíduo encontrado no grupo de experimento EGHyPDP-2}
+		\caption{Resultados de 30 execuções do melhor indivíduo encontrado no grupo de experimento EGHyPDP-2}
 		\label{tab:gexp2best}
 		\resizebox{\columnwidth}{!}{%
 			\begin{tabular}{cccccccccccc}
@@ -300,7 +304,7 @@ O primeiro grupo de experimentos denominado, EGHyPDP-1, apenas gerou mecanismos 
 	
 	\begin{table}[]
 		\centering
-		\caption{Resultados da execução do melhor indivíduo encontrado no grupo de experimento EGHyPDP-3}
+		\caption{Resultados de 30 execuções do melhor indivíduo encontrado no grupo de experimento EGHyPDP-3}
 		\label{bestGExp3}
 		\resizebox{\columnwidth}{!}{%
 			\begin{tabular}{cccccccccccc}
@@ -345,9 +349,9 @@ O primeiro grupo de experimentos denominado, EGHyPDP-1, apenas gerou mecanismos 
 	Estes experimentos mostraram que o EGHyPDP conseguiu várias vezes gerar um critério de aceitação com exatamente o mesmo comportamento que critérios de aceitação desenvolvidos por pesquisadores. Entretanto, os critérios gerados são muito simples e não são suficientes para possibilitar que a busca não fique travada em mínimos locais. Levando em consideração que os experimentos envolvendo geração de critérios de aceitação (EGHyPDP-2 e EGHyPDP-3) não obtiveram resultados competitivos. 
 	
 	
-	\subsection{Conclusão dos experimentos utilizando o EGHyPDP}
+	\subsection{Discussão sobre os experimentos realizados com EGHyPDP}
 	
-	Esta seção apresentou os experimentos realizados com EGHyPDP, uma ferramenta para gerar automática heurísticas de alto nível para um \textit{framework} hiper heurístico para resolver o problema PDP com o modelo HP-2D. Este problema é muito desafiador com uma grande quantidade de mínimos locais, um espaço de busca complexo e características específicas inerentes a cada instância. 
+	Esta seção apresentou os experimentos realizados com EGHyPDP, uma ferramenta para gerar de maneira automática heurísticas de alto nível para um \textit{framework} hiper heurístico para resolver o problema PDP com o modelo HP-2D. Este problema é muito desafiador com uma grande quantidade de mínimos locais, um espaço de busca complexo e características específicas inerentes a cada instância. 
 	
 		Muitos estudos exploraram o PDP com modelos simplificados, tais como modelo HP-2D, utilizando métodos heurísticos. Embora, é comum que estratégias heurísticas não consigam obter os melhores resultados conhecidos no caso das maiores instâncias. Geralmente, os \textit{frameworks} hiper heurísticos se adaptam bem a este tipo de contexto complexo. Consequentemente, o objetivo desta abordagem foi gerar mecanismos de seleção e critérios de aceitação, através de um processo de evolução gramatical, de um \textit{framework} hiper heurístico. Tal \textit{framework} foi utilizado para resolver o PDP utilizando o modelo HP-2D. O desempenho e comportamento das heurísticas de alto nível geradas foi avaliado executando o \textit{framework} utilizando um conjunto de 11 instâncias. 
 		Trés grupos de experimentos foram desenvolvidos: o primeiro grupo apenas gerou mecanismos de seleção e utilizou um critério de aceitação melhor ou igual; o segundo gerou apenas critérios de aceitação. E no caso do mecanismo de seleção foi utilizado o melhor gerado pelo primeiro grupo; O terceiro e último grupo gerou tanto mecanismos de seleção e critérios de aceitação em paralelo. Os resultados obtidos pelos experimentos demonstram que a melhor heurística de alto nível foi encontrada no primeiro grupo. Já os resultados obtidos com o segundo e terceiro grupo não são expressivos. Analisando, o melhor resultado obtido pelo primeiro experimento (um mecanismo de seleção e o critério de aceitação melhor ou igual) é possível notar que de 11 instâncias em 7 casos foram encontrados os melhores resultados conhecidos. Entretanto, nas maiores instâncias (7,9,10 e 11) os resultados foram inferiores aos melhores conhecidos. 
