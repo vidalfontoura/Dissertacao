@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.20)  21 FEB 2017 23:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.20)  22 FEB 2017 00:59
 entering extended mode
 **./main.tex
 (main.tex
@@ -1623,7 +1623,7 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/bx/n' in size <14.4> not available
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 14.4pt on input line 84.
 
-[6] <Imagens/modeloHPExemplo.png, id=331, 277.035pt x 146.949pt>
+[6] <Imagens/modeloHPExemplo.png, id=330, 277.035pt x 146.949pt>
 File: Imagens/modeloHPExemplo.png Graphic file (type png)
 
 <use Imagens/modeloHPExemplo.png>
@@ -1662,14 +1662,14 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 83.
  [12] [13] [14] [15]
-<Imagens/HiperHeuristicas.png, id=439, 314.3745pt x 284.262pt>
+<Imagens/HiperHeuristicas.png, id=438, 314.3745pt x 284.262pt>
 File: Imagens/HiperHeuristicas.png Graphic file (type png)
 
 <use Imagens/HiperHeuristicas.png>
 Package pdftex.def Info: Imagens/HiperHeuristicas.png used on input line 187.
 (pdftex.def)             Requested size: 314.37372pt x 284.26129pt.
 
-<Imagens/ClassificacaoHiperHeuristica.png, id=444, 495.8525pt x 345.29pt>
+<Imagens/ClassificacaoHiperHeuristica.png, id=443, 495.8525pt x 345.29pt>
 File: Imagens/ClassificacaoHiperHeuristica.png Graphic file (type png)
 
 <use Imagens/ClassificacaoHiperHeuristica.png>
@@ -1809,7 +1809,7 @@ Cap\'{\i }tulo 4.
 
  (4-proposta/proposta.tex
 Cap\'{\i }tulo 5.
-<Imagens/DecodedCromossome.png, id=567, 642.4pt x 481.8pt>
+<Imagens/DecodedCromossome.png, id=566, 642.4pt x 481.8pt>
 File: Imagens/DecodedCromossome.png Graphic file (type png)
 
 <use Imagens/DecodedCromossome.png>
@@ -1820,14 +1820,14 @@ Package pdftex.def Info: Imagens/DecodedCromossome.png used on input line 20.
 
 
 ]
-<Imagens/TwoPointsCrossover.png, id=579, 264.38776pt x 69.861pt>
+<Imagens/TwoPointsCrossover.png, id=578, 264.38776pt x 69.861pt>
 File: Imagens/TwoPointsCrossover.png Graphic file (type png)
 
 <use Imagens/TwoPointsCrossover.png>
 Package pdftex.def Info: Imagens/TwoPointsCrossover.png used on input line 38.
 (pdftex.def)             Requested size: 264.3871pt x 69.86081pt.
 
-<Imagens/MultiPointsCrossover.png, id=582, 263.7855pt x 68.6565pt>
+<Imagens/MultiPointsCrossover.png, id=581, 263.7855pt x 68.6565pt>
 File: Imagens/MultiPointsCrossover.png Graphic file (type png)
 
 <use Imagens/MultiPointsCrossover.png>
@@ -1835,7 +1835,7 @@ Package pdftex.def Info: Imagens/MultiPointsCrossover.png used on input line 51
 .
 (pdftex.def)             Requested size: 263.78485pt x 68.65631pt.
 
-<Imagens/segmentMutation.png, id=584, 263.7855pt x 42.75975pt>
+<Imagens/segmentMutation.png, id=583, 263.7855pt x 42.75975pt>
 File: Imagens/segmentMutation.png Graphic file (type png)
 
 <use Imagens/segmentMutation.png>
@@ -1843,21 +1843,21 @@ Package pdftex.def Info: Imagens/segmentMutation.png used on input line 59.
 (pdftex.def)             Requested size: 263.78485pt x 42.75963pt.
  [29 <./Imagens/DecodedCromossome.png> <./Imagens/TwoPointsCrossover.png> <./Im
 agens/MultiPointsCrossover.png>]
-<Imagens/LocalMoveOperator.png, id=593, 263.18324pt x 41.55525pt>
+<Imagens/LocalMoveOperator.png, id=592, 263.18324pt x 41.55525pt>
 File: Imagens/LocalMoveOperator.png Graphic file (type png)
 
 <use Imagens/LocalMoveOperator.png>
 Package pdftex.def Info: Imagens/LocalMoveOperator.png used on input line 73.
 (pdftex.def)             Requested size: 263.1826pt x 41.55513pt.
 
-<Imagens/LoopMoveOperator.png, id=595, 263.7855pt x 42.75975pt>
+<Imagens/LoopMoveOperator.png, id=594, 263.7855pt x 42.75975pt>
 File: Imagens/LoopMoveOperator.png Graphic file (type png)
 
 <use Imagens/LoopMoveOperator.png>
 Package pdftex.def Info: Imagens/LoopMoveOperator.png used on input line 84.
 (pdftex.def)             Requested size: 263.78485pt x 42.75963pt.
 
-<Imagens/OppositeMutation.png, id=597, 263.7855pt x 42.75975pt>
+<Imagens/OppositeMutation.png, id=596, 263.7855pt x 42.75975pt>
 File: Imagens/OppositeMutation.png Graphic file (type png)
 
 <use Imagens/OppositeMutation.png>
@@ -1865,7 +1865,7 @@ Package pdftex.def Info: Imagens/OppositeMutation.png used on input line 94.
 (pdftex.def)             Requested size: 263.78485pt x 42.75963pt.
  [30 <./Imagens/segmentMutation.png> <./Imagens/LocalMoveOperator.png> <./Image
 ns/LoopMoveOperator.png>] [31 <./Imagens/OppositeMutation.png>] [32]
-<Imagens/proposedFramework.png, id=622, 360.74776pt x 216.81pt>
+<Imagens/proposedFramework.png, id=621, 360.74776pt x 216.81pt>
 File: Imagens/proposedFramework.png Graphic file (type png)
 
 <use Imagens/proposedFramework.png>
@@ -1965,7 +1965,7 @@ s/MiKTeX 2.9/fonts/type1/public/txfonts/rtxr.pfb><C:/Program Files/MiKTeX 2.9/f
 onts/type1/public/newtx/txexs.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
 ic/newtx/txsys.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.p
 fb>
-Output written on main.pdf (67 pages, 624349 bytes).
+Output written on main.pdf (67 pages, 624326 bytes).
 PDF statistics:
  1054 PDF objects out of 1200 (max. 8388607)
  241 named destinations out of 1000 (max. 500000)
