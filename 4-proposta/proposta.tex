@@ -3,7 +3,7 @@
 
 Neste capítulo serão apresentadas as duas estratégias propostas e desenvolvidas nesta dissertação para o PDP simplificado. A primeira trata de uma abordagem multi-objetiva utilizando dois AEMOs. Já a segunda visa aplicação da evolução gramatical  para gerar heurísticas de alto nível para um \textit{framework} hiper-heurístico intitulada EGHyPDP.
 
-Inicialmente será apresentada a representação para o problema com modelo HP-2D. Em seguida é apresentado o conjunto de heurísticas de baixo nível. Tanto a representação quanto o conjunto de heurísticas foram utilizados por ambas as abordagens propostas.
+Inicialmente será apresentada a representação para o problema com modelo HP-2D. Em seguida é apresentado o conjunto de heurísticas de baixo nível. Tanto a representação quanto o conjunto de heurísticas foram utilizados em ambas as abordagens propostas.
 
 \section{Representação do PDP com modelo HP-2D}
 
@@ -32,28 +32,28 @@ Para ambas as abordagens o mesmo conjunto de heurísticas de baixo nível (opera
 
  \begin{itemize}
  	
- 		\item \textit{Single Point Crossover} (1X): Este operador seleciona, de maneria aleatória, 1 ponto de cruzamento dividindo os indivíduos em 2 partes. Os genes entre as posições selecionadas são trocados entre os pais de modo a gerar dois novos filhos \cite{benitez2015algoritmo}.
+ 		\item \textit{Single Point Crossover} (1X): Esta heurística seleciona, de maneria aleatória, 1 ponto de cruzamento dividindo os indivíduos em 2 partes. Os genes entre as posições selecionadas são trocados entre os pais de modo a gerar dois novos filhos \cite{benitez2015algoritmo}.
  	
- 	\item \textit{Two Points Crossover} (2X): Este operador seleciona, de maneria aleatória, 2 pontos de cruzamento dividindo os indivíduos em 3 partes. Os genes entre as posições selecionadas são trocados entre os pais de modo a gerar dois novos filhos \cite{benitez2015algoritmo}, conforme apresentado na figura \ref{fig:twopointscrossover}.
+ 	\item \textit{Two Points Crossover} (2X): Esta heurística seleciona, de maneria aleatória, 2 pontos de cruzamento dividindo os indivíduos em 3 partes. Os genes entre as posições selecionadas são trocados entre os pais de modo a gerar dois novos filhos \cite{benitez2015algoritmo}, conforme apresentado na figura \ref{fig:twopointscrossover}.
  	
  	
  	\begin{figure}[!htb]
  		\centering
  		\includegraphics{Imagens/TwoPointsCrossover.png}
- 		\caption{Exemplo de aplicação do operador 2x. \\Fonte Autoria Própria}
+ 		\caption{Exemplo de aplicação da heurística 2x. \\Fonte Autoria Própria}
  		\label{fig:twopointscrossover}
  	\end{figure}
  	
  	
  	
  	
- 	\item \textit{Multi Points Crossover} (MPX): Semelhante ao 2X porém com c pontos, baseado na função $c = int(n * 0.1)$, onde $n$ é o tamanho da sequência. O operador MPX é utilizado para promover diversidade estrutural realizando uma mescla randômica entre os pais. Embora, não tão radical quanto o \textit{Uniform  Crossover} \cite{sabar2015automatic}. Um exemplo de aplicação do operador MPX é apresentado na imagem \ref{fig:multipointscrossover}
+ 	\item \textit{Multi Points Crossover} (MPX): Semelhante ao 2X porém com c pontos, baseado na função $c = int(n * 0.1)$, onde $n$ é o tamanho da sequência. A heurística MPX é utilizado para promover diversidade estrutural realizando uma mescla randômica entre os pais. Embora, não tão radical quanto o \textit{Uniform  Crossover} \cite{sabar2015automatic}. Um exemplo de aplicação da heurística MPX é apresentado na imagem \ref{fig:multipointscrossover}
  	
  	
  	\begin{figure}[!htb]
  		\centering
  		\includegraphics{Imagens/MultiPointsCrossover.png}
- 		\caption{Exemplo de aplicação do operador MPX. \\Fonte Autoria Própria}
+ 		\caption{Exemplo de aplicação da heurística MPX. \\Fonte Autoria Própria}
  		\label{fig:multipointscrossover}
  	\end{figure}
  	\item \textit{Segment Mutation} (SMUT): Altera um número aleatório (5 a 7) de genes consecutivos para direções distintas. Esta heurística introduz grandes mudanças na conformação, e tem uma grande probabilidade de criar colisões. Um mecanismo de reparação simples é aplicado no descendente gerado. A imagem \ref{fig:segmentMutation} apresenta um exemplo da aplicação do SMUT.
@@ -61,7 +61,7 @@ Para ambas as abordagens o mesmo conjunto de heurísticas de baixo nível (opera
  	\begin{figure}[!htb]
  		\centering
  		\includegraphics{Imagens/segmentMutation.png}
- 		\caption{Exemplo de aplicação do operador SMUT. \\Fonte Autoria Própria}
+ 		\caption{Exemplo de aplicação da heurística SMUT. \\Fonte Autoria Própria}
  		\label{fig:segmentMutation}
  	\end{figure}
  	
@@ -75,7 +75,7 @@ Para ambas as abordagens o mesmo conjunto de heurísticas de baixo nível (opera
  	\begin{figure}[!htb]
  		\centering
  		\includegraphics{Imagens/LocalMoveOperator.png}
- 		\caption{Exemplo de aplicação do operador LM. \\Fonte Autoria Própria}
+ 		\caption{Exemplo de aplicação da heurística LM. \\Fonte Autoria Própria}
  		\label{fig:localMoveOperator}
  	\end{figure}
  	
@@ -86,7 +86,7 @@ Para ambas as abordagens o mesmo conjunto de heurísticas de baixo nível (opera
  	\begin{figure}[!htb]
  		\centering
  		\includegraphics{Imagens/LoopMoveOperator.png}
- 		\caption{Exemplo de aplicação do operador LPM. \\Fonte Autoria Própria}
+ 		\caption{Exemplo de aplicação da heurística LPM. \\Fonte Autoria Própria}
  		\label{fig:loopMoveOperator}
  	\end{figure}
  	
@@ -96,7 +96,7 @@ Para ambas as abordagens o mesmo conjunto de heurísticas de baixo nível (opera
  	\begin{figure}[!htb]
  		\centering
  		\includegraphics{Imagens/OppositeMutation.png}
- 		\caption{Exemplo de aplicação do operador OM. \\Fonte Autoria Própria}
+ 		\caption{Exemplo de aplicação da heurística OM. \\Fonte Autoria Própria}
  		\label{fig:oppositeMutation}
  	\end{figure}
  	
@@ -117,13 +117,13 @@ Para ambas as abordagens o mesmo conjunto de heurísticas de baixo nível (opera
 
 Esta abordagem utiliza uma modelagem multi-objetiva para PDP baseado no estudo desenvolvido por \cite{gabriel2012algoritmos}. O primeiro objetivo consiste em maximizar a quantidade de contatos topológicos das estruturas de proteínas. Já o segundo  trata de minimizar a máxima distância euclidiana entre os aminoácidos. 
 
-Duas abordagens multi-objetivas foram desenvolvidas neste capítulo, utilizando os AEMOs (NSGAII e IBEA) descritos no capítulo \ref{cap:Referencial Teórico}. A primeira abordagem consistiu em aplicar os algoritmo IBEA and NSGAII utilizando suas versões padrão. Nesta abordagem os operadores genéticos (cruzamento e mutação) são fixos com: \textit{Single Point Crossover (1x)} and \textit{Bit Flip Mutation (BM)}. Esta foi a combinação que obteve os melhores resultados em experimentos preliminares. No caso da segunda abordagem, o IBEA e NSGAII foram modificados com objetivo de aprimorar os resultados em relação às versões padrões. Duas modificações foram propostas e serão descritas abaixo:
+Duas abordagens multi-objetivas foram desenvolvidas neste capítulo, utilizando os AEMOs (NSGAII e IBEA) descritos no capítulo \ref{cap:Referencial Teórico}. A primeira abordagem consistiu em aplicar os algoritmo IBEA and NSGAII utilizando suas versões padrão. Nesta abordagem os operadores (heurísticas de baixo nível) genéticos (cruzamento e mutação) são fixos com: \textit{Single Point Crossover (1x)} and \textit{Bit Flip Mutation (BM)}. Esta foi a combinação que obteve os melhores resultados em experimentos preliminares. No caso da segunda abordagem, o IBEA e NSGAII foram modificados com objetivo de aprimorar os resultados em relação às versões padrões. Duas modificações foram propostas e serão descritas abaixo:
 
  
  \begin{itemize}
  		
 		\item \textit Conjunto de heurísticas de baixo nivel: O uso de operadores fixos geralmente não conseguem guiar a busca para regiões promissoras. 
-		Com objetivo de aprimorar os AEMOs, . Os operadores que compõem conjunto foram selecionados de estudos anteriores e foram apresentados no início deste capítulo. A cada operação de cruzamento e mutação os operadores são selecionados de maneira aleatória a partir do conjunto. Os operadores são sempre executados independente de probabilidades conforme a versão padrão dos algoritmos. 
+		Com objetivo de aprimorar os AEMOs, um conjunto de heurísticas foi proposto. As heurísticas que compõem conjunto foram selecionados de estudos anteriores e foram apresentados no início deste capítulo. A cada operação de cruzamento e mutação as heurísticas são selecionados de maneira aleatória a partir do conjunto. As heurísticas são sempre executadas independente de probabilidades conforme a versão padrão dos algoritmos. 
 	
 		
 		\item Inicialização via \textit{backtracking}: Tradicionalmente, a população inicial é gerada de maneira aleatória no caso dos algoritmos NSGAII e IBEA. Este tipo de inicialização tem grande potencial de gerar muitas soluções inválidas ao  modelo HP-2D. Soluções que não sejam \textit{self-avoiding walk} (SAW) são consideradas inválidas pois dois ou mais aminoácidos estariam ocupando a mesma posição no espaço. Se a população for integralmente gerada de maneira aleatória os algoritmos de otimização perdem um tempo considerável avaliando soluções inválidas. Para evitar este problema uma estratégia de \textit{backtracking} pode ser utilizada. A estratégia de inicialização com \textit{backtracking} irá começar posicionando o primeiro aminoácido na posição 0,0. Para posicionar o próximo aminoácido, um movimento é selecionado de maneira aleatória. Caso o movimento cause uma colisão, este movimento será marcado como uma má escolha e um novo movimento é selecionado aleatoriamente (do conjunto que restou sem os movimentos marcados como más escolhas). Caso todos os movimentos estejam marcados como má escolha, a estratégia de \textit{backtracking} irá retornar de maneira recursiva para o aminoácido anterior e marcar a escolha em questão como uma má escolha. A estratégia de \textit{backtracking} termina quando gerar uma conformação que não possua colisões. Entretanto, a inicialização via \textit{backtracking} é computacionalmente custosa. Dessa maneira, apenas 20\% da população inicial foi inicializada utilizando esta estratégia.
@@ -257,7 +257,9 @@ Para inicializar os dados dos terminais: todas as heurísicas foram executadas u
   
   	%TODO: escrever na metodologia sobre a funao de fitness escrever uma funcao bunitinha 
   	
- Com objetivo de avaliar os indivíduos gerados durante a busca, uma função de \textit{fitness} foi desenvolvida. A função executa a heurística de alto nível, representada por um dado indivíduo, em 3 instâncias aleatórias de um total de 11 selecionadas dos estudos anteriores. Para cada instância a heuristíca de alto nível foi executada com um tempo máximo de 30 minutos e o retorno é a melhor solução para o PDP simplificado com o modelo HP-2D. O valor de \textit{fitness} associado com a solução retornada é então normalizado entre 0 e 1. O \textit{fitness} de um indivíduo, da EG, consiste na soma das saídas das execuções com cada uma das 3 instâncias. Dessa maneira, o melhor valor possível é 3 e o pior é 0. A razão de executar a heurística de alto nível (indivíduo) com 3 instâncias é que treinar a EG com apenas uma poderia torna as heurísticas geradas muito especializadas na instância utilizada. Portanto 1/4 do número total de instâncias foi utilizado para tentar tonar as heurísticas menos especialistas e mais genéricas. 
+ Com objetivo de avaliar os indivíduos gerados durante a busca, uma função de \textit{fitness} foi desenvolvida. A função executa a heurística de alto nível, representada por um dado indivíduo, 
+ em 1/4 do total instâncias utilizadas como \textit{benchmark}. Conforme será descrito no capítulo \ref{cap:experimentos} foram   foram selecionadas 11 instâncias de diversos estudos que exploram o PDP simplificado com modelo HP-2D. Portanto 1/4 de 11 resulta em 3 instâncias que serão selecionadas de maneira aleatória. Para cada instância a heuristíca de alto nível foi executada com um tempo máximo de 30 minutos e o retorno é a melhor solução para so modelo HP-2D. O valor de \textit{fitness} associado com a solução retornada é então normalizado entre 0 e 1. O \textit{fitness} de um indivíduo, da EG, consiste na soma das saídas das execuções com cada uma das 3 instâncias. Dessa maneira, o melhor valor possível é 3 e o pior é 0. A razão de executar a heurística de alto nível (indivíduo) com 1/4 do total de instâncias é tornar as heurísticas geradas mais genéricas ao invés de especializada em apenas uma instância. 
+  
  
 % 
 %\begin{equation}

@@ -31,7 +31,7 @@
 \contentsline {section}{\numberline {5.4}EGHyPDP}{33}{section.58}
 \contentsline {section}{\numberline {5.5}Heur\IeC {\'\i }sticas de alto n\IeC {\'\i }vel}{33}{section.59}
 \contentsline {subsection}{\numberline {5.5.1}Fun\IeC {\c c}\IeC {\~a}o de \textit {Fitness}}{36}{subsection.62}
-\contentsline {subsection}{\numberline {5.5.2}Crit\IeC {\'e}rio de Parada}{36}{subsection.63}
+\contentsline {subsection}{\numberline {5.5.2}Crit\IeC {\'e}rio de Parada}{37}{subsection.63}
 \contentsline {section}{\numberline {5.6}Heur\IeC {\'\i }sticas de baixo n\IeC {\'\i }vel}{37}{section.64}
 \contentsline {subsection}{\numberline {5.6.1}Conjunto de heur\IeC {\'\i }sticas de baixo n\IeC {\'\i }vel}{37}{subsection.65}
 \contentsline {section}{\numberline {5.7}Processo geral do EGHyPDP}{37}{section.66}
