@@ -3,6 +3,9 @@
 
 Neste capítulo serão apresentadas as duas estratégias propostas e desenvolvidas nesta dissertação para o PDP simplificado. A primeira trata de uma abordagem multi-objetiva utilizando dois AEMOs. Já a segunda visa aplicação da evolução gramatical  para gerar heurísticas de alto nível para um \textit{framework} hiper-heurístico intitulada EGHyPDP.
 
+Inicialmente será apresentada a representação para o problema com modelo HP-2D. Em seguida é apresentado o conjunto de heurísticas de baixo nível. Tanto a representação quanto o conjunto de heurísticas foram utilizados por ambas as abordagens propostas.
+
+\section{Representação do PDP com modelo HP-2D}
 
 O problema PDP simplificado foi modelado utilizando a representação relativa, descrita na subseção \ref{subsubsection:modeloHP}, afim de codificar as possíveis estruturas de proteínas em vetores de inteiros. Segundo o estudo realizado por  \cite{krasnogor1999protein} esta representação possui um maior potencial em conduzir os algoritmos a resultados melhores. Cada gene do cromossomo especifica a direção que o amino ácido atual deve ser posicionado. Cada amino ácido é posicionado na direção codificada pelo respectivo gene em relação ao amino ácido anterior. O genes podem assumir apenas 3 valores:
 
@@ -23,6 +26,7 @@ A Figura \ref{img:cromossomo} apresenta um exemplo de um cromossomo hipotético 
 \end{figure}
 
 
+\section{Conjunto de Heurísticas de Baixo Nível}
 
 Para ambas as abordagens o mesmo conjunto de heurísticas de baixo nível (operadores de cruzamento/mutação e busca locais) foi selecionado a partir dos estudos anteriores \cite{custodio2014multiple, custodio2004investigation, garza2012locality,benitez2015algoritmo}. O conjunto de heurísticas de baixo nível será descrito abaixo:
 
@@ -102,7 +106,7 @@ Para ambas as abordagens o mesmo conjunto de heurísticas de baixo nível (opera
 
 
 
- Este capítulo está divido em duas seções para melhor apresentar ambas as estratégias propostas nesta dissertação . A seção \ref{sec:aemos} apresenta a estratégia multi objetiva onde foi utilizada dois algoritmos evolucionários, do estado da arte de otimização multi objetiva. Já a seção  \ref{sec:eghypdp} irá apresentar o design automático de heurísticas de alto nível para um \textit{framework} hiper heurístico para resolver o PDP.
+ Este capítulo está divido em duas seções para melhor apresentar ambas as estratégias propostas nesta dissertação. A seção \ref{sec:aemos} apresenta a estratégia multi objetiva onde foi utilizada dois algoritmos evolucionários, do estado da arte de otimização multi objetiva. Já a seção  \ref{sec:eghypdp} irá apresentar o design automático de heurísticas de alto nível para um \textit{framework} hiper heurístico para resolver o PDP.
 
 	
 
@@ -118,7 +122,8 @@ Duas abordagens multi-objetivas foram desenvolvidas neste capítulo, utilizando 
  
  \begin{itemize}
  		
-		\item \textit{Pool} de operadores: O uso de operadores fixos geralmente não conseguem guiar a busca para regiões promissoras. Com objetivo de aprimorar os AEMOs, um \textit{pool} de operadores foi desenvolvido. Os operadores que compõem \textit{pool} foram selecionados de estudos anteriores e foram apresentados no início deste capítulo. A cada operação de cruzamento e mutação os operadores são selecionados de maneira aleatória a partir do \textit{pool}. Os operadores são sempre executados independente de probabilidades conforme a versão padrão dos algoritmos. 
+		\item \textit Conjunto de heurísticas de baixo nivel: O uso de operadores fixos geralmente não conseguem guiar a busca para regiões promissoras. 
+		Com objetivo de aprimorar os AEMOs, . Os operadores que compõem conjunto foram selecionados de estudos anteriores e foram apresentados no início deste capítulo. A cada operação de cruzamento e mutação os operadores são selecionados de maneira aleatória a partir do conjunto. Os operadores são sempre executados independente de probabilidades conforme a versão padrão dos algoritmos. 
 	
 		
 		\item Inicialização via \textit{backtracking}: Tradicionalmente, a população inicial é gerada de maneira aleatória no caso dos algoritmos NSGAII e IBEA. Este tipo de inicialização tem grande potencial de gerar muitas soluções inválidas ao  modelo HP-2D. Soluções que não sejam \textit{self-avoiding walk} (SAW) são consideradas inválidas pois dois ou mais aminoácidos estariam ocupando a mesma posição no espaço. Se a população for integralmente gerada de maneira aleatória os algoritmos de otimização perdem um tempo considerável avaliando soluções inválidas. Para evitar este problema uma estratégia de \textit{backtracking} pode ser utilizada. A estratégia de inicialização com \textit{backtracking} irá começar posicionando o primeiro aminoácido na posição 0,0. Para posicionar o próximo aminoácido, um movimento é selecionado de maneira aleatória. Caso o movimento cause uma colisão, este movimento será marcado como uma má escolha e um novo movimento é selecionado aleatoriamente (do conjunto que restou sem os movimentos marcados como más escolhas). Caso todos os movimentos estejam marcados como má escolha, a estratégia de \textit{backtracking} irá retornar de maneira recursiva para o aminoácido anterior e marcar a escolha em questão como uma má escolha. A estratégia de \textit{backtracking} termina quando gerar uma conformação que não possua colisões. Entretanto, a inicialização via \textit{backtracking} é computacionalmente custosa. Dessa maneira, apenas 20\% da população inicial foi inicializada utilizando esta estratégia.
@@ -320,7 +325,7 @@ Para cada indivíduo (heurística de alto nível) será selecionada de maneira a
 \section{Considerações Finais}
 \label{Metodologia:ConsideracoesFinais}
 
-Neste capítulo foram discutidos os principais aspectos relativos à duas estratégias propostas nesta dissertação. Inicialmente, foi discutido sobre a aplicação de AEMOs e em seguida o EGHyPDP foi apresentado. A representação relativa foi utilizada para codificar as soluções para ambas as estratégias. O conjunto de heurísticas de baixo nível, utilizado em ambas abordagens, também foi apresentado. No caso dos AEMOs 4 versões de algoritmos foram apresentadas. As funções objetivas também foram discutidas. Duas adaptacões foram propostas que consistiram em adicionar um \textit{pool} de operadores para tornar os AEMOs mais adpatativos e a inicialização via \textit{backtracking}. Para aplicar o EGHyPDP com objetivo de gerar heurísticas de alto nível de um \text{framework} hiper-heurístico para o PDP simplicado, uma  gramática foi desenvolvida. Também foi apresentado um conjunto de terminais referente ao histórico das aplicações das heurísticas de baixo nível. Funções matemáticas simples compõem a gramática e combinadas com os dados estatísticos diferentes heurísticas de alto nível foram geradas. Posteriormente, a função de \textit{fitness} avalia estas heurística executando o \textit{framework} composto por tais trés vezes em três instâncias distintas selecionadas de maneira aleatória.
+Neste capítulo foram discutidos os principais aspectos relativos à duas estratégias propostas nesta dissertação. Inicialmente, foi discutido sobre a aplicação de AEMOs e em seguida o EGHyPDP foi apresentado. A representação relativa foi utilizada para codificar as soluções para ambas as estratégias. O conjunto de heurísticas de baixo nível, utilizado em ambas abordagens, também foi apresentado. No caso dos AEMOs 4 versões de algoritmos foram apresentadas. As funções objetivas também foram discutidas. Duas adaptacões foram propostas que consistiram em adicionar um conjunto heurísticas de baixo nível para tornar os AEMOs mais adpatativos e a inicialização via \textit{backtracking}. Para aplicar o EGHyPDP com objetivo de gerar heurísticas de alto nível de um \text{framework} hiper-heurístico para o PDP simplicado, uma  gramática foi desenvolvida. Também foi apresentado um conjunto de terminais referente ao histórico das aplicações das heurísticas de baixo nível. Funções matemáticas simples compõem a gramática e combinadas com os dados estatísticos diferentes heurísticas de alto nível foram geradas. Posteriormente, a função de \textit{fitness} avalia estas heurística executando o \textit{framework} composto por tais trés vezes em três instâncias distintas selecionadas de maneira aleatória.
  
  O próximo capítulo apresenta os experimentos realizados afim de avaliar o desempenho das abordagens aqui propostas.
 
