@@ -33,23 +33,22 @@
 \contentsline {subsection}{\numberline {5.5.1}Fun\IeC {\c c}\IeC {\~a}o de \textit {Fitness}}{36}{subsection.62}
 \contentsline {subsection}{\numberline {5.5.2}Crit\IeC {\'e}rio de Parada}{37}{subsection.63}
 \contentsline {section}{\numberline {5.6}Heur\IeC {\'\i }sticas de baixo n\IeC {\'\i }vel}{37}{section.64}
-\contentsline {subsection}{\numberline {5.6.1}Conjunto de heur\IeC {\'\i }sticas de baixo n\IeC {\'\i }vel}{37}{subsection.65}
-\contentsline {section}{\numberline {5.7}Processo geral do EGHyPDP}{37}{section.66}
-\contentsline {subsection}{\numberline {5.7.1}Mecanismo de Mem\IeC {\'o}ria}{37}{subsection.67}
-\contentsline {subsubsection}{Inicializa\IeC {\c c}\IeC {\~a}o do Mecanismo de Mem\IeC {\'o}ria}{38}{section*.68}
-\contentsline {subsubsection}{Atualiza\IeC {\c c}\IeC {\~a}o do Mecanismo de Mem\IeC {\'o}ria}{38}{section*.69}
-\contentsline {section}{\numberline {5.8}Considera\IeC {\c c}\IeC {\~o}es Finais}{38}{section.70}
-\contentsline {chapter}{\numberline {6}Experimentos}{40}{chapter.71}
-\contentsline {section}{\numberline {6.1}AEMOs aplicados ao PDP}{40}{section.73}
-\contentsline {subsection}{\numberline {6.1.1}Resultados dos AEMOs aplicados ao PDP}{41}{subsection.74}
-\contentsline {subsection}{\numberline {6.1.2}Compara\IeC {\c c}\IeC {\~a}o com outras abordagens mono-objetivas}{42}{subsection.77}
-\contentsline {subsection}{\numberline {6.1.3}Discuss\IeC {\~a}o sobre os experimentos utilizando os AEMOs}{44}{subsection.79}
-\contentsline {section}{\numberline {6.2}EGHyPDP}{45}{section.80}
-\contentsline {subsection}{\numberline {6.2.1}Resultados obtidos com EGHyPDP-1}{46}{subsection.81}
-\contentsline {subsection}{\numberline {6.2.2}Resultados obtidos com EGHyPDP-2}{46}{subsection.84}
-\contentsline {subsection}{\numberline {6.2.3}Resultados obtidos com EGHyPDP-3}{48}{subsection.87}
-\contentsline {subsection}{\numberline {6.2.4}Compara\IeC {\c c}\IeC {\~a}o com \textit {framework} hiper heur\IeC {\'\i }stico GIHH}{49}{subsection.91}
-\contentsline {subsection}{\numberline {6.2.5}Discuss\IeC {\~a}o}{49}{subsection.93}
-\contentsline {subsection}{\numberline {6.2.6}Discuss\IeC {\~a}o sobre os experimentos realizados com EGHyPDP}{50}{subsection.94}
-\contentsline {chapter}{\numberline {7}Conclus\IeC {\~a}o}{52}{chapter.95}
-\contentsline {chapter}{Refer\^encias Bibliogr\'aficas}{54}{chapter*.96}
+\contentsline {section}{\numberline {5.7}Processo geral do EGHyPDP}{37}{section.65}
+\contentsline {subsection}{\numberline {5.7.1}Mecanismo de Mem\IeC {\'o}ria}{37}{subsection.66}
+\contentsline {subsubsection}{Inicializa\IeC {\c c}\IeC {\~a}o do Mecanismo de Mem\IeC {\'o}ria}{38}{section*.67}
+\contentsline {subsubsection}{Atualiza\IeC {\c c}\IeC {\~a}o do Mecanismo de Mem\IeC {\'o}ria}{38}{section*.68}
+\contentsline {section}{\numberline {5.8}Considera\IeC {\c c}\IeC {\~o}es Finais}{38}{section.69}
+\contentsline {chapter}{\numberline {6}Experimentos}{40}{chapter.70}
+\contentsline {section}{\numberline {6.1}AEMOs aplicados ao PDP}{40}{section.72}
+\contentsline {subsection}{\numberline {6.1.1}Resultados dos AEMOs aplicados ao PDP}{41}{subsection.73}
+\contentsline {subsection}{\numberline {6.1.2}Compara\IeC {\c c}\IeC {\~a}o com outras abordagens mono-objetivas}{42}{subsection.76}
+\contentsline {subsection}{\numberline {6.1.3}Discuss\IeC {\~a}o sobre os experimentos utilizando os AEMOs}{44}{subsection.78}
+\contentsline {section}{\numberline {6.2}EGHyPDP}{45}{section.79}
+\contentsline {subsection}{\numberline {6.2.1}Resultados obtidos com EGHyPDP-1}{46}{subsection.80}
+\contentsline {subsection}{\numberline {6.2.2}Resultados obtidos com EGHyPDP-2}{46}{subsection.83}
+\contentsline {subsection}{\numberline {6.2.3}Resultados obtidos com EGHyPDP-3}{48}{subsection.86}
+\contentsline {subsection}{\numberline {6.2.4}Compara\IeC {\c c}\IeC {\~a}o com \textit {framework} hiper heur\IeC {\'\i }stico GIHH}{49}{subsection.90}
+\contentsline {subsection}{\numberline {6.2.5}Discuss\IeC {\~a}o}{49}{subsection.92}
+\contentsline {subsection}{\numberline {6.2.6}Discuss\IeC {\~a}o sobre os experimentos realizados com EGHyPDP}{50}{subsection.93}
+\contentsline {chapter}{\numberline {7}Conclus\IeC {\~a}o}{52}{chapter.94}
+\contentsline {chapter}{Refer\^encias Bibliogr\'aficas}{54}{chapter*.95}

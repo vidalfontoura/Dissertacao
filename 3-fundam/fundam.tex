@@ -1,10 +1,10 @@
 \chapter{Referencial Teórico}
 \label{cap:Referencial Teórico}
 
-% figuras estão no subdiretório "figuras/" dentro deste capítulo
+% figuras estão no subdiretório "figuras/" dentro deste Capítulo
 \graphicspath{\currfiledir/figuras/}
 
-Este capítulo apresenta o referencial teórico das estratégias heurísticas implementadas para resolver o problema PDP. Inicialmente, os algoritmos evolutivos e otimização multi objetiva são apresentados. Em seguida os algoritmos multi objetivos: NSGAII e IBEA são descritos em detalhe. Na sequência hiper heurísticas são apresentadas. O capítulo termina descrevendo programação genética, evolução gramatical e a abordagem básica para aplicar estas técnicas para produzir programas de computador.
+Este Capítulo apresenta o referencial teórico das estratégias heurísticas implementadas para resolver o problema PDP. Inicialmente, os algoritmos evolutivos e otimização multi objetiva são apresentados. Em seguida os algoritmos multi objetivos: NSGAII e IBEA são descritos em detalhe. Na sequência hiper heurísticas são apresentadas. O Capítulo termina descrevendo programação genética, evolução gramatical e a abordagem básica para aplicar estas técnicas para produzir programas de computador.
 
 
 \section{AEs - Algoritmos Evolucionários}
@@ -15,7 +15,7 @@ Um algoritmo evolucionário (AE) é uma técnica de busca, altamente paralela, i
 de reprodução. Indivíduos com mais descendentes tem uma chance maior de perpetuarem seus códigos genéticos nas gerações futuras. O código genético é a identidade de cada indivíduo e é representado por cromossomos. Estes princípios são utilizados na implementação de algoritmos computacionais, que procuram por soluções melhores para um dado problema, evoluindo uma população 
 de soluções codificadas em cromossomos artificais -- estruturas de dados utilizadas para representar soluções factíveis para um dado problema \cite{pacheco1999algoritmos}.
 
-De maneira geral, problemas reais de otimização  estão presentes em muitas áreas do conhecimento epossuem múltiplos objetivos a serem minimizados/maximizados. Para otimizar problemas multiobjetivos dois ou mais objetivos são considerados, os quais geralmente são conflitantes. Para estes problemas é impossível encontrar uma
+De maneira geral, problemas reais de otimização  estão presentes em muitas áreas do conhecimento e possuem múltiplos objetivos a serem minimizados/maximizados. Para otimizar problemas multi objetivos dois ou mais objetivos são considerados, os quais geralmente são conflitantes. Para estes problemas é impossível encontrar uma
 única solução ótima. Um conjunto de soluções é encontrado avaliando a dominância de Pareto \cite{pareto} entre as soluções. O objetivo principal é encontrar o conjunto  
 de soluções que sejam não dominadas entre si. Uma solução domina outra, se e somente se, for melhor em pelos um dos objetivos, sem ser pior em qualquer outro.
 Este conjunto de soluções constitui a fronteira de Pareto. Encontrar a fronteira real de Pareto é um problema NP-Completo \cite{fonseca2005tutorial}, dessa maneira,
@@ -23,7 +23,7 @@ o objetivo é encontrar uma boa aproximação da fronteira.
 
 Algoritmos Evolucionários Multi-Objetivos (AEMOs) são extensões de AEs para problemas multi-objetivos, os quais aplicam
 conceitos da dominância de Pareto para criar diferentes estratégias para evoluir e manter a diversidade das soluções.
-Nesta dissertação foram explorados dois AEMOs: NSGAII \cite{deb2002fast} e IBEA \cite{zitzler2004indicator}. Estes algoritmos foram selecionados pois sãp tradicionais e muito utilizados em diversos problemas do mundo real.
+Nesta Dissertação foram explorados dois AEMOs: NSGAII \cite{deb2002fast} e IBEA \cite{zitzler2004indicator}. Estes algoritmos foram selecionados pois são tradicionais e muito utilizados em diversos problemas do mundo real.
 %TODO: TALVEZ REFERENCIAR
 %=====================================================
 
@@ -173,7 +173,7 @@ Apesar do sucesso de métodos heurísticos e outros métodos de busca na tarefa 
 \end{itemize}
 
 
-Esta seção tratará apenas de hiper-heurísticas e suas particularidades. Uma hiper-heurística pode ser vista como uma metodologia de alto nível, a qual seleciona ou cria heurísticas para resolver um dado problema ou instância de um problema. \cite{burke2013hyper}. O objetivo principal é tentar encontrar ou construir a heurística mais adequada para cada situação. As hiper-heurísticas diferem dos métodos padrão de busca, pois operam sobre o espaço de busca de heurísticas que por sua vez operam sobre o espaço de busca de um problema. Além disso, hiper-heurísticas são independentes do problema. Tradicionalmente \textit{frameworks} hiper-heurísticos possuem dois níveis \cite{sabar2015automatic}: 
+Esta Seção tratará apenas de hiper-heurísticas e suas particularidades. Uma hiper-heurística pode ser vista como uma metodologia de alto nível, a qual seleciona ou cria heurísticas para resolver um dado problema ou instância de um problema. \cite{burke2013hyper}. O objetivo principal é tentar encontrar ou construir a heurística mais adequada para cada situação. As hiper-heurísticas diferem dos métodos padrão de busca, pois operam sobre o espaço de busca de heurísticas que por sua vez operam sobre o espaço de busca de um problema. Além disso, hiper-heurísticas são independentes do problema. Tradicionalmente \textit{frameworks} hiper-heurísticos possuem dois níveis \cite{sabar2015automatic}: 
 
 \textbf{Heurísticas de baixo nível}:  Um conjunto de heurísticas de baixo nível específicas. Estas heurísticas costumam diferir entre domínios de problemas. São exemplos: operadores de cruzamento, mutação e buscas locais. Em alguns casos, meta-heurísticas, dependendo da modelagem do \textit{framework} hiper-heurístico, também podem assumir o papel de heurísticas de baixo nível. 
 
@@ -205,19 +205,19 @@ A primeira classificação de hiper-heurísticas é baseada na sua fonte de conh
 \subsection{Hiper-heurísticas de Geração}
 \label{Hiper-Heuristicas-Geraçao}
 
-Estas hiper-heurísticas geram novas heurísticas combinando componentes de heurísticas existentes \cite{burke2013hyper}. Geralmente se utiliza programação genética (GP), como hiper-heurística para gerar heurísticas. A próxima sub-seção irá introduzir o conhecimento necessário para a compreensão da programação genética, assim como irá introduzir evolução gramatical, que se trata de um tipo de programação genética e que será utilizada nesta proposta.
+Estas hiper-heurísticas geram novas heurísticas combinando componentes de heurísticas existentes \cite{burke2013hyper}. Geralmente se utiliza programação genética (GP), como hiper-heurística para gerar heurísticas. A próxima subseção irá introduzir o conhecimento necessário para a compreensão da programação genética, assim como irá introduzir evolução gramatical, que se trata de um tipo de programação genética e que será utilizada nesta proposta.
 
 \section{Programação Genética (PG)}
 \label{subsection:PG}
 
 Programação Genética \cite{burke2009exploring} é um ramo da síntese de programas que utiliza ideias oriundas da teoria da evolução natural para produzir programas. Da mesma maneira, que nos AEs um processo evolutivo é aplicado a uma população de indivíduos. Na PG um indivíduo representa um programa de computador. Os operadores geneticamente inspirados (cruzamento e mutação) são repetidamente aplicados com objetivo de produzir novos programas de computador. Estes programas são avaliados utilizando uma função de \textit{fitness} (normalmente dependente do desempenho obtido pela aplicação do programa em um problema), que determina quais destes programas são mais suscetíveis a sobreviver para gerações futuras. Os programas com maior aptidão tem mais chances de serem selecionados para o cruzamento e perpetuarem parte de seus códigos genéticos durante o processo evolutivo. 
 Programação genética é um método de geração de programas sintaticamente válidos e a função de \textit{fitness} é utilizada para decidir quais programas são mais adequados para o problema.
-Na programação genética, os programas que compõem a população são tradicionalmente representados utilizando estruturas de árvore. Existem outras estruturas que podem ser evoluídas, por exemplo: sequências lineares de instruções ou gramáticas. Nesta  Dissertação será utilizada uma representação gramatical linear que será explicada na seção \ref{subsubsection:EvolucaoGramatical}.
+Na programação genética, os programas que compõem a população são tradicionalmente representados utilizando estruturas de árvore. Existem outras estruturas que podem ser evoluídas, por exemplo: sequências lineares de instruções ou gramáticas. Nesta  Dissertação será utilizada uma representação gramatical linear que será explicada na Seção \ref{subsubsection:EvolucaoGramatical}.
 
 \section{Evolução Gramatical (EG)}
 \label{subsubsection:EvolucaoGramatical}
 
-Evolução gramatical é uma técnica relativamente nova de computação evolutiva, proposta por Ryan et al. \cite{ryan1998grammatical}. Trata-se de um tipo de programação genética. Assim como na programação genética, o principal objetivo é encontrar um programa executável ou trecho de um programa, que obtenha um bom valor de \textit{fitness} para o problema em questão. Na maioria dos trabalhos publicados de programação genética, expressões que representam estruturas de árvore são manipuladas, enquanto na evolução gramatical os operadores genéticos são aplicados em vetores de inteiros que posteriormente são mapeados para um programa (ou trecho de programa) através de uma gramática específica. Um dos benefícios de EG é que este mapeamento generaliza a aplicação para diferentes linguagens de programação. \cite{ryan1998grammatical} propõem uma técnica para gerar programas ou fragmentos de programas para qualquer linguagem de programação utilizando notações \textit{Backus Naur Form} (BNF). Esta técnica pode ser utilizada para evoluir programas por um processo evolutivo. A evolução gramatical adota um mecanismo de mapeamento entre o genótipo (indivíduos codificados em um vetor de inteiros) e o fenótipo (programas gerados para resolver algum problema). 
+Evolução gramatical é uma técnica relativamente nova de computação evolutiva, proposta por Ryan et al. \cite{ryan1998grammatical}. Trata-se de um tipo de programação genética. Assim como na programação genética, o principal objetivo é encontrar um programa executável ou trecho de um programa, que obtenha um bom valor de \textit{fitness} para o problema em questão. Na maioria dos trabalhos publicados de programação genética, expressões que representam estruturas de árvore são manipuladas, enquanto na evolução gramatical os operadores genéticos são aplicados em vetores de inteiros que posteriormente são mapeados para um programa (ou trecho de programa) através de uma gramática específica. Um dos benefícios de EG é que este mapeamento generaliza a aplicação para diferentes linguagens de programação. Ryan et al. \cite{ryan1998grammatical} propõem uma técnica para gerar programas ou fragmentos de programas para qualquer linguagem de programação utilizando notações \textit{Backus Naur Form} (BNF). Esta técnica pode ser utilizada para evoluir programas por um processo evolutivo. A evolução gramatical adota um mecanismo de mapeamento entre o genótipo (indivíduos codificados em um vetor de inteiros) e o fenótipo (programas gerados para resolver algum problema). 
 A notação BNF é utilizada para expressar a gramática de uma linguagem na forma de regras de produção. Uma gramática BNF consiste em um conjunto de terminais, os quais são itens que podem aparecer na linguagem, por exemplo: +, -, *, / etc e não terminais, que podem ser expandidos em um ou mais terminais e não terminais. Uma gramática pode ser expressada como uma tupla ${N,T,P,S}$, onde $N$ é o conjunto de não terminais, $T$ o conjunto de terminais, P um conjunto de regras de produção que mapeia os elementos $N$ para $T$; e, por último, $S$, um símbolo de início e que está contido em $N$.
 A Gramatica \ref{gram:gramatica} apresenta um exemplo de definições BNF para gerar funções aritméticas simples.
 
@@ -358,7 +358,7 @@ O Algoritmo \ref{alg:GE} apresenta o pseudocódigo da evolução gramatical (EG)
 \section{Programação Genética como Hiper-Heurística de Geração de Heurísticas}
 \label{subsubsection:PGasHH}
 
-Nesta seção serão apresentadas questões relativas ao uso de EG como mecanismo de geração de heurísticas. Burke et al. \cite{burke2009exploring} descrevem que muitos autores mencionam a melhor adequação de programação genética, em relação a outras técnicas de aprendizagem de máquina, para gerar heurísticas de maneira automática. Burke et al. também apontam algumas vantagens desta técnica:
+Nesta Seção serão apresentadas questões relativas ao uso de EG como mecanismo de geração de heurísticas. Burke et al. \cite{burke2009exploring} descrevem que muitos autores mencionam a melhor adequação de programação genética, em relação a outras técnicas de aprendizagem de máquina, para gerar heurísticas de maneira automática. Burke et al. também apontam algumas vantagens desta técnica:
 
 \begin{itemize}
 	\item PG utiliza cromossomos de tamanho variável. Geralmente, não se sabe um tamanho ótimo para representar heurísticas de um dado domínio de problema.
@@ -367,11 +367,11 @@ Nesta seção serão apresentadas questões relativas ao uso de EG como mecanism
 	\item Heurísticas desenvolvidas por humanos podem facilmente ser expressadas na mesma linguagem utilizada para criar o espaço de busca da PG. O conjunto de funções, relevante para o problema pode ser determinado facilmente. E adicionalmente PG pode ser suplementada com uma gramática específica.
 \end{itemize}
 
-Todas estas vantagens descritas por \cite{burke2009exploring} também são consideradas ao utilizar EG, visto que se trata de uma extensão de programação genética e possui as mesmas características (cromossomo de tamanho variável, produz estruturas executáveis, etc). \cite{burke2009exploring} também mencionam desvantagens, por exemplo: a cada execução da programação genética é encontrada uma melhor heurística que, por se tratar de uma técnica estocástica, os resultados podem ser distintos em diferentes execuções. Portanto, se fazem necessárias múltiplas execuções a fim de se obter um melhor conhecimento da qualidade das heurísticas que podem ser produzidas. Outra desvantagem é referente à configuração de parâmetros, que normalmente é encontrada via tentativa e erro.
+Todas estas vantagens descritas em \cite{burke2009exploring} também são consideradas ao utilizar EG, visto que se trata de uma extensão de programação genética e possui as mesmas características (cromossomo de tamanho variável, produz estruturas executáveis, etc). \cite{burke2009exploring} também mencionam desvantagens, por exemplo: a cada execução da programação genética é encontrada uma melhor heurística que, por se tratar de uma técnica estocástica, os resultados podem ser distintos em diferentes execuções. Portanto, se fazem necessárias múltiplas execuções a fim de se obter um melhor conhecimento da qualidade das heurísticas que podem ser produzidas. Outra desvantagem é referente à configuração de parâmetros, que normalmente é encontrada via tentativa e erro.
 
 \subsubsection{Abordagem Básica}
 
-\cite{burke2009exploring} descrevem uma abordagem básica para aplicar programação genética para gerar heurísticas:
+Burke et al.  descrevem uma abordagem básica \cite{burke2009exploring} para aplicar programação genética para gerar heurísticas:
 
 \begin{enumerate}
 	\item Examinar as heurísticas existentes: Avaliar se as heurísticas já propostas para um dado problema podem ser descritas em um \textit{framework} comum. Estas heurísticas podem ter sido criadas por humanos ou até mesmo concebidas via outras técnicas de aprendizagem. Este passo não é trivial, pois envolve o entendimento de um número diverso de heurísticas existentes, que podem operar de diferentes maneiras. Geralmente heurísticas desenvolvidas por humanos são produtos de anos de pesquisa, e portanto, uma boa compreensão das heurísticas existentes pode ser um trabalho difícil. 
@@ -389,9 +389,9 @@ Todas estas vantagens descritas por \cite{burke2009exploring} também são consi
 \label{ReferencialTeorico:Conclusão}
 
 
-Neste capítulo foram apresentados alguns conceitos que permeiam a área de estudo otimização multi objetiva e sobre hiper-heurísticas. Inicialmente, uma contextualização sobre AEs foi fornecida em seguida os AEMOs foram introduzidos. Nesta dissertação foram utilizados os algoritmos NSGAII e IBEA os quais também foram apresentados. Também foi discutido sobre \textit{frameworks} hiper-heurísticos,  os seus níveis (alto e baixo) e as classificações encontradas na literatura.  Foram discutidas algumas estratégias para hiper-heurísticas de seleção e geração. As hiper-heurísticas de geração foram mais detalhadas, pois esta proposta visa o projeto  automático de heurísticas de alto nível. Foram apresentados os conceitos de PG e sua extensão EG, por se tratarem de estratégias comumente utilizadas para o projeto de hiper-heurísticas de geração de heurísticas. Também foram discutidas algumas vantagens e desvantagens referentes ao uso de PG para geração de heurísticas, além de demonstrar que a EG possui as mesmas características da PG, pois se trata de uma extensão que utiliza uma gramática para gerar os programas. O funcionamento geral da EG foi demonstrado utilizando uma gramática exemplo e um vetor de inteiros e, por fim, o pseudocódigo da evolução gramatical foi apresentado. 
+Neste Capítulo foram apresentados alguns conceitos que permeiam a área de estudo otimização multi objetiva e sobre hiper-heurísticas. Inicialmente, uma contextualização sobre AEs foi fornecida em seguida os AEMOs foram introduzidos. Nesta Dissertação foram utilizados os algoritmos NSGAII e IBEA os quais também foram apresentados. Também foi discutido sobre \textit{frameworks} hiper-heurísticos,  os seus níveis (alto e baixo) e as classificações encontradas na literatura.  Foram discutidas algumas estratégias para hiper-heurísticas de seleção e geração. As hiper-heurísticas de geração foram mais detalhadas, pois esta proposta visa o projeto  automático de heurísticas de alto nível. Foram apresentados os conceitos de PG e sua extensão EG, por se tratarem de estratégias comumente utilizadas para o projeto de hiper-heurísticas de geração de heurísticas. Também foram discutidas algumas vantagens e desvantagens referentes ao uso de PG para geração de heurísticas, além de demonstrar que a EG possui as mesmas características da PG, pois se trata de uma extensão que utiliza uma gramática para gerar os programas. O funcionamento geral da EG foi demonstrado utilizando uma gramática exemplo e um vetor de inteiros e, por fim, o pseudocódigo da evolução gramatical foi apresentado. 
 
-O capítulo \ref{cap:Trabalhos Relacionados} apresenta os trabalhos relacionados que foram selecionados a partir da revisão bibliográfica realizada.
+O Capítulo \ref{cap:Trabalhos Relacionados} apresenta os trabalhos relacionados que foram selecionados a partir da revisão bibliográfica realizada.
 
 
 
