@@ -2,7 +2,19 @@
 \select@language {english}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Framework Geral Hiper-Heur\IeC {\'\i }stico. Adaptado de \cite {sabar2015automatic}\relax }}{14}{figure.caption.27}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Classifica\IeC {\c c}\IeC {\~a}o Hiper-heur\IeC {\'\i }sticas. Adaptado de \cite {sabar2015automatic}\relax }}{15}{figure.caption.28}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Comunica\IeC {\c c}\IeC {\~a}o inter-processos.\relax }}{23}{figure.caption.47}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Exemplos de representa\IeC {\c c}\IeC {\~a}o de prote\IeC {\'\i }nas utilizando os modelos HP 2D-HP (a) e 3D-HP (b). Fonte: Adaptado de \cite {benitez2015algoritmo}\relax }}{7}{figure.caption.15}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Framework Geral Hiper-Heur\IeC {\'\i }stico. Adaptado de \cite {sabar2015automatic}\relax }}{16}{figure.caption.26}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Classifica\IeC {\c c}\IeC {\~a}o Hiper-heur\IeC {\'\i }sticas. Adaptado de \cite {sabar2015automatic}\relax }}{17}{figure.caption.27}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Cromossomo decodificado que representa uma poss\IeC {\'\i }vel conforma\IeC {\c c}\IeC {\~a}o para a cadeia HHPPHPPHHH\relax }}{29}{figure.caption.48}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Exemplo de aplica\IeC {\c c}\IeC {\~a}o da heur\IeC {\'\i }stica 2x. Fonte Autoria Pr\IeC {\'o}pria\relax }}{29}{figure.caption.50}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Exemplo de aplica\IeC {\c c}\IeC {\~a}o da heur\IeC {\'\i }stica MPX. Fonte Autoria Pr\IeC {\'o}pria\relax }}{30}{figure.caption.51}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Exemplo de aplica\IeC {\c c}\IeC {\~a}o da heur\IeC {\'\i }stica SMUT. Fonte Autoria Pr\IeC {\'o}pria\relax }}{30}{figure.caption.52}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Exemplo de aplica\IeC {\c c}\IeC {\~a}o da heur\IeC {\'\i }stica LM. Fonte Autoria Pr\IeC {\'o}pria\relax }}{30}{figure.caption.53}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Exemplo de aplica\IeC {\c c}\IeC {\~a}o da heur\IeC {\'\i }stica LPM. Fonte Autoria Pr\IeC {\'o}pria\relax }}{31}{figure.caption.54}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Exemplo de aplica\IeC {\c c}\IeC {\~a}o da heur\IeC {\'\i }stica OM. Fonte Autoria Pr\IeC {\'o}pria\relax }}{31}{figure.caption.55}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces \textit {Estrutura geral do EGHyPDP.} Fonte: Adaptado de \cite {sabar2015automatic}\relax }}{34}{figure.caption.60}
+\addvspace {10\p@ }
 \addvspace {10\p@ }
