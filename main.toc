@@ -1,30 +1,54 @@
 \select@language {brazilian}
 \select@language {english}
-\contentsline {chapter}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{1}{chapter.9}
-\contentsline {chapter}{\numberline {2}Referencial Te\IeC {\'o}rico}{3}{chapter.11}
-\contentsline {section}{\numberline {2.1}PDP - Problema de Dobramento de Prote\IeC {\'\i }nas}{3}{section.12}
-\contentsline {section}{\numberline {2.2}Dobramento de prote\IeC {\'\i }nas}{3}{section.13}
-\contentsline {section}{\numberline {2.3}Modelos de Representa\IeC {\c c}\IeC {\~a}o de Prote\IeC {\'\i }nas}{5}{section.14}
-\contentsline {subsection}{\numberline {2.3.1}Modelos Discretos}{6}{subsection.15}
-\contentsline {subsubsection}{Modelo Hidrof\IeC {\'o}bico-Polar HP}{6}{section*.16}
-\contentsline {subsubsection}{Outros Modelos}{7}{section*.18}
-\contentsline {subsection}{\numberline {2.3.2}Considera\IeC {\c c}\IeC {\~o}es Finais}{9}{subsection.19}
-\contentsline {section}{\numberline {2.4}AEs - Algoritmos Evolucion\IeC {\'a}rios}{9}{section.20}
-\contentsline {subsection}{\numberline {2.4.1}NSGAII - Non-dominated sorting Genetic Algorithm II}{10}{subsection.21}
-\contentsline {subsection}{\numberline {2.4.2}IBEA (Indicator-Based Evolutionary Algorithm)}{10}{subsection.23}
-\contentsline {section}{\numberline {2.5}Hiper-Heur\IeC {\'\i }sticas }{12}{section.26}
-\contentsline {subsection}{\numberline {2.5.1}Hiper-heur\IeC {\'\i }sticas de Gera\IeC {\c c}\IeC {\~a}o}{15}{subsection.29}
-\contentsline {section}{\numberline {2.6}Programa\IeC {\c c}\IeC {\~a}o Gen\IeC {\'e}tica (PG)}{16}{section.30}
-\contentsline {section}{\numberline {2.7}Evolu\IeC {\c c}\IeC {\~a}o Gramatical (EG)}{16}{section.31}
-\contentsline {section}{\numberline {2.8}Programa\IeC {\c c}\IeC {\~a}o Gen\IeC {\'e}tica como Hiper-Heur\IeC {\'\i }stica de Gera\IeC {\c c}\IeC {\~a}o de Heur\IeC {\'\i }sticas}{20}{section.36}
-\contentsline {subsubsection}{Abordagem B\IeC {\'a}sica}{21}{section*.37}
-\contentsline {section}{\numberline {2.9}Considera\IeC {\c c}\IeC {\~o}es Finais}{22}{section.44}
-\contentsline {section}{\numberline {2.10}Exemplo de figura}{22}{section.45}
-\contentsline {section}{\numberline {2.11}Exemplo de tabela}{23}{section.48}
-\contentsline {section}{\numberline {2.12}Exemplo de equa\IeC {\c c}\IeC {\~a}o}{23}{section.50}
-\contentsline {section}{\numberline {2.13}Exemplos de c\IeC {\'o}digo-fonte}{23}{section.52}
-\contentsline {section}{\numberline {2.14}Conclus\IeC {\~a}o}{24}{section.73}
-\contentsline {chapter}{Refer\^encias Bibliogr\'aficas}{25}{chapter*.74}
-\contentsline {chapter}{\numberline {A}Exemplo de anexo}{26}{appendix.75}
-\contentsline {section}{\numberline {A.1}Uma Se\IeC {\c c}\IeC {\~a}o}{26}{section.76}
-\contentsline {subsection}{\numberline {A.1.1}Uma sub-Se\IeC {\c c}\IeC {\~a}o}{27}{subsection.77}
+\contentsline {chapter}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{1}{chapter.6}
+\contentsline {section}{\numberline {1.1}Organiza\IeC {\c c}\IeC {\~a}o do Texto}{2}{section.7}
+\contentsline {chapter}{\numberline {2}Problema de Dobramento de Prote\IeC {\'\i }nas}{3}{chapter.8}
+\contentsline {section}{\numberline {2.1}PDP - Problema de Dobramento de Prote\IeC {\'\i }nas}{3}{section.9}
+\contentsline {section}{\numberline {2.2}Dobramento de prote\IeC {\'\i }nas}{3}{section.10}
+\contentsline {section}{\numberline {2.3}Modelos de Representa\IeC {\c c}\IeC {\~a}o de Prote\IeC {\'\i }nas}{6}{section.11}
+\contentsline {subsection}{\numberline {2.3.1}Modelos Discretos}{6}{subsection.12}
+\contentsline {subsubsection}{Modelo Hidrof\IeC {\'o}bico-Polar (HP)}{6}{section*.13}
+\contentsline {subsubsection}{Outros Modelos}{8}{section*.16}
+\contentsline {subsection}{\numberline {2.3.2}Considera\IeC {\c c}\IeC {\~o}es Finais}{9}{subsection.17}
+\contentsline {chapter}{\numberline {3}Referencial Te\IeC {\'o}rico}{11}{chapter.18}
+\contentsline {section}{\numberline {3.1}AEMOs - Algoritmos Evolucion\IeC {\'a}rios Multi-objetivo}{11}{section.19}
+\contentsline {subsection}{\numberline {3.1.1}NSGAII - Non-dominated sorting Genetic Algorithm II}{12}{subsection.20}
+\contentsline {subsection}{\numberline {3.1.2}IBEA (Indicator-Based Evolutionary Algorithm)}{12}{subsection.22}
+\contentsline {section}{\numberline {3.2}Hiper-Heur\IeC {\'\i }sticas }{14}{section.25}
+\contentsline {subsection}{\numberline {3.2.1}Hiper-heur\IeC {\'\i }sticas de Gera\IeC {\c c}\IeC {\~a}o}{18}{subsection.28}
+\contentsline {section}{\numberline {3.3}Programa\IeC {\c c}\IeC {\~a}o Gen\IeC {\'e}tica (PG)}{18}{section.29}
+\contentsline {section}{\numberline {3.4}Evolu\IeC {\c c}\IeC {\~a}o Gramatical (EG)}{18}{section.30}
+\contentsline {section}{\numberline {3.5}Programa\IeC {\c c}\IeC {\~a}o Gen\IeC {\'e}tica como Hiper-Heur\IeC {\'\i }stica de Gera\IeC {\c c}\IeC {\~a}o de Heur\IeC {\'\i }sticas}{22}{section.35}
+\contentsline {subsubsection}{Abordagem B\IeC {\'a}sica}{23}{section*.36}
+\contentsline {section}{\numberline {3.6}Considera\IeC {\c c}\IeC {\~o}es Finais}{24}{section.43}
+\contentsline {chapter}{\numberline {4}Trabalhos Relacionados}{25}{chapter.44}
+\contentsline {section}{\numberline {4.1}Considera\IeC {\c c}\IeC {\~o}es Finais}{27}{section.45}
+\contentsline {chapter}{\numberline {5}Metodologia}{28}{chapter.46}
+\contentsline {section}{\numberline {5.1}Representa\IeC {\c c}\IeC {\~a}o do PDP com modelo HP-2D}{28}{section.47}
+\contentsline {section}{\numberline {5.2}Conjunto de Heur\IeC {\'\i }sticas de Baixo N\IeC {\'\i }vel}{29}{section.49}
+\contentsline {section}{\numberline {5.3}AEMOs aplicados ao PDP}{31}{section.56}
+\contentsline {subsection}{\numberline {5.3.1}Fun\IeC {\c c}\IeC {\~o}es Objetivo}{32}{subsection.57}
+\contentsline {section}{\numberline {5.4}EGHyPDP}{33}{section.58}
+\contentsline {section}{\numberline {5.5}Heur\IeC {\'\i }sticas de alto n\IeC {\'\i }vel}{33}{section.59}
+\contentsline {subsection}{\numberline {5.5.1}Fun\IeC {\c c}\IeC {\~a}o de \textit {Fitness}}{36}{subsection.62}
+\contentsline {subsection}{\numberline {5.5.2}Crit\IeC {\'e}rio de Parada}{36}{subsection.63}
+\contentsline {section}{\numberline {5.6}Heur\IeC {\'\i }sticas de baixo n\IeC {\'\i }vel}{37}{section.64}
+\contentsline {section}{\numberline {5.7}Processo geral do EGHyPDP}{37}{section.65}
+\contentsline {subsection}{\numberline {5.7.1}Mecanismo de Mem\IeC {\'o}ria}{37}{subsection.66}
+\contentsline {subsubsection}{Inicializa\IeC {\c c}\IeC {\~a}o do Mecanismo de Mem\IeC {\'o}ria}{37}{section*.67}
+\contentsline {subsubsection}{Atualiza\IeC {\c c}\IeC {\~a}o do Mecanismo de Mem\IeC {\'o}ria}{38}{section*.68}
+\contentsline {section}{\numberline {5.8}Considera\IeC {\c c}\IeC {\~o}es Finais}{38}{section.69}
+\contentsline {chapter}{\numberline {6}Experimentos}{40}{chapter.70}
+\contentsline {section}{\numberline {6.1}AEMOs aplicados ao PDP}{40}{section.72}
+\contentsline {subsection}{\numberline {6.1.1}Resultados dos AEMOs aplicados ao PDP}{41}{subsection.73}
+\contentsline {subsection}{\numberline {6.1.2}Compara\IeC {\c c}\IeC {\~a}o com outras abordagens mono-objetivas}{42}{subsection.76}
+\contentsline {subsection}{\numberline {6.1.3}Discuss\IeC {\~a}o sobre os experimentos utilizando os AEMOs}{44}{subsection.78}
+\contentsline {section}{\numberline {6.2}EGHyPDP}{45}{section.79}
+\contentsline {subsection}{\numberline {6.2.1}Resultados obtidos com EGHyPDP-1}{46}{subsection.80}
+\contentsline {subsection}{\numberline {6.2.2}Resultados obtidos com EGHyPDP-2}{46}{subsection.83}
+\contentsline {subsection}{\numberline {6.2.3}Resultados obtidos com EGHyPDP-3}{48}{subsection.86}
+\contentsline {subsection}{\numberline {6.2.4}Compara\IeC {\c c}\IeC {\~a}o com \textit {framework} hiper heur\IeC {\'\i }stico GIHH}{49}{subsection.90}
+\contentsline {subsection}{\numberline {6.2.5}Discuss\IeC {\~a}o}{49}{subsection.92}
+\contentsline {subsection}{\numberline {6.2.6}Discuss\IeC {\~a}o sobre os experimentos realizados com EGHyPDP}{50}{subsection.93}
+\contentsline {chapter}{\numberline {7}Conclus\IeC {\~a}o}{52}{chapter.94}
+\contentsline {chapter}{Refer\^encias Bibliogr\'aficas}{54}{chapter*.95}

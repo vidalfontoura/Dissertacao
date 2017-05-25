@@ -1,7 +1,7 @@
 \chapter{Problema de Dobramento de Proteínas}
 \label{cap:pdp}
 
-% figuras estão no subdiretório "figuras/" dentro deste capítulo
+% figuras estão no subdiretório "figuras/" dentro deste Capítulo
 \graphicspath{\currfiledir/figuras/}
 
 %=====================================================
@@ -9,9 +9,9 @@
 \section{PDP - Problema de Dobramento de Proteínas}
 \label{sec:ProblemaDobramentoProteínas}
 
-Proteínas são estruturas básicas, essenciais para vida e possuem incontáveis funções biológicas. Proteínas são sintetizadas pelos ribossomos seguindo um formato provido pelo mensageiro RNA (mRNA). Durante a síntese, as proteínas dobram (enovelam) em uma estrutura tridimensional única, conhecida como conformação nativa. Este processo é chamado de dobramento de proteínas (\textit{protein folding}). A função biológica de uma proteína depende da sua estrutura tridimensional.
+Proteínas são estruturas básicas, essenciais para vida e possuem incontáveis funções biológicas. Proteínas são sintetizadas pelos ribossomos seguindo um formato provido pelo mensageiro RNA (mRNA). Durante a síntese, as proteínas dobram (enovelam) em uma estrutura tridimensional única, conhecida como conformação nativa. Este processo é chamado de dobramento de proteínas (\textit{protein folding}). A função biológica de uma proteína depende da sua estrutura tridimensional \cite{unger1993genetic}.
 
-As proteínas são polímeros compostos por sequências de aminoácidos (também chamados de resíduos) conectados linearmente por ligações peptídicas. Cada aminoácido é composto por um átomo central de carbono ($C\alpha$) conectado a um átomo de hidrogênio, um grupo amina, um grupo carboxila e uma cadeia lateral (\textit{side-chain}) a qual confere a cada aminoácido uma função distinta. Uma ligação peptídica é formada por dois aminoácidos quando o grupo carboxila de uma molécula reage com o grupo amina da outra. Este processo de agregação de aminoácidos é conhecido como desidratação pois libera uma molécula de água ($H_2O$) \cite{suzuki1986introduction}. Proteínas podem ser chamadas de cadeias polipeptídicas. Todos os aminoácidos tem o mesmo \textit{backbone} e se diferem dos outros apenas pela \textit{side-chain}, a qual pode ser um simples átomo de hidrogênio ou até um grupo heterocíclico complexo. A \textit{side-chain} define as propriedades físicas e químicas dos aminoácidos de uma proteína \cite{cox2013lehninger}.
+As proteínas são polímeros compostos por sequências de aminoácidos (também chamados de resíduos) conectados linearmente por ligações peptídicas. Cada aminoácido é composto por um átomo central de carbono ($C\alpha$) conectado a um átomo de hidrogênio, um grupo amina, um grupo carboxila e uma cadeia lateral (\textit{side-chain}) a qual confere a cada aminoácido uma função distinta. Uma ligação peptídica é formada por dois aminoácidos quando o grupo carboxila de uma molécula reage com o grupo amina da outra. Este processo de agregação de aminoácidos é conhecido como desidratação pois libera uma molécula de água ($H_2O$) \cite{suzuki1986introduction}. Proteínas podem ser chamadas de cadeias polipeptídicas. Todos os aminoácidos tem a mesma cadeia principal (\textit{backbone}) e se diferem dos outros apenas pela cadeia lateral (\textit{side-chain}), a qual pode ser um simples átomo de hidrogênio ou até um grupo heterocíclico complexo. A \textit{side-chain} define as propriedades físicas e químicas dos aminoácidos de uma proteína \cite{cox2013lehninger}.
 
 %\subsection{Estrutura hierárquica e função das proteínas}
 
@@ -50,11 +50,11 @@ Um dos objetivos comuns das ciências biológicas é caracterizar funcionalmente
 A cristalografia de raios-X e espectroscopia de RNM são os métodos experimentais mais poderosos para o estudo da estruturas de proteínas \cite{ilari2008protein} \cite{gobl2012application}. Entretanto estes métodos são altamente custosos tanto em esforços computacionais, de tempo e financeiros, e estão disponíveis apenas para algumas instituições.
 
 
-Embora o conceito de dobramento de proteínas tenha surgido da área de biologia molecular, este problema é um problema interdisciplinar, o qual requer apoio de muitas áreas do conhecimento, e é considerado como um dos desafios atuais mais importantes da biologia e bioinformática \cite{nicosia2008generalized}. 
+Embora o conceito de dobramento de proteínas tenha surgido da área de biologia molecular, este problema é um tópico interdisciplinar, o qual requer apoio de muitas áreas do conhecimento, e é considerado como um dos desafios atuais mais importantes da biologia e bioinformática \cite{nicosia2008generalized}. 
 
 Na biologia computacional existem dois problemas que tratam sobre o dobramento de proteínas. São eles: problema de predição estrutura de proteínas (ou PSP - \textit{Protein Structure Prediction}), que trata de predizer a estrutura tridimensional (conformação) a partir de sua sequência (estrutura primária); e o problema de dobramento de proteínas (PDP ou PFP - \textit{Protein Folding Problem}), o qual trata da determinação dos passos/eventos que conduzem o dobramento a partir da estrutura primária até a conformação nativa \cite{lopes2008evolutionary}. Porém, na literatura, são encontrado ambos os termos sendo utilizados sem nenhuma distinção, normalmente se referindo apenas ao primeiro problema \cite{lopes2008evolutionary}.  
 
-A ciência da computação desempenha um papel importante nisto, propondo e desenvolvendo modelos e soluções computacionais para o estudo de ambos os problemas PSP e PDP \cite{lopes2008evolutionary}. Muitas estratégias computacionais descrevem modelos de predição para estruturas proteicas com diferentes níveis de detalhamento e complexidade. Embora, existão modelos com um elevado grau de detalhamento. Simular a predição de estruturas das proteínas é computacionalmente muito custosa. É nesta lacuna que se abre espaço para estratégias que proponham modelos simplificados para representar estruturas de proteínas sem perda de viabilidade computacional \cite{benitez2015algoritmo}. Consequentemente, é possível evitar a obrigatoriedade de métodos caros e assim aumentar a capacidade de centros de pesquisa, com recursos escassos, desenvolverem abordagens com modelos simplificados para representar as estruturas. Apesar de complexidade reduzida estes modelos apresentam uma maneira fidedigna de representar as estruturas de proteínas. 
+A ciência da computação desempenha um papel importante nisto, propondo e desenvolvendo modelos e soluções computacionais para o estudo de ambos os problemas PSP e PDP \cite{lopes2008evolutionary}. Muitas estratégias computacionais descrevem modelos de predição para estruturas proteicas com diferentes níveis de detalhamento e complexidade. Embora, existam modelos com um elevado grau de detalhamento simular a predição de estruturas das proteínas é computacionalmente muito custosa. É nesta lacuna que se abre espaço para estratégias que proponham modelos simplificados para representar estruturas de proteínas sem perda de viabilidade computacional \cite{benitez2015algoritmo}. Consequentemente, é possível evitar a obrigatoriedade de métodos caros e assim aumentar a capacidade de centros de pesquisa, com recursos escassos, desenvolverem abordagens com modelos simplificados para representar as estruturas. Apesar de complexidade reduzida estes modelos apresentam uma maneira fidedigna de representar as estruturas de proteínas. 
 
 
 Segundo a lei da termodinâmica \cite{anfinsen1972studies}, a estrutura de uma proteína se torna estável quando adquire o seu estado nativo, em qual a sua energia livre é mínima. Os modelos de predição de estruturas normalmente são baseados nesta lei. Dessa maneira, o problema é modelado com objetivo de minimizar energia livre das possíveis conformações que uma proteína pode assumir \cite{benitez2015algoritmo}. Estes modelos assumem que o principal fator para formação das estruturas de proteínas segue a lei da termodinâmica. Portanto, a conformação nativa de uma proteína é dada por aquela que possuir o menor valor de energia livre.
@@ -79,13 +79,13 @@ Em suma, existem duas classes de modelos de representação de estruturas de pro
 	
 \end{itemize}
 
- Esta proposta irá descrever apenas os modelos discretos pois visa a utilização do modelo hidrofóbico polar (HP) 2D.
+ Nesta dissertação, são descritos apenas os modelos discretos pois visa a utilização do modelo hidrofóbico polar (HP) 2D.
 
 \subsection{Modelos Discretos}
 
 Os modelos computacionais mais simples são os conhecidos como modelos de grade (\textit{lattice models}). Estes modelos consideram as estruturas de proteínas como um colar de esferas posicionado em uma grade. O grau de liberdade dos movimentos é restrito à estrutura da grade, que pode ser 2D (plano) ou 3D (espacial). Conformações válidas são aquelas que os aminoácidos adjacentes na sequência também são adjacentes na grade e cada aminoácido ocupe uma posição distinta na grade. Muitos modelos de grade têm sido propostos e aplicados ao PDP. Os modelos 2D-HP e 3D-HP são exemplos de modelos de grade.
 
-\subsubsection{Modelo Hidrofóbico-Polar HP}
+\subsubsection{Modelo Hidrofóbico-Polar (HP)}
 \label{subsubsection:modeloHP}
 
 No modelo HP os aminoácidos são classificados em 2 tipos: Hidrofílicos (Polar) e Hidrofóbico. Consequentemente, uma proteína é representada por uma \textit{string} de caracteres definida por um alfabeto binário $\{H,P\}$. Este modelo considera que as interações entre aminoácidos hidrofóbicos (H) representam a contribuição mais importante para a energia livre de uma proteína. Portanto existe uma relação inversamente proporcional: quanto maior for a quantidade de interações hidrofóbicas (H-H), menor será a energia livre de uma proteína. Uma interação hidrofóbica (também conhecida como contato hidrofóbico) é definida como um par de aminoácidos do tipo H-H que não sejam consecutivos na sequência mas sejam adjacentes na grade.
@@ -114,12 +114,12 @@ A Figura \ref{fig:exemploModeloHP} apresenta um exemplo para os modelos HP (2D e
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[scale=.9]{Imagens/modeloHPExemplo.png}
-	\caption{Exemplos de representação de proteínas utilizando os modelos HP 2D-HP (a) e 3D-HP (b). \\ Fonte: Adaptado de \cite{benitez2015algoritmo}}
+	\caption{Exemplos de representação de proteínas utilizando os modelos HP 2D-HP (a) e 3D-HP (b). Fonte: Adaptado de \cite{benitez2015algoritmo}}
 	\label{fig:exemploModeloHP}
 \end{figure}
 
 
-Diversos trabalhos aplicam algoritmos evolucionários e bio-inspirados ao problema de dobramento de proteínas utilizando o modelo HP. Uma decisão comum a todos trabalhos que utilizam o modelo HP é a de como representar as variáveis de entrada. Na literatura é possível encontrar basicamente três representações \cite{krasnogor1999protein, lopes2008evolutionary}: 
+Diversos trabalhos tem aplicado algoritmos de otimização ao problema de dobramento de proteínas utilizando o modelo HP. Uma decisão comum a todos trabalhos que utilizam o modelo HP é a de como representar as variáveis de entrada. Na literatura é possível encontrar basicamente três representações \cite{krasnogor1999protein, lopes2008evolutionary}: 
 
 \begin{itemize}
 	\item Coordenadas cartesianas: Este método  representa a posição de cada aminoácido utilizando suas coordenadas espaciais (x,y) no plano cartesiano 2D ou (x,y,z) no plano cartesiano 3D. Geralmente, sua utilização não é adequada para algoritmos baseados em população, pois estruturas idênticas ou semelhantes podem ter coordenadas totalmente diferentes  \cite{benitez2015algoritmo}; 
@@ -160,7 +160,7 @@ Além do modelo HP, outros modelos simples em grade são utilizados para represe
 
 
 
-\subsection{Conclusão}
+\subsection{Considerações Finais}
 \label{Problema de Dobramento de Proteínas:Conclusao}
 
-Nesta capítulo foi apresentado o problema de dobramento de proteinas, bem como sua importância para biológica computacional, química orgânica e medicina. Também foi mencionado que existem diversos modelos para representar estruturas de proteínas. Cada modelo tem suas peculiaridades e considera interações diferentes. Não existe um modelo que represente de maneira real o dobramento de proteínas, pois se trata de um processo ainda não completamente compreendido pelos cientistas e pesquisadores. Os modelos propostos tem diferentes níveis de detalhe e complexidade. O modelo mais simples é o HP mas apesar da sua simplicidade se apresenta como um problema $NP$-completo. O modelo HP será utilizado nesta proposta por conta de sua simplicidade de implementação, assim como o baixo custo computacional para realizar simulações do cálculo de energia. Utilizando o modelo HP diferentes maneiras de representar as variáveis existem. Nesta dissertação será utilizada a representação relativa pois, é mencionado na literatura que esta tem uma maior capacidade de guiar algoritmos de busca a melhores resultados  \cite{krasnogor1999protein}.
+Nesta Capítulo foi apresentado o problema de dobramento de proteinas, bem como sua importância para biológica computacional, química orgânica e medicina. Também foi mencionado que existem diversos modelos para representar estruturas de proteínas. Cada modelo tem suas peculiaridades e considera interações diferentes. Não existe um modelo que represente de maneira real o dobramento de proteínas, pois se trata de um processo ainda não completamente compreendido pelos cientistas e pesquisadores. Os modelos propostos tem diferentes níveis de detalhe e complexidade. O modelo mais simples é o HP mas apesar da sua simplicidade se apresenta como um problema $NP$-completo. O modelo HP é utilizado nesta proposta por conta de sua simplicidade de implementação, assim como o baixo custo computacional para realizar simulações do cálculo de energia. Existem diversas maneiras de representar as soluções utilizando o modelo HP. Nesta dissertação será utilizada a representação relativa pois, é mencionado na literatura que esta tem uma maior capacidade de guiar algoritmos de busca a melhores resultados  \cite{krasnogor1999protein}.
