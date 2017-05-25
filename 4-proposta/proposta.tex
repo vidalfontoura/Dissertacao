@@ -1,13 +1,21 @@
 \chapter{Metodologia}
 \label{cap:Metodologia}
 
+<<<<<<< HEAD
 Neste Capítulo são apresentadas as duas estratégias propostas e desenvolvidas nesta Dissertação para o PDP simplificado. A primeira trata de uma abordagem multi-objetiva utilizando dois AEMOs. Já a segunda visa aplicação da evolução gramatical  para gerar heurísticas de alto nível para um \textit{framework} hiper-heurístico intitulada EGHyPDP.
+=======
+Neste Capítulo serão apresentadas as duas estratégias propostas e desenvolvidas nesta Dissertação para o PDP simplificado. A primeira trata de uma abordagem multi-objetiva utilizando dois AEMOs. Já a segunda visa aplicação da evolução gramatical  para gerar heurísticas de alto nível para um \textit{framework} hiper-heurístico intitulada EGHyPDP.
+>>>>>>> 1491eafdc569b7a670d8f8b83aae192c363e6aab
 
 Inicialmente será apresentada a representação para o problema com modelo HP-2D. Em seguida é apresentado o conjunto de heurísticas de baixo nível. Tanto a representação quanto o conjunto de heurísticas foram utilizados em ambas as abordagens propostas.
 
 \section{Representação do PDP com modelo HP-2D}
 
+<<<<<<< HEAD
 O problema PDP simplificado foi modelado utilizando a representação relativa, descrita na subseção \ref{subsubsection:modeloHP}, afim de codificar as possíveis estruturas de proteínas em vetores de inteiros. De acordo com \cite{krasnogor1999protein} esta representação possui um maior potencial em conduzir os algoritmos a resultados melhores. Cada gene do cromossomo especifica a direção que o aminoácido atual deve ser posicionado. Cada aminoácido é posicionado na direção codificada pelo respectivo gene em relação ao aminoácido anterior. O genes podem assumir apenas 3 valores:
+=======
+O problema PDP simplificado foi modelado utilizando a representação relativa, descrita na subseção \ref{subsubsection:modeloHP}, afim de codificar as possíveis estruturas de proteínas em vetores de inteiros. Segundo o estudo \cite{krasnogor1999protein} esta representação possui um maior potencial em conduzir os algoritmos a resultados melhores. Cada gene do cromossomo especifica a direção que o amino ácido atual deve ser posicionado. Cada amino ácido é posicionado na direção codificada pelo respectivo gene em relação ao amino ácido anterior. O genes podem assumir apenas 3 valores:
+>>>>>>> 1491eafdc569b7a670d8f8b83aae192c363e6aab
 
 \begin{itemize}
 	\item 0 indica que o próximo aminoácido deve ser posicionado à direita do aminoácido anterior
@@ -39,7 +47,11 @@ Para ambas as abordagens o mesmo conjunto de heurísticas de baixo nível (opera
  	
  	\begin{figure}[!htb]
  		\centering
+<<<<<<< HEAD
  		\includegraphics[scale=0.8]{Imagens/TwoPointsCrossover.png}
+=======
+ 		\includegraphics{Imagens/TwoPointsCrossover.png}
+>>>>>>> 1491eafdc569b7a670d8f8b83aae192c363e6aab
  		\caption{Exemplo de aplicação da heurística 2x. \\Fonte Autoria Própria}
  		\label{fig:twopointscrossover}
  	\end{figure}
@@ -52,7 +64,11 @@ Para ambas as abordagens o mesmo conjunto de heurísticas de baixo nível (opera
  	
  	\begin{figure}[!htb]
  		\centering
+<<<<<<< HEAD
  		\includegraphics[scale=0.8]{Imagens/MultiPointsCrossover.png}
+=======
+ 		\includegraphics{Imagens/MultiPointsCrossover.png}
+>>>>>>> 1491eafdc569b7a670d8f8b83aae192c363e6aab
  		\caption{Exemplo de aplicação da heurística MPX. \\Fonte Autoria Própria}
  		\label{fig:multipointscrossover}
  	\end{figure}
@@ -60,7 +76,11 @@ Para ambas as abordagens o mesmo conjunto de heurísticas de baixo nível (opera
  	
  	\begin{figure}[!htb]
  		\centering
+<<<<<<< HEAD
  		\includegraphics[scale=0.8]{Imagens/segmentMutation.png}
+=======
+ 		\includegraphics{Imagens/segmentMutation.png}
+>>>>>>> 1491eafdc569b7a670d8f8b83aae192c363e6aab
  		\caption{Exemplo de aplicação da heurística SMUT. \\Fonte Autoria Própria}
  		\label{fig:segmentMutation}
  	\end{figure}
@@ -74,7 +94,11 @@ Para ambas as abordagens o mesmo conjunto de heurísticas de baixo nível (opera
  	
  	\begin{figure}[!htb]
  		\centering
+<<<<<<< HEAD
  		\includegraphics[scale=0.8]{Imagens/LocalMoveOperator.png}
+=======
+ 		\includegraphics{Imagens/LocalMoveOperator.png}
+>>>>>>> 1491eafdc569b7a670d8f8b83aae192c363e6aab
  		\caption{Exemplo de aplicação da heurística LM. \\Fonte Autoria Própria}
  		\label{fig:localMoveOperator}
  	\end{figure}
@@ -90,12 +114,20 @@ Para ambas as abordagens o mesmo conjunto de heurísticas de baixo nível (opera
  		\label{fig:loopMoveOperator}
  	\end{figure}
  	
+<<<<<<< HEAD
  	\item \textit{Opposite Mutation} (OM): Esta heurística troca as direções, para direção oposta, de uma sequência de genes entre dois genes $(i,j)$ selecionados de maneira aleatória. A direção 1 ($F$) não possui oposta, portanto é mantida. Para exemplificar, suponha esta solução hipotética para uma sequência de 5 aminoácidos: $\{0,1,2,1,2\}$. Ela se tornaria $\{2,1,0,1,0\}$. A Figura \ref{fig:oppositeMutation} apresenta um exemplo da aplicação do operador OM.
+=======
+ 	\item \textit{Opposite Mutation} (OM): Esta heurística troca as direções, para direção oposta, de uma sequência de genes entre dois genes $(i,j)$ selecionados de maneira aleatória. A direção 0 ($F$) não possui oposta, portanto é mantida. Para exemplificar, suponha esta solução hipotética para uma sequência de 5 aminoácidos: $\{0,1,2,1,2\}$. Ela se tornaria $\{0,2,1,2,1\}$. A Figura \ref{fig:oppositeMutation} apresenta um exemplo da aplicação do operador OM.
+>>>>>>> 1491eafdc569b7a670d8f8b83aae192c363e6aab
  	
  	
  	\begin{figure}[!htb]
  		\centering
+<<<<<<< HEAD
  		\includegraphics[scale=0.8]{Imagens/OppositeMutation.png}
+=======
+ 		\includegraphics{Imagens/OppositeMutation.png}
+>>>>>>> 1491eafdc569b7a670d8f8b83aae192c363e6aab
  		\caption{Exemplo de aplicação da heurística OM. \\Fonte Autoria Própria}
  		\label{fig:oppositeMutation}
  	\end{figure}
@@ -106,7 +138,11 @@ Para ambas as abordagens o mesmo conjunto de heurísticas de baixo nível (opera
 
 
 
+<<<<<<< HEAD
  Este Capítulo está divido em duas seções para melhor apresentar ambas as estratégias propostas nesta Dissertação. Na Seção \ref{sec:aemos} foi apresentado a estratégia multi objetiva, a qual utiliza dois algoritmos evolucionários, descritos na literatura para otimização multi objetiva. Já a Seção  \ref{sec:eghypdp} irá apresentar o design automático de heurísticas de alto nível para um \textit{framework} hiper heurístico para resolver o PDP.
+=======
+ Este Capítulo está divido em duas seções para melhor apresentar ambas as estratégias propostas nesta Dissertação. A Seção \ref{sec:aemos} apresenta a estratégia multi objetiva onde foi utilizada dois algoritmos evolucionários, do estado da arte de otimização multi objetiva. Já a Seção  \ref{sec:eghypdp} irá apresentar o design automático de heurísticas de alto nível para um \textit{framework} hiper heurístico para resolver o PDP.
+>>>>>>> 1491eafdc569b7a670d8f8b83aae192c363e6aab
 
 	
 
@@ -117,7 +153,11 @@ Para ambas as abordagens o mesmo conjunto de heurísticas de baixo nível (opera
 
 Esta abordagem utiliza uma modelagem multi-objetiva para PDP baseado no estudo desenvolvido em \cite{gabriel2012algoritmos}. O primeiro objetivo consiste em maximizar a quantidade de contatos topológicos das estruturas de proteínas. Já o segundo  trata de minimizar a máxima distância euclidiana entre os aminoácidos. 
 
+<<<<<<< HEAD
 Duas abordagens multi-objetivas foram desenvolvidas neste Capítulo, utilizando os AEMOs (NSGAII e IBEA) descritos no Capítulo \ref{cap:Referencial Teórico}. A primeira abordagem consistiu em aplicar os algoritmo IBEA and NSGAII utilizando suas versões padrão. Nesta abordagem os operadores (heurísticas de baixo nível) genéticos (cruzamento e mutação) são fixos com: \textit{Single Point Crossover (1x)} and \textit{Bit Flip Mutation (BM)}. Esta foi a combinação que obteve os melhores resultados em experimentos preliminares. No caso da segunda abordagem, o IBEA e NSGAII foram modificados com objetivo de aprimorar os resultados em relação às versões padrões. Duas modificações foram incluídas e serão descritas abaixo:
+=======
+Duas abordagens multi-objetivas foram desenvolvidas neste Capítulo, utilizando os AEMOs (NSGAII e IBEA) descritos no Capítulo \ref{cap:Referencial Teórico}. A primeira abordagem consistiu em aplicar os algoritmo IBEA and NSGAII utilizando suas versões padrão. Nesta abordagem os operadores (heurísticas de baixo nível) genéticos (cruzamento e mutação) são fixos com: \textit{Single Point Crossover (1x)} and \textit{Bit Flip Mutation (BM)}. Esta foi a combinação que obteve os melhores resultados em experimentos preliminares. No caso da segunda abordagem, o IBEA e NSGAII foram modificados com objetivo de aprimorar os resultados em relação às versões padrões. Duas modificações foram propostas e serão descritas abaixo:
+>>>>>>> 1491eafdc569b7a670d8f8b83aae192c363e6aab
 
  
  \begin{itemize}
@@ -165,7 +205,11 @@ Esta abordagem  foi desenvolvida para construir de maneria \textit{offline} os c
 \end{figure}
 
 
+<<<<<<< HEAD
 Heurísticas de alto nível geralmente levam em consideração uma ou mais informações referentes ao histórico das aplicações das heurísticas de baixo nível para tomar suas decisões. Tradicionalmente, informações tais como desempenho (capacidade de melhorar soluções), tempo (desde a última aplicação de uma dada heurística) e intervalo de confiança) são utilizadas como base de conhecimento.  Sabar et al. \cite{sabar2015automatic} propõem a utilização de vários critérios para avaliar as heurísticas de baixo nível. Cada critério irá favorecer a seleção de uma heurística de baixo nível a partir de um aspecto diferente. Por exemplo, algumas heurísticas de baixo nível podem ter bom desempenho apenas no início da busca, enquanto outras podem obter melhores resultados apenas ao final. Estes critérios propostos por Sabar et al. contém estatísticas referente à aplicações das heurísticas de baixo nível e são genéricos o suficiente para serem aplicados ao PDP. Os critérios propostos em \cite{sabar2015automatic} são detalhados em seguida:
+=======
+Heurísticas de alto nível geralmente levam em consideração uma ou mais informações referentes ao histórico das aplicações das heurísticas de baixo nível para tomar suas decisões. Tradicionalmente, informações tais como desempenho (capacidade de melhorar soluções), tempo (desde a última aplicação de uma dada heurística) e intervalo de confiança (no caso de estratégias que utilizam MAB) são utilizadas como base de conhecimento.  Sabar et al. \cite{sabar2015automatic} propõem a utilização de vários critérios para avaliar as heurísticas de baixo nível. Cada critério irá favorecer a seleção de uma heurística de baixo nível a partir de um aspecto diferente. Por exemplo, algumas heurísticas de baixo nível podem ter bom desempenho apenas no início da busca, enquanto outras podem obter melhores resultados apenas ao final. Estes critérios propostos por Sabar et al. contém estatísticas referente à aplicações das heurísticas de baixo nível e são genéricos o suficiente para serem aplicados ao PDP. Os critérios propostos em \cite{sabar2015automatic} são detalhados em seguida:
+>>>>>>> 1491eafdc569b7a670d8f8b83aae192c363e6aab
 
 
 \begin{itemize}
@@ -248,7 +292,11 @@ Para inicializar os dados dos terminais: todas as heurísicas foram executadas u
 
   
   O próximo passo consiste em evoluir uma população de vetores de inteiro utilizando o processo evolutivo descrito na subseção 
+<<<<<<< HEAD
 	  \ref{subsubsection:EvolucaoGramatical}. %A Figura BLAH apresenta o processo geral da evolução gramatical proposta.
+=======
+  \ref{subsubsection:EvolucaoGramatical}. %A Figura BLAH apresenta o processo geral da evolução gramatical proposta.
+>>>>>>> 1491eafdc569b7a670d8f8b83aae192c363e6aab
   
   
   \subsection{Função de \textit{Fitness}}
@@ -306,7 +354,11 @@ A maioria dos \textit{frameworks} hiper-heurísticos propostos na literatura ope
 
 \subsubsection{Inicialização do Mecanismo de Memória}
 
+<<<<<<< HEAD
 Tradicionalmente algoritmos evolutivos inicializam suas populações de maneira aleatória, por conta disto  muitas soluções inválidas ao modelo HP são geradas na inicialização. Isto geralmente  ocasiona perda de tempo de processamento, por conta da grande quantidade de conformações inválidas antes que bons resultados sejam obtidos. Diante disto, \cite{benitez2015algoritmo} propôs uma estratégia especializada de inicialização. A população de seu algoritmo genético, é dividia em duas partes. Uma gerada aleatoriamente, com indivíduos que potencialmente possuem colisões. E uma segunda parte onde todos os indivíduos são livres de colisões. Uma configuração é utilizada para definir a proporção entre as duas partes da população inicial. Para garantir que os indivíduos não possuam colisões, uma estratégia de \textit{backtracking} deve ser utilizada. Nesta abordagem, a mesma estratégia de inicialização via \textit{backtracking }, descrita  na Seção \ref{sec:aeoms} foi implementada.
+=======
+Tradicionalmente algoritmos evolutivos inicializam suas populações iniciais de maneira aleatória, por conta disto  muitas soluções inválidas ao modelo HP, são geradas na inicialização. Isto geralmente  ocasiona perda de tempo de processamento, por conta da grande quantidade de conformações inválidas antes que bons resultados sejam obtidos. Diante disto, \cite{benitez2015algoritmo} propôs uma estratégia especializada de inicialização. A população de seu algoritmo genético, é dividia em duas partes. Uma gerada aleatoriamente, com indivíduos que potencialmente possuem colisões. E uma segunda parte onde todos os indivíduos são livres de colisões. Uma configuração é utilizada para definir a proporção entre as duas partes da população inicial. Para garantir que os indivíduos não possuam colisões, uma estratégia de \textit{backtracking} deve ser utilizada. Nesta abordagem, a mesma estratégia de inicialização via \textit{backtracking }, descrita  na Seção \ref{sec:aeoms} foi implementada.
+>>>>>>> 1491eafdc569b7a670d8f8b83aae192c363e6aab
 
 
 
@@ -324,7 +376,11 @@ Para cada indivíduo (heurística de alto nível) será selecionada de maneira a
 \section{Considerações Finais}
 \label{Metodologia:ConsideracoesFinais}
 
+<<<<<<< HEAD
 Neste Capítulo foram discutidos os principais aspectos relativos à duas estratégias propostas nesta Dissertação. Inicialmente, foi discutido sobre a aplicação de AEMOs e em seguida o EGHyPDP foi apresentado. A representação relativa foi utilizada para codificar as soluções para ambas as estratégias. O conjunto de heurísticas de baixo nível, utilizado em ambas abordagens, também foi apresentado. No caso dos AEMOs 4 versões de algoritmos foram apresentadas. As funções objetivo também foram discutidas. Duas adaptacões foram propostas que consistiram em adicionar um conjunto heurísticas de baixo nível para tornar os AEMOs mais adpatativos e a inicialização via \textit{backtracking}. Para aplicar o EGHyPDP com objetivo de gerar heurísticas de alto nível de um \text{framework} hiper-heurístico para o PDP simplicado, uma  gramática foi desenvolvida. Também foi apresentado um conjunto de terminais referente ao histórico das aplicações das heurísticas de baixo nível. Operações aritméticas compõem a gramática e combinadas com os dados estatísticos é possível criar diferentes heurísticas de alto nível. Posteriormente, a função de \textit{fitness} avalia estas heurística executando o \textit{framework} composto por tais três vezes em três instâncias distintas selecionadas de maneira aleatória.
+=======
+Neste Capítulo foram discutidos os principais aspectos relativos à duas estratégias propostas nesta Dissertação. Inicialmente, foi discutido sobre a aplicação de AEMOs e em seguida o EGHyPDP foi apresentado. A representação relativa foi utilizada para codificar as soluções para ambas as estratégias. O conjunto de heurísticas de baixo nível, utilizado em ambas abordagens, também foi apresentado. No caso dos AEMOs 4 versões de algoritmos foram apresentadas. As funções objetivas também foram discutidas. Duas adaptacões foram propostas que consistiram em adicionar um conjunto heurísticas de baixo nível para tornar os AEMOs mais adpatativos e a inicialização via \textit{backtracking}. Para aplicar o EGHyPDP com objetivo de gerar heurísticas de alto nível de um \text{framework} hiper-heurístico para o PDP simplicado, uma  gramática foi desenvolvida. Também foi apresentado um conjunto de terminais referente ao histórico das aplicações das heurísticas de baixo nível. Funções matemáticas simples compõem a gramática e combinadas com os dados estatísticos diferentes heurísticas de alto nível foram geradas. Posteriormente, a função de \textit{fitness} avalia estas heurística executando o \textit{framework} composto por tais trés vezes em três instâncias distintas selecionadas de maneira aleatória.
+>>>>>>> 1491eafdc569b7a670d8f8b83aae192c363e6aab
  
  O próximo Capítulo apresenta os experimentos realizados afim de avaliar o desempenho das abordagens aqui propostas.
 

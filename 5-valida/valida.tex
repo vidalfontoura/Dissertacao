@@ -4,7 +4,11 @@
 Neste Capítulo serão apresentados  os experimentos para  validar as duas estratégias apresentadas no Capítulo \ref{cap:Metodologia}. 
 
 
+<<<<<<< HEAD
 A partir da revisão bibliográfica foi selecionado 11 instâncias dos trabalhos relacionados \cite{unger1993genetic,krasnogor2002multimeme,shmygelska2002ant,shmygelska2003improved,hsu2003growth} para compor um conjunto de \textit{benchmark}. Este conjunto foi utilizado para avaliar ambas estratégias propostas, a Tabela \ref{tab:instancias} apresenta o tamanho, o melhor valor de energia conhecido e a fórmula da sequência de aminoácidos para o modelo HP. Tanto os AEMOs e o EGHyPDP foram submetidos a esse conjunto de instâncias o qual possui diferentes níveis de complexidade e características. Todos os experimentos realizados nesta Dissertação foram executados 30 vezes por conta do comportamento estocástico inerente às heurísticas utilizadas. Por conta das múltiplas execuções em casos que forem necessários serão apresentados os valores de média, desvio padrão, minimo e máximo referente as execuções. Para avaliar a diferença entre os conjuntos de resultados é necessário usar algum teste estatístico. Nesta Dissertação foi utilizado o teste não paramétrico de  Kruskal-Wallis \cite{mckight2010kruskal}.
+=======
+A partir da revisão bibliográfica foi possível selecionar 11 instâncias dos trabalhos relacionados \cite{unger1993genetic,krasnogor2002multimeme,shmygelska2002ant,shmygelska2003improved,hsu2003growth} para compor um conjunto de \textit{benchmark}. Este conjunto foi utilizado para avaliar ambas estratégias propostas, a Tabela \ref{tab:instancias} apresenta o tamanho, o melhor valor de energia conhecido e a fórmula da sequência de aminoácidos para o modelo HP. Tanto os AEMOs e o EGHyPDP foram submetidos a esse conjunto de instâncias o qual possui diferentes níveis de complexidade e características. Todos os experimentos realizados nesta Dissertação foram executados 30 vezes por conta do comportamento estocástico inerente às heurísticas utilizadas. Por conta das múltiplas execuções em casos que forem necessários serão apresentados os valores de média, desvio padrão, minimo e máximo referente as execuções. Para avaliar a diferença entre os conjuntos de resultados é necessário usar algum teste estatístico. Nesta Dissertação foi utilizado o teste não paramétrico de  Kruskal-Wallis \cite{mckight2010kruskal}.
+>>>>>>> 1491eafdc569b7a670d8f8b83aae192c363e6aab
 
 
 
@@ -52,7 +56,11 @@ AEMOs são algoritmos evolucionários que visam a otimização de múltiplos obj
 
 Nesta Seção serão apresentados o cojunto de experimentos realizados utilizando a abordagem multi-objetiva com os algoritmos NSGAII e IBEA. Inicialmente, serão apresentadas as configurações utilizadas para os algoritmos. Em seguida, uma comparação entre os resultados de cada algoritmo é apresentada. Por fim, uma comparação com os resultados dos trabalhos relacionados, que tratam o PDP de maneira mono-objetiva, é apresentada.
 
+<<<<<<< HEAD
 As configurações utilizadas nos AEMOs foi definida baseada no tamanho das instâncias. A Tabela \ref{tab:popConfiguration} apresenta para cada instância: o tamanho da instância, o tamanho da população e número máximo de avaliações.
+=======
+As configurações utilizadas nos AEMOs foi definida baseada no tamanho das instâncias. Para instâncias menores o tamanho da população e o número máximo de avaliações são menores. Já para as sequências maiores os valores utilizados são superiores. A Tabela \ref{tab:popConfiguration} apresenta para cada instância: o tamanho da instância, o tamanho da população e número máximo de avaliações.
+>>>>>>> 1491eafdc569b7a670d8f8b83aae192c363e6aab
 
 No caso das versões padrão dos algoritmos IBEA e NSGAII as probabilidades de cruzamento e mutação foram configuradas com 0.9 e 0.01 respectivamente. A segunda abordagem não necessita de probabilidades, pois os operadores sempre serão aplicados para gerar novos indivíduos. No caso dos algoritmos IBEA e M\_IBEA a população auxiliar foi mantida em 200 para todas as instâncias.
 
@@ -80,7 +88,12 @@ No caso das versões padrão dos algoritmos IBEA e NSGAII as probabilidades de c
 
 Conforme mencionado no Capítulo \ref{cap:Metodologia} o indicador \textit{hypervolume} foi utilizado para comparar o desempenho dos AEMOs. Para cada algoritmo a média e o desvio padrão do \textit{hypervolume}  referente a 30 execuções é apresentada na Tabela \ref{tab:hypervolumeResults}. Os maiores valores estão em negrito e indicam uma maior aproximação da fronteira de Pareto \cite{barr1998economics}.
 
+<<<<<<< HEAD
 Observando a Tabela \ref{tab:hypervolumeResults} é possível notar que, exceto para a instância $1$, em todas instâncias o algoritmo M\_IBEA  obteve a maior média de \textit{hypervolume}. No caso da instância $1$, o IBEA sem modificações obteve a média mais alta. Também vale mencionar, que quando comparando apenas o NSGAII e o M\_NSGAII, a versão modificada obteve as melhores médias. De maneira geral, os AEMOs com \textit{backtracking} e o conjunto de heurísticas de baixo nível (M\_IBEA and M\_M_NSGAII) apresentaram uma melhoria considerável em relação aos AEMOs tradicionais. De acordo com o teste Kruskal-Wallis \cite{mckight2010kruskal}, M_IBEA obteve os melhores resultados com diferença significativa em 6 casos (destacados em cinza na Tabela \cite{mckight2010kruskal})
+=======
+Observando a Tabela \ref{tab:hypervolumeResults} é possível notar que, exceto para a instância $1$, em todas instâncias o algoritmo M\_IBEA  obteve a maior média de \textit{hypervolume}. No caso da instância $1$, o IBEA sem modificações obteve a média mais alta. Também vale mencionar, que quando comparando apenas o NSGAII e o M\_NSGAII, a versão modificada obteve as melhores médias. De maneira geral, os AEMOs com \textit{backtracking} e o conjunto de heurísticas de baixo nível (M\_IBEA and M\_M_NSGAII) apresentaram uma melhoria considerável em relação aos AEMOs tradicionais. Na Tabela \ref{tab:hypervolumeResults}, as células do M\_IBEA que estão marcados com cinza apresentaram diferença estatística de acordo com o teste estatístico \cite{mckight2010kruskal} entre os outros algoritmos (NSGAII, M\_NSGAII e IBEA).
+
+>>>>>>> 1491eafdc569b7a670d8f8b83aae192c363e6aab
 
 
 
@@ -194,20 +207,37 @@ Dado os resultados se tornou claro que as versões modificadas dos algoritmos te
 
 Também foi possível verificar que a abordagem multi-objetiva utilizando o NSGAII e o M\_NSGAII também não apresentou resultados satisfatórios, tanto em termos de \textit{hypervolume} como valores de energia,  quando comparado com o IBEA e a versão modificada. Mesmo a versão padrão de IBEA obteve melhores resultados do que ambas as versões do NSGAII. Porém, a versão modificada M\_IBEA apresentou os melhores resultados dentre todos AEMOs propostos. Isto sugere que apenas uma formulação multi-objetiva não é suficiente para atingir bons resultados em termos de energia das estruturas. Com a inicialização via \textit{backtracking}, conjunto de heurísticas de baixo nível e a maneira sofisticada de explorar o espaço de busca multi-objetivo do IBEA  possibilitaram resultados promissores.
 
+<<<<<<< HEAD
 Dado os resultados é possível afirmar que o algoritmo M\_IBEA foi capaz de escapar dos mínimos locais em vários casos, exceto para as instâncias 7,9,10 e 11. Estas instâncias são as mais complexas e muitas propostas não conseguem obter os melhores resultados. Dentre  os trabalhos relacionados apenas o PERM consegue  explorar o espaço de busca o suficiente para encontrar os melhores resultados.
+=======
+Dado os resultados é indiscutível que o algoritmo M\_IBEA foi capaz de escapar dos mínimos locais em vários casos, exceto para as instâncias 7,9,10 e 11. Estas instâncias são as mais complexas e muitas propostas não conseguem obter os melhores resultados. Dentre  os trabalhos relacionados apenas o PERM consegue  explorar o espaço de busca o suficiente para encontrar os melhores resultados.
+>>>>>>> 1491eafdc569b7a670d8f8b83aae192c363e6aab
 
 Também vale mencionar que os parâmetros para os algoritmos não foram \textit{tunados} e que existe uma chance de obterem melhores resultados caso um procedimento de \textit{tunning} seja feito.
 
 Os resultados obtidos pelo M\_IBEA abrem um amplo campo de possibilidades para aprofundar formulações multi-objetivas para o problema PDP com o modelo HP-2D ou até mesmo o HP-3D. As descobertas desta Dissertação motivam pesquisas adicionais utilizando abordagens multi-objetivas e adição de um conjunto de heurísticas de baixo nível com objetivo de aprimorar a habilidade de escapar de mínimos locais. No caso de formulações multi-objetiva é possível mencionar que o \textit{design} de abordagens inovadoras como o uso de métricas para avaliar o grau de compactação das conformações de proteínas ou outros métodos que considerem diferentes fatores, podem aprimorar os AEMOs e possibilitar que melhores resultados sejam obtidos.
+<<<<<<< HEAD
 
 
 
 \section{EGHyPDP}
 
 Nesta Seção, serão discutidos  os experimentos conduzidos com objetivo de avaliar o \textit{design} automático de heurísticas de alto nível para um \textit{framework} hiper-heurístico. Este \textit{framework} foi aplicado ao PDP para avaliar seu desempenho. A implementação do EGHyPDP ocorreu durante o período de desenvolvimento desta Dissertação. 
+=======
 
 
+
+\section{EGHyPDP}
+>>>>>>> 1491eafdc569b7a670d8f8b83aae192c363e6aab
+
+Nesta Seção, serão discutidos  os experimentos conduzidos com objetivo de avaliar o \textit{design} automático de heurísticas de alto nível para um \textit{framework} hiper-heurístico. Este \textit{framework} foi aplicado ao PDP para avaliar seu desempenho. A implementação do EGHyPDP ocorreu durante o período de desenvolvimento desta Dissertação. 
+
+<<<<<<< HEAD
 Três grupos de experimentos foram desenvolvidos e executados. Após a execução dos experimentos os resultados obtidos por cada grupo foram comparados entre si. Porém esta comparação não foi suficiente para avaliar a capacidade das heurísticas de alto nível. Misir et al. forneceram o código fonte utilizado em seu estudo e isto possibilitou a execução do GIHH (Generic Intelligent Hyper-heuristic) \cite{misir2012intelligent}b no contexto do PDP com o modelo HP-2D. O GIHH obteve os   melhores resultados conhecidos em outros problemas de \textit{benchmark}. Portanto, a comparação dos resultados em relação aos obtidos por uma estratégia hiper heurística (do estado da arte) desenvolvida por um pesquisador foi realizada. 
+=======
+
+Três grupos de experimentos foram desenvolvidos e executados. O tempo de execução total destes 3 grupos de experimentos foi de 28 dias. Após a execução dos experimentos os resultados obtidos por cada grupo foram comparados entre si. Porém esta comparação não foi suficiente para avaliar a capacidade das heurísticas de alto nível. Misir et al. forneceram o código fonte utilizado em seu estudo e isto possibilitou a execução do GIHH (Generic Intelligent Hyper-heuristic) \cite{misir2012intelligent}b no contexto do PDP com o modelo HP-2D. O GIHH obteve resultados impressionantes em outros problemas de \textit{benchmark}. Portanto, a comparação dos resultados em relação aos obtidos por uma estratégia hiper heurística (do estado da arte) desenvolvida por um pesquisador foi realizada. 
+>>>>>>> 1491eafdc569b7a670d8f8b83aae192c363e6aab
 
 O primeiro grupo de experimentos denominado, EGHyPDP-1, apenas gerou mecanismos de seleção. O critério de aceitação foi configurado e mantido fixo com uma estratégia que aceita apenas soluções melhores ou iguais \cite{burke2013hyper}. O objetivo deste grupo é avaliar a habilidade da abordagem proposta em gerar mecanismos de seleção utilizando um critério de aceitação fixo.
 
@@ -349,7 +379,11 @@ O primeiro grupo de experimentos denominado, EGHyPDP-1, apenas gerou mecanismos 
 	
 	\subsection{Discussão sobre os experimentos realizados com EGHyPDP}
 	
+<<<<<<< HEAD
 	Esta Seção apresentou os experimentos realizados com EGHyPDP, uma ferramenta para gerar de maneira automática heurísticas de alto nível para um \textit{framework} hiper heurístico para resolver o problema PDP com o modelo HP-2D. Este problema é muito desafiador com uma grande quantidade de mínimos locais conforme descrito na literatura, um espaço de busca complexo e características específicas inerentes a cada instância. 
+=======
+	Esta Seção apresentou os experimentos realizados com EGHyPDP, uma ferramenta para gerar de maneira automática heurísticas de alto nível para um \textit{framework} hiper heurístico para resolver o problema PDP com o modelo HP-2D. Este problema é muito desafiador com uma grande quantidade de mínimos locais, um espaço de busca complexo e características específicas inerentes a cada instância. 
+>>>>>>> 1491eafdc569b7a670d8f8b83aae192c363e6aab
 	
 		Muitos estudos exploraram o PDP com modelos simplificados, tais como modelo HP-2D, utilizando métodos heurísticos. Embora, é comum que estratégias heurísticas não consigam obter os melhores resultados conhecidos no caso das maiores instâncias. Geralmente, os \textit{frameworks} hiper heurísticos se adaptam bem a este tipo de contexto complexo. Consequentemente, o objetivo desta abordagem foi gerar mecanismos de seleção e critérios de aceitação, através de um processo de evolução gramatical, de um \textit{framework} hiper heurístico. Tal \textit{framework} foi utilizado para resolver o PDP utilizando o modelo HP-2D. O desempenho e comportamento das heurísticas de alto nível geradas foi avaliado executando o \textit{framework} utilizando um conjunto de 11 instâncias. 
 		Três grupos de experimentos foram desenvolvidos: o primeiro grupo apenas gerou mecanismos de seleção e utilizou um critério de aceitação melhor ou igual; o segundo gerou apenas critérios de aceitação. E no caso do mecanismo de seleção foi utilizado o melhor gerado pelo primeiro grupo; O terceiro e último grupo gerou tanto mecanismos de seleção e critérios de aceitação em paralelo. Os resultados obtidos pelos experimentos demonstram que a melhor heurística de alto nível foi encontrada no primeiro grupo. Já os resultados obtidos com o segundo e terceiro grupo não são expressivos. Analisando, o melhor resultado obtido pelo primeiro experimento (um mecanismo de seleção e o critério de aceitação melhor ou igual) é possível notar que de 11 instâncias em 7 casos foram encontrados os melhores resultados conhecidos. Entretanto, nas maiores instâncias (7,9,10 e 11) os resultados foram inferiores aos melhores conhecidos. 

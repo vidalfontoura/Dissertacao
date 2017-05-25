@@ -5,6 +5,10 @@
 \graphicspath{\currfiledir/figuras/}
 
 Este Capítulo apresenta o referencial teórico das estratégias heurísticas implementadas para resolver o problema PDP. Inicialmente, os algoritmos evolutivos e otimização multi objetiva são apresentados. Em seguida os algoritmos multi objetivos: NSGAII e IBEA são descritos em detalhe. Na sequência hiper heurísticas são apresentadas. O Capítulo termina descrevendo programação genética, evolução gramatical e a abordagem básica para aplicar estas técnicas para produzir programas de computador.
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1491eafdc569b7a670d8f8b83aae192c363e6aab
 
 
 \section{AEMOs - Algoritmos Evolucionários Multi-objetivo}
@@ -15,6 +19,7 @@ Um algoritmo evolucionário (AE) é uma técnica de busca, altamente paralela, i
 de reprodução. Indivíduos com mais descendentes tem uma chance maior de perpetuarem seus códigos genéticos nas gerações futuras. O código genético é a identidade de cada indivíduo e é representado por cromossomos. Estes princípios são utilizados na implementação de algoritmos computacionais, que procuram por soluções melhores para um dado problema, evoluindo uma população 
 de soluções codificadas em cromossomos artificais -- estruturas de dados utilizadas para representar soluções factíveis para um dado problema \cite{pacheco1999algoritmos}.
 
+<<<<<<< HEAD
 De maneira geral, problemas reais de otimização  estão presentes em muitas áreas do conhecimento e possuem múltiplos objetivos a serem minimizados/maximizados. Para otimizar problemas multi objetivos dois ou mais objetivos são considerados, os quais geralmente são conflitantes. Na maioria das vezes, estes objetivos possuem o mesmo grau de importância para os gestores do problema. E neste caso, se os objetivos são conflitantes,  é impossível encontrar uma única solução que otimize simultaneamente todos os objetivos. Porém existe um \textit{trade off} de soluções igualmente ótimas. Muitas vezes, este conjunto de soluções ótimas é representado a partir do conceito de dominãncia de Pareto \cite{pareto} entre as soluções. 
 
 
@@ -22,6 +27,13 @@ De maneira geral, problemas reais de otimização  estão presentes em muitas á
 O objetivo principal é encontrar o conjunto  
 de soluções que sejam não dominadas entre si. Uma solução domina outra, se e somente se, for melhor em pelos um dos objetivos, sem ser pior em qualquer outro.
 Este conjunto de soluções constitui a fronteira de Pareto. Para alguns problemas multi-objetivo, encontrar a fronteira real de Pareto é um problema NP-Completo \cite{fonseca2005tutorial}. Muitas vezes, uma aproximação do ótimo é aceitavél pelos gestores do problema. Logo o objetivo dos algoritmos evolucionários é encontrar uma boa aproximação da fronteira de Pareto real.
+=======
+De maneira geral, problemas reais de otimização  estão presentes em muitas áreas do conhecimento e possuem múltiplos objetivos a serem minimizados/maximizados. Para otimizar problemas multi objetivos dois ou mais objetivos são considerados, os quais geralmente são conflitantes. Para estes problemas é impossível encontrar uma
+única solução ótima. Um conjunto de soluções é encontrado avaliando a dominância de Pareto \cite{pareto} entre as soluções. O objetivo principal é encontrar o conjunto  
+de soluções que sejam não dominadas entre si. Uma solução domina outra, se e somente se, for melhor em pelos um dos objetivos, sem ser pior em qualquer outro.
+Este conjunto de soluções constitui a fronteira de Pareto. Encontrar a fronteira real de Pareto é um problema NP-Completo \cite{fonseca2005tutorial}, dessa maneira,
+o objetivo é encontrar uma boa aproximação da fronteira.
+>>>>>>> 1491eafdc569b7a670d8f8b83aae192c363e6aab
 
 Algoritmos Evolucionários Multi-Objetivos (AEMOs) são extensões de AEs para problemas multi-objetivos, os quais aplicam
 conceitos da dominância de Pareto para criar diferentes estratégias para evoluir e manter a diversidade das soluções.
@@ -207,14 +219,22 @@ A primeira classificação de hiper-heurísticas é baseada na sua fonte de conh
 \subsection{Hiper-heurísticas de Geração}
 \label{Hiper-Heuristicas-Geraçao}
 
+<<<<<<< HEAD
 Estas hiper-heurísticas geram novas heurísticas combinando componentes de heurísticas existentes \cite{burke2013hyper}. Geralmente se utiliza programação genética (GP), como hiper-heurística para gerar heurísticas. A próxima subseção irá introduzir o conhecimento necessário para a compreensão da programação genética, assim como irá introduzir evolução gramatical, que se trata de um tipo de programação genética utilizada nesta dissertação.
+=======
+Estas hiper-heurísticas geram novas heurísticas combinando componentes de heurísticas existentes \cite{burke2013hyper}. Geralmente se utiliza programação genética (GP), como hiper-heurística para gerar heurísticas. A próxima subseção irá introduzir o conhecimento necessário para a compreensão da programação genética, assim como irá introduzir evolução gramatical, que se trata de um tipo de programação genética e que será utilizada nesta proposta.
+>>>>>>> 1491eafdc569b7a670d8f8b83aae192c363e6aab
 
 \section{Programação Genética (PG)}
 \label{subsection:PG}
 
 Programação Genética \cite{burke2009exploring} é um ramo da síntese de programas que utiliza ideias oriundas da teoria da evolução natural para produzir programas. Da mesma maneira, que nos AEs um processo evolutivo é aplicado a uma população de indivíduos. Na PG um indivíduo representa um programa de computador. Os operadores geneticamente inspirados (cruzamento e mutação) são repetidamente aplicados com objetivo de produzir novos programas de computador. Estes programas são avaliados utilizando uma função de \textit{fitness} (normalmente dependente do desempenho obtido pela aplicação do programa em um problema), que determina quais destes programas são mais suscetíveis a sobreviver para gerações futuras. Os programas com maior aptidão tem mais chances de serem selecionados para o cruzamento e perpetuarem parte de seus códigos genéticos durante o processo evolutivo. 
 Programação genética é um método de geração de programas sintaticamente válidos e a função de \textit{fitness} é utilizada para decidir quais programas são mais adequados para o problema.
+<<<<<<< HEAD
 Na programação genética, os programas que compõem a população são tradicionalmente representados utilizando estruturas de árvore. Existem outras estruturas que podem ser evoluídas, por exemplo: sequências lineares de instruções ou gramáticas. Nesta dissertação é utilizada uma representação gramatical linear que será explicada na Seção \ref{subsubsection:EvolucaoGramatical}.
+=======
+Na programação genética, os programas que compõem a população são tradicionalmente representados utilizando estruturas de árvore. Existem outras estruturas que podem ser evoluídas, por exemplo: sequências lineares de instruções ou gramáticas. Nesta  Dissertação será utilizada uma representação gramatical linear que será explicada na Seção \ref{subsubsection:EvolucaoGramatical}.
+>>>>>>> 1491eafdc569b7a670d8f8b83aae192c363e6aab
 
 \section{Evolução Gramatical (EG)}
 \label{subsubsection:EvolucaoGramatical}
@@ -391,7 +411,11 @@ Burke et al.  descrevem uma abordagem básica \cite{burke2009exploring} para apl
 \label{ReferencialTeorico:Conclusão}
 
 
+<<<<<<< HEAD
 Neste Capítulo foram apresentados alguns conceitos que permeiam a área de estudo otimização multi objetiva e sobre hiper-heurísticas. Inicialmente, uma contextualização sobre AEs foi fornecida em seguida os AEMOs foram introduzidos. Nesta Dissertação são utilizados os algoritmos NSGAII e IBEA os quais também foram apresentados. Também foi discutido sobre \textit{frameworks} hiper-heurísticos,  os seus níveis (alto e baixo) e as classificações encontradas na literatura.  Foram discutidas algumas estratégias para hiper-heurísticas de seleção e geração. As hiper-heurísticas de geração foram mais detalhadas, pois esta proposta visa o projeto  automático de heurísticas de alto nível. Foram apresentados os conceitos de PG e sua extensão EG, por se tratarem de estratégias comumente utilizadas para o projeto de hiper-heurísticas de geração de heurísticas. Também foram discutidas algumas vantagens e desvantagens referentes ao uso de PG para geração de heurísticas, além de demonstrar que a EG possui as mesmas características da PG, pois se trata de uma extensão que utiliza uma gramática para gerar os programas. O funcionamento geral da EG foi demonstrado utilizando uma gramática exemplo e um vetor de inteiros e, por fim, o pseudocódigo da evolução gramatical foi apresentado. 
+=======
+Neste Capítulo foram apresentados alguns conceitos que permeiam a área de estudo otimização multi objetiva e sobre hiper-heurísticas. Inicialmente, uma contextualização sobre AEs foi fornecida em seguida os AEMOs foram introduzidos. Nesta Dissertação foram utilizados os algoritmos NSGAII e IBEA os quais também foram apresentados. Também foi discutido sobre \textit{frameworks} hiper-heurísticos,  os seus níveis (alto e baixo) e as classificações encontradas na literatura.  Foram discutidas algumas estratégias para hiper-heurísticas de seleção e geração. As hiper-heurísticas de geração foram mais detalhadas, pois esta proposta visa o projeto  automático de heurísticas de alto nível. Foram apresentados os conceitos de PG e sua extensão EG, por se tratarem de estratégias comumente utilizadas para o projeto de hiper-heurísticas de geração de heurísticas. Também foram discutidas algumas vantagens e desvantagens referentes ao uso de PG para geração de heurísticas, além de demonstrar que a EG possui as mesmas características da PG, pois se trata de uma extensão que utiliza uma gramática para gerar os programas. O funcionamento geral da EG foi demonstrado utilizando uma gramática exemplo e um vetor de inteiros e, por fim, o pseudocódigo da evolução gramatical foi apresentado. 
+>>>>>>> 1491eafdc569b7a670d8f8b83aae192c363e6aab
 
 O Capítulo \ref{cap:Trabalhos Relacionados} apresenta os trabalhos relacionados que foram selecionados a partir da revisão bibliográfica realizada.
 

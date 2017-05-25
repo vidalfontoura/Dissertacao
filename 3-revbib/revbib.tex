@@ -1,7 +1,11 @@
 \chapter{Trabalhos Relacionados}
 \label{cap:Trabalhos Relacionados}
 
+<<<<<<< HEAD
 Este Capítulo apresenta alguns trabalhados relacionados com a presente Dissertação. São apresentados trabalhos que buscam construir/adaptar estratégicas heurísticas para encontrar melhores soluções ao PDP utilizando o modelo HP. Também serão apresentados alguns trabalhos que utilizam técnicas de programação genética para gerar heurísticas para diferentes problemas.
+=======
+Este Capítulo irá apresentar alguns trabalhados relacionados com a presente Dissertação. Serão apresentados trabalhos que buscam construir/adaptar estratégicas heurísticas para encontrar melhores soluções ao PDP utilizando o modelo HP. Também serão apresentados alguns trabalhos que utilizam técnicas de programação genética para gerar heurísticas para diferentes problemas.
+>>>>>>> 1491eafdc569b7a670d8f8b83aae192c363e6aab
 
 
 %Também será apresentado um trabalho que trata do \textit{design} automático de heurísticas de alto nível para um \textit{framework}  hiper-heurístico aplicado a problemas de \textit{benchmark} disponibilizados pelo \textit{software} HyFlex \cite{ochoa2012hyflex}.
@@ -21,12 +25,21 @@ No trabalho de Santana et al. \cite{santana2008protein} é proposto a aplicaçã
 O estudo \cite{lin2011protein} desenvolvido por Lin e Su utiliza um algoritmo genético híbrido combinando um operador de mutação baseado na otimização por exame de partículas. Os resultados apresentados por Lin et al. se mostraram superiores aos apresentados por outros estudos, da época, que utilizam algoritmos evolutivos. Este trabalho também utiliza operadores de buscas locais que serão utilizados como heurísticas de baixo nível na presente proposta. 
 
 
+<<<<<<< HEAD
 Custódio et al. \cite{custodio2014multiple} desenvolveram um metodologia que consistiu em modificar um algoritmo genético para selecionar os operadores de cruzamento e mutação de maneira dinâmica. Além disso, utilizaram um mecanismo baseado em \textit{crowding}  para manter a diversidade durante o processo de busca. Este trabalho apresentou bons resultados em relação a outros estudos que exploram algoritmos evolutivos. Os operadores genéticos utilizados deste trabalho também serão implementados como heurísticas de baixo nível nesta proposta.
 
 Gabriel et al. propõem um abordagem multi objetiva \cite{gabriel2012algoritmos} para resolver o PDP com modelo HP-3D. Os autores apresentam uma estratégia inovadora biobjetiva considerando duas métricas. A primeira avalia a quantidade de contatos hidrofóbicos conforme descrito na subseção \ref{subsubsection:modeloHP}  . Já a segunda, introduzida pelos autores, considera a distância entre os aminoácidos. Neste trabalho foi desenvolvido um AEMOs chamado AEMT \cite{gabriel2012algoritmos} algoritmo evolutivo multiobjetivo em tabelas. A formulação biobjetiva deste estudo motivou a exploração de algoritmos multiobjetivos tradicionais já aplicados com sucesso em diversos domínios de problemas.  
 
 
 Misir em \cite{misir2012intelligent} apresenta o GIHH (Generic Intelligent Hyper-Heuristic) uma estratégia genérica o suficiente para ser aplicada em qualquer domínio de problema. Esta estratégia utiliza muitos mecanismos para explorar o espaço de busca. Inicialmente, uma lista Tabu é utilizada para armazenar más escolhas. O tempo de execução também é considerado afim de dar chances de execução para heurísticas que não estão sendo selecionadas com frequência. Um mecanismo inteligente de aceitação verifica se estão ocorrendo muitas iterações sem melhoria. Caso estejam a solução atual é substituída por outra solução contida em um mecanismo de memória. Este estudo obteve os melhores resultados utilizando os domínios de problemas contidos no \textit{framework} HyFlexs \cite{ochoa2012hyflex}.
+=======
+Custódio et al. \cite{custodio2014multiple} desenvolveram um metodologia que consistiu modificar um algoritmo genético para selecionar os operadores de cruzamento e mutação de maneira dinâmica. Além disso, utilizaram um mecanismo baseado em \textit{crowding}  para manter a diversidade durante o processo de busca. Este trabalho apresentou bons resultados em relação a outros estudos que exploram algoritmos evolutivos. Os operadores genéticos utilizados deste trabalho também serão implementados como heurísticas de baixo nível nesta proposta.
+
+Gabriel et al. propõem um abordagem multi objetiva \cite{gabriel2012algoritmos} para resolver o PDP com modelo HP-3D. Os autores apresentam uma estratégia inovadora biobjetiva considerando duas métricas. A primeira avalia a quantidade de contatos hidrofóbicos. Já a segunda considera a distância entre os aminoácidos. Neste trabalho foi desenvolvido um AEMOs chamado AEMT \cite{gabriel2012algoritmos} algoritmo evolutivo multiobjetivo em tabelas. A formulação biobjetiva deste estudo motivou a exploração de algoritmos multiobjetivos tradicionais já aplicados com sucesso em diversos domínios de problemas.  
+
+
+Misir em \cite{misir2012intelligent} apresenta o GIHH uma estratégia com objetivo de ser genérica o suficiente para ser aplicada em qualquer domínio de problema. Esta estratégia utiliza muitos mecanismos para explorar o espaço de busca. Inicialmente, uma lista Tabu é utilizada para armazenar más escolhas. O tempo de execução também é considerado afim de dar chances de execução para heurísticas que não estão sendo selecionadas com frequência. Um inteligente mecanismo de aceitação verifica se estão ocorrendo muitas iterações sem melhoria. Caso estejam a solução atual é substituída por outra solução contida em um mecanismo de memória. Este estudo obteve os melhores resultados utilizando os domínios de problemas contidos no \textit{framework} HyFlexs \cite{ochoa2012hyflex}.
+>>>>>>> 1491eafdc569b7a670d8f8b83aae192c363e6aab
 
 Uma função escolha foi proposta em \cite{drake2012improved}. Neste estudo mecanismos de aprendizado são baseados nas melhorias obtidas pelas heurísticas de baixo nível. Um mecanismo de reforço de aprendizagem também é utilizado para atualizar os parâmetros da função dinamicamente. O critério de aceitação utilizado foi sempre aceitar toda aplicação das heurísticas de baixo nível. Este trabalho também obteve bons resultados entretanto inferiores aos resultados obtidos em \cite{misir2012intelligent}.
 
@@ -36,7 +49,11 @@ Uma função escolha foi proposta em \cite{drake2012improved}. Neste estudo meca
 Lourenço et al. \cite{lourencco2012evolving} desenvolveram uma estratégia hiper-heurística utilizando evolução gramatical para geração e \textit{tuning} automático de algoritmos evolutivos. Neste trabalho uma gramática foi desenvolvida e contém os principais componentes de algoritmos evolutivos. Os resultados apresentados por Lourenço et al. provaram a habilidade da abordagem para evoluir algoritmos evolutivos. Os resultados obtidos pelos algoritmos evolutivos gerados pela evolução gramatical são competitivos com outras abordagens padrão. 
 
 
+<<<<<<< HEAD
 O trabalho desenvolvido por Sabar et al. \cite{sabar2015automatic} propõe uma estratégia inovadora, utilizando \text{Gene Expression Programming} (GEP), de geração de heurísticas de alto nível para um \textit {framework} hiper-heurístico aplicado a diversos problemas de \textit{benchmark} contidos no \text{framework} HyFlex \cite{ochoa2012hyflex}. Este trabalho motivou a abordagem que envolve o projeto automático de heurísticas. Os resultados apresentados se mostraram  promissores. A aplicação de uma vertente de programação genética para geração de heurísticas tem uma maior capacidade de explorar espaços de busca complexos (com muitos mínimos locais) e com muitas restrições.
+=======
+O trabalho desenvolvido por Sabar et al. \cite{sabar2015automatic} propõe uma estratégia inovadora, utilizando \text{Gene Expression Programming} (GEP), de geração de heurísticas de alto nível para um \textit {framework} hiper-heurístico aplicado a diversos problemas de \textit{benchmark} contidos no \text{framework} HyFlex \cite{ochoa2012hyflex}. Este trabalho motivou a abordagem que envolve o projeto automático de heurísticas. Os resultados apresentados se mostraram extremamente promissores. A aplicação de uma vertente de programação genética para geração de heurísticas tem uma maior capacidade de explorar espaços de busca complexos (com muitos mínimos locais) e com muitas restrições.
+>>>>>>> 1491eafdc569b7a670d8f8b83aae192c363e6aab
 
 
 % A principal diferença entre as abordagns propostas  Dissertação e os outros trabalhos relacionados \cite{santana2008protein,shmygelska2002ant,shmygelska2003improved,hsu2003growth, krasnogor2002multimeme,krasnogor2002multimeme,unger1993genetic} é que este irá explorar o espaçao de busca, da mesma maneira que foi realizada no estudo \cite{sabar2015automatic}, em um nível superior: gerando heurísticas de alto nível para um \textit{framework} hiper-heurístico que será aplicado para resolver o PDP enquanto os outros trabalhos aplicam meta-heurísticas diretamente ao PDP. 
@@ -53,7 +70,13 @@ O trabalho desenvolvido por Sabar et al. \cite{sabar2015automatic} propõe uma e
 \label{TrabalhosRelacionados:Conclusão}
 
 %TODO: Melhorar essa parte
+<<<<<<< HEAD
 Neste Capítulo foram discutidos alguns estudos que utilizam algoritmos de busca para explorar o espaço de busca do PDP utilizando o modelo HP. Também foram discutidos trabalhos que aplicam PG como hiper-heurística de geração de heurísticas. Foram mencionadas diferentes estratégias de busca para o PDP e algumas destas estrategias servem de base para alguns componentes que esta proposta possui. Os operadores genéticos utilizados \cite{custodio2014multiple} e \cite{lin2011protein} serviram de matéria prima para as heurísticas de baixo nível desta Dissertação. O trabalho desenvolvido por \cite{sabar2015automatic} foi utilizado como base na implementação da presente Dissertação. 
 pois demonstrou a habilidade do \textit{framework} proposto em generalizar entre diferentes domínios de problemas.
 
 O Capítulo \ref{cap:Metodologia} apresentará as duas abordagens propostas nesta Dissertação. 
+=======
+Neste Capítulo foram discutidos alguns estudos que utilizam algoritmos de busca para explorar o espaço de busca do PDP utilizando o modelo HP. Também foram discutidos trabalhos que aplicam PG como hiper-heurística de geração de heurísticas. Foram mencionadas diferentes estratégias de busca para o PDP e algumas destas estrategias servem de base para alguns componentes que esta proposta possui. Os operadores genéticos utilizados \cite{custodio2014multiple} e \cite{lin2011protein} serviram de matéria prima para as heurísticas de baixo nível desta Dissertação. O trabalho desenvolvido por \cite{sabar2015automatic} foi utilizado como base na implementação da presente Dissertação, pois obteve bons resultados dessa maneira, demonstrando a habilidade do \textit{framework} proposto generalizar bem entre diferentes domínios de problemas.
+
+O próximo Capítulo \ref{cap:Metodologia} apresentará as duas abordagens propostas nesta Dissertação. 
+>>>>>>> 1491eafdc569b7a670d8f8b83aae192c363e6aab
