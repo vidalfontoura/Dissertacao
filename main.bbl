@@ -1,0 +1,458 @@
+\begin{thebibliography}{}
+
+\bibitem[Anfinsen, 1972]{anfinsen1972studies}
+Anfinsen, C.~B. (1972).
+\newblock Studies on the principles that govern the folding of protein chains.
+
+\bibitem[Anfinsen et~al., 1961]{anfinsen1961kinetics}
+Anfinsen, C.~B., Haber, E., Sela, M.  e White~Jr, F. (1961).
+\newblock The kinetics of formation of native ribonuclease during oxidation of
+  the reduced polypeptide chain.
+\newblock {\em Proceedings of the National Academy of Sciences of the United
+  States of America}, 47(9):1309.
+
+\bibitem[Atkins e Hart, 1999]{atkins1999intractability}
+Atkins, J. e Hart, W.~E. (1999).
+\newblock On the intractability of protein folding with a finite alphabet of
+  amino acids.
+\newblock {\em Algorithmica}, 25(2-3):279--294.
+
+\bibitem[Barr, 1998]{barr1998economics}
+Barr, N.~A. (1998).
+\newblock {\em The economics of the welfare state}.
+\newblock Stanford University Press.
+
+\bibitem[Bastolla et~al., 1997]{bastolla1997testing}
+Bastolla, U., Frauenkron, H., Gerstner, E., Grassberger, P.  e Nadler, W.
+  (1997).
+\newblock Testing a new monte carlo algorithm for protein folding.
+\newblock {\em arXiv preprint cond-mat/9710030}.
+
+\bibitem[Baudrillart, 1872]{pareto}
+Baudrillart, H. J.~L. (1872).
+\newblock {\em Manuel d'{\'e}conomie politique}.
+\newblock Guillaumin et cie.
+
+\bibitem[Bell et~al., 2002]{bell2002p53}
+Bell, S., Klein, C., M{\"u}ller, L., Hansen, S.  e Buchner, J. (2002).
+\newblock p53 contains large unstructured regions in its native state.
+\newblock {\em Journal of molecular biology}, 322(5):917--927.
+
+\bibitem[Ben{\'\i}tez, 2010]{benitez2015algoritmo}
+Ben{\'\i}tez, C. M.~V. (2010).
+\newblock Um algoritmo gen{\'e}tico paralelo para o problema de dobramento de
+  prote{\'\i}nas utilizando o modelo 3dhp com cadeia lateral.
+
+\bibitem[Berger e Leighton, 1998]{berger1998protein}
+Berger, B. e Leighton, T. (1998).
+\newblock Protein folding in the hydrophobic-hydrophilic (hp) model is
+  np-complete.
+\newblock {\em Journal of Computational Biology}, 5(1):27--40.
+
+\bibitem[Blum et~al., 2011]{blum2011hybrid}
+Blum, C., Puchinger, J., Raidl, G.~R.  e Roli, A. (2011).
+\newblock Hybrid metaheuristics in combinatorial optimization: A survey.
+\newblock {\em Applied Soft Computing}, 11(6):4135--4151.
+
+\bibitem[Bornberg-Bauer, 1997]{bornberg1997chain}
+Bornberg-Bauer, E. (1997).
+\newblock Chain growth algorithms for hp-type lattice proteins.
+\newblock Em {\em Proceedings of the first annual international conference on
+  Computational molecular biology}, p\'aginas 47--55. ACM.
+
+\bibitem[Branden et~al., 1999]{branden1999introduction}
+Branden, C.~I. et~al. (1999).
+\newblock {\em Introduction to protein structure}.
+\newblock Garland Science.
+
+\bibitem[Burke et~al., 2013]{burke2013hyper}
+Burke, E.~K., Gendreau, M., Hyde, M., Kendall, G., Ochoa, G., {\"O}zcan, E.  e
+  Qu, R. (2013).
+\newblock Hyper-heuristics: A survey of the state of the art.
+\newblock {\em Journal of the Operational Research Society}, 64(12):1695--1724.
+
+\bibitem[Burke et~al., 2009]{burke2009exploring}
+Burke, E.~K., Hyde, M.~R., Kendall, G., Ochoa, G., Ozcan, E.  e Woodward, J.~R.
+  (2009).
+\newblock Exploring hyper-heuristic methodologies with genetic programming.
+\newblock Em {\em Computational intelligence}, p\'aginas 177--201. Springer.
+
+\bibitem[Chakhlevitch e Cowling, 2008]{chakhlevitch2008hyperheuristics}
+Chakhlevitch, K. e Cowling, P. (2008).
+\newblock Hyperheuristics: recent developments.
+\newblock Em {\em Adaptive and multilevel metaheuristics}, p\'aginas 3--29.
+  Springer.
+
+\bibitem[Cox et~al., 2013]{cox2013lehninger}
+Cox, M.~M. et~al. (2013).
+\newblock {\em Lehninger principles of biochemistry}.
+\newblock Freeman.
+
+\bibitem[Crescenzi et~al., 1998]{crescenzi1998complexity}
+Crescenzi, P., Goldman, D., Papadimitriou, C., Piccolboni, A.  e Yannakakis, M.
+  (1998).
+\newblock On the complexity of protein folding.
+\newblock {\em Journal of computational biology}, 5(3):423--465.
+
+\bibitem[Cust{\'o}dio et~al., 2004]{custodio2004investigation}
+Cust{\'o}dio, F.~L., Barbosa, H.~J.  e Dardenne, L.~E. (2004).
+\newblock Investigation of the three-dimensional lattice hp protein folding
+  model using a genetic algorithm.
+\newblock {\em Genetics and Molecular Biology}, 27(4):611--615.
+
+\bibitem[Cust{\'o}dio et~al., 2014]{custodio2014multiple}
+Cust{\'o}dio, F.~L., Barbosa, H.~J.  e Dardenne, L.~E. (2014).
+\newblock A multiple minima genetic algorithm for protein structure prediction.
+\newblock {\em Applied Soft Computing}, 15:88--99.
+
+\bibitem[Dawson et~al., 2003]{dawson2003n}
+Dawson, R., M{\"u}ller, L., Dehner, A., Klein, C., Kessler, H.  e Buchner, J.
+  (2003).
+\newblock The n-terminal domain of p53 is natively unfolded.
+\newblock {\em Journal of molecular biology}, 332(5):1131--1141.
+
+\bibitem[Deb et~al., 2002a]{deb2002}
+Deb, K., Pratap, A., Agarwal, S.  e Meyarivan, T. (2002a).
+\newblock {A fast and elitist multiobjective genetic algorithm: NSGA-II}.
+\newblock {\em IEEE Transactions on Evolutionary Computation}, 6(2):182--197.
+
+\bibitem[Deb et~al., 2002b]{deb2002fast}
+Deb, K., Pratap, A., Agarwal, S.  e Meyarivan, T. (2002b).
+\newblock A fast and elitist multiobjective genetic algorithm: {NSGA-II}.
+\newblock {\em Evolutionary Computation, IEEE Transactions on}, 6(2):182--197.
+
+\bibitem[Devlin e Toma, 1998]{devlin1998manual}
+Devlin, T.~M. e Toma, L. (1998).
+\newblock {\em Manual de bioqu{\'\i}mica: com correla{\c{c}}{\~o}es
+  cl{\'\i}nicas}.
+
+\bibitem[Drake et~al., 2012]{drake2012improved}
+Drake, J.~H., {\"O}zcan, E.  e Burke, E.~K. (2012).
+\newblock An improved choice function heuristic selection for cross domain
+  heuristic search.
+\newblock Em {\em International Conference on Parallel Problem Solving from
+  Nature}, p\'aginas 307--316. Springer.
+
+\bibitem[Eswar et~al., 2003]{eswar2003tools}
+Eswar, N., John, B., Mirkovic, N., Fiser, A., Ilyin, V.~A., Pieper, U., Stuart,
+  A.~C., Marti-Renom, M.~A., Madhusudhan, M.~S., Yerkovich, B.  et~al. (2003).
+\newblock Tools for comparative protein structure modeling and analysis.
+\newblock {\em Nucleic acids research}, 31(13):3375--3380.
+
+\bibitem[Figueiredo et~al., 2013]{figueiredo2013algoritmo}
+Figueiredo, E. M. d.~N., Ludermir, T. B.~O.  e Bastos~Filho, C. J. A.~C.
+  (2013).
+\newblock Algoritmo baseado em enxame de part{\'\i}culas para
+  otimiza{\c{c}}{\~a}o de problemas com muitos objetivos.
+\newblock {\em Repositório Institucional da UFPE}.
+
+\bibitem[Fonseca et~al., 2005]{fonseca2005tutorial}
+Fonseca, C.~M., Knowles, J.~D., Thiele, L.  e Zitzler, E. (2005).
+\newblock A tutorial on the performance assessment of stochastic multiobjective
+  optimizers.
+\newblock Em {\em Third International Conference on Evolutionary
+  Multi-Criterion Optimization (EMO 2005)}, volume 216, p\'agina 240.
+
+\bibitem[Fontoura et~al., 2015]{fontouralimacbic2015}
+Fontoura, V., de~Lima, R.~R., Pozo, A. T.~R.  e Hermida, R.~S. (2015).
+\newblock Algoritmos multiobjetivos aplicados ao problema de predicao de
+  estruturas proteinas.
+\newblock Em {Bastos Filho}, C. J.~A., Pozo, A.~R.  e Lopes, H.~S., editores,
+  {\em Anais do 12 Congresso Brasileiro de Inteligencia Computacional},
+  p\'aginas 1--6, Curitiba, PR. ABRICOM.
+
+\bibitem[Gabriel et~al., 2012]{gabriel2012algoritmos}
+Gabriel, P.~H., Melo, V. V.~d., Delbem, A.~C.  et~al. (2012).
+\newblock Algoritmos evolutivos e modelo hp para predi{\c{c}}{\~a}o de
+  estruturas de prote{\'\i}nas.
+\newblock {\em Revista de Controle e Automa{\c{c}}{\~a}o}, 23(1):25--37.
+
+\bibitem[Garza-Fabre et~al., 2012]{garza2012locality}
+Garza-Fabre, M., Toscano-Pulido, G.  e Rodriguez-Tello, E. (2012).
+\newblock Locality-based multiobjectivization for the hp model of protein
+  structure prediction.
+\newblock Em {\em Proceedings of the 14th annual conference on Genetic and
+  evolutionary computation}, p\'aginas 473--480. ACM.
+
+\bibitem[G{\"o}bl e Tjandra, 2012]{gobl2012application}
+G{\"o}bl, C. e Tjandra, N. (2012).
+\newblock Application of solution nmr spectroscopy to study protein dynamics.
+\newblock {\em Entropy}, 14(3):581--598.
+
+\bibitem[Grantcharova et~al., 2001]{grantcharova2001mechanisms}
+Grantcharova, V., Alm, E.~J., Baker, D.  e Horwich, A.~L. (2001).
+\newblock Mechanisms of protein folding.
+\newblock {\em Current opinion in structural biology}, 11(1):70--82.
+
+\bibitem[Hamming, 1950]{hamming1950error}
+Hamming, R.~W. (1950).
+\newblock Error detecting and error correcting codes.
+\newblock {\em Bell System technical journal}, 29(2):147--160.
+
+\bibitem[Hart e Istrail, 1997]{hart1997lattice}
+Hart, W.~E. e Istrail, S. (1997).
+\newblock Lattice and off-lattice side chain models of protein folding: linear
+  time structure prediction better than 86\% of optimal.
+\newblock {\em Journal of Computational Biology}, 4(3):241--259.
+
+\bibitem[Hsu et~al., 2003]{hsu2003growth}
+Hsu, H.-P., Mehra, V., Nadler, W.  e Grassberger, P. (2003).
+\newblock Growth algorithms for lattice heteropolymers at low temperatures.
+\newblock {\em The Journal of chemical physics}, 118(1):444--451.
+
+\bibitem[Hutton et~al., 2001]{hutton2001analysis}
+Hutton, M., Lewis, J., Dickson, D., Yen, S.-H.  e McGowan, E. (2001).
+\newblock Analysis of tauopathies with transgenic mice.
+\newblock {\em Trends in molecular medicine}, 7(10):467--470.
+
+\bibitem[Ilari e Savino, 2008]{ilari2008protein}
+Ilari, A. e Savino, C. (2008).
+\newblock Protein structure determination by x-ray crystallography.
+\newblock Em {\em Bioinformatics}, p\'aginas 63--87. Springer.
+
+\bibitem[Ishibuchi et~al., 2008]{ishibuchi2008evolutionary}
+Ishibuchi, H., Tsukamoto, N.  e Nojima, Y. (2008).
+\newblock Evolutionary many-objective optimization.
+\newblock Em {\em Genetic and Evolving Systems, 2008. GEFS 2008. 3rd
+  International Workshop on}, p\'aginas 47--52. IEEE.
+
+\bibitem[Ishimaru et~al., 2003]{ishimaru2003fibrillar}
+Ishimaru, D., Andrade, L.~R., Teixeira, L.~S., Quesado, P.~A., Maiolino, L.~M.,
+  Lopez, P.~M., Cordeiro, Y., Costa, L.~T., Heckl, W.~M., Weissm{\"u}ller, G.
+  et~al. (2003).
+\newblock Fibrillar aggregates of the tumor suppressor p53 core domain.
+\newblock {\em Biochemistry}, 42(30):9022--9027.
+
+\bibitem[Krasnogor et~al., 2002]{krasnogor2002multimeme}
+Krasnogor, N., Blackburne, B., Burke, E.~K.  e Hirst, J.~D. (2002).
+\newblock Multimeme algorithms for protein structure prediction.
+\newblock Em {\em Parallel Problem Solving from Nature PPSN VII}, p\'aginas
+  769--778. Springer.
+
+\bibitem[Krasnogor et~al., 1999]{krasnogor1999protein}
+Krasnogor, N., Hart, W., Smith, J.  e Pelta, D. (1999).
+\newblock Protein structure prediction with evolutionary algorithms.
+
+\bibitem[Krieger et~al., 2009]{krieger2009improving}
+Krieger, E., Joo, K., Lee, J., Lee, J., Raman, S., Thompson, J., Tyka, M.,
+  Baker, D.  e Karplus, K. (2009).
+\newblock Improving physical realism, stereochemistry, and side-chain accuracy
+  in homology modeling: four approaches that performed well in casp8.
+\newblock {\em Proteins: Structure, Function, and Bioinformatics},
+  77(S9):114--122.
+
+\bibitem[Lau e Dill, 1989]{lau1989lattice}
+Lau, K.~F. e Dill, K.~A. (1989).
+\newblock A lattice statistical mechanics model of the conformational and
+  sequence spaces of proteins.
+\newblock {\em Macromolecules}, 22(10):3986--3997.
+
+\bibitem[Lin e Su, 2011]{lin2011protein}
+Lin, C.-J. e Su, S.-C. (2011).
+\newblock Protein 3 d hp model folding simulation using a hybrid of genetic
+  algorithm and particle swarm optimization.
+\newblock {\em International Journal of Fuzzy Systems}, 13(2):140--147.
+
+\bibitem[Lodish et~al., 2000]{lodish2000molecular}
+Lodish, H.~F., Berk, A., Zipursky, S.~L., Matsudaira, P., Baltimore, D.,
+  Darnell, J.  et~al. (2000).
+\newblock {\em Molecular cell biology}, volume~4.
+\newblock Citeseer.
+
+\bibitem[Lopes, 2008]{lopes2008evolutionary}
+Lopes, H.~S. (2008).
+\newblock Evolutionary algorithms for the protein folding problem: A review and
+  current trends.
+\newblock Em {\em Computational intelligence in biomedicine and
+  bioinformatics}, p\'aginas 297--315. Springer.
+
+\bibitem[Louren{\c{c}}o et~al., 2012]{lourencco2012evolving}
+Louren{\c{c}}o, N., Pereira, F.  e Costa, E. (2012).
+\newblock Evolving evolutionary algorithms.
+\newblock Em {\em Proceedings of the 14th annual conference companion on
+  Genetic and evolutionary computation}, p\'aginas 51--58. ACM.
+
+\bibitem[McKight e Najab, 2010]{mckight2010kruskal}
+McKight, P.~E. e Najab, J. (2010).
+\newblock {Kruskal-Wallis} test.
+\newblock {\em Corsini Encyclopedia of Psychology}.
+
+\bibitem[McNaught et~al., 2001]{mcnaught2001failure}
+McNaught, K. S.~P., Olanow, C.~W., Halliwell, B., Isacson, O.  e Jenner, P.
+  (2001).
+\newblock Failure of the ubiquitin--proteasome system in parkinson's disease.
+\newblock {\em Nature Reviews Neuroscience}, 2(8):589--594.
+
+\bibitem[Misir, 2012]{misir2012intelligent}
+Misir, M. (2012).
+\newblock Intelligent hyper-heuristics: a tool for solving generic optimisation
+  problems.
+
+\bibitem[Ngo et~al., 1994]{ngo1994protein}
+Ngo, J., Marks, J.  e Karplus, M. (1994).
+\newblock The protein folding problem and tertiary structure prediction.
+\newblock {\em Merz and LeGrand, ed. Birkhauser, Boston}.
+
+\bibitem[Nicosia e Stracquadanio, 2008]{nicosia2008generalized}
+Nicosia, G. e Stracquadanio, G. (2008).
+\newblock Generalized pattern search algorithm for peptide structure
+  prediction.
+\newblock {\em Biophysical journal}, 95(10):4988--4999.
+
+\bibitem[Ochoa et~al., 2012]{ochoa2012hyflex}
+Ochoa, G., Hyde, M., Curtois, T., Vazquez-Rodriguez, J.~A., Walker, J.,
+  Gendreau, M., Kendall, G., McCollum, B., Parkes, A.~J., Petrovic, S.  et~al.
+  (2012).
+\newblock Hyflex: A benchmark framework for cross-domain heuristic search.
+\newblock Em {\em Evolutionary computation in combinatorial optimization},
+  p\'aginas 136--147. Springer.
+
+\bibitem[Pacheco, 1999]{pacheco1999algoritmos}
+Pacheco, M. A.~C. (1999).
+\newblock Algoritmos gen{\'e}ticos: princ{\'\i}pios e aplica{\c{c}}{\~o}es.
+\newblock {\em ICA: Laborat{\'o}rio de Intelig{\^e}ncia Computacional Aplicada.
+  Departamento de Engenharia El{\'e}trica. Pontif{\'\i}cia Universidade
+  Cat{\'o}lica do Rio de Janeiro. Fonte desconhecida}.
+
+\bibitem[Pedersen, 2000]{pedersen2000algorithms}
+Pedersen, C.~N. (2000).
+\newblock {\em Algorithms in computational biology}.
+\newblock BRICS.
+
+\bibitem[Qian et~al., 2004]{qian2004improvement}
+Qian, B., Ortiz, A.~R.  e Baker, D. (2004).
+\newblock Improvement of comparative model accuracy by free-energy optimization
+  along principal components of natural structural variation.
+\newblock {\em Proceedings of the National Academy of Sciences of the United
+  States of America}, 101(43):15346--15351.
+
+\bibitem[R{\"o}thlisberger et~al., 2008]{rothlisberger2008kemp}
+R{\"o}thlisberger, D., Khersonsky, O., Wollacott, A.~M., Jiang, L., DeChancie,
+  J., Betker, J., Gallaher, J.~L., Althoff, E.~A., Zanghellini, A., Dym, O.
+  et~al. (2008).
+\newblock Kemp elimination catalysts by computational enzyme design.
+\newblock {\em Nature}, 453(7192):190--195.
+
+\bibitem[Ryan et~al., 1998]{ryan1998grammatical}
+Ryan, C., Collins, J.  e Neill, M.~O. (1998).
+\newblock Grammatical evolution: Evolving programs for an arbitrary language.
+\newblock Em {\em Genetic Programming}, p\'aginas 83--96. Springer.
+
+\bibitem[Sabar et~al., 2015]{sabar2015automatic}
+Sabar, N.~R., Ayob, M., Kendall, G.  e Qu, R. (2015).
+\newblock Automatic design of a hyper-heuristic framework with gene expression
+  programming for combinatorial optimization problems.
+\newblock {\em IEEE Transactions on Evolutionary Computation}, 19(3):309--325.
+
+\bibitem[Santana et~al., 2008]{santana2008protein}
+Santana, R., Larra{\~n}aga, P., Lozano, J.  et~al. (2008).
+\newblock Protein folding in simplified models with estimation of distribution
+  algorithms.
+\newblock {\em Evolutionary Computation, IEEE Transactions on}, 12(4):418--438.
+
+\bibitem[Sela et~al., 1957]{sela1957reductive}
+Sela, M., White~Jr, F.~H.  e Anfinsen, C.~B. (1957).
+\newblock Reductive cleavage of disulfide bridges in ribonuclease.
+\newblock {\em Science}, 125(3250):691--692.
+
+\bibitem[Selkoe, 2001]{selkoe2001clearing}
+Selkoe, D.~J. (2001).
+\newblock Clearing the brain's amyloid cobwebs.
+\newblock {\em Neuron}, 32(2):177--180.
+
+\bibitem[Shakhnovich e Gutin, 1993]{shakhnovich1993engineering}
+Shakhnovich, E.~I. e Gutin, A.~M. (1993).
+\newblock Engineering of stable and fast-folding sequences of model proteins.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  90(15):7195--7199.
+
+\bibitem[Shen et~al., 2009]{shen2009novo}
+Shen, Y., Vernon, R., Baker, D.  e Bax, A. (2009).
+\newblock De novo protein structure generation from incomplete chemical shift
+  assignments.
+\newblock {\em Journal of biomolecular NMR}, 43(2):63--78.
+
+\bibitem[Shmygelska et~al., 2002]{shmygelska2002ant}
+Shmygelska, A., Aguirre-Hernandez, R.  e Hoos, H.~H. (2002).
+\newblock An ant colony optimization algorithm for the 2d hp protein folding
+  problem.
+\newblock Em {\em Ant Algorithms}, p\'aginas 40--52. Springer.
+
+\bibitem[Shmygelska e Hoos, 2003]{shmygelska2003improved}
+Shmygelska, A. e Hoos, H.~H. (2003).
+\newblock An improved ant colony optimisation algorithm for the 2d hp protein
+  folding problem.
+\newblock Em {\em Advances in Artificial Intelligence}, p\'aginas 400--417.
+  Springer.
+
+\bibitem[Stillinger et~al., 1993]{stillinger1993toy}
+Stillinger, F.~H., Head-Gordon, T.  e Hirshfeld, C.~L. (1993).
+\newblock Toy model for protein folding.
+\newblock {\em Physical review E}, 48(2):1469.
+
+\bibitem[Suzuki et~al., 1986]{suzuki1986introduction}
+Suzuki, D.~T., Griffiths, A.~J., Miller, J.~H., Lewontin, R.~C.  et~al. (1986).
+\newblock {\em An introduction to genetic analysis.}
+\newblock N\'umero Ed. 3. WH Freeman and Company.
+
+\bibitem[Talbi e Bachelet, 2006]{talbi2006cosearch}
+Talbi, E.-G. e Bachelet, V. (2006).
+\newblock Cosearch: A parallel cooperative metaheuristic.
+\newblock {\em Journal of Mathematical Modelling and Algorithms}, 5(1):5--22.
+
+\bibitem[Thomas e Dill, 1993]{thomas1993local}
+Thomas, P.~D. e Dill, K.~A. (1993).
+\newblock Local and nonlocal interactions in globular proteins and mechanisms
+  of alcohol denaturation.
+\newblock {\em Protein Science}, 2(12):2050--2065.
+
+\bibitem[Thomas et~al., 1992]{thomas1992altered}
+Thomas, P.~J., Ko, Y.~H.  e Pedersen, P.~L. (1992).
+\newblock Altered protein folding may be the molecular basis of most cases of
+  cystic fibrosis.
+\newblock {\em FEBS letters}, 312(1):7--9.
+
+\bibitem[Unger e Moult, 1993a]{unger1993finding}
+Unger, R. e Moult, J. (1993a).
+\newblock Finding the lowest free energy conformation of a protein is an
+  np-hard problem: proof and implications.
+\newblock {\em Bulletin of Mathematical Biology}, 55(6):1183--1198.
+
+\bibitem[Unger e Moult, 1993b]{unger1993genetic}
+Unger, R. e Moult, J. (1993b).
+\newblock Genetic algorithms for protein folding simulations.
+\newblock {\em Journal of molecular biology}, 231(1):75--81.
+
+\bibitem[Ursini et~al., 2002]{ursini2002atherosclerosis}
+Ursini, F., Davies, K.~J., Maiorino, M., Parasassi, T.  e Sevanian, A. (2002).
+\newblock Atherosclerosis: another protein misfolding disease?
+\newblock {\em Trends in Molecular Medicine}, 8(8):370--374.
+
+\bibitem[Vendruscolo et~al., 2000]{vendruscolo2000can}
+Vendruscolo, M., Najmanovich, R.  e Domany, E. (2000).
+\newblock Can a pairwise contact potential stabilize native protein folds
+  against decoys obtained by threading?
+\newblock {\em Proteins: Structure, Function, and Bioinformatics},
+  38(2):134--148.
+
+\bibitem[Wang et~al., 2012]{wang2012structural}
+Wang, L., Althoff, E.~A., Bolduc, J., Jiang, L., Moody, J., Lassila, J.~K.,
+  Giger, L., Hilvert, D., Stoddard, B.  e Baker, D. (2012).
+\newblock Structural analyses of covalent enzyme--substrate analog complexes
+  reveal strengths and limitations of de novo enzyme design.
+\newblock {\em Journal of molecular biology}, 415(3):615--625.
+
+\bibitem[Zitzler e K{\"u}nzli, 2004]{zitzler2004indicator}
+Zitzler, E. e K{\"u}nzli, S. (2004).
+\newblock Indicator-based selection in multiobjective search.
+\newblock Em {\em Parallel Problem Solving from Nature-PPSN VIII}, p\'aginas
+  832--842. Springer.
+
+\bibitem[Zitzler et~al., 2003]{zitzler2003performance}
+Zitzler, E., Thiele, L., Laumanns, M., Fonseca, C.~M.  e Da~Fonseca, V.~G.
+  (2003).
+\newblock Performance assessment of multiobjective optimizers: an analysis and
+  review.
+\newblock {\em Evolutionary Computation, IEEE Transactions on}, 7(2):117--132.
+
+\end{thebibliography}

@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
+A level-1 auxiliary file: 0-preambulo/ficha.aux
+A level-1 auxiliary file: 0-preambulo/aprovacao.aux
+A level-1 auxiliary file: 0-preambulo/dedica.aux
+A level-1 auxiliary file: 0-preambulo/agradece.aux
+A level-1 auxiliary file: 0-preambulo/resumo.aux
+A level-1 auxiliary file: 0-preambulo/abstract.aux
+A level-1 auxiliary file: 0-preambulo/acronimos.aux
+A level-1 auxiliary file: 0-preambulo/simbolos.aux
+A level-1 auxiliary file: 1-intro/intro.aux
+A level-1 auxiliary file: 2-pdp/pdp.aux
+A level-1 auxiliary file: 3-fundam/fundam.aux
+A level-1 auxiliary file: 3-revbib/revbib.aux
+A level-1 auxiliary file: 4-proposta/proposta.aux
+A level-1 auxiliary file: 5-valida/valida.aux
+A level-1 auxiliary file: 6-conclusao/conclusao.aux
+The style file: apalike-ptbr.bst
+Database file #1: refs.bib
+Repeated entry---line 1214 of file refs.bib
+ : @article{berger1998protein
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1318 of file refs.bib
+ : @article{burke2013hyper
+ :                        ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1537 of file refs.bib
+ : @article{unger1993genetic
+ :                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1557 of file refs.bib
+ : @article{hsu2003growth
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1688 of file refs.bib
+ : @article{sabar2015automatic
+ :                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1700 of file refs.bib
+ : @article{mckight2010kruskal
+ :                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1720 of file refs.bib
+ : @article{custodio2014multiple
+ :                              ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1750 of file refs.bib
+ : @article{gabriel2012algoritmos
+ :                               ,
+I'm skipping whatever remains of this entry
+Warning--empty journal in benitez2015algoritmo
+Warning--empty publisher in devlin1998manual
+Warning--empty journal in krasnogor1999protein
+Warning--empty journal in misir2012intelligent
+Warning--there's a number but no series in suzuki1986introduction
+(There were 8 error messages)
